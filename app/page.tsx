@@ -2,13 +2,20 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 export default function Home() {
   const [opacity, setOpacity] = useState(1);
   const [showMiniLogo, setShowMiniLogo] = useState(false);
-
   const [overlayOpacity, setOverlayOpacity] = useState(0.5);
   const textRef = useRef<HTMLHeadingElement>(null);
+  const textSectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: textSectionRef,
+    offset: ["start end", "end start"],
+  });
+  const yRange = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const smoothY = useSpring(yRange, { stiffness: 20, damping: 10 });
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [isLogoLoaded, setIsLogoLoaded] = useState(false);
@@ -18,11 +25,11 @@ export default function Home() {
 
     const logoTimer = setTimeout(() => {
       setIsLogoLoaded(true);
-    }, 2000);
+    }, 1500);
 
     const scrollTimer = setTimeout(() => {
       setIsScrollLoaded(true);
-    }, 2500);
+    }, 2000);
 
     return () => {
       clearTimeout(logoTimer);
@@ -127,30 +134,194 @@ export default function Home() {
         <div className="min-h-screen w-full bg-transparent  text-white p-24">
 
           <div className="max-w-4xl mx-auto">
+            <motion.div
+              ref={textSectionRef}
+              className="max-w-4xl mx-auto"
+              style={{ y: smoothY }}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.8, ease: "easeOut" }}
+              >
 
-            <h2 ref={textRef}
-              className="text-6xl font-bold mb-10 text-center text-white-500">
-              教室には収まらない
-            </h2>
+                <h2 ref={textRef}
+                  className="text-6xl font-bold mb-10 text-center text-white-500">
+                  教室には収まらない
+                </h2>
 
-            <h2 className="text-6xl font-bold mb-30 text-center text-white-500">
-              慶祥生の本気
-            </h2>
+                <h2 className="text-6xl font-bold mb-30 text-center text-white-500">
+                  慶祥生の本気
+                </h2>
+              </motion.div>
 
-            <p className="text-xl text-center leading-relaxed mb-10">
-              R-EXPO2026が目指すのは、未来社会の縮図を描くこと。
-            </p>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.8, ease: "easeOut", delay: 0.6 }}
+              >
 
-            <p className="text-xl text-center leading-relaxed mb-10">
+                <p className="text-xl text-center leading-relaxed mb-10">
+                  R-EXPO2026が目指すのは、未来社会の縮図を描くこと。
+                </p>
 
-              会場に一歩足を踏み入れれば、そこには多様なレイヤーで構成された
-            </p>
-            <p className="text-xl text-center leading-relaxed mb-10">
-              「新しい世界」が広がっています。
-            </p>
+                <p className="text-xl text-center leading-relaxed mb-10">
+
+                  会場に一歩足を踏み入れれば、そこには多様なレイヤーで構成された
+                </p>
+                <p className="text-xl text-center leading-relaxed mb-20">
+                  「新しい世界」が広がっています。
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.8, ease: "easeOut", delay: 0.6 }}
+              >
+
+                <p className="text-xl text-center leading-relaxed mb-9">
+                  国境を超えた対話
+                </p>
+
+                <p className="text-xl text-center leading-relaxed mb-9">
+
+                  知の冒険
+                </p>
+                <p className="text-xl text-center leading-relaxed mb-20">
+                  感性の爆発...
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 1.8, ease: "easeOut", delay: 0.6 }}
+              >
+
+                <p className="text-xl text-center leading-relaxed mb-9">
+                  完成された未来図はまだありません。しかしここには、
+                </p>
+
+                <p className="text-xl text-center leading-relaxed mb-9">
+
+                  未来を創るための「種」が無限に撒かれています。
+                </p>
+                <p className="text-xl text-center leading-relaxed mb-9">
+
+                </p>
+              </motion.div>
+
+            </motion.div>
+
+
           </div>
 
         </div>
+
+      </div>
+
+      <div className="w-full max-w-5xl mx-auto px-12 pb-40">
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-row items-center gap-10 mb-32"
+        >
+          <div className="shrink-0">
+            <div className="w-48 h-48 rounded-full overflow-hidden border-2 border-white/20 relative shadow-2xl">
+              <Image
+                src="/Kenji.png"
+                alt="菊地 賢司"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="flex-1 text-left">
+            <div className="flex items-end gap-4 mb-4">
+              <h3 className="text-4xl font-bold text-white">菊地 賢司</h3>
+              <span className="text-base font-bold text-white pb-1">
+                立命館慶祥中学校・高等学校　学校長
+              </span>
+            </div>
+            <p className="text-white text-lg leading-relaxed opacity-90">
+              教室を飛び出し、世界とつながる「探究」の集大成。 <br />
+              多様な個性が響き合い、未来をデザインする瞬間を目撃してください...
+
+            </p>
+          </div>
+
+          <div className="shrink-0">
+            <a
+              href="/Subpage"
+              className="block hover:scale-110 transition-transform duration-300 cursor-pointer"
+            >
+              <Image
+                src="/Click.png"
+                alt="詳しく見る"
+                width={60}
+                height={60}
+              />
+            </a>
+          </div>
+        </motion.div>
+
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex flex-row items-center gap-10"
+        >
+          <div className="shrink-0">
+            <div className="w-48 h-48 rounded-full overflow-hidden border-2 border-white/20 relative shadow-2xl">
+              <Image
+                src="/Ueno.png"
+                alt="上野 政聖"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="flex-1 text-left">
+            <div className="flex items-end gap-4 mb-4">
+              <h3 className="text-4xl font-bold text-white">上野 政聖</h3>
+              <span className="text-base font-bold text-white pb-1">
+                行事改革実行委員会　委員長
+              </span>
+            </div>
+            <p className="text-white text-lg leading-relaxed opacity-90">
+              「文化祭」から「万博」へ。僕たちが本気で変えた、新しい景色。<br />
+
+              1500人の情熱と、まだ誰も見たことのない1日がここから始まります...
+
+            </p>
+          </div>
+
+          <div className="shrink-0">
+            <a
+              href="/Subpage"
+              className="block hover:scale-110 transition-transform duration-300 cursor-pointer"
+            >
+              <Image
+                src="/Click.png"
+                alt="詳しく見る"
+                width={60}
+                height={60}
+              />
+            </a>
+          </div>
+        </motion.div>
 
       </div>
 
