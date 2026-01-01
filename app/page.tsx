@@ -100,6 +100,19 @@ export default function Home() {
           />
         </div>
 
+        <div
+          className={`fixed top-6 right-6 z-50 transition-opacity duration-500 ease-in-out
+            ${showMiniLogo ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+        >
+          <Image
+            src="/ME.png"
+            alt="Menu"
+            width={40}
+            height={40}
+            className="object-contain cursor-pointer"
+          />
+        </div>
+
         <div className="relative z-10 flex h-screen flex-col items-center justify-center pointer-events-none"
           style={{ opacity: opacity }}>
 
