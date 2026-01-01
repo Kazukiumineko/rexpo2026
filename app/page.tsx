@@ -14,12 +14,13 @@ export default function Home() {
     target: textSectionRef,
     offset: ["start end", "end start"],
   });
-  const yRange = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const yRange = useTransform(scrollYProgress, [0, 1], [50, -50]);
   const smoothY = useSpring(yRange, { stiffness: 20, damping: 10 });
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [isLogoLoaded, setIsLogoLoaded] = useState(false);
   const [isScrollLoaded, setIsScrollLoaded] = useState(false);
+  const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
 
@@ -155,7 +156,7 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 1.8, ease: "easeOut" }}
               >
 
@@ -172,7 +173,7 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 1.8, ease: "easeOut", delay: 0.6 }}
               >
 
@@ -192,7 +193,7 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 1.8, ease: "easeOut", delay: 0.6 }}
               >
 
@@ -212,7 +213,7 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 1.8, ease: "easeOut", delay: 0.6 }}
               >
 
@@ -240,101 +241,93 @@ export default function Home() {
 
       <div className="w-full max-w-5xl mx-auto px-12 pb-40">
 
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-row items-center gap-10 mb-32"
-        >
-          <div className="shrink-0">
-            <div className="w-48 h-48 rounded-full overflow-hidden border-2 border-white/20 relative shadow-2xl">
-              <Image
-                src="/Kenji.png"
-                alt="菊地 賢司"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
+        {[
+          {
+            id: "principal",
+            name: "菊地 賢司",
+            title: "立命館慶祥高校・中学校 学校長",
+            image: "/Kenji.png",
+            textShort: "R-EXPO2026が目指すのは、未来社会の縮図を描くこと。会場に一歩足を踏み入れれば、そこには多様なレイヤーで構成された「新しい世界」が広がっています。",
+            textLong: "生徒たちが自ら考え、行動し、創り上げるこの空間は、まさに教育の枠を超えた挑戦です。彼らの熱量と無限の可能性を、ぜひ肌で感じてください。教室では見られない、慶祥生の「本気」がここにあります。"
+          },
+          {
+            id: "student",
+            name: "上野 政聖",
+            title: "行事改革実行委員会 委員長",
+            image: "/Ueno.png",
+            textShort: "私たちの挑戦は、常識を疑うことから始まりました。既存の枠組みを取り払い、ゼロから作り上げたこのR-EXPOには、全校生徒の想いが詰まっています。",
+            textLong: "失敗を恐れず、前例のないことに挑み続ける。そのプロセスこそが、私たちの財産です。ご来場いただく皆様に、驚きと感動、そして未来への希望をお届けすることをお約束します。"
+          }
+        ].map((person, index) => {
+          const isOpen = expandedItems[person.id];
 
-          <div className="flex-1 text-left">
-            <div className="flex items-end gap-4 mb-4">
-              <h3 className="text-4xl font-bold text-white">菊地 賢司</h3>
-              <span className="text-base font-bold text-white pb-1">
-                立命館慶祥中学校・高等学校　学校長
-              </span>
-            </div>
-            <p className="text-white text-lg leading-relaxed opacity-90">
-              教室を飛び出し、世界とつながる「探究」の集大成。 <br />
-              多様な個性が響き合い、未来をデザインする瞬間を目撃してください...
-
-            </p>
-          </div>
-
-          <div className="shrink-0">
-            <a
-              href="/Subpage"
-              className="block hover:scale-110 transition-transform duration-300 cursor-pointer"
+          return (
+            <motion.div
+              key={person.id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              className="flex flex-col items-center mb-32"
             >
-              <Image
-                src="/Click.png"
-                alt="詳しく見る"
-                width={60}
-                height={60}
-              />
-            </a>
-          </div>
-        </motion.div>
+              <div className="flex flex-row items-center gap-10 w-full mb-1">
+                <div className="shrink-0">
+                  <div className="w-48 h-48 rounded-full overflow-hidden border-2 border-white/20 relative shadow-2xl">
+                    <Image
+                      src={person.image}
+                      alt={person.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
 
+                <div className="flex-1 text-left">
+                  <div className="flex items-end gap-4 mb-4">
+                    <h3 className="text-4xl font-bold text-white">{person.name}</h3>
+                    <span className="text-sm font-bold text-gray-300 pb-1">
+                      {person.title}
+                    </span>
+                  </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-row items-center gap-10"
-        >
-          <div className="shrink-0">
-            <div className="w-48 h-48 rounded-full overflow-hidden border-2 border-white/20 relative shadow-2xl">
-              <Image
-                src="/Ueno.png"
-                alt="上野 政聖"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
+                  <p className="text-gray-200 text-lg leading-relaxed opacity-90">
+                    {person.textShort}
+                  </p>
+                </div>
+              </div>
 
-          <div className="flex-1 text-left">
-            <div className="flex items-end gap-4 mb-4">
-              <h3 className="text-4xl font-bold text-white">上野 政聖</h3>
-              <span className="text-base font-bold text-white pb-1">
-                行事改革実行委員会　委員長
-              </span>
-            </div>
-            <p className="text-white text-lg leading-relaxed opacity-90">
-              「文化祭」から「万博」へ。僕たちが本気で変えた、新しい景色。<br />
+              <motion.div
+                initial={false}
+                animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="overflow-hidden w-full pl-[232px]"
+              >
+                <p className="text-gray-200 text-lg leading-relaxed opacity-90 pb-6">
+                  {person.textLong}
+                </p>
+              </motion.div>
 
-              1500人の情熱と、まだ誰も見たことのない1日がここから始まります...
+              <div
+                className="mt-2 cursor-pointer transition-transform duration-300 hover:scale-110"
+                onClick={() => setExpandedItems(prev => ({ ...prev, [person.id]: !prev[person.id] }))}
+              >
+                <motion.div
+                  animate={{ rotate: isOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image
+                    src="/PullDown.png"
+                    alt="詳しく見る"
+                    width={60}
+                    height={60}
+                    className="opacity-80 hover:opacity-100"
+                  />
+                </motion.div>
+              </div>
 
-            </p>
-          </div>
-
-          <div className="shrink-0">
-            <a
-              href="/Subpage"
-              className="block hover:scale-110 transition-transform duration-300 cursor-pointer"
-            >
-              <Image
-                src="/Click.png"
-                alt="詳しく見る"
-                width={60}
-                height={60}
-              />
-            </a>
-          </div>
-        </motion.div>
+            </motion.div>
+          );
+        })}
 
       </div>
 
