@@ -10,6 +10,26 @@ export default function Home() {
   const [overlayOpacity, setOverlayOpacity] = useState(0.5);
   const textRef = useRef<HTMLHeadingElement>(null);
 
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLogoLoaded, setIsLogoLoaded] = useState(false);
+  const [isScrollLoaded, setIsScrollLoaded] = useState(false);
+
+  useEffect(() => {
+
+    const logoTimer = setTimeout(() => {
+      setIsLogoLoaded(true);
+    }, 2000);
+
+    const scrollTimer = setTimeout(() => {
+      setIsScrollLoaded(true);
+    }, 2500);
+
+    return () => {
+      clearTimeout(logoTimer);
+      clearTimeout(scrollTimer);
+    };
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -36,6 +56,7 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
+
   }, []);
 
 
@@ -50,7 +71,7 @@ export default function Home() {
           muted
           playsInline
         >
-          <source src="/Timeline 1.mp4" type="video/mp4" />
+          <source src="/Drone.mp4" type="video/mp4" />
         </video>
 
         <div
@@ -74,20 +95,29 @@ export default function Home() {
 
         <div className="relative z-10 flex h-screen flex-col items-center justify-center pointer-events-none"
           style={{ opacity: opacity }}>
-          <Image
-            src="/R-EXPO-LOGO1.png"
-            alt="R-EXPO Logo"
-            width={600}
-            height={200}
-            priority
-            className="object-contain"
-          />
-          <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center animate-bounce">
+
+          <div className={`transition-opacity duration-1000 ease-out mb-8
+            ${isLogoLoaded ? "opacity-100" : "opacity-0"}`}>
+
+            <Image
+              src="/R-EXPO-LOGO1.png"
+              alt="R-EXPO Logo"
+              width={600}
+              height={200}
+              priority
+              className="object-contain"
+            />
+          </div>
+
+          <div className={`absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center animate-bounce transition-opacity duration-4000 ease-out
+            ${isScrollLoaded ? "opacity-100" : "opacity-0"}`}>
             <div className="w-px h-16 bg-white/80"></div>
             <p className="text-white text-sm mt-4 tracking-widest uppercase opacity-90">
               Scroll Down
             </p>
           </div>
+
+
         </div>
 
       </div>
@@ -104,7 +134,7 @@ export default function Home() {
             </h2>
 
             <h2 className="text-6xl font-bold mb-30 text-center text-white-500">
-              新しい学校の定義
+              慶祥生の本気
             </h2>
 
             <p className="text-xl text-center leading-relaxed mb-10">
