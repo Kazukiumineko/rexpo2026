@@ -10,6 +10,8 @@ import HeroSection from "@/components/HeroSection";
 import ScrollTextSection from "@/components/ScrollTextSection";
 import EventConceptSection from "@/components/ui/EventConceptSection";
 import StageSection from "@/components/ui/Stage";
+import TopicSection from "@/components/ui/TopicSection";
+import FooterBar from "@/components/ui/FooterBar";
 
 
 export default function Home() {
@@ -33,7 +35,7 @@ export default function Home() {
 
       <div className="fixed top-0 left-0 w-full z-50 pointer-events-none">
         <div
-          className={`absolute top-0 left-0 w-full h-14 lg:h-0 bg-black/85 transition-opacity duration-500 ease-in-out
+          className={`absolute top-0 left-0 w-full h-14 lg:h-18 bg-black/85 md:bg-black/85 lg:bg-black/0 transition-opacity duration-500 ease-in-out
             ${showMiniLogo ? "opacity-100" : "opacity-0"}`}
         ></div>
 
@@ -61,6 +63,18 @@ export default function Home() {
       <div className="relative z-10">
         <StageSection />
       </div>
+
+
+      <div className="relative z-10 w-full bg-white text-black">
+        <div className="w-full h-24 lg:h-32"></div>
+        <TopicSection />
+        <div className="w-full h-24 lg:h-32"></div>
+      </div>
+
+      <div className="relative z-50">
+        <FooterBar />
+      </div>
+
     </main>
   );
 }

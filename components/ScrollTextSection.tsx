@@ -31,7 +31,7 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                 >
 
                     <h2 ref={headerRef}
-                        className="text-2xl md:2ext-5xl lg:text-6xl font-bold mb-10 text-center text-white-500">
+                        className="text-2xl md:text-5xl lg:text-6xl font-bold mb-10 text-center text-white-500">
                         教室には収まらない
                     </h2>
 
