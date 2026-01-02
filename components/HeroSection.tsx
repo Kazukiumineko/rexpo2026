@@ -22,7 +22,7 @@ export default function HeroSection({ opacity, isLogoLoaded, isScrollLoaded }: H
                     width={600}
                     height={200}
                     priority
-                    className="object-contain"
+                    className="object-contain h-auto w-[280px] md:w-[600px]"
                 />
             </div>
 

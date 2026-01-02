@@ -31,11 +31,11 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                 >
 
                     <h2 ref={headerRef}
-                        className="text-6xl font-bold mb-10 text-center text-white-500">
+                        className="text-xl md:text-6xl font-bold mb-10 text-center text-white-500">
                         教室には収まらない
                     </h2>
 
-                    <h2 className="text-6xl font-bold mb-30 text-center text-white-500">
+                    <h2 className="text-xl md:text-6xl font-bold mb-30 text-center text-white-500">
                         慶祥生の本気
                     </h2>
                 </motion.div>
@@ -47,15 +47,15 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                     transition={{ duration: 1.8, ease: "easeOut", delay: 0.6 }}
                 >
 
-                    <p className="text-xl text-center leading-relaxed mb-10">
+                    <p className="text-sm md:text-xl text-center leading-relaxed mb-10">
                         R-EXPO2026が目指すのは、未来社会の縮図を描くこと。
                     </p>
 
-                    <p className="text-xl text-center leading-relaxed mb-10">
+                    <p className="text-sm md:text-xl text-center leading-relaxed mb-10">
 
                         会場に一歩足を踏み入れれば、そこには多様なレイヤーで構成された
                     </p>
-                    <p className="text-xl text-center leading-relaxed mb-20">
+                    <p className="text-sm md:text-xl text-center leading-relaxed mb-20">
                         「新しい世界」が広がっています。
                     </p>
                 </motion.div>
