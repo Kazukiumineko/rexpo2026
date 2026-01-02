@@ -9,7 +9,7 @@ interface MiniLogoProps {
 export default function MiniLogo({ isVisible }: MiniLogoProps) {
     return (
         <div
-            className={`fixed top-6 left-6 z-50 transition-opacity duration-500 ease-in-out
+            className={`fixed top-4 left-4 md:top-6 md:left-6 z-50 transition-opacity duration-500 ease-in-out
         ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         >
             <Image
@@ -17,7 +17,7 @@ export default function MiniLogo({ isVisible }: MiniLogoProps) {
                 alt="R-EXPO Mini Logo"
                 width={150}
                 height={50}
-                className="object-contain cursor-pointer"
+                className="object-contain cursor-pointer h-auto w-[100px] md:w-[150px]"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             />
         </div>

@@ -24,16 +24,25 @@ export default function Home() {
       <div className="fixed top-0 left-0 w-full h-screen -z-10">
         <BackgroundVideo overlayOpacity={overlayOpacity} />
 
-        <MiniLogo isVisible={showMiniLogo} />
-
-        <MenuButton isVisible={showMiniLogo} />
-
         <HeroSection
           opacity={opacity}
           isLogoLoaded={isLogoLoaded}
           isScrollLoaded={isScrollLoaded}
         />
       </div>
+
+      <div className="fixed top-0 left-0 w-full z-50 pointer-events-none">
+        <div
+          className={`absolute top-0 left-0 w-full h-14 lg:h-0 bg-black/85 transition-opacity duration-500 ease-in-out
+            ${showMiniLogo ? "opacity-100" : "opacity-0"}`}
+        ></div>
+
+        <div className="relative">
+          <MiniLogo isVisible={showMiniLogo} />
+          <MenuButton isVisible={showMiniLogo} />
+        </div>
+      </div>
+
 
       <div className="relative z-10">
         <div className="h-screen w-full bg-transparent"></div>

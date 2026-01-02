@@ -17,10 +17,10 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
     const smoothY = useSpring(yRange, { stiffness: 20, damping: 10 });
 
     return (
-        <div className="max-w-4xl mx-auto">
+        <div className="w-full max-w-full mx-auto px-2 md:px-0">
             <motion.div
                 ref={textSectionRef}
-                className="max-w-4xl mx-auto"
+                className="max-w-full mx-auto"
                 style={{ y: smoothY }}
             >
                 <motion.div
@@ -31,11 +31,11 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                 >
 
                     <h2 ref={headerRef}
-                        className="text-2xl md:text-6xl font-bold mb-10 text-center text-white-500">
+                        className="text-2xl md:2ext-5xl lg:text-6xl font-bold mb-10 text-center text-white-500">
                         教室には収まらない
                     </h2>
 
-                    <h2 className="text-2xl md:text-6xl font-bold mb-30 text-center text-white-500">
+                    <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold mb-30 text-center text-white-500">
                         慶祥生の本気
                     </h2>
                 </motion.div>

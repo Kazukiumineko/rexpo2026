@@ -2,23 +2,19 @@
 
 import * as React from "react";
 import Image from "next/image";
-import Autoplay from "embla-carousel-autoplay";
+import { motion } from "framer-motion";
 import {
     Carousel,
     CarouselContent,
     CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useCarouselAutoPlay } from "@/hooks/useCarouselAutoPlay";
+import { useEventConceptAnimation } from "@/hooks/useEventConceptAnimation";
 
 export default function EventConceptSection() {
-    // カルーセルの自動再生設定
-    const plugin = React.useRef(
-        Autoplay({ delay: 3000, stopOnInteraction: true })
-    );
+    const plugin = useCarouselAutoPlay();
+    const { sectionRef, isInView, containerVariants, itemVariants } = useEventConceptAnimation();
 
-    // カルーセルに表示する画像のリスト
-    // ※publicフォルダにある画像名に合わせて変更してください
     const carouselImages = [
         "/CarouselPic/Carousel1.jpg",
         "/CarouselPic/Carousel2.jpg",
@@ -29,14 +25,21 @@ export default function EventConceptSection() {
     return (
         <section className="relative w-full py-32 bg-transparent text-white overflow-hidden">
 
-            <div className="absolute inset-0 -z-10 opacity-40 ">
+            <div className="absolute inset-0 -z-10 opacity-40 "></div>
 
-            </div>
+            <div ref={sectionRef} className="w-full max-w-7xl mx-auto px-6 lg:px-12">
 
-            <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <motion.div
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                >
 
-                    <div className="flex flex-col items-start space-y-8">
+                    <motion.div
+                        className="flex flex-col items-start space-y-8"
+                        variants={itemVariants}
+                    >
                         <h2 className="text-5xl lg:text-6xl font-bold tracking-tight">
                             Event Concept
                         </h2>
@@ -58,15 +61,16 @@ export default function EventConceptSection() {
                                 className="object-contain"
                             />
                         </a>
-                    </div>
+                    </motion.div>
 
 
-                    <div className="w-full flex justify-center lg:justify-end">
+                    <motion.div
+                        className="w-full flex justify-center lg:justify-end"
+                        variants={itemVariants}
+                    >
                         <Carousel
                             plugins={[plugin.current]}
                             className="w-full max-w-lg"
-                            onMouseEnter={plugin.current.stop}
-                            onMouseLeave={plugin.current.reset}
                             opts={{
                                 align: "start",
                                 loop: true,
@@ -74,10 +78,10 @@ export default function EventConceptSection() {
                         >
                             <CarouselContent>
                                 {carouselImages.map((src, index) => (
-                                    <CarouselItem key={index} className="md:basis-1/1 lg:basis-1/1">
+                                    // ★修正箇所: basis-1/1 は存在しないクラスのため basis-full に修正
+                                    <CarouselItem key={index} className="basis-full">
                                         <div className="p-1">
-                                            {/* 画像カードエリア */}
-                                            <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-2xl border border-white/10">
+                                            <div className="relative aspect-video w-full overflow-hidden rounded-lg z-40 shadow-2xl border border-white/10">
                                                 <Image
                                                     src={src}
                                                     alt={`Event Photo ${index + 1}`}
@@ -90,9 +94,9 @@ export default function EventConceptSection() {
                                 ))}
                             </CarouselContent>
                         </Carousel>
-                    </div>
+                    </motion.div>
 
-                </div>
+                </motion.div>
             </div>
         </section>
     );

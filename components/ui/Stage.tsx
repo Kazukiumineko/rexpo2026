@@ -1,6 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
+import { motion, useInView, Variants } from "framer-motion";
 
 export default function StageSection() {
     const stages = [
@@ -18,11 +20,33 @@ export default function StageSection() {
         },
     ];
 
+    const sectionRef = useRef(null);
+    const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
+
+    const containerVariants: Variants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.4,
+            },
+        },
+    };
+
+    const itemVariants: Variants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.8, ease: "easeOut" },
+        },
+    };
+
     return (
-        // ■トリミング調整ポイントA：セクションの高さ
-        // 現在は py-32 (上下の余白) で高さを確保していますが、もし背景を特定の高さで切り取りたい場合は
-        // py-32 を削除し、代わりに `h-[800px]` や `h-screen` (画面いっぱい) などを指定してください。
-        <section className="relative w-full py-32 text-white overflow-hidden">
+        <section
+            className="relative w-full py-32 text-white overflow-hidden"
+            ref={sectionRef}
+        >
 
             <div className="absolute inset-0 -z-10">
                 <Image
@@ -30,24 +54,27 @@ export default function StageSection() {
                     alt="Stage Background"
                     fill
                     className="object-cover"
-                    // ■トリミング調整ポイントB：画像の表示位置 (object-position)
-                    // 下記の "center" を書き換えることで、画像のどこを中心に見せるか調整できます。
-                    // "top"    : 画像の上端に合わせる
-                    // "bottom" : 画像の下端に合わせる
-                    // "center" : 中央（デフォルト）
-                    // "0% 30%" : 左から0%(左端)、上から30%の位置
                     style={{ objectPosition: "center" }}
                 />
 
-                {/* 背景画像を少し暗くして文字を読みやすくする黒いカバー（濃さは opacity-60 で調整） */}
                 <div className="absolute inset-0 bg-black/60" />
             </div>
 
             <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                >
                     {stages.map((stage, index) => (
-                        <div key={index} className="flex flex-col items-left text-left space-y-6">
+
+                        <motion.div
+                            key={index}
+                            className="flex flex-col items-left text-left space-y-6"
+                            variants={itemVariants}
+                        >
                             <h3 className="text-3xl lg:text-4xl items-left text-left font-bold tracking-tight">
                                 {stage.title}
                             </h3>
@@ -68,9 +95,9 @@ export default function StageSection() {
                                     className="object-contain"
                                 />
                             </a>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
