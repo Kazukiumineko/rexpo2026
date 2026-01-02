@@ -3,15 +3,15 @@
 import { useRef } from "react";
 import { useLoadingSequence } from "@/hooks/useLoadingSequence";
 import { useScrollEffects } from "@/hooks/useScrollEffects";
-import BackgroundVideo from "@/components/BackgroundVideo";
-import MiniLogo from "@/components/MiniLogo";
-import MenuButton from "@/components/MenuButton";
-import HeroSection from "@/components/HeroSection";
-import ScrollTextSection from "@/components/ScrollTextSection";
-import EventConceptSection from "@/components/ui/EventConceptSection";
-import StageSection from "@/components/ui/Stage";
-import TopicSection from "@/components/ui/TopicSection";
-import FooterBar from "@/components/ui/FooterBar";
+import BackgroundVideo from "@/components/MainUI/BackgroundVideo";
+import MiniLogo from "@/components/MainUI/MiniLogo";
+import MenuButton from "@/components/MainUI/MenuButton";
+import HeroSection from "@/components/MainUI/HeroSection";
+import ScrollTextSection from "@/components/MainUI/ScrollTextSection";
+import EventConceptSection from "@/components/MainUI/EventConceptSection";
+import StageSection from "@/components/MainUI/Stage";
+import TopicSection from "@/components/MainUI/TopicSection";
+import FooterBar from "@/components/MainUI/FooterBar";
 
 
 export default function Home() {

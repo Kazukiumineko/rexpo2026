@@ -9,30 +9,32 @@ export default function TopicSection() {
         {
             title: "LOCATION",
             src: "/topic/Location.jpg",
+            link: "/location",
             description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
         },
         {
             title: "SUPPORT",
             src: "/topic/Support.jpg",
+            link: "/support",
             description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
         },
         {
             title: "COMMENTS",
             src: "/topic/Comments.jpg",
+            link: "/comments",
             description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
         },
         {
             title: "APPLICATION",
             src: "/topic/Application.jpg",
+            link: "/application",
             description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
         },
     ];
 
-    // スクロール検知設定
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
 
-    // アニメーション設定（親）
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
@@ -43,7 +45,6 @@ export default function TopicSection() {
         },
     };
 
-    // アニメーション設定（子）
     const itemVariants: Variants = {
         hidden: { opacity: 0, y: 50 },
         visible: {
@@ -72,14 +73,17 @@ export default function TopicSection() {
                             className="flex flex-col items-start space-y-4"
                             variants={itemVariants}
                         >
-                            <div className="relative w-full aspect-video overflow-hidden rounded-sm shadow-lg border border-gray-200">
+                            <a
+                                href={topic.link}
+                                className="block relative w-full aspect-video overflow-hidden rounded-sm shadow-lg border border-gray-200 cursor-pointer"
+                            >
                                 <Image
                                     src={topic.src}
                                     alt={topic.title}
                                     fill
                                     className="object-cover transition-transform duration-500 hover:scale-110"
                                 />
-                            </div>
+                            </a>
 
                             <div className="flex flex-col space-y-3">
                                 <h3 className="text-xl font-bold tracking-widest uppercase mt-2">
@@ -91,7 +95,7 @@ export default function TopicSection() {
                             </div>
 
                             <a
-                                href="/Subpage"
+                                href={topic.link}
                                 className="block transition-transform duration-300 hover:scale-105 pt-2"
                             >
                                 <Image

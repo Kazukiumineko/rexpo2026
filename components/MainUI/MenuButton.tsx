@@ -4,10 +4,10 @@ import Image from "next/image";
 
 
 interface MenuButtonProps {
-    isVisible: boolean;
+    isVisible?: boolean;
 }
 
-export default function MenuButton({ isVisible }: MenuButtonProps) {
+export default function MenuButton({ isVisible = true }: MenuButtonProps) {
     return (
         <div
             className={`fixed top-4 right-4 md:top-4 md:right-4 z-50 transition-opacity duration-500 ease-in-out

@@ -7,7 +7,7 @@ import {
     Carousel,
     CarouselContent,
     CarouselItem,
-} from "@/components/ui/carousel";
+} from "@/components/MainUI/carousel";
 import { useCarouselAutoPlay } from "@/hooks/useCarouselAutoPlay";
 import { useEventConceptAnimation } from "@/hooks/useEventConceptAnimation";
 
@@ -50,7 +50,7 @@ export default function EventConceptSection() {
                         </p>
 
                         <a
-                            href="/Subpage"
+                            href="/event-concept"
                             className="block transition-transform duration-300 hover:scale-105"
                         >
                             <Image
@@ -82,12 +82,14 @@ export default function EventConceptSection() {
                                     <CarouselItem key={index} className="basis-full">
                                         <div className="p-1">
                                             <div className="relative aspect-video w-full overflow-hidden rounded-lg z-40 shadow-2xl border border-white/10">
-                                                <Image
-                                                    src={src}
-                                                    alt={`Event Photo ${index + 1}`}
-                                                    fill
-                                                    className="object-cover transition-transform duration-500 hover:scale-110"
-                                                />
+                                                <a href="/event-concept">
+                                                    <Image
+                                                        src={src}
+                                                        alt={`Event Photo ${index + 1}`}
+                                                        fill
+                                                        className="object-cover transition-transform duration-500 hover:scale-110"
+                                                    />
+                                                </a>
                                             </div>
                                         </div>
                                     </CarouselItem>
