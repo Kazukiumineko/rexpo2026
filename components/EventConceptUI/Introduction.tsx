@@ -102,7 +102,7 @@ export default function Introduction() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: false }}
-                        className="font-oswald text-white/30 text-5xl md:text-6xl lg:text-9xl font-bold tracking-normal drop-shadow-lg [writing-mode:vertical-rl] z-50 translate-y-52 md:translate-y-32"
+                        className="font-oswald text-white/30 text-5xl md:text-8xl lg:text-9xl font-bold tracking-normal drop-shadow-lg [writing-mode:vertical-rl] z-50 translate-y-40 md:translate-y-52 lg:translate-y-32"
                     >
                         INTRODUCTION
                     </motion.h1>

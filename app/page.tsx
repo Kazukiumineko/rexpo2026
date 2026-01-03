@@ -10,7 +10,8 @@ import ScrollTextSection from "@/components/MainUI/04_ScrollTextSection";
 import ConceptSection from "@/components/MainUI/05_ConceptSection";
 import StageSection from "@/components/MainUI/07_StageSection";
 import TopicSection from "@/components/MainUI/08_TopicSection";
-import FooterBar from "@/components/MainUI/09_FooterBar";
+import EventInfo from "@/components/MainUI/09_EventInfo";
+import FooterBar from "@/components/MainUI/10_FooterBar";
 
 
 export default function Home() {
@@ -57,9 +58,11 @@ export default function Home() {
       <div className="relative z-10 w-full bg-white text-black">
         <div className="w-full h-24 lg:h-32"></div>
         <TopicSection />
-        <div className="w-full h-24 lg:h-32"></div>
+        <div className="w-full h-24 lg:h-48"></div>
 
 
+        <EventInfo />
+        <div className="w-full h-24 lg:h-38"></div>
         <div className="relative z-50">
           <FooterBar />
         </div>
