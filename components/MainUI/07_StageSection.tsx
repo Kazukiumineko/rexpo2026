@@ -75,7 +75,7 @@ export default function StageSection() {
                         <h2 className="text-white font-oswald text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-none">
                             STAGE CONCEPT
                         </h2>
-                        <p className="mt-6 text-sm md:text-lg font-bold text-gray-200 font-jp tracking-widest">
+                        <p className="mt-6 text-sm md:text-2xl font-bold text-gray-200 font-jp tracking-widest">
                             個性が輝く多彩なステージ
                         </p>
                     </motion.div>

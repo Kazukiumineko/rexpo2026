@@ -23,7 +23,7 @@ export default function ThemeMessage() {
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                     viewport={{ once: false }}
-                    className="relative w-full max-w-3xl"
+                    className="relative w-full max-w-xl md:max-w-2xl lg:max-w-3xl"
                 >
                     <Image
                         src="/event-concept-page/ThemeMessage.png"

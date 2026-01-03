@@ -37,15 +37,15 @@ export default function ConceptSection() {
                 >
 
                     <motion.div
-                        className="flex flex-col items-start space-y-8"
+                        className="flex flex-col items-center lg:items-start space-y-8"
                         variants={itemVariants}
                     >
 
-                        <h2 className="font-oswald text-5xl lg:text-8xl font-bold tracking-tight">
+                        <h2 className="font-oswald text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
                             INTRODUCTION
                         </h2>
 
-                        <h2 className="font-jp text-5xl lg:text-5xl font-bold tracking-tight">
+                        <h2 className="font-jp text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight">
                             R-EXPO が目指す場所
                         </h2>
 

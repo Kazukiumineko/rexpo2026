@@ -19,9 +19,7 @@ export default function Introduction() {
                     {/* 1行目: まだ見ぬ */}
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
-                        // animate ではなく whileInView を使用
                         whileInView={{ opacity: 1, y: 0 }}
-                        // once: false にすることで、画面に入るたびに再生
                         viewport={{ once: false }}
                         transition={{ duration: 0.8 }}
                         className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-[0.2em]"
@@ -32,9 +30,7 @@ export default function Introduction() {
                     {/* 2行目: 個性を */}
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
-                        // animate ではなく whileInView を使用
                         whileInView={{ opacity: 1, y: 0 }}
-                        // once: false にすることで、画面に入るたびに再生
                         viewport={{ once: false }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-[0.2em]"
@@ -45,21 +41,25 @@ export default function Introduction() {
                 </div>
             </div>
 
-
+            {/* ▼ 修正点1: ここから overflow-hidden を削除しました（文字をはみ出させるため） */}
             <div className={
-                "relative w-full h-[80vh] md:h-[80vh] lg:h-[100vh] overflow-hidden bg-black z-30 " +
+                "relative w-full h-[80vh] md:h-[80vh] lg:h-[100vh] bg-black z-30 " +
                 "-mt-20 md:-mt-28"
             }>
 
-                <Image
-                    src="/event-concept-page/Introduction.jpg"
-                    alt="Introduction Background"
-                    fill
-                    priority
-                    className="object-cover object-[center_65%] opacity-60"
-                />
+                {/* ▼ 追加: 背景画像だけを切り取るためのラッパーを作成 */}
+                <div className="absolute inset-0 overflow-hidden">
+                    <Image
+                        src="/event-concept-page/Introduction.jpg"
+                        alt="Introduction Background"
+                        fill
+                        priority
+                        className="object-cover object-[center_65%] opacity-60"
+                    />
+                    <div className="absolute inset-0 bg-black/30"></div>
+                </div>
+                {/* ▲ 画像エリアここまで */}
 
-                <div className="absolute inset-0 bg-black/30"></div>
 
                 <div className={
                     "absolute top-0 left-0 w-full px-6 md:px-20 lg:px-32 flex justify-center " +
@@ -69,9 +69,7 @@ export default function Introduction() {
                         {/* 3行目: 映し出せ。 */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
-                            // animate ではなく whileInView を使用
                             whileInView={{ opacity: 1, y: 0 }}
-                            // once: false にすることで、画面に入るたびに再生
                             viewport={{ once: false }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                             className="mt-0"
@@ -83,15 +81,15 @@ export default function Introduction() {
                     </div>
                 </div>
 
-                <div className="absolute inset-0 flex items-center justify-center pt-20">
+                <div className="absolute inset-0 flex items-end justify-center pt-20 pointer-events-none">
                     <motion.h1
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: false }}
-                        className="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest drop-shadow-lg"
+                        className="font-oswald text-white/30 text-5xl md:text-6xl lg:text-9xl font-bold tracking-normal drop-shadow-lg justify-center translate-y1/4 z-50"
                     >
-                        Event Concept
+                        INTRODUCTION
                     </motion.h1>
                 </div>
 
