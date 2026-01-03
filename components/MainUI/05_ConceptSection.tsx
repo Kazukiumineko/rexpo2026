@@ -40,8 +40,9 @@ export default function ConceptSection() {
                         className="flex flex-col items-start space-y-8"
                         variants={itemVariants}
                     >
+
                         <h2 className="text-5xl lg:text-6xl font-bold tracking-tight">
-                            Event Concept
+                            R-EXPO とは？
                         </h2>
 
                         <p className="text-gray-300 text-sm leading-loose">
