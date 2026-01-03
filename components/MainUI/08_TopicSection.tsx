@@ -7,25 +7,25 @@ import { motion, useInView, Variants } from "framer-motion";
 export default function TopicSection() {
     const topics = [
         {
-            title: "LOCATION",
+            title: "会場",
             src: "/topic/Location.jpg",
             link: "/location",
             description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
         },
         {
-            title: "SUPPORT",
+            title: "協賛企業",
             src: "/topic/Support.jpg",
             link: "/support",
             description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
         },
         {
-            title: "COMMENTS",
+            title: "代表より",
             src: "/topic/Comments.jpg",
             link: "/comments",
             description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
         },
         {
-            title: "APPLICATION",
+            title: "特設アプリ",
             src: "/topic/Application.jpg",
             link: "/application",
             description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
