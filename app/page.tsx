@@ -38,7 +38,7 @@ export default function Home() {
 
       <div className="relative z-10">
         <div className="h-screen w-full bg-transparent"></div>
-        <div className="min-h-screen w-full bg-transparent text-white p-24">
+        <div className="min-h-screen w-full bg-transparent text-white px-6 py-24 md:p-24">
           <ScrollTextSection headerRef={textRef} />
         </div>
       </div>
@@ -68,6 +68,6 @@ export default function Home() {
         </div>
       </div>
 
-    </main>
+    </main >
   );
 }
