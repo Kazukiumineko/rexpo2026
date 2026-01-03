@@ -9,7 +9,7 @@ export default function ThemeMessage() {
 
             <div className="absolute inset-0 z-0 pointer-events-none">
                 <Image
-                    src="/Event-concept-page/Introduction.jpg"
+                    src="/event-concept-page/Introduction.jpg"
                     alt="Background Texture"
                     fill
                     className="object-cover object-center opacity-20"

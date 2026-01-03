@@ -91,7 +91,7 @@ export default function Introduction() {
                         viewport={{ once: false }}
                         className="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest drop-shadow-lg"
                     >
-                        Introduction
+                        Event Concept
                     </motion.h1>
                 </div>
 

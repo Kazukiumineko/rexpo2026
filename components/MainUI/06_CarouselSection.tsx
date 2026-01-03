@@ -12,10 +12,10 @@ import {
 
 export default function CarouselSection() {
     const carouselImages = [
-        "/CarouselPic/Carousel1.jpg",
-        "/CarouselPic/Carousel2.jpg",
-        "/CarouselPic/Carousel3.jpg",
-        "/CarouselPic/Carousel4.jpg",
+        "/carouselpic/Carousel1.jpg",
+        "/carouselpic/Carousel2.jpg",
+        "/carouselpic/Carousel3.jpg",
+        "/carouselpic/Carousel4.jpg",
     ];
 
     return (
