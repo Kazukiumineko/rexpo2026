@@ -42,7 +42,7 @@ export default function ConceptSection() {
                     >
 
                         <h2 className="text-5xl lg:text-6xl font-bold tracking-tight">
-                            R-EXPO とは？
+                            R-EXPO とは
                         </h2>
 
                         <p className="text-gray-300 text-sm leading-loose">
