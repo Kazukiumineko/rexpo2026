@@ -52,7 +52,7 @@ export default function Introduction() {
             }>
 
                 <Image
-                    src="/Event-concept-page/Introduction.jpg"
+                    src="/event-concept-page/Introduction.jpg"
                     alt="Introduction Background"
                     fill
                     priority

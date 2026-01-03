@@ -26,7 +26,7 @@ export default function ThemeMessage() {
                     className="relative w-full max-w-3xl"
                 >
                     <Image
-                        src="/Event-concept-page/ThemeMessage.png"
+                        src="/event-concept-page/ThemeMessage.png"
                         alt="Theme Message"
                         width={1200}
                         height={800}
