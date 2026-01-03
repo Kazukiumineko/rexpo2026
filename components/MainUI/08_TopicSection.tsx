@@ -67,6 +67,22 @@ export default function TopicSection() {
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                 >
+                    {/* ▼ 修正箇所: INFORMATION とその下の文字 ▼ */}
+                    {/* flex-col items-center で縦並び・中央寄せにします */}
+                    <motion.div
+                        className="col-span-full flex flex-col items-center mb-24 lg:mb-32"
+                        variants={itemVariants}
+                    >
+                        <h2 className="text-gray-800 font-oswald text-7xl md:text-8xl lg:text-9xl tracking-normal font-bold leading-none">
+                            INFORMATION
+                        </h2>
+                        {/* ▼ 追加した文字 ▼ */}
+                        <p className="mt-4 text-sm md:text-2xl font-bold text-gray-800 font-jp tracking-widest">
+                            R-EXPOをもっと知る
+                        </p>
+                    </motion.div>
+                    {/* ▲ 修正箇所ここまで ▲ */}
+
                     {topics.map((topic, index) => (
                         <motion.div
                             key={index}
@@ -86,10 +102,10 @@ export default function TopicSection() {
                             </a>
 
                             <div className="flex flex-col space-y-3">
-                                <h3 className="text-xl font-bold tracking-widest uppercase mt-2">
+                                <h3 className="font-biz text-xl font-bold tracking-widest uppercase mt-2">
                                     {topic.title}
                                 </h3>
-                                <p className="text-gray-600 text-xs leading-relaxed">
+                                <p className="font-kaku text-gray-600 text-xs leading-relaxed">
                                     {topic.description}
                                 </p>
                             </div>

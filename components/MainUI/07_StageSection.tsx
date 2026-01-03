@@ -28,7 +28,7 @@ export default function StageSection() {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.4,
+                staggerChildren: 0.2,
             },
         },
     };
@@ -56,7 +56,6 @@ export default function StageSection() {
                     className="object-cover"
                     style={{ objectPosition: "center" }}
                 />
-
                 <div className="absolute inset-0 bg-black/60" />
             </div>
 
@@ -68,13 +67,27 @@ export default function StageSection() {
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                 >
-                    {stages.map((stage, index) => (
+                    {/* ▼ 追加箇所: STAGE CONCEPT 見出しとサブタイトル ▼ */}
+                    <motion.div
+                        className="col-span-full flex flex-col items-center mb-16 lg:mb-24 text-center"
+                        variants={itemVariants}
+                    >
+                        <h2 className="text-white font-oswald text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-none">
+                            STAGE CONCEPT
+                        </h2>
+                        <p className="mt-6 text-sm md:text-lg font-bold text-gray-200 font-jp tracking-widest">
+                            個性が輝く多彩なステージ
+                        </p>
+                    </motion.div>
+                    {/* ▲ 追加箇所ここまで ▲ */}
 
+                    {stages.map((stage, index) => (
                         <motion.div
                             key={index}
                             className="flex flex-col items-left text-left space-y-6"
                             variants={itemVariants}
                         >
+                            {/* ▼ 元のデザインに戻しました（白線を削除し、元のクラス名を使用） ▼ */}
                             <h3 className="text-3xl lg:text-4xl items-left text-left font-bold tracking-tight">
                                 {stage.title}
                             </h3>

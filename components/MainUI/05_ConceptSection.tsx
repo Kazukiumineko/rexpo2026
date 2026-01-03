@@ -41,14 +41,15 @@ export default function ConceptSection() {
                         variants={itemVariants}
                     >
 
-                        <h2 className="font-jp text-5xl lg:text-6xl font-bold tracking-tight">
-                            R-EXPO とは
+                        <h2 className="font-oswald text-5xl lg:text-8xl font-bold tracking-tight">
+                            INTRODUCTION
                         </h2>
 
-                        <p className="font-zen-kaku text-gray-300 text-sm leading-loose">
-                            タイ、マレーシア、ベトナム、アメリカ、オーストラリア、リトアニア、ガラパゴス諸島・・・
-                            彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。
-                        </p>
+                        <h2 className="font-jp text-5xl lg:text-5xl font-bold tracking-tight">
+                            R-EXPO が目指す場所
+                        </h2>
+
+
 
                         <a
                             href="/event-concept"
