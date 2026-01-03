@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface HeaderProps {
@@ -10,19 +11,34 @@ interface HeaderProps {
 }
 
 export function MiniLogo({ isVisible }: { isVisible: boolean }) {
+    const pathname = usePathname();
+    const isHomePage = pathname === "/";
+
     return (
         <div
             className={`fixed top-4 left-4 md:top-4 md:left-4 z-50 transition-opacity duration-500 ease-in-out
         ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         >
-            <Image
-                src="/R-EXPO-LOGO2.png"
-                alt="R-EXPO Mini Logo"
-                width={150}
-                height={50}
-                className="object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px]"
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            />
+            {isHomePage ? (
+                <Image
+                    src="/R-EXPO-LOGO2.png"
+                    alt="R-EXPO Mini Logo"
+                    width={150}
+                    height={50}
+                    className="object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px]"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                />
+            ) : (
+                <Link href="/">
+                    <Image
+                        src="/R-EXPO-LOGO2.png"
+                        alt="R-EXPO Mini Logo"
+                        width={150}
+                        height={50}
+                        className="object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px]"
+                    />
+                </Link>
+            )}
         </div>
     );
 }
