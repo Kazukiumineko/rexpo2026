@@ -62,7 +62,7 @@ export default function Home() {
 
 
         <EventInfo />
-        <div className="w-full h-24 lg:h-38"></div>
+        <div className="w-full h-2 lg:h-38"></div>
         <div className="relative z-50">
           <FooterBar />
         </div>

@@ -73,7 +73,7 @@ export default function TopicSection() {
                         className="col-span-full flex flex-col items-center mb-24 lg:mb-32"
                         variants={itemVariants}
                     >
-                        <h2 className="text-gray-800 font-oswald text-5xl md:text-8xl lg:text-9xl tracking-normal font-bold leading-none">
+                        <h2 className="text-gray-800 font-oswald text-6xl md:text-8xl lg:text-9xl tracking-normal font-bold leading-none">
                             INFORMATION
                         </h2>
                         {/* ▼ 追加した文字 ▼ */}

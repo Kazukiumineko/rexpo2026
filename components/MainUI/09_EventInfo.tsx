@@ -18,7 +18,7 @@ export default function EventInfo() {
         <section className="relative w-full bg-white flex flex-col">
 
             {/* --- 画像エリア --- */}
-            <div className="relative w-full h-[60vh] md:h-[70vh] lg:h-[90vh] overflow-hidden bg-gray-900">
+            <div className="relative w-full h-[70vh] md:h-[80vh] lg:h-[90vh] overflow-hidden bg-gray-900">
                 <Image
                     src="/Cotan.jpg"
                     alt="Event Background"
@@ -81,7 +81,7 @@ export default function EventInfo() {
                                 2/11
                             </span>
                         </div>
-                        <p className="text-lg md:text-3xl lg:text-3xl font-black tracking-tighter uppercase">
+                        <p className="text-base md:text-2xl lg:text-3xl font-black tracking-tighter uppercase">
                             札幌コンベンションセンター
                         </p>
                     </motion.div>
