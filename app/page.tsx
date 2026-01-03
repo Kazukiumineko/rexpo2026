@@ -3,15 +3,14 @@
 import { useRef } from "react";
 import { useLoadingSequence } from "@/hooks/useLoadingSequence";
 import { useScrollEffects } from "@/hooks/useScrollEffects";
-import BackgroundVideo from "@/components/MainUI/BackgroundVideo";
-import MiniLogo from "@/components/MainUI/MiniLogo";
-import MenuButton from "@/components/MainUI/MenuButton";
-import HeroSection from "@/components/MainUI/HeroSection";
-import ScrollTextSection from "@/components/MainUI/ScrollTextSection";
-import EventConceptSection from "@/components/MainUI/EventConceptSection";
-import StageSection from "@/components/MainUI/Stage";
-import TopicSection from "@/components/MainUI/TopicSection";
-import FooterBar from "@/components/MainUI/FooterBar";
+import BackgroundVideo from "@/components/MainUI/01_BackgroundVideo";
+import Header from "@/components/MainUI/02_Header";
+import HeroSection from "@/components/MainUI/03_HeroSection";
+import ScrollTextSection from "@/components/MainUI/04_ScrollTextSection";
+import ConceptSection from "@/components/MainUI/05_ConceptSection";
+import StageSection from "@/components/MainUI/07_StageSection";
+import TopicSection from "@/components/MainUI/08_TopicSection";
+import FooterBar from "@/components/MainUI/09_FooterBar";
 
 
 export default function Home() {
@@ -33,17 +32,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="fixed top-0 left-0 w-full z-50 pointer-events-none">
-        <div
-          className={`absolute top-0 left-0 w-full h-14 lg:h-18 bg-black/85 md:bg-black/85 lg:bg-black/0 transition-opacity duration-500 ease-in-out
-            ${showMiniLogo ? "opacity-100" : "opacity-0"}`}
-        ></div>
-
-        <div className="relative">
-          <MiniLogo isVisible={showMiniLogo} />
-          <MenuButton isVisible={showMiniLogo} />
-        </div>
-      </div>
+      <Header isVisible={showMiniLogo} />
 
 
       <div className="relative z-10">
@@ -55,7 +44,7 @@ export default function Home() {
 
 
       <div className="relative z-10">
-        <EventConceptSection />
+        <ConceptSection />
       </div>
 
       <div className="relative z-10 w-full h-24 lg:h-32"></div>
@@ -69,10 +58,11 @@ export default function Home() {
         <div className="w-full h-24 lg:h-32"></div>
         <TopicSection />
         <div className="w-full h-24 lg:h-32"></div>
-      </div>
 
-      <div className="relative z-50">
-        <FooterBar />
+
+        <div className="relative z-50">
+          <FooterBar />
+        </div>
       </div>
 
     </main>

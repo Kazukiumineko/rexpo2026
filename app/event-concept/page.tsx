@@ -1,6 +1,6 @@
 // ★ MainUI からインポートするように修正しています
-import MenuButton from "@/components/MainUI/MenuButton";
-import FooterBar from "@/components/MainUI/FooterBar";
+import { MenuButton } from "@/components/MainUI/02_Header";
+import FooterBar from "@/components/MainUI/09_FooterBar";
 
 export default function EventConceptPage() {
     return (

@@ -7,11 +7,11 @@ import {
     Carousel,
     CarouselContent,
     CarouselItem,
-} from "@/components/MainUI/carousel";
+} from "@/components/MainUI/06_carousel";
 import { useCarouselAutoPlay } from "@/hooks/useCarouselAutoPlay";
 import { useEventConceptAnimation } from "@/hooks/useEventConceptAnimation";
 
-export default function EventConceptSection() {
+export default function ConceptSection() {
     const plugin = useCarouselAutoPlay();
     const { sectionRef, isInView, containerVariants, itemVariants } = useEventConceptAnimation();
 
