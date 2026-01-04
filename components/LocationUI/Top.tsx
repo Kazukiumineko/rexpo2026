@@ -37,15 +37,18 @@ export default function LocationTop() {
             </div>
 
             {/* ★ 追加: 2/11全館貸切！ポップ画像 */}
+
+            {/* === 【スマホ用】 (md未満で表示) === */}
             <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
+                // 左側からスライドさせるアニメーション設定
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1.0, ease: "easeOut", delay: 0.8 }}
                 // 配置設定:
-                // absolute bottom-0 ... 下端に配置
-                // translate-y-1/2 ..... 高サの半分だけ下にずらして食い込ませる
-                // 【変更点】left-8 md:left-24 に変更し、左端から少し右へ移動させました
-                className="absolute bottom-0 left-8 md:left-24 z-30 transform translate-y-1/2 w-24 md:w-28 lg:w-32"
+                // block md:hidden ... スマホのみ表示
+                // top-20 ............ 上から少し離す
+                // left-8 ............ 左寄りに配置
+                className="absolute z-30 w-24 top-20 left-8 block md:hidden"
             >
                 <Image
                     src="/location/TOPYerrow.png"
@@ -55,6 +58,28 @@ export default function LocationTop() {
                     className="object-contain drop-shadow-xl"
                 />
             </motion.div>
+
+            {/* === 【PC用】 (md以上で表示) === */}
+            <motion.div
+                // 【変更】PCも左側からスライドさせるアニメーションに変更
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.0, ease: "easeOut", delay: 0.8 }}
+                // 配置設定:
+                // hidden md:block ... PCのみ表示
+                // bottom-0 .......... 下端に配置
+                // translate-y-1/2 ... 下に食い込ませる
+                className="absolute z-30 w-28 lg:w-32 bottom-0 left-24 transform translate-y-1/2 hidden md:block"
+            >
+                <Image
+                    src="/location/TOPYerrow.png"
+                    alt="2/11全館貸切！"
+                    width={300}
+                    height={300}
+                    className="object-contain drop-shadow-xl"
+                />
+            </motion.div>
+
         </section>
     );
 }
