@@ -15,7 +15,7 @@ export default function LocationPage() {
            2. min-h-screen: 最低でも画面いっぱいの高さを確保する
            3. bg-black: 背景を黒に指定（もし白が良い場合は bg-white）
         */
-        <main className="flex flex-col min-h-screen w-full bg-black overflow-x-hidden">
+        <main className="flex flex-col min-h-screen w-full bg-black overflow-hidden">
 
             {/* ヘッダー */}
             <Header isVisible={showHeader} />

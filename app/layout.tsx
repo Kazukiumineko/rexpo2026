@@ -33,7 +33,7 @@ const oswald = Oswald({
 // 5. 本文用 (スマート・モダン) ★ここが主役
 const zenKaku = Zen_Kaku_Gothic_New({
   weight: ["300", "400", "500", "700"], // 細字(300)もあると綺麗です
-  subsets: ["latin"],
+  preload: false,
   variable: "--font-zen-kaku",
 });
 
@@ -62,9 +62,9 @@ export default function RootLayout({
           ${notoSansJP.variable} 
           ${cinzel.variable} 
           ${oswald.variable} 
-          ${zenKaku.variable} 
           ${bizUdp.variable} 
           antialiased
+          ${zenKaku.className}
         `}
       >
         {children}

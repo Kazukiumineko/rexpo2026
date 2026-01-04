@@ -12,7 +12,7 @@ module.exports = {
         biz: ["var(--font-biz-udp)"],
 
         // 既存の設定（そのまま）
-        sans: ["var(--font-biz-udp)", "var(--font-zen-kaku)", "var(--font-inter)"],
+        // sansは globals.css で定義します
         kaku: ["var(--font-zen-kaku)"],
         jp: ["var(--font-noto-sans-jp)"],
         cinzel: ["var(--font-cinzel)"],
