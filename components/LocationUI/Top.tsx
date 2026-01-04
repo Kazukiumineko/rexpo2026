@@ -1,0 +1,40 @@
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
+
+export default function LocationTop() {
+    return (
+        /* 文字の突き抜けを許可するため overflow-hidden はなし */
+        <section className="relative w-full h-screen bg-black">
+            {/* 1. メイン背景画像 */}
+            <Image
+                src="/location/Location.jpg"
+                alt="Location Background"
+                fill
+                className="object-cover brightness-90"
+                priority
+            />
+
+            {/* 2. 下部のごく薄いグラデーション（Infoセクションへの繋ぎ） */}
+            <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+
+            {/* 3. 右端の縦書き "LOCATION" テキスト：視認性を高めるため opacity-30 に調整 */}
+            <div className="absolute inset-y-0 right-0 flex items-start pt-20 z-20 pr-4 md:pr-8 pointer-events-none">
+                <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 0.3, y: 0 }} // 30%まで濃くしました
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    className="font-oswald text-[12vh] md:text-[20vh] lg:text-[25vh] font-bold text-white leading-none select-none"
+                    style={{
+                        writingMode: "vertical-rl",
+                        textOrientation: "mixed",
+                        height: "400vh", // Infoセクションへ食い込ませる
+                    }}
+                >
+                    LOCATION
+                </motion.h1>
+            </div>
+        </section>
+    );
+}
