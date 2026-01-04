@@ -32,7 +32,7 @@ export default function Jump() {
                     >
                         {/* テキストエリア */}
                         <div>
-                            <h2 className="font-oswald text-5xl md:text-7xl font-bold tracking-tighter mb-6">
+                            <h2 className="font-oswald text-5xl md:text-7xl font-bold tracking-tight mb-6">
                                 STAGE CONCEPT
                             </h2>
 
@@ -88,7 +88,7 @@ export default function Jump() {
                     >
                         {/* テキストエリア */}
                         <div>
-                            <h2 className="font-oswald text-5xl md:text-7xl font-bold tracking-tighter mb-6">
+                            <h2 className="font-oswald text-5xl md:text-7xl font-bold tracking-tight mb-6">
                                 MESSAGE
                             </h2>
 

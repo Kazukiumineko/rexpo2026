@@ -2,7 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 
-export default function ThemeMessage() {
+export default function Message() {
     // 親コンテナのアニメーション設定（子要素を順番に実行）
     const containerVariants: Variants = {
         hidden: {},

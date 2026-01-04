@@ -7,9 +7,9 @@ import { useState, useEffect } from "react";
 import Header from "@/components/MainUI/02_Header";
 import FooterBar from "@/components/MainUI/10_FooterBar";
 import Introduction from "@/components/EventConceptUI/Introduction";
-import ThemeTopic from "@/components/EventConceptUI/ThemeTopic";
-import ThemeMessage from "@/components/EventConceptUI/ThemeMessage";
-import ThemePic from "@/components/EventConceptUI/ThemePic";
+import Topic from "@/components/EventConceptUI/Topic";
+import Message from "@/components/EventConceptUI/Message";
+import Pic from "@/components/EventConceptUI/Pic";
 import Jump from "@/components/EventConceptUI/Jump";
 
 export default function EventConceptPage() {
@@ -36,9 +36,9 @@ export default function EventConceptPage() {
                 <Header isVisible={showHeader} />
 
                 <Introduction />
-                <ThemePic />
-                <ThemeMessage />
-                <ThemeTopic />
+                <Pic />
+                <Message />
+                <Topic />
                 <Jump />
                 <FooterBar />
             </div>

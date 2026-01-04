@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function ThemeMessage() {
+export default function Topic() {
     // 【調整箇所②】01~04の各セクション間の距離
     const sectionGap = "gap-12 md:gap-20";
 
