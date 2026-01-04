@@ -28,10 +28,10 @@ export default function FooterBar() {
                         {/* Catchphrase */}
                         <div>
                             <h2 className="font-oswald text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-none">
-                                <span className="inline-block">BE</span> <span className="inline-block">THE</span> <span className="inline-block">ORIGINAL</span>
+                                <span className="inline-block">MOVE</span> <span className="inline-block">FORWARD</span> <br className="hidden lg:block" /> <span className="inline-block">INTO</span> <span className="inline-block">THE</span> <span className="inline-block">FUTURE</span>
                             </h2>
                             <p className="mt-4 text-base md:text-2xl lg:text-4xl font-medium tracking-[0.3em] opacity-80">
-                                世界に一人の、君を見せろ
+                                進もう、ミライへ。
                             </p>
                         </div>
 
