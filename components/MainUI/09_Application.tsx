@@ -10,7 +10,7 @@ export default function Application() {
             {/* --- 画像エリア --- */}
             <div className="relative w-full h-[65vh] md:h-[65vh] lg:h-[90vh] overflow-hidden bg-gray-900">
                 <Image
-                    src="/Application.jpg"
+                    src="/main/Application.jpg"
                     alt="Event Background"
                     fill
                     className="object-cover brightness-[0.2]"

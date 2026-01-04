@@ -56,10 +56,10 @@ export default function ConceptSection() {
                             className="block transition-transform duration-300 hover:scale-105"
                         >
                             <Image
-                                src="/ViewMore.png"
+                                src="/main/ViewMore.png"
                                 alt="View More"
-                                width={100}
-                                height={40}
+                                width={128}
+                                height={128}
                                 className="object-contain"
                             />
                         </a>

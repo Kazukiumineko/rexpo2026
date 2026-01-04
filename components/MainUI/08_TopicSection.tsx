@@ -115,11 +115,11 @@ export default function TopicSection() {
                                 className="block transition-transform duration-300 hover:scale-105 pt-2"
                             >
                                 <Image
-                                    src="/ViewMore.png"
+                                    src="/main/ViewMore.png"
                                     alt="View More"
-                                    width={100}
-                                    height={36}
-                                    className="object-contain invert"
+                                    width={128}
+                                    height={128}
+                                    className="object-contain"
                                 />
                             </a>
                         </motion.div>

@@ -70,7 +70,7 @@ export default function FooterBar() {
                 {/* bg-transparentで透明背景を指定し、py-6で上下に余白を設ける */}
                 <div className="w-full bg-white flex justify-center items-center py-10 border-t border-gray-100">
                     <Image
-                        src="/FooterLOGO.png"
+                        src="/main/FooterLOGO.png"
                         alt="Footer Logo"
                         // サイズは必要に応じて調整してください
                         width={160}
@@ -88,7 +88,7 @@ export default function FooterBar() {
                 {/* 左側: 立命館ロゴ */}
                 <div className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2">
                     <Image
-                        src="/Ritsumeikan.png"
+                        src="/main/Ritsumeikan.png"
                         alt="Ritsumeikan Logo"
                         width={80}
                         height={30}

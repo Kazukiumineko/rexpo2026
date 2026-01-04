@@ -9,14 +9,17 @@ export default function StageSection() {
         {
             title: "Global Stage",
             description: "タイ、マレーシア、ベトナム、アメリカ、オーストラリア、リトアニア、ガラパゴス諸島・・・彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
+            href: "/stage-concept#global"
         },
         {
             title: "Academic Stage",
             description: "タイ、マレーシア、ベトナム、アメリカ、オーストラリア、リトアニア、ガラパゴス諸島・・・彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
+            href: "/stage-concept#academic"
         },
         {
             title: "Artistic Stage",
             description: "タイ、マレーシア、ベトナム、アメリカ、オーストラリア、リトアニア、ガラパゴス諸島・・・彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
+            href: "/stage-concept#artistic"
         },
     ];
 
@@ -50,7 +53,7 @@ export default function StageSection() {
 
             <div className="absolute inset-0 -z-10">
                 <Image
-                    src="/StageBG.jpg"
+                    src="/main/StageBG.jpg"
                     alt="Stage Background"
                     fill
                     className="object-cover"
@@ -67,7 +70,7 @@ export default function StageSection() {
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                 >
-                    {/* ▼ 追加箇所: STAGE CONCEPT 見出しとサブタイトル ▼ */}
+                    {/* Header: STAGE CONCEPT */}
                     <motion.div
                         className="col-span-full flex flex-col items-center mb-16 lg:mb-24 text-center"
                         variants={itemVariants}
@@ -79,15 +82,14 @@ export default function StageSection() {
                             個性が輝く多彩なステージ
                         </p>
                     </motion.div>
-                    {/* ▲ 追加箇所ここまで ▲ */}
 
+                    {/* Stage Lists */}
                     {stages.map((stage, index) => (
                         <motion.div
                             key={index}
                             className="flex flex-col items-left text-left space-y-6"
                             variants={itemVariants}
                         >
-                            {/* ▼ 元のデザインに戻しました（白線を削除し、元のクラス名を使用） ▼ */}
                             <h3 className="text-3xl lg:text-4xl items-left text-left font-bold tracking-tight">
                                 {stage.title}
                             </h3>
@@ -97,11 +99,11 @@ export default function StageSection() {
                             </p>
 
                             <a
-                                href="/Subpage"
+                                href={stage.href}
                                 className="mt-4 block transition-transform duration-300 hover:scale-105"
                             >
                                 <Image
-                                    src="/ViewMore.png"
+                                    src="/main/ViewMore.png"
                                     alt="View More"
                                     width={100}
                                     height={40}

@@ -17,12 +17,12 @@ export default function HeroSection({ opacity, isLogoLoaded, isScrollLoaded }: H
         ${isLogoLoaded ? "opacity-100" : "opacity-0"}`}>
 
                 <Image
-                    src="/R-EXPO-LOGO1.png"
-                    alt="R-EXPO Logo"
-                    width={600}
+                    src="/main/R-EXPO-LOGO1.png"
+                    alt="R-EXPO LOGO"
+                    width={500}
                     height={200}
+                    className="object-contain w-[280px] md:w-[400px] lg:w-[500px] h-auto"
                     priority
-                    className="object-contain h-auto w-[280px] md:w-[600px]"
                 />
             </div>
 
