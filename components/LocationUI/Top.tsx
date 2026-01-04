@@ -35,6 +35,26 @@ export default function LocationTop() {
                     LOCATION
                 </motion.h1>
             </div>
+
+            {/* ★ 追加: 2/11全館貸切！ポップ画像 */}
+            <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.0, ease: "easeOut", delay: 0.8 }}
+                // 配置設定:
+                // absolute bottom-0 ... 下端に配置
+                // translate-y-1/2 ..... 高サの半分だけ下にずらして食い込ませる
+                // 【変更点】left-8 md:left-24 に変更し、左端から少し右へ移動させました
+                className="absolute bottom-0 left-8 md:left-24 z-30 transform translate-y-1/2 w-24 md:w-28 lg:w-32"
+            >
+                <Image
+                    src="/location/TOPYerrow.png"
+                    alt="2/11全館貸切！"
+                    width={300}
+                    height={300}
+                    className="object-contain drop-shadow-xl"
+                />
+            </motion.div>
         </section>
     );
 }
