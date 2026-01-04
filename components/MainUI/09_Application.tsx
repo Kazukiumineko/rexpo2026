@@ -63,7 +63,7 @@ export default function Application() {
                     >
                         <button className="group relative transition-transform duration-300 hover:scale-105">
                             <Image
-                                src="/ViewMore.png"
+                                src="/main/ViewMore.png"
                                 alt="View More"
                                 width={240}
                                 height={80}

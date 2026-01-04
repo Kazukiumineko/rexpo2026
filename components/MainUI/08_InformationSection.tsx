@@ -119,7 +119,7 @@ export default function InformationSection() {
                                     alt="View More"
                                     width={128}
                                     height={128}
-                                    className="object-contain"
+                                    className="object-contain invert"
                                 />
                             </a>
                         </motion.div>
