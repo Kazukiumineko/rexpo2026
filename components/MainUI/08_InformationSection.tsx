@@ -117,8 +117,8 @@ export default function InformationSection() {
                                 <Image
                                     src="/main/ViewMore.png"
                                     alt="View More"
-                                    width={128}
-                                    height={128}
+                                    width={100}
+                                    height={40}
                                     className="object-contain invert"
                                 />
                             </a>
