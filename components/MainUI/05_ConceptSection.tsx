@@ -27,10 +27,10 @@ export default function ConceptSection() {
 
             <div className="absolute inset-0 -z-10 opacity-40 "></div>
 
-            <div ref={sectionRef} className="w-full max-w-7xl mx-auto px-6 lg:px-12">
+            <div ref={sectionRef} className="w-full max-w-[1600px] mx-auto px-6 lg:px-20">
 
                 <motion.div
-                    className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center"
                     variants={containerVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
@@ -41,7 +41,7 @@ export default function ConceptSection() {
                         variants={itemVariants}
                     >
 
-                        <h2 className="font-oswald text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+                        <h2 className="font-oswald text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight">
                             INTRODUCTION
                         </h2>
 

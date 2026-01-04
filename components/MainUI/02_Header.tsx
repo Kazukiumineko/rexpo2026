@@ -60,7 +60,7 @@ export function MenuButton({ isVisible = true }: { isVisible?: boolean }) {
         { label: "LOCATION", href: "/location" },
         { label: "SUPPORT", href: "/support" },
         { label: "COMMENTS", href: "/comments" },
-        { label: "APPLICATION", href: "/application" },
+        { label: "APPLICATION", href: "/signup" },
     ];
 
     return (

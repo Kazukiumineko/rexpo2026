@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView, Variants } from "framer-motion";
 
-export default function TopicSection() {
+export default function InformationSection() {
     const topics = [
         {
             title: "会場",
