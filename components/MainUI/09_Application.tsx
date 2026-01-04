@@ -8,7 +8,7 @@ export default function Application() {
         <section className="relative w-full bg-white flex flex-col">
 
             {/* --- 画像エリア --- */}
-            <div className="relative w-full h-[55vh] md:h-[55vh] lg:h-[90vh] overflow-hidden bg-gray-900">
+            <div className="relative w-full h-[65vh] md:h-[65vh] lg:h-[90vh] overflow-hidden bg-gray-900">
                 <Image
                     src="/Application.jpg"
                     alt="Event Background"

@@ -21,14 +21,14 @@ export default function FooterBar() {
             {/* Content Wrapper with White Background */}
             <div className="w-full bg-white pt-28">
                 {/* --- ① Moved from EventInfo: Text Content Area --- */}
-                <div className="w-full max-w-[1920px] mx-auto px-6 md:px-16 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-10 mb-30 text-black">
+                <div className="w-full max-w-[1920px] mx-auto px-6 md:px-16 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-10 mb-30 text-gray-800">
 
                     {/* Left Column: Catchphrase & Nav */}
                     <div className="flex flex-col space-y-12">
                         {/* Catchphrase */}
                         <div>
-                            <h2 className="font-oswald text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-none whitespace-nowrap">
-                                BE THE ORIGINAL
+                            <h2 className="font-oswald text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-none">
+                                <span className="inline-block">BE</span> <span className="inline-block">THE</span> <span className="inline-block">ORIGINAL</span>
                             </h2>
                             <p className="mt-4 text-base md:text-2xl lg:text-4xl font-medium tracking-[0.3em] opacity-80">
                                 世界に一人の、君を見せろ
