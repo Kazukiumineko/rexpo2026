@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 
-export default function FooterBar() {
+interface FooterBarProps {
+    variant?: "default" | "black";
+}
+
+export default function FooterBar({ variant = "default" }: FooterBarProps) {
     // ナビゲーション項目の定義 (Moved from EventInfo)
     const navItems = [
         { label: "R-EXPOとは", href: "#" },
@@ -13,15 +17,20 @@ export default function FooterBar() {
         { label: "特設アプリ", href: "#" },
     ];
 
+    const isBlack = variant === "black";
+    const bgClass = isBlack ? "bg-black" : "bg-white";
+    const textClass = isBlack ? "text-white" : "text-gray-800";
+    const hoverBorderClass = isBlack ? "group-hover:border-white" : "group-hover:border-black";
+
     return (
 
         // フッター全体を包むコンテナ（背景なし・縦並び・中央揃え）
         <footer className="w-full flex flex-col items-center relative z-50">
 
-            {/* Content Wrapper with White Background */}
-            <div className="w-full bg-white pt-28">
+            {/* Content Wrapper */}
+            <div className={`w-full ${bgClass} pt-28`}>
                 {/* --- ① Moved from EventInfo: Text Content Area --- */}
-                <div className="w-full max-w-[1920px] mx-auto px-6 md:px-16 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-10 mb-30 text-gray-800">
+                <div className={`w-full max-w-[1920px] mx-auto px-6 md:px-16 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-10 mb-30 ${textClass}`}>
 
                     {/* Left Column: Catchphrase & Nav */}
                     <div className="flex flex-col space-y-12">
@@ -44,7 +53,7 @@ export default function FooterBar() {
                                     className="group flex items-center text-xs md:text-sm font-medium tracking-wider hover:opacity-60 transition-opacity"
                                 >
                                     <span className="mr-2 text-[10px] md:text-xs">▷</span>
-                                    <span className="border-b border-transparent group-hover:border-black transition-all">
+                                    <span className={`border-b border-transparent ${hoverBorderClass} transition-all`}>
                                         {item.label}
                                     </span>
                                 </a>
@@ -71,7 +80,7 @@ export default function FooterBar() {
 
             {/* --- ③ 既存の黒いバー --- */}
             {/* ここに以前のfooterタグのスタイルを適用します */}
-            <div className="w-full bg-black/85 text-white h-10 flex items-center justify-center px-4 md:px-8 relative">
+            <div className={`w-full ${isBlack ? "bg-black border-t border-white/20" : "bg-black/85"} text-white h-10 flex items-center justify-center px-4 md:px-8 relative`}>
 
                 {/* 左側: 立命館ロゴ */}
                 <div className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2">

@@ -16,7 +16,7 @@ export default function LocationPage() {
            2. min-h-screen: 最低でも画面いっぱいの高さを確保する
            3. bg-black: 背景を黒に指定（もし白が良い場合は bg-white）
         */
-        <main className="flex flex-col min-h-screen w-full bg-black overflow-hidden">
+        <main className="flex flex-col min-h-screen w-full bg-white overflow-hidden">
 
             {/* ヘッダー */}
             <Header isVisible={showHeader} />
@@ -33,7 +33,7 @@ export default function LocationPage() {
             </div>
 
             {/* フッター：これで必ず「コンテンツの直後」かつ「最低でも画面最下部」に配置されます */}
-            <FooterBar />
+            <FooterBar variant="black" />
         </main>
     );
 }

@@ -22,7 +22,7 @@ export default function LocationInfo() {
            これにより、内部のカルーセルもテキストも左右に同じ余白（マージン）が生まれ、
            そのラインで写真が消えるようになります。
         */
-        <section className="relative w-full bg-black text-white pt-32 pb-48 px-6 md:px-20 lg:px-32 z-10 overflow-hidden">
+        <section className="relative w-full bg-white text-black pt-32 pb-48 px-6 md:px-20 lg:px-32 z-10 overflow-hidden">
 
             {/* テキストエリア（親のPaddingに従うため、個別のPaddingは削除） */}
             <div className="w-full max-w-4xl mb-24">
@@ -33,7 +33,7 @@ export default function LocationInfo() {
                     transition={{ duration: 1 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 tracking-tighter">
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 tracking-tighter text-black">
                         札幌コンベンションセンター
                     </h2>
                 </motion.div>
@@ -44,7 +44,7 @@ export default function LocationInfo() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1, delay: 0.3 }}
                     viewport={{ once: true }}
-                    className="space-y-6 text-sm md:text-base lg:text-lg font-light leading-relaxed tracking-widest text-gray-300 max-w-2xl"
+                    className="space-y-6 text-sm md:text-base lg:text-lg font-light leading-relaxed tracking-widest text-gray-700 max-w-2xl"
                 >
                     <p>
                         北海道の産業・文化の拠点として、数々の国際会議やイベントが開催されてきた広大な空間。
@@ -84,7 +84,7 @@ export default function LocationInfo() {
                                 key={index}
                                 className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
                             >
-                                <div className="relative aspect-video w-full overflow-hidden bg-gray-900 group">
+                                <div className="relative aspect-video w-full overflow-hidden bg-gray-100 group">
                                     <Image
                                         src={src}
                                         alt={`Sapporo Convention Center ${index + 1}`}
