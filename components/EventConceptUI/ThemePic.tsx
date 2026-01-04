@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function ThemePic() {
     return (
-        <section className="relative w-full bg-black py-24 md:py-40 overflow-hidden flex flex-col items-center">
+        <section className="relative w-full bg-transparent py-24 md:py-40 overflow-hidden flex flex-col items-center">
             {/* メインビジュアルエリア */}
             <div className="relative z-10 w-full px-4 md:px-10 flex items-center justify-center">
                 <motion.div

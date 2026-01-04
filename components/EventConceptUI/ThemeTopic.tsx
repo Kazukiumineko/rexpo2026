@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function ThemeMessage() {
@@ -30,14 +31,16 @@ export default function ThemeMessage() {
     ];
 
     return (
-        <section className="relative w-full bg-white py-24 md:py-40 overflow-hidden flex flex-col items-center">
+        <section className="relative w-full bg-transparent py-24 md:py-40 overflow-hidden flex flex-col items-center">
+
+            {/* 背景画像エリア削除済 */}
 
             {/* ヘッダーエリア */}
             <div className="relative z-10 w-full flex flex-col items-center mb-20 md:mb-32 text-center px-4">
-                <h2 className="font-oswald text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-black mb-4">
+                <h2 className="font-oswald text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight text-white mb-4">
                     CONCEPTS
                 </h2>
-                <p className="text-sm md:text-3xl font-bold tracking-widest text-black font-sans">
+                <p className="text-sm md:text-3xl font-bold tracking-widest text-white font-sans">
                     R-EXPOとは
                 </p>
             </div>
@@ -59,17 +62,17 @@ export default function ThemeMessage() {
                         >
                             {/* 数字：親の高さ(items-stretch)をそのまま受け継ぐ */}
                             <div className="flex items-center justify-center">
-                                <span className="font-oswald text-[80px] md:text-[140px] lg:text-[160px] font-black text-black/10 leading-[0.8] tracking-tighter inline-block">
+                                <span className="font-oswald text-[80px] md:text-[140px] lg:text-[160px] font-black text-white/30 leading-[0.8] tracking-tighter inline-block">
                                     {item.num}
                                 </span>
                             </div>
 
                             {/* テキスト内容：ここの高さが数字の基準になる */}
                             <div className="flex flex-col justify-center py-2">
-                                <h4 className="text-xl md:text-4xl font-black text-black mb-4 tracking-tight leading-tight uppercase">
+                                <h4 className="text-xl md:text-4xl font-black text-white mb-4 tracking-tight leading-tight uppercase">
                                     {item.title}
                                 </h4>
-                                <p className="text-sm md:text-xl text-gray-700 font-medium leading-relaxed tracking-wide">
+                                <p className="text-sm md:text-xl text-gray-300 font-medium leading-relaxed tracking-wide">
                                     {item.desc}
                                 </p>
                             </div>

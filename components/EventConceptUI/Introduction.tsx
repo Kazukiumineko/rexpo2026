@@ -26,7 +26,7 @@ export default function Introduction() {
 
 
             <div className={
-                "w-full bg-gray-950 text-white pt-32 flex justify-center relative z-20 " +
+                "w-full bg-transparent text-white pt-32 flex justify-center relative z-20 " +
                 "pl-14 pr-4 md:px-20 lg:px-32 " +
                 "pb-24 md:pb-36"
             }>
@@ -59,7 +59,7 @@ export default function Introduction() {
             </div>
 
             <div className={
-                "relative w-full h-[80vh] md:h-[80vh] lg:h-[100vh] bg-black z-30 " +
+                "relative w-full h-[80vh] md:h-[80vh] lg:h-[100vh] bg-transparent z-30 " +
                 "-mt-20 md:-mt-28"
             }>
 

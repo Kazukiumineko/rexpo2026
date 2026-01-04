@@ -25,7 +25,7 @@ export default function ThemeMessage() {
     };
 
     return (
-        <section className="w-full bg-black text-white py-24 md:py-40 px-6 overflow-hidden">
+        <section className="w-full bg-transparent text-white py-24 md:py-40 px-6 overflow-hidden">
             <motion.div
                 variants={containerVariants}
                 initial="hidden"

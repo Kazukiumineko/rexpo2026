@@ -10,21 +10,38 @@ import Introduction from "@/components/EventConceptUI/Introduction";
 import ThemeTopic from "@/components/EventConceptUI/ThemeTopic";
 import ThemeMessage from "@/components/EventConceptUI/ThemeMessage";
 import ThemePic from "@/components/EventConceptUI/ThemePic";
+import Jump from "@/components/EventConceptUI/Jump";
 
 export default function EventConceptPage() {
 
     const [showHeader, setShowHeader] = useState(true);
 
     return (
-        <main className="relative w-full bg-white min-h-screen">
+        <main className="relative w-full min-h-screen text-white">
+            {/* 固定背景画像 */}
+            <div className="fixed inset-0 z-0">
+                <div className="relative w-full h-full">
+                    <img
+                        src="/event-concept-page/Introduction.jpg"
+                        alt="Background"
+                        className="object-cover w-full h-full"
+                    />
+                    {/* 暗くするためのオーバーレイ */}
+                    <div className="absolute inset-0 bg-black/80" />
+                </div>
+            </div>
 
-            <Header isVisible={showHeader} />
+            {/* コンテンツラッパー (z-indexを上げて背景の上に表示) */}
+            <div className="relative z-10 w-full">
+                <Header isVisible={showHeader} />
 
-            <Introduction />
-            <ThemePic />
-            <ThemeMessage />
-            <ThemeTopic />
-            <FooterBar />
+                <Introduction />
+                <ThemePic />
+                <ThemeMessage />
+                <ThemeTopic />
+                <Jump />
+                <FooterBar />
+            </div>
 
         </main>
     );
