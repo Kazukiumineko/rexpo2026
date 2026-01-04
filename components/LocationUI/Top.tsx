@@ -6,13 +6,13 @@ import { motion } from "framer-motion";
 export default function LocationTop() {
     return (
         /* 文字の突き抜けを許可するため overflow-hidden はなし */
-        <section className="relative w-full h-screen bg-white">
+        <section className="relative w-full h-[60vh] bg-white">
             {/* 1. メイン背景画像 */}
             <Image
                 src="/location/Location.jpg"
                 alt="Location Background"
                 fill
-                className="object-cover brightness-100"
+                className="object-cover object-bottom brightness-100"
                 priority
             />
 

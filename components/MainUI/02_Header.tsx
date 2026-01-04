@@ -8,9 +8,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface HeaderProps {
     isVisible: boolean;
+    invert?: boolean;
 }
 
-export function MiniLogo({ isVisible }: { isVisible: boolean }) {
+
+export function MiniLogo({ isVisible, invert = false }: { isVisible: boolean; invert?: boolean }) {
     const pathname = usePathname();
     const isHomePage = pathname === "/";
 
@@ -25,7 +27,8 @@ export function MiniLogo({ isVisible }: { isVisible: boolean }) {
                     alt="R-EXPO Mini Logo"
                     width={150}
                     height={50}
-                    className="object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px]"
+                    // lg:invert に変更してスマホ時は白のままにする
+                    className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] ${invert ? "lg:invert" : ""}`}
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 />
             ) : (
@@ -35,7 +38,8 @@ export function MiniLogo({ isVisible }: { isVisible: boolean }) {
                         alt="R-EXPO Mini Logo"
                         width={150}
                         height={50}
-                        className="object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px]"
+                        // lg:invert に変更してスマホ時は白のままにする
+                        className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] ${invert ? "lg:invert" : ""}`}
                     />
                 </Link>
             )}
@@ -43,7 +47,7 @@ export function MiniLogo({ isVisible }: { isVisible: boolean }) {
     );
 }
 
-export function MenuButton({ isVisible = true }: { isVisible?: boolean }) {
+export function MenuButton({ isVisible = true, invert = false }: { isVisible?: boolean; invert?: boolean }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -59,7 +63,7 @@ export function MenuButton({ isVisible = true }: { isVisible?: boolean }) {
         { label: "CONCEPT", href: "/event-concept" },
         { label: "LOCATION", href: "/location" },
         { label: "SUPPORT", href: "/support" },
-        { label: "COMMENTS", href: "/comments" },
+        { label: "MESSAGE", href: "/message" },
         { label: "APPLICATION", href: "/signup" },
     ];
 
@@ -68,19 +72,19 @@ export function MenuButton({ isVisible = true }: { isVisible?: boolean }) {
             <button
                 onClick={toggleMenu}
                 aria-label="Toggle Menu"
-                className={`fixed top-0 right-4 z-50 w-16 h-16 flex flex-col justify-center items-center gap-2 transition-opacity duration-500 ease-in-out cursor-pointer mix-blend-difference
+                className={`fixed top-0 right-4 z-50 w-16 h-16 flex flex-col justify-center items-center gap-2 transition-opacity duration-500 ease-in-out cursor-pointer ${invert ? "" : "mix-blend-difference"}
                 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
             >
                 <span
-                    className={`block w-12 h-0.5 bg-white transition-transform duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-2" : ""
+                    className={`block w-12 h-0.5 ${invert ? "bg-white lg:bg-black" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-2" : ""
                         }`}
                 />
                 <span
-                    className={`block w-12 h-0.5 bg-white transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-0" : "opacity-100"
+                    className={`block w-12 h-0.5 ${invert ? "bg-white lg:bg-black" : "bg-white"} transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-0" : "opacity-100"
                         }`}
                 />
                 <span
-                    className={`block w-12 h-0.5 bg-white transition-transform duration-300 ease-in-out ${isOpen ? "-rotate-45 -translate-y-2" : ""
+                    className={`block w-12 h-0.5 ${invert ? "bg-white lg:bg-black" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "-rotate-45 -translate-y-2" : ""
                         }`}
                 />
             </button>
@@ -123,7 +127,7 @@ export function MenuButton({ isVisible = true }: { isVisible?: boolean }) {
     );
 }
 
-export default function Header({ isVisible }: HeaderProps) {
+export default function Header({ isVisible, invert }: HeaderProps) {
     return (
         <div className="fixed top-0 left-0 w-full z-50 pointer-events-none">
             <div
@@ -132,8 +136,8 @@ export default function Header({ isVisible }: HeaderProps) {
             ></div>
 
             <div className="relative pointer-events-auto">
-                <MiniLogo isVisible={isVisible} />
-                <MenuButton isVisible={isVisible} />
+                <MiniLogo isVisible={isVisible} invert={invert} />
+                <MenuButton isVisible={isVisible} invert={invert} />
             </div>
         </div>
     );

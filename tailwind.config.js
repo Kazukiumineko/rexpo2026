@@ -18,6 +18,10 @@ module.exports = {
         cinzel: ["var(--font-cinzel)"],
         oswald: ["var(--font-oswald)"],
       },
+      colors: {
+        "r-expo-blue": "#0066FF",
+        "r-expo-green": "#00CC66",
+      },
     },
   },
   plugins: [],

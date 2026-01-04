@@ -19,7 +19,7 @@ export default function LocationPage() {
         <main className="flex flex-col min-h-screen w-full bg-white overflow-hidden">
 
             {/* ヘッダー */}
-            <Header isVisible={showHeader} />
+            <Header isVisible={showHeader} invert />
 
             {/* 【重要：コンテンツエリア】
                 flex-grow をつけることで、中身（TopやInfo）が少なくても、
