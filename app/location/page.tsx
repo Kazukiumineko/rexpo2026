@@ -5,6 +5,7 @@ import Header from "@/components/MainUI/02_Header";
 import FooterBar from "@/components/MainUI/10_FooterBar";
 import Top from "@/components/LocationUI/Top";
 import Info from "@/components/LocationUI/Info";
+import Map from "@/components/LocationUI/Map";
 
 export default function LocationPage() {
     const [showHeader] = useState(true);
@@ -28,6 +29,7 @@ export default function LocationPage() {
                 {/* ロケーションTOPセクション */}
                 <Top />
                 <Info />
+                <Map />
             </div>
 
             {/* フッター：これで必ず「コンテンツの直後」かつ「最低でも画面最下部」に配置されます */}

@@ -66,19 +66,7 @@ export default function FooterBar() {
                 </div>
 
 
-                {/* --- ② 透明なロゴエリア（黒いバーの上側） --- */}
-                {/* bg-transparentで透明背景を指定し、py-6で上下に余白を設ける */}
-                <div className="w-full bg-white flex justify-center items-center py-10 border-t border-gray-100">
-                    <Image
-                        src="/main/FooterLOGO.png"
-                        alt="Footer Logo"
-                        // サイズは必要に応じて調整してください
-                        width={160}
-                        height={160}
-                        // レスポンシブ対応のクラス
-                        className="object-contain w-28 md:w-36 lg:w-40 h-auto"
-                    />
-                </div>
+
             </div>
 
             {/* --- ③ 既存の黒いバー --- */}
