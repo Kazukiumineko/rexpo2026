@@ -25,8 +25,8 @@ export default function TopicSection() {
             description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
         },
         {
-            title: "特設アプリ",
-            src: "/topic/Application.jpg",
+            title: "申し込み",
+            src: "/topic/Signup.jpg",
             link: "/signup",
             description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
         },
