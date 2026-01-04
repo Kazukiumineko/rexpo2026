@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function Map() {
+export default function Access() {
     return (
         <section className="w-full bg-white text-black py-24 md:py-32 px-6 md:px-20 lg:px-32 overflow-hidden">
 

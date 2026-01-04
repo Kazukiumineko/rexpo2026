@@ -25,7 +25,7 @@ export default function Application() {
                         initial={{ opacity: 0, y: -20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        viewport={{ once: false }}
+                        viewport={{ once: true }}
                         className="text-center"
                     >
                         <h2 className="font-oswald text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tight text-white leading-none">
@@ -43,7 +43,7 @@ export default function Application() {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 1.2, delay: 0.4 }}
-                        viewport={{ once: false }}
+                        viewport={{ once: true }}
                         className="mt-12 md:mt-16 text-center max-w-2xl"
                     >
                         <div className="text-white text-xs md:text-sm lg:text-base font-extralight leading-[2.2] tracking-[0.15em]">
@@ -58,7 +58,7 @@ export default function Application() {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
-                        viewport={{ once: false }}
+                        viewport={{ once: true }}
                         className="mt-10 md:mt-12"
                     >
                         <button className="group relative transition-transform duration-300 hover:scale-105">

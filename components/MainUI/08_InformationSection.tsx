@@ -33,7 +33,7 @@ export default function InformationSection() {
     ];
 
     const sectionRef = useRef(null);
-    const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
+    const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
     const containerVariants: Variants = {
         hidden: { opacity: 0 },

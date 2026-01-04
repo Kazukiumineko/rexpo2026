@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface FooterBarProps {
     variant?: "default" | "black";
@@ -28,7 +29,13 @@ export default function FooterBar({ variant = "default" }: FooterBarProps) {
         <footer className="w-full flex flex-col items-center relative z-50">
 
             {/* Content Wrapper */}
-            <div className={`w-full ${bgClass} pt-28`}>
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className={`w-full ${bgClass} pt-28`}
+            >
                 {/* --- ① Moved from EventInfo: Text Content Area --- */}
                 <div className={`w-full max-w-[1920px] mx-auto px-6 md:px-16 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-10 mb-30 ${textClass}`}>
 
@@ -76,7 +83,7 @@ export default function FooterBar({ variant = "default" }: FooterBarProps) {
 
 
 
-            </div>
+            </motion.div>
 
             {/* --- ③ 既存の黒いバー --- */}
             {/* ここに以前のfooterタグのスタイルを適用します */}
