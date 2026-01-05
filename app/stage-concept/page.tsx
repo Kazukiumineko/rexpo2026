@@ -41,13 +41,16 @@ export default function StageConceptPage() {
                 {/* flex-growでフッターを下に押し下げる */}
                 <div className="flex-grow pb-20">
                     <StageTop />
-                    {/* ここに他のセクション（Infoなど）を追加していきます */}
+                    <div className="h-32" />
                     <GlobalStage />
                     <GlobalInfo />
+                    <div className="h-32" />
                     <AcademicStage />
                     <AcademicInfo />
+                    <div className="h-32" />
                     <ArtisticStage />
                     <ArtisticInfo />
+                    <div className="h-32" />
                     <CollabStage />
                     <CollabInfo />
                     <Jump />
