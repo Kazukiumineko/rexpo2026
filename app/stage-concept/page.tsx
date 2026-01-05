@@ -6,6 +6,14 @@ import FooterBar from "@/components/MainUI/10_FooterBar";
 import StageTop from "@/components/StageConceptUI/top";
 import GlobalStage from "@/components/StageConceptUI/GlobalStage";
 import GlobalInfo from "@/components/StageConceptUI/GlobalInfo";
+import AcademicStage from "@/components/StageConceptUI/AcademicStage";
+import AcademicInfo from "@/components/StageConceptUI/AcademicInfo";
+import ArtisticStage from "@/components/StageConceptUI/ArtisticStage";
+import ArtisticInfo from "@/components/StageConceptUI/ArtisticInfo";
+import CollabStage from "@/components/StageConceptUI/CollabStage";
+import CollabInfo from "@/components/StageConceptUI/CollabInfo";
+import Jump from "@/components/StageConceptUI/Jump";
+
 
 export default function StageConceptPage() {
     // ヘッダーを常に表示
@@ -31,11 +39,18 @@ export default function StageConceptPage() {
                 <Header isVisible={showHeader} />
 
                 {/* flex-growでフッターを下に押し下げる */}
-                <div className="flex-grow">
+                <div className="flex-grow pb-20">
                     <StageTop />
                     {/* ここに他のセクション（Infoなど）を追加していきます */}
                     <GlobalStage />
                     <GlobalInfo />
+                    <AcademicStage />
+                    <AcademicInfo />
+                    <ArtisticStage />
+                    <ArtisticInfo />
+                    <CollabStage />
+                    <CollabInfo />
+                    <Jump />
                 </div>
 
                 <FooterBar />

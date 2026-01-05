@@ -21,6 +21,11 @@ export default function StageSection() {
             description: "タイ、マレーシア、ベトナム、アメリカ、オーストラリア、リトアニア、ガラパゴス諸島・・・彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
             href: "/stage-concept#artistic"
         },
+        {
+            title: "Collab Stage",
+            description: "地域企業や大学との連携による、実践的なプロジェクト発表です。学校の枠を飛び出し、社会との関わりの中で生まれた新たな価値創造への挑戦。大人たちとの本気の議論を経て磨かれたアイデアと、共創のストーリーをお届けします。",
+            href: "/stage-concept#collaboration"
+        },
     ];
 
     const sectionRef = useRef(null);
@@ -62,17 +67,16 @@ export default function StageSection() {
                 <div className="absolute inset-0 bg-black/60" />
             </div>
 
-            <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
+            <div className="w-full max-w-[1400px] mx-auto px-6 lg:px-12">
 
                 <motion.div
-                    className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16"
                     variants={containerVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                 >
                     {/* Header: STAGE CONCEPT */}
                     <motion.div
-                        className="col-span-full flex flex-col items-center mb-16 lg:mb-24 text-center"
+                        className="flex flex-col items-center mb-16 lg:mb-24 text-center"
                         variants={itemVariants}
                     >
                         <h2 className="text-white font-oswald text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-none">
@@ -84,34 +88,36 @@ export default function StageSection() {
                     </motion.div>
 
                     {/* Stage Lists */}
-                    {stages.map((stage, index) => (
-                        <motion.div
-                            key={index}
-                            className="flex flex-col items-left text-left space-y-6"
-                            variants={itemVariants}
-                        >
-                            <h3 className="text-3xl lg:text-4xl items-left text-left font-bold tracking-tight">
-                                {stage.title}
-                            </h3>
-
-                            <p className="text-gray-200 text-xs lg:text-sm leading-loose text-left">
-                                {stage.description}
-                            </p>
-
-                            <a
-                                href={stage.href}
-                                className="mt-4 block transition-transform duration-300 hover:scale-105"
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {stages.map((stage, index) => (
+                            <motion.div
+                                key={index}
+                                className="flex flex-col items-left text-left space-y-6"
+                                variants={itemVariants}
                             >
-                                <Image
-                                    src="/main/ViewMore.png"
-                                    alt="View More"
-                                    width={100}
-                                    height={40}
-                                    className="object-contain"
-                                />
-                            </a>
-                        </motion.div>
-                    ))}
+                                <h3 className="text-3xl lg:text-4xl items-left text-left font-bold tracking-tight">
+                                    {stage.title}
+                                </h3>
+
+                                <p className="text-gray-200 text-xs lg:text-sm leading-loose text-left">
+                                    {stage.description}
+                                </p>
+
+                                <a
+                                    href={stage.href}
+                                    className="mt-4 block transition-transform duration-300 hover:scale-105"
+                                >
+                                    <Image
+                                        src="/main/ViewMore.png"
+                                        alt="View More"
+                                        width={100}
+                                        height={40}
+                                        className="object-contain"
+                                    />
+                                </a>
+                            </motion.div>
+                        ))}
+                    </div>
                 </motion.div>
             </div>
         </section>
