@@ -25,7 +25,6 @@ export default function Message() {
     };
 
     return (
-        // 【修正1】背景を白、文字を黒に変更
         <section className="w-full bg-white text-black py-24 md:py-32 px-6 md:px-20 lg:px-32 overflow-hidden">
             <motion.div
                 variants={containerVariants}
@@ -37,11 +36,14 @@ export default function Message() {
                 {/* --- ページタイトル --- */}
 
 
-                <div className="flex flex-col gap-20 lg:gap-32">
+                {/* ブロック間の距離 (スマホ: gap-40, PC: gap-32) */}
+                <div className="flex flex-col gap-40 lg:gap-32">
 
                     {/* === 1人目: 菊地賢司 校長 === */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-                        {/* メッセージエリア */}
+                    {/* 【修正点】スマホの時の gap を 16 -> 6 に詰めて、写真と文章を近づけました */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-24 items-start">
+
+                        {/* メッセージエリア (order-2: スマホでは写真の下) */}
                         <div className="order-2 lg:order-1">
                             <motion.div variants={itemVariants} className="space-y-10">
                                 <div>
@@ -67,8 +69,9 @@ export default function Message() {
                             </motion.div>
                         </div>
 
-                        {/* 写真エリア */}
-                        <div className="order-1 lg:order-2 sticky top-24 h-fit">
+                        {/* 写真エリア (order-1: スマホでは上) */}
+                        {/* 【修正点】mb-10 を削除し、下の文章との余白を削減しました */}
+                        <div className="order-1 lg:order-2 lg:sticky lg:top-24 h-fit lg:mt-20 lg:mb-0">
                             <motion.div
                                 variants={itemVariants}
                                 className="relative aspect-[3/2] w-full rounded-sm overflow-hidden border border-black/10 bg-gray-100"
@@ -84,7 +87,9 @@ export default function Message() {
                     </div>
 
                     {/* === 2人目: 上野政聖 委員長 === */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+                    {/* 【修正点】同様に gap-6 に変更 */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-24 items-start">
+
                         {/* メッセージエリア */}
                         <div className="order-2 lg:order-1">
                             <motion.div variants={itemVariants} className="space-y-10">
@@ -112,10 +117,10 @@ export default function Message() {
                         </div>
 
                         {/* 写真エリア */}
-                        <div className="order-1 lg:order-2 sticky top-24 h-fit">
+                        {/* 【修正点】mb-10 を削除 */}
+                        <div className="order-1 lg:order-2 lg:sticky lg:top-24 h-fit lg:mt-20 lg:mb-0">
                             <motion.div
                                 variants={itemVariants}
-                                // 幅やマージンは調整
                                 className="relative aspect-[3/2] w-full rounded-sm overflow-hidden border border-black/10 bg-gray-100"
                             >
                                 <Image
