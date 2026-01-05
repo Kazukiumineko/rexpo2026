@@ -66,7 +66,7 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
         { label: "TIMETABLE", href: "/time-table" },
         { label: "SUPPORT", href: "/support" },
         { label: "MESSAGE", href: "/message" },
-        { label: "APPLICATION", href: "/signup" },
+        { label: "APPLICATION", href: "/application" },
     ];
 
     return (

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Application() {
@@ -61,7 +62,7 @@ export default function Application() {
                         viewport={{ once: true }}
                         className="mt-10 md:mt-12"
                     >
-                        <button className="group relative transition-transform duration-300 hover:scale-105">
+                        <Link href="/application" className="group relative transition-transform duration-300 hover:scale-105 inline-block">
                             <Image
                                 src="/main/ViewMore.png"
                                 alt="View More"
@@ -69,7 +70,7 @@ export default function Application() {
                                 height={80}
                                 className="h-auto w-[85px] md:w-[100px] lg:w-[120px] object-contain"
                             />
-                        </button>
+                        </Link>
                     </motion.div>
 
                 </div>
