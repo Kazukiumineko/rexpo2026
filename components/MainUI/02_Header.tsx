@@ -18,7 +18,7 @@ export function MiniLogo({ isVisible, invert = false }: { isVisible: boolean; in
 
     return (
         <div
-            className={`fixed top-4 left-4 md:top-4 md:left-4 z-50 transition-opacity duration-500 ease-in-out
+            className={`absolute top-4 left-4 md:top-4 md:left-4 z-50 transition-opacity duration-500 ease-in-out
         ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         >
             {isHomePage ? (
@@ -28,7 +28,7 @@ export function MiniLogo({ isVisible, invert = false }: { isVisible: boolean; in
                     width={150}
                     height={50}
                     // lg:invert に変更してスマホ時は白のままにする
-                    className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] ${invert ? "lg:invert" : ""}`}
+                    className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] ${invert ? "lg:invert" : "lg:mix-blend-difference"}`}
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 />
             ) : (
@@ -39,7 +39,7 @@ export function MiniLogo({ isVisible, invert = false }: { isVisible: boolean; in
                         width={150}
                         height={50}
                         // lg:invert に変更してスマホ時は白のままにする
-                        className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] ${invert ? "lg:invert" : ""}`}
+                        className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] ${invert ? "lg:invert" : "lg:mix-blend-difference"}`}
                     />
                 </Link>
             )}
@@ -74,7 +74,7 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
             <button
                 onClick={toggleMenu}
                 aria-label="Toggle Menu"
-                className={`fixed top-0 right-4 z-50 w-16 h-16 flex flex-col justify-center items-center gap-2 transition-opacity duration-500 ease-in-out cursor-pointer ${invert ? "" : "mix-blend-difference"}
+                className={`absolute top-0 right-4 z-50 w-16 h-16 flex flex-col justify-center items-center gap-2 transition-opacity duration-500 ease-in-out cursor-pointer ${invert ? "" : "lg:mix-blend-difference"}
                 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
             >
                 <span
@@ -131,7 +131,7 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
 
 export default function Header({ isVisible, invert }: HeaderProps) {
     return (
-        <div className="fixed top-0 left-0 w-full z-50 pointer-events-none">
+        <div className="fixed top-0 left-0 w-full z-[100] pointer-events-none">
             <div
                 className={`absolute top-0 left-0 w-full h-14 lg:h-18 bg-black/85 md:bg-black/85 lg:bg-black/0 transition-opacity duration-500 ease-in-out
           ${isVisible ? "opacity-100" : "opacity-0"}`}
