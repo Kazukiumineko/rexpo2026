@@ -35,13 +35,7 @@ export default function Message() {
                 className="max-w-[1600px] mx-auto"
             >
                 {/* --- ページタイトル --- */}
-                <motion.h1
-                    variants={itemVariants}
-                    // 【修正2】中央寄せ(text-center)に変更し、下の余白(mb)を拡大
-                    className="font-oswald text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-24 lg:mb-40 text-center"
-                >
-                    MESSAGE
-                </motion.h1>
+
 
                 <div className="flex flex-col gap-20 lg:gap-32">
 

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Header from "@/components/MainUI/02_Header";
 import FooterBar from "@/components/MainUI/10_FooterBar";
 import Message from "@/components/MessageUI/Message";
+import MessageTop from "@/components/MessageUI/Top";
 
 export default function MessagePage() {
     const [showHeader] = useState(true);
@@ -15,6 +16,7 @@ export default function MessagePage() {
 
             <div className="flex-grow">
                 {/* ページ上部メッセージセクション */}
+                <MessageTop />
                 <Message />
             </div>
 
