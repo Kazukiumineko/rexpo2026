@@ -8,22 +8,22 @@ const projects = [
     {
         title: "吹奏楽演奏",
         img: "/stage-concept/global1.jpg", // 仮の画像
-        desc: "コンクールでの入賞実績を持つ吹奏楽部による迫力の演奏です。クラシックからポップスまで幅広いジャンルの名曲を、息の合ったアンサンブルで披露。日々の厳しい練習の成果である美しいハーモニーが、会場全体を包み込みます。",
+        desc: "コンクール入賞実績を持つ吹奏楽部による迫力の演奏。クラシックからポップスまで、息の合ったアンサンブルで披露。日々の練習が紡ぎ出す美しいハーモニーが、会場全体を感動で包み込みます。",
     },
     {
         title: "演劇公演",
         img: "/stage-concept/global2.jpg", // 仮の画像
-        desc: "生徒たちが脚本から演出までを手掛けるオリジナル演劇。笑いあり、涙ありの青春ストーリーや、社会問題を鋭く切り取るシリアスな作品など、多彩な演目で観客を魅了します。舞台上で輝く役者たちの熱演にご注目ください。",
+        desc: "生徒が脚本・演出を手掛けるオリジナル演劇。笑いあり涙ありの青春ストーリーや、社会問題を鋭く切り取るシリアスな作品。舞台上で輝く役者たちの熱演にご注目ください。",
     },
     {
         title: "ダンスパフォーマンス",
         img: "/stage-concept/global3.jpg", // 仮の画像
-        desc: "ヒップホップ、ジャズ、創作ダンスなど、様々なジャンルのダンスパフォーマンス。躍動感あふれる動きとキレのある振付で、若さ漲るエネルギーを表現します。チームワーク抜群の群舞と、個性際立つソロパートの見事な融合。",
+        desc: "ヒップホップ、ジャズ、創作ダンスなど多彩なジャンル。躍動感あふれる動きとキレのある振付で表現する、若さ漲るエネルギー。チームワーク抜群の群舞と個性際立つソロ、その融合をお楽しみください。",
     },
     {
         title: "美術・写真展示",
         img: "/stage-concept/global4.jpg", // 仮の画像
-        desc: "美術部や写真部による作品展示です。絵画、彫刻、インスタレーション、風景写真、ポートレートなど、独自の感性で切り取られた世界観。作品一つひとつに込められた作者の想いやメッセージを感じ取ってください。",
+        desc: "美術部・写真部による作品展示。絵画、彫刻、インスタレーション、風景写真、ポートレート。独自の感性で切り取られた世界観と、作品一つひとつに込められた作者の想いを感じてください。",
     },
 ];
 
@@ -31,30 +31,38 @@ export default function ArtisticInfo() {
     return (
         <section className="w-full bg-transparent text-white pt-12 pb-20 px-6 md:px-12 lg:px-20">
             <div className="max-w-[1600px] mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                <div className="flex flex-col space-y-12 max-w-6xl mx-auto">
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.title}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                            className="flex flex-col"
+                            className="flex flex-row items-center space-x-6 md:space-x-12"
                         >
-                            <div className="relative w-full aspect-[4/3] mb-6 overflow-hidden rounded-sm bg-black/20">
+                            {/* 1. 画像エリア (円形アイコン) */}
+                            <div className="relative w-20 h-20 md:w-32 md:h-32 flex-shrink-0 overflow-hidden rounded-full border-2 border-white/20">
                                 <Image
                                     src={project.img}
                                     alt={project.title}
                                     fill
-                                    className="object-cover transition-transform duration-700 hover:scale-105"
+                                    className="object-cover"
                                 />
                             </div>
-                            <h3 className="font-oswald text-2xl font-bold mb-4 text-white">
-                                {project.title}
-                            </h3>
-                            <p className="text-gray-200 text-sm leading-loose font-jp">
-                                {project.desc}
-                            </p>
+
+                            {/* 2. テキストエリア */}
+                            <div className="flex-1 flex flex-col justify-center py-2">
+                                {/* 企画タイトル */}
+                                <h3 className="font-oswald text-xl md:text-3xl font-bold mb-3 text-white">
+                                    {project.title}
+                                </h3>
+
+                                {/* 説明文 */}
+                                <p className="text-gray-300 text-sm md:text-base leading-loose font-jp">
+                                    {project.desc}
+                                </p>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
