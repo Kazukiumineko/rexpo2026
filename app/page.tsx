@@ -9,7 +9,7 @@ import HeroSection from "@/components/MainUI/03_HeroSection";
 import ScrollTextSection from "@/components/MainUI/04_ScrollTextSection";
 import ConceptSection from "@/components/MainUI/05_ConceptSection";
 import StageSection from "@/components/MainUI/07_StageSection";
-import InformationSection from "@/components/MainUI/08_InformationSection";
+import TopicSection from "@/components/MainUI/08_TopicSection";
 import Application from "@/components/MainUI/09_Application";
 import FooterBar from "@/components/MainUI/10_FooterBar";
 
@@ -57,7 +57,7 @@ export default function Home() {
 
       <div className="relative z-10 w-full bg-white text-black">
         <div className="w-full h-24 lg:h-32"></div>
-        <InformationSection />
+        <TopicSection />
         <div className="w-full h-24 lg:h-48"></div>
 
 

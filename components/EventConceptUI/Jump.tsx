@@ -75,6 +75,62 @@ export default function Jump() {
 
                 </div>
 
+                {/* === ブロック: TIME TABLE === */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center mt-24 md:mt-32">
+
+                    {/* --- 左側: テキスト & ボタン --- */}
+                    <motion.div
+                        variants={fadeUpVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-50px" }}
+                        className="flex flex-col space-y-6"
+                    >
+                        {/* テキストエリア */}
+                        <div>
+                            <h2 className="font-oswald text-5xl md:text-7xl font-bold tracking-tight mb-6">
+                                TIME TABLE
+                            </h2>
+
+                            {/* 説明文 */}
+                            <p className="font-jp text-gray-300 leading-relaxed mb-8">
+                                当日のタイムテーブルをご覧いただけます。各ステージの開始時間や内容をチェックし、R-EXPO2026を余すことなくお楽しみください。
+                            </p>
+
+                            {/* テキストボタンに変更 */}
+                            <Link
+                                href="/time-table"
+                                className="inline-block border border-white px-8 py-3 text-sm tracking-widest hover:bg-white hover:text-black transition-colors duration-300"
+                            >
+                                詳細を見る →
+                            </Link>
+                        </div>
+                    </motion.div>
+
+                    {/* --- 右側: 写真 --- */}
+                    <motion.div
+                        variants={fadeUpVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ delay: 0.2 }}
+                        className="w-full"
+                    >
+                        {/* 写真比率を自然な 3:2 (スマホは 4:3) に調整 */}
+                        <Link href="/time-table" className="block w-full h-full cursor-pointer group">
+                            <div className="relative w-full aspect-[4/3] md:aspect-[2/1] rounded-sm overflow-hidden border border-white/10">
+                                <Image
+                                    src="/topic/Signup.jpg"
+                                    alt="Time Table Image"
+                                    fill
+                                    className="object-cover hover:scale-105 transition-transform duration-700"
+                                />
+                            </div>
+                        </Link>
+                    </motion.div>
+
+                </div>
+
                 {/* === ブロック: MESSAGE === */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center mt-24 md:mt-32">
 
