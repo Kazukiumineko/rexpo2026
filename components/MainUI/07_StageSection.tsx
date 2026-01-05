@@ -92,10 +92,10 @@ export default function StageSection() {
                         {stages.map((stage, index) => (
                             <motion.div
                                 key={index}
-                                className="flex flex-col items-left text-left space-y-6"
+                                className="flex flex-col items-start text-left space-y-6 h-full"
                                 variants={itemVariants}
                             >
-                                <h3 className="text-3xl lg:text-4xl items-left text-left font-bold tracking-tight">
+                                <h3 className="text-3xl lg:text-4xl items-start text-left font-bold tracking-tight">
                                     {stage.title}
                                 </h3>
 
@@ -105,7 +105,7 @@ export default function StageSection() {
 
                                 <a
                                     href={stage.href}
-                                    className="mt-4 block transition-transform duration-300 hover:scale-105"
+                                    className="mt-auto block transition-transform duration-300 hover:scale-105"
                                 >
                                     <Image
                                         src="/main/ViewMore.png"

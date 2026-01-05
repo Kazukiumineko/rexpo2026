@@ -25,7 +25,7 @@ export default function LocationPage() {
                 flex-grow をつけることで、中身（TopやInfo）が少なくても、
                 このエリアが自動で伸びてフッターを一番下まで押し下げます。
             */}
-            <div className="flex-grow">
+            <div className="flex-grow pb-24">
                 {/* ロケーションTOPセクション */}
                 <Top />
                 <Info />
