@@ -27,7 +27,7 @@ export default function EntryMain() {
                     variants={sectionVariants}
                     className="py-16 md:py-24 text-center md:text-left"
                 >
-                    <h2 className="text-2xl md:text-3xl font-bold leading-relaxed tracking-wide mb-8">
+                    <h2 className="text-2xl md:text-3xl font-bold leading-relaxed tracking-wide mb-8 text-black">
                         立命館慶祥中学校・高等学校が主催する、<br className="hidden md:block" />
                         生徒の個性を発信する万博形式のイベント「R-EXPO 2026」。
                     </h2>
@@ -106,7 +106,7 @@ export default function EntryMain() {
                         viewport={{ once: true, margin: "-100px" }}
                         variants={sectionVariants}
                     >
-                        <h4 className="text-xl font-bold mb-6 flex items-center">
+                        <h4 className="text-xl font-bold mb-6 flex items-center text-black">
                             <span className="w-2 h-8 bg-gray-200 mr-3"></span>
                             お申込みについて
                         </h4>
@@ -141,7 +141,7 @@ export default function EntryMain() {
                         viewport={{ once: true, margin: "-100px" }}
                         variants={sectionVariants}
                     >
-                        <h4 className="text-xl font-bold mb-6 flex items-center">
+                        <h4 className="text-xl font-bold mb-6 flex items-center text-black">
                             <span className="w-2 h-8 bg-gray-200 mr-3"></span>
                             ご来場の方へのお願い
                         </h4>
