@@ -63,9 +63,9 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
         { label: "INTRODUCTION", href: "/event-concept" },
         { label: "STAGE", href: "/stage-concept" },
         { label: "LOCATION", href: "/location" },
-        { label: "ENTRY", href: "/entry" },
-        { label: "SUPPORT", href: "/support" },
         { label: "MESSAGE", href: "/message" },
+        { label: "SUPPORT", href: "/support" },
+        { label: "JOIN US", href: "/entry" },
         { label: "APPLICATION", href: "/application" },
     ];
 
