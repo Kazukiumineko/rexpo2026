@@ -33,7 +33,7 @@ export default function Jump() {
                         {/* テキストエリア */}
                         <div>
                             <h2 className="font-oswald text-5xl md:text-7xl font-bold tracking-tight mb-6">
-                                TIME TABLE
+                                LOCATION
                             </h2>
 
                             {/* 説明文 */}
@@ -61,11 +61,11 @@ export default function Jump() {
                         className="w-full"
                     >
                         {/* 写真比率を自然な 3:2 (スマホは 4:3) に調整 */}
-                        <Link href="/time-table" className="block w-full h-full cursor-pointer group">
+                        <Link href="/location" className="block w-full h-full cursor-pointer group">
                             <div className="relative w-full aspect-[4/3] md:aspect-[2/1] rounded-sm overflow-hidden border border-white/10">
                                 <Image
-                                    src="/topic/Signup.jpg"
-                                    alt="Time Table Image"
+                                    src="/topic/Location.jpg"
+                                    alt="Location Image"
                                     fill
                                     className="object-cover hover:scale-105 transition-transform duration-700"
                                 />
