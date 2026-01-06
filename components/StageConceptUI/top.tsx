@@ -22,9 +22,9 @@ export default function StageTop() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.5, ease: "easeOut" }}
                     /* フォントサイズを大きくし、中央揃えで横書きに */
-                    className="font-oswald text-5xl md:text-8xl lg:text-[10rem] font-bold text-white text-center leading-none tracking-tighter select-none drop-shadow-lg"
+                    className="font-oswald text-7xl md:text-8xl lg:text-[10rem] font-bold text-white text-center leading-none tracking-tighter select-none drop-shadow-lg"
                 >
-                    STAGE CONCEPT
+                    STAGE<br className="block md:hidden" /> CONCEPT
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0, y: 10 }}
