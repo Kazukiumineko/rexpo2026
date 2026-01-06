@@ -13,9 +13,9 @@ export default function TopicSection() {
             description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
         },
         {
-            title: "タイムテーブル",
-            src: "/topic/Signup.jpg",
-            link: "/time-table",
+            title: "代表より",
+            src: "/topic/Comments.jpg",
+            link: "/message",
             description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
         },
         {
@@ -25,11 +25,12 @@ export default function TopicSection() {
             description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
         },
         {
-            title: "代表より",
-            src: "/topic/Comments.jpg",
-            link: "/message",
+            title: "一般来場の方",
+            src: "/topic/Signup.jpg",
+            link: "/entry",
             description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
         },
+
     ];
 
     const sectionRef = useRef(null);
