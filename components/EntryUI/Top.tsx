@@ -21,7 +21,8 @@ export default function EntryTop() {
             {/* 【変更点】
                 スマホの pt (padding-top) を 6 から 16 に増やし、画像との距離を広げました。
             */}
-            <div className="relative w-full h-auto md:h-[25vh] bg-white flex items-start md:items-end pt-16 md:pt-0 pb-12 md:pb-12 px-6 md:px-20 lg:px-32 overflow-hidden">
+
+            <div className="relative w-full h-auto md:h-[25vh] bg-white flex items-start md:items-end pt-16 md:pt-0 pb-12 md:pb-6 px-6 md:px-20 lg:px-32 overflow-hidden">
                 {/* 開祭にあたって */}
                 <div className="w-full max-w-[1600px] mx-auto">
                     <motion.p

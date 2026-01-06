@@ -4,6 +4,7 @@ import { useState } from "react";
 import Header from "@/components/MainUI/02_Header";
 import FooterBar from "@/components/MainUI/10_FooterBar";
 import Top from "@/components/EntryUI/Top";
+import Title from "@/components/EntryUI/Title";
 import Main from "@/components/EntryUI/Main";
 import Form from "@/components/EntryUI/Form";
 
@@ -19,6 +20,7 @@ export default function TimeTablePage() {
                 {/* ページ上部メッセージセクション */}
                 <Top />
                 {/* メインコンテンツ */}
+                <Title />
                 <Main />
                 {/* 申込みフォーム */}
                 <Form />
