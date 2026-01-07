@@ -131,7 +131,7 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
 
 export default function Header({ isVisible, invert }: HeaderProps) {
     return (
-        <div className="fixed top-0 left-0 w-full z-[100] pointer-events-none">
+        <div className="fixed top-0 left-0 w-full z-[1000] pointer-events-none">
             <div
                 className={`absolute top-0 left-0 w-full h-14 lg:h-18 bg-black/85 md:bg-black/85 lg:bg-black/0 transition-opacity duration-500 ease-in-out
           ${isVisible ? "opacity-100" : "opacity-0"}`}

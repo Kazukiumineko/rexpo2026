@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Introduction() {
     return (
-        <section className="relative w-full flex flex-col overflow-hidden">
+        <section className="relative w-full flex flex-col overflow-visible z-20">
             <div className="absolute inset-0 z-50 flex justify-center px-6 md:px-24 lg:px-32 pointer-events-none">
                 <div className="w-full max-w-4xl relative h-full">
 
@@ -59,7 +59,7 @@ export default function Introduction() {
             </div>
 
             <div className={
-                "relative w-full h-[80vh] md:h-[80vh] lg:h-[100vh] bg-transparent z-30 " +
+                "relative w-full h-[80vh] md:h-[80vh] lg:h-[100vh] bg-transparent z-[100] " +
                 "-mt-20 md:-mt-28"
             }>
 
@@ -102,7 +102,7 @@ export default function Introduction() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: false }}
-                        className="font-oswald text-white/30 text-5xl md:text-8xl lg:text-9xl font-bold tracking-normal drop-shadow-lg [writing-mode:vertical-rl] z-50 translate-y-40 md:translate-y-52 lg:translate-y-32"
+                        className="font-oswald text-white/30 text-5xl md:text-8xl lg:text-9xl font-bold tracking-normal drop-shadow-lg [writing-mode:vertical-rl] z-[100] translate-y-40 md:translate-y-52 lg:translate-y-32"
                     >
                         INTRODUCTION
                     </motion.h1>

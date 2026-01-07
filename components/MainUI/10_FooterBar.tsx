@@ -27,7 +27,7 @@ export default function FooterBar({ variant = "default" }: FooterBarProps) {
     return (
 
         // フッター全体を包むコンテナ（背景なし・縦並び・中央揃え）
-        <footer className="w-full flex flex-col items-center relative z-50">
+        <footer className="w-full flex flex-col items-center relative z-[999]">
 
             {/* Content Wrapper */}
             <motion.div
