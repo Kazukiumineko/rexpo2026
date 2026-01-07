@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function Introduction() {
     return (
         <section className="relative w-full flex flex-col overflow-visible z-20">
-            <div className="absolute inset-0 z-50 flex justify-center px-6 md:px-24 lg:px-32 pointer-events-none">
+            <div className="absolute inset-0 z-[200] flex justify-center px-6 md:px-24 lg:px-32 pointer-events-none">
                 <div className="w-full max-w-4xl relative h-full">
 
                     <div className="absolute top-32 -left-2 md:-left-16 lg:-left-24">
