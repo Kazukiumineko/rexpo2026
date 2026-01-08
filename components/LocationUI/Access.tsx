@@ -37,14 +37,14 @@ export default function Access() {
                             <div>
                                 <span className="block text-black font-bold mb-1">地下鉄でお越しの方</span>
                                 <p className="font-light">
-                                    地下鉄東西線「東札幌駅」より徒歩約8分
+                                    地下鉄東西線 東札幌駅 1番出口より徒歩約8分
                                 </p>
                             </div>
 
                             <div>
                                 <span className="block text-black font-bold mb-1">お車・タクシーでお越しの方</span>
                                 <p className="font-light">
-                                    当日は300台分の駐車場をご用意しております
+                                    当日は駐車場をご用意しておりますが、混雑緩和のため公共交通機関の利用を推奨します。
                                 </p>
                             </div>
                         </div>

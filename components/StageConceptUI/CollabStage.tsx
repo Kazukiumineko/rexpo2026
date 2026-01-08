@@ -57,7 +57,7 @@ export default function CollabStage() {
                         variants={itemVariants}
                     >
                         <h2 className="font-oswald text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none text-white">
-                            COLLAB STAGE
+                            COLLABORATION STAGE
                         </h2>
 
                         <div>

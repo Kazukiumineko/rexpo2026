@@ -8,8 +8,8 @@ import GlobalStage from "@/components/StageConceptUI/GlobalStage";
 import GlobalInfo from "@/components/StageConceptUI/GlobalInfo";
 import AcademicStage from "@/components/StageConceptUI/AcademicStage";
 import AcademicInfo from "@/components/StageConceptUI/AcademicInfo";
-import ArtisticStage from "@/components/StageConceptUI/ArtisticStage";
-import ArtisticInfo from "@/components/StageConceptUI/ArtisticInfo";
+import EntertainmentStage from "@/components/StageConceptUI/EntertainmentStage";
+import EntertainmentInfo from "@/components/StageConceptUI/EntertainmentInfo";
 import CollabStage from "@/components/StageConceptUI/CollabStage";
 import CollabInfo from "@/components/StageConceptUI/CollabInfo";
 import Jump from "@/components/StageConceptUI/Jump";
@@ -48,8 +48,8 @@ export default function StageConceptPage() {
                     <AcademicStage />
                     <AcademicInfo />
                     <div className="h-32" />
-                    <ArtisticStage />
-                    <ArtisticInfo />
+                    <EntertainmentStage />
+                    <EntertainmentInfo />
                     <div className="h-32" />
                     <CollabStage />
                     <CollabInfo />

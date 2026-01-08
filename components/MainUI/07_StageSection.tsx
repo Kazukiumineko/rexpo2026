@@ -7,22 +7,22 @@ import { motion, useInView, Variants } from "framer-motion";
 export default function StageSection() {
     const stages = [
         {
-            title: "Global Stage",
-            description: "タイ、マレーシア、ベトナム、アメリカ、オーストラリア、リトアニア、ガラパゴス諸島・・・彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
+            title: "Global",
+            description: "海外研修や留学、国際交流活動に参加した慶祥生が、現地での体験や学びを発表するステージです。国境を越えて異文化に触れ、多様な価値観と向き合ってきた慶祥生。教室にいるだけでは学べない、高校生が見た世界の今をお伝えします。",
             href: "/stage-concept#global"
         },
         {
-            title: "Academic Stage",
+            title: "Academic",
             description: "タイ、マレーシア、ベトナム、アメリカ、オーストラリア、リトアニア、ガラパゴス諸島・・・彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
             href: "/stage-concept#academic"
         },
         {
-            title: "Artistic Stage",
+            title: "Entertainment",
             description: "タイ、マレーシア、ベトナム、アメリカ、オーストラリア、リトアニア、ガラパゴス諸島・・・彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
-            href: "/stage-concept#artistic"
+            href: "/stage-concept#entertainment"
         },
         {
-            title: "Collab Stage",
+            title: "Collaboration",
             description: "地域企業や大学との連携による、実践的なプロジェクト発表です。学校の枠を飛び出し、社会との関わりの中で生まれた新たな価値創造への挑戦。大人たちとの本気の議論を経て磨かれたアイデアと、共創のストーリーをお届けします。",
             href: "/stage-concept#collaboration"
         },

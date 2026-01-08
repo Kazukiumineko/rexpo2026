@@ -27,7 +27,7 @@ const itemVariants = {
     visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
 };
 
-export default function ArtisticStage() {
+export default function EntertainmentStage() {
     const plugin = useCarouselAutoPlay();
 
     const carouselImages = [
@@ -40,7 +40,7 @@ export default function ArtisticStage() {
     ];
 
     return (
-        <section id="artistic" className="relative w-full pt-24 pb-0 md:pt-32 md:pb-0 bg-transparent text-white overflow-hidden">
+        <section id="entertainment" className="relative w-full pt-24 pb-0 md:pt-32 md:pb-0 bg-transparent text-white overflow-hidden">
 
             <motion.div
                 className="w-full max-w-[1600px] mx-auto px-6 lg:px-20"
@@ -57,7 +57,7 @@ export default function ArtisticStage() {
                         variants={itemVariants}
                     >
                         <h2 className="font-oswald text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none text-white">
-                            ARTISTIC STAGE
+                            ENTERTAINMENT STAGE
                         </h2>
 
                         <div>
@@ -65,7 +65,7 @@ export default function ArtisticStage() {
                                 感性が共鳴する、創造の舞台
                             </h3>
                             <p className="font-jp text-sm md:text-base leading-loose text-gray-400">
-                                音楽、演劇、ダンス、美術。多様な芸術表現を通じて、生徒たちの瑞々しい感性が爆発するアーティスティックステージ。言葉では伝えきれない想いや感情を身体や作品全体で表現し、観客の心に直接訴えかける感動のパフォーマンスをお届けします。
+                                音楽、演劇、ダンス、美術。多様な芸術表現を通じて、生徒たちの瑞々しい感性が爆発するエンターテインメントステージ。言葉では伝えきれない想いや感情を身体や作品全体で表現し、観客の心に直接訴えかける感動のパフォーマンスをお届けします。
                             </p>
                         </div>
                     </motion.div>
@@ -89,7 +89,7 @@ export default function ArtisticStage() {
                                         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm border border-white/10 bg-gray-900">
                                             <Image
                                                 src={src}
-                                                alt={`Artistic Stage ${index + 1}`}
+                                                alt={`Entertainment Stage ${index + 1}`}
                                                 fill
                                                 className="object-cover"
                                             />
