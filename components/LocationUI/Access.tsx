@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Access() {
     return (
-        <section className="w-full bg-white text-black py-24 md:py-32 px-6 md:px-20 lg:px-32 overflow-hidden">
+        <section className="w-full bg-white text-black py-6 md:py-12 px-6 md:px-20 lg:px-32 overflow-hidden">
 
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-16 items-start">
 
@@ -27,7 +27,19 @@ export default function Access() {
                     {/* 詳細テキスト */}
                     <div className="space-y-8 text-gray-700 leading-relaxed font-jp">
                         <div>
-                            <h3 className="text-black font-bold text-xl mb-2">札幌コンベンションセンター</h3>
+                            <h3 className="text-black font-bold text-xl mb-2">
+                                <a
+                                    href="https://www.sora-scc.jp/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 hover:opacity-70 transition-opacity"
+                                >
+                                    札幌コンベンションセンター
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="translate-y-[1px]">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </a>
+                            </h3>
                             <p className="text-sm md:text-base font-light">
                                 〒003-0006 北海道札幌市白石区東札幌6条1丁目1-1
                             </p>
