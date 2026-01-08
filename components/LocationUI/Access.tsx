@@ -40,7 +40,7 @@ export default function Access() {
                                     </svg>
                                 </a>
                             </h3>
-                            <p className="text-sm md:text-base font-light">
+                            <p className="text-sm md:text-sm font-light">
                                 〒003-0006 北海道札幌市白石区東札幌6条1丁目1-1
                             </p>
                         </div>
@@ -48,14 +48,14 @@ export default function Access() {
                         <div className="space-y-4 border-l-2 border-black/20 pl-6">
                             <div>
                                 <span className="block text-black font-bold mb-1">地下鉄でお越しの方</span>
-                                <p className="font-light">
+                                <p className="font-light text-sm">
                                     地下鉄東西線 東札幌駅 1番出口より徒歩約8分
                                 </p>
                             </div>
 
                             <div>
-                                <span className="block text-black font-bold mb-1">お車・タクシーでお越しの方</span>
-                                <p className="font-light">
+                                <span className="block text-black font-bold mb-1">お車でお越しの方</span>
+                                <p className="font-light text-sm">
                                     当日は駐車場をご用意しておりますが、混雑緩和のため公共交通機関の利用を推奨します。
                                 </p>
                             </div>
