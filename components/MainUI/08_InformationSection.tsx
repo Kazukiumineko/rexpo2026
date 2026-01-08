@@ -62,7 +62,7 @@ export default function InformationSection() {
             <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
 
                 <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-42 md:gap-8 lg:gap-12"
                     variants={containerVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}

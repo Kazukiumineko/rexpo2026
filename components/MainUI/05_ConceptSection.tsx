@@ -30,7 +30,7 @@ export default function ConceptSection() {
             <div ref={sectionRef} className="w-full max-w-[1600px] mx-auto px-6 lg:px-20">
 
                 <motion.div
-                    className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 lg:gap-24 items-center"
                     variants={containerVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
@@ -45,15 +45,29 @@ export default function ConceptSection() {
                             INTRODUCTION
                         </h2>
 
-                        <h2 className="font-jp text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+                        <h2 className="font-jp text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight flex items-center gap-3">
                             R-EXPO が目指す場所
+                            <a
+                                href="/event-concept"
+                                className="md:hidden flex items-center justify-center p-1 opacity-80 hover:opacity-100 transition-opacity"
+                            >
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </a>
                         </h2>
 
 
 
                         <a
                             href="/event-concept"
-                            className="block transition-transform duration-300 hover:scale-105"
+                            className="hidden md:block transition-transform duration-300 hover:scale-105"
                         >
                             <Image
                                 src="/main/ViewMore.png"

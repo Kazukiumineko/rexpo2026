@@ -82,13 +82,27 @@ export default function StageSection() {
                         <h2 className="text-white font-oswald text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-none">
                             STAGE CONCEPT
                         </h2>
-                        <p className="mt-6 text-sm md:text-2xl font-bold text-gray-200 font-jp tracking-widest">
+                        <p className="mt-6 text-sm md:text-2xl font-bold text-gray-200 font-jp tracking-widest flex items-center justify-center gap-3">
                             個性が輝く多彩なステージ
+                            <a
+                                href="/stage-concept"
+                                className="md:hidden flex items-center justify-center p-1 opacity-80 hover:opacity-100 transition-opacity"
+                            >
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </a>
                         </p>
                     </motion.div>
 
                     {/* Stage Lists */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 md:gap-8">
                         {stages.map((stage, index) => (
                             <motion.div
                                 key={index}
