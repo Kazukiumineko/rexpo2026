@@ -64,7 +64,7 @@ export default function AcademicStage() {
                             <h3 className="font-jp text-lg md:text-xl lg:text-2xl font-medium tracking-wide leading-relaxed text-gray-300 mb-6">
                                 知的好奇心が拓く、探究の地平
                             </h3>
-                            <p className="font-jp text-sm md:text-base leading-loose text-gray-400">
+                            <p className="font-jp text-sm md:text-base leading-loose text-gray-300">
                                 理数系の研究発表から社会問題や文化に関する研究まで、慶祥独自の学びが集結するエリアです。ほとんどの企画が”授業”の枠を飛び出して、生徒ひとりひとりが独自のテーマで進めた研究の成果です。ポスターセッションやプレゼン、ブース形式で紹介します。
                             </p>
                         </div>

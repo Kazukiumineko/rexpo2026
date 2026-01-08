@@ -37,8 +37,8 @@ export default function Jump() {
                             </h2>
 
                             {/* 説明文 */}
-                            <p className="font-jp text-gray-300 leading-relaxed mb-8">
-                                当日のタイムテーブルをご覧いただけます。各ステージの開始時間や内容をチェックし、R-EXPO2026を余すことなくお楽しみください。
+                            <p className="font-jp text-gray-300 leading-relaxed mb-8 text-sm">
+                                世界的な会議や学会が開催される札幌コンベンションセンターが舞台。生徒の熱量を引き出すこの会場で、かつてない体験をお届けします。
                             </p>
 
                             {/* テキストボタンに変更 */}

@@ -64,7 +64,7 @@ export default function EntertainmentStage() {
                             <h3 className="font-jp text-lg md:text-xl lg:text-2xl font-medium tracking-wide leading-relaxed text-gray-300 mb-6">
                                 感性が共鳴する、創造の舞台
                             </h3>
-                            <p className="font-jp text-sm md:text-base leading-loose text-gray-400">
+                            <p className="font-jp text-sm md:text-base leading-loose text-gray-300">
                                 バンド、ダンス、演劇などのステージで、生徒たちの情熱と創造性が爆発します。ステージ上のパフォーマンスだけでなく、美術作品展示やお茶会、E-Sports大会など、五感で楽しめる多彩なプログラムが会場を彩ります。
                             </p>
                         </div>

@@ -71,10 +71,10 @@ export default function InformationSection() {
                     {/* ▼ 修正箇所: INFORMATION とその下の文字 ▼ */}
                     {/* flex-col items-center で縦並び・中央寄せにします */}
                     <motion.div
-                        className="col-span-full flex flex-col items-center mb-24 lg:mb-32"
+                        className="col-span-full flex flex-col items-center mb-8 lg:mb-32"
                         variants={itemVariants}
                     >
-                        <h2 className="text-gray-800 font-oswald text-6xl md:text-8xl lg:text-[10rem] tracking-normal font-bold leading-none">
+                        <h2 className="text-gray-800 font-oswald text-6xl md:text-8xl lg:text-[10rem] tracking-tight font-bold leading-none">
                             INFORMATION
                         </h2>
                         {/* ▼ 追加した文字 ▼ */}
@@ -103,7 +103,7 @@ export default function InformationSection() {
                             </Link>
 
                             <div className="flex flex-col space-y-3 flex-grow">
-                                <h3 className="font-biz text-xl font-bold tracking-widest uppercase mt-2 flex items-center gap-2">
+                                <h3 className="font-biz text-2xl font-bold tracking-widest uppercase mt-2 flex items-center gap-2">
                                     <Link href={topic.link} className="md:pointer-events-none md:cursor-auto">
                                         {topic.title}
                                     </Link>
@@ -122,7 +122,7 @@ export default function InformationSection() {
                                         </svg>
                                     </Link>
                                 </h3>
-                                <p className="font-kaku text-gray-600 text-xs leading-relaxed">
+                                <p className="font-kaku text-gray-600 text-sm leading-relaxed">
                                     {topic.description}
                                 </p>
                             </div>

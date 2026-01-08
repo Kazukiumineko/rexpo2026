@@ -64,7 +64,7 @@ export default function GlobalStage() {
                             <h3 className="font-jp text-lg md:text-xl lg:text-2xl font-medium tracking-wide leading-relaxed text-gray-300 mb-6">
                                 国境を越えた学びが生む、慶祥生の未来
                             </h3>
-                            <p className="font-jp text-sm md:text-base leading-loose text-gray-400">
+                            <p className="font-jp text-sm md:text-base leading-loose text-gray-300">
                                 海外研修や留学、国際交流活動に参加した慶祥生が、現地での体験や学びを発表するステージです。国境を越えて異文化に触れ、多様な価値観と向き合ってきた慶祥生。教室にいるだけでは学べない、高校生が見た世界の今をお伝えします。
                             </p>
                         </div>

@@ -95,7 +95,7 @@ export default function StageSection() {
                                 className="flex flex-col items-start text-left space-y-6 h-full"
                                 variants={itemVariants}
                             >
-                                <h3 className="text-3xl lg:text-4xl items-start text-left font-bold tracking-tight flex items-center gap-2">
+                                <h3 className="text-4xl lg:text-4xl items-start text-left font-bold tracking-tight flex items-center gap-2">
                                     <a href={stage.href} className="md:pointer-events-none md:cursor-auto">
                                         {stage.title}
                                     </a>
@@ -115,7 +115,7 @@ export default function StageSection() {
                                     </a>
                                 </h3>
 
-                                <p className="text-gray-200 text-xs lg:text-sm leading-loose text-left">
+                                <p className="text-gray-200 text-sm lg:text-sm leading-loose text-left">
                                     <a href={stage.href} className="md:pointer-events-none md:cursor-auto">
                                         {stage.description}
                                     </a>
