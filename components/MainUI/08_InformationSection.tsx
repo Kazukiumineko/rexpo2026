@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView, Variants } from "framer-motion";
@@ -27,7 +28,7 @@ export default function InformationSection() {
         {
             title: "申し込み",
             src: "/topic/Signup.jpg",
-            link: "/signup",
+            link: "/entry",
             description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
         },
     ];
@@ -89,7 +90,7 @@ export default function InformationSection() {
                             className="flex flex-col items-start space-y-4"
                             variants={itemVariants}
                         >
-                            <a
+                            <Link
                                 href={topic.link}
                                 className="block relative w-full aspect-video overflow-hidden rounded-sm shadow-lg border border-gray-200 cursor-pointer"
                             >
@@ -99,14 +100,14 @@ export default function InformationSection() {
                                     fill
                                     className="object-cover transition-transform duration-500 hover:scale-110"
                                 />
-                            </a>
+                            </Link>
 
                             <div className="flex flex-col space-y-3">
                                 <h3 className="font-biz text-xl font-bold tracking-widest uppercase mt-2 flex items-center gap-2">
-                                    <a href={topic.link} className="md:pointer-events-none md:cursor-auto">
+                                    <Link href={topic.link} className="md:pointer-events-none md:cursor-auto">
                                         {topic.title}
-                                    </a>
-                                    <a
+                                    </Link>
+                                    <Link
                                         href={topic.link}
                                         className="md:hidden flex items-center justify-center p-1 opacity-80 hover:opacity-100 transition-opacity text-gray-500"
                                     >
@@ -119,14 +120,14 @@ export default function InformationSection() {
                                         >
                                             <path d="M8 5v14l11-7z" />
                                         </svg>
-                                    </a>
+                                    </Link>
                                 </h3>
                                 <p className="font-kaku text-gray-600 text-xs leading-relaxed">
                                     {topic.description}
                                 </p>
                             </div>
 
-                            <a
+                            <Link
                                 href={topic.link}
                                 className="hidden md:block transition-transform duration-300 hover:scale-105 pt-2"
                             >
@@ -137,7 +138,7 @@ export default function InformationSection() {
                                     height={40}
                                     className="object-contain invert"
                                 />
-                            </a>
+                            </Link>
                         </motion.div>
                     ))}
                 </motion.div>

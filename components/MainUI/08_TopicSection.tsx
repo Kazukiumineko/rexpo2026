@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView, Variants } from "framer-motion";
@@ -90,7 +91,7 @@ export default function TopicSection() {
                             className="flex flex-col items-start space-y-4"
                             variants={itemVariants}
                         >
-                            <a
+                            <Link
                                 href={topic.link}
                                 className="block relative w-full aspect-video overflow-hidden rounded-sm shadow-lg border border-gray-200 cursor-pointer"
                             >
@@ -100,7 +101,7 @@ export default function TopicSection() {
                                     fill
                                     className="object-cover transition-transform duration-500 hover:scale-110"
                                 />
-                            </a>
+                            </Link>
 
                             <div className="flex flex-col space-y-3">
                                 <h3 className="font-biz text-xl font-bold tracking-widest uppercase mt-2">
@@ -111,7 +112,7 @@ export default function TopicSection() {
                                 </p>
                             </div>
 
-                            <a
+                            <Link
                                 href={topic.link}
                                 className="block transition-transform duration-300 hover:scale-105 pt-2"
                             >
@@ -122,7 +123,7 @@ export default function TopicSection() {
                                     height={40}
                                     className="object-contain invert"
                                 />
-                            </a>
+                            </Link>
                         </motion.div>
                     ))}
                 </motion.div>
