@@ -17,19 +17,19 @@ export default function InformationSection() {
             title: "協賛企業",
             src: "/topic/Support.jpg",
             link: "/support",
-            description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
+            description: "R-EXPO 2026は、20を超える企業・団体の皆様より多大なるご協賛・ご支援をいただいています。 当日は、講演会や企業ブース、そして生徒とのコラボステージなど、ここでしかできない特別なプログラムが満載です。",
         },
         {
             title: "開祭にあたって",
             src: "/topic/Comments.jpg",
             link: "/message",
-            description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
+            description: "立命館慶祥中学校・高等学校 校長よりご挨拶申し上げます。 また、本イベントは有志生徒によって結成された行事改革実行委員会（行事部）が主体となり、企画から運営までを担っています。生徒代表として、行事部長からのメッセージもあわせて掲載いたします。",
         },
         {
             title: "申し込み",
             src: "/topic/Signup.jpg",
             link: "/entry",
-            description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
+            description: "本イベントは一般公開を行っており、保護者の方をはじめ、どなたでも無料でご入場いただけます。 ご来場の皆様に安全かつ快適に楽しんでいただくため、事前に申し込み手続きと注意事項のご確認をお願いしています。詳細をご覧の上、ぜひお気軽にお越しください。",
         },
     ];
 
@@ -87,7 +87,7 @@ export default function InformationSection() {
                     {topics.map((topic, index) => (
                         <motion.div
                             key={index}
-                            className="flex flex-col items-start space-y-4"
+                            className="flex flex-col items-start space-y-4 h-full"
                             variants={itemVariants}
                         >
                             <Link
@@ -102,7 +102,7 @@ export default function InformationSection() {
                                 />
                             </Link>
 
-                            <div className="flex flex-col space-y-3">
+                            <div className="flex flex-col space-y-3 flex-grow">
                                 <h3 className="font-biz text-xl font-bold tracking-widest uppercase mt-2 flex items-center gap-2">
                                     <Link href={topic.link} className="md:pointer-events-none md:cursor-auto">
                                         {topic.title}
