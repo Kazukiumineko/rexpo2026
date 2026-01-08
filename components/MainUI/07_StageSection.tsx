@@ -82,44 +82,48 @@ export default function StageSection() {
                         <h2 className="text-white font-oswald text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-none">
                             STAGE CONCEPT
                         </h2>
-                        <p className="mt-6 text-sm md:text-2xl font-bold text-gray-200 font-jp tracking-widest flex items-center justify-center gap-3">
+                        <p className="mt-6 text-sm md:text-2xl font-bold text-gray-200 font-jp tracking-widest">
                             個性が輝く多彩なステージ
-                            <a
-                                href="/stage-concept"
-                                className="md:hidden flex items-center justify-center p-1 opacity-80 hover:opacity-100 transition-opacity"
-                            >
-                                <svg
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </a>
                         </p>
                     </motion.div>
 
                     {/* Stage Lists */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 md:gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14 md:gap-8">
                         {stages.map((stage, index) => (
                             <motion.div
                                 key={index}
                                 className="flex flex-col items-start text-left space-y-6 h-full"
                                 variants={itemVariants}
                             >
-                                <h3 className="text-3xl lg:text-4xl items-start text-left font-bold tracking-tight">
-                                    {stage.title}
+                                <h3 className="text-3xl lg:text-4xl items-start text-left font-bold tracking-tight flex items-center gap-2">
+                                    <a href={stage.href} className="md:pointer-events-none md:cursor-auto">
+                                        {stage.title}
+                                    </a>
+                                    <a
+                                        href={stage.href}
+                                        className="md:hidden flex items-center justify-center p-1 opacity-80 hover:opacity-100 transition-opacity text-white mt-2"
+                                    >
+                                        <svg
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                    </a>
                                 </h3>
 
                                 <p className="text-gray-200 text-xs lg:text-sm leading-loose text-left">
-                                    {stage.description}
+                                    <a href={stage.href} className="md:pointer-events-none md:cursor-auto">
+                                        {stage.description}
+                                    </a>
                                 </p>
 
                                 <a
                                     href={stage.href}
-                                    className="mt-auto block transition-transform duration-300 hover:scale-105"
+                                    className="mt-auto hidden md:block transition-transform duration-300 hover:scale-105"
                                 >
                                     <Image
                                         src="/main/ViewMore.png"

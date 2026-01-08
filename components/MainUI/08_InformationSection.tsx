@@ -19,7 +19,7 @@ export default function InformationSection() {
             description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
         },
         {
-            title: "代表より",
+            title: "開祭にあたって",
             src: "/topic/Comments.jpg",
             link: "/message",
             description: "彼らが語るのは、ネットで調べた情報のまとめではありません。「トビタテ！留学JAPAN」や海外研修で直面したトラブル、現地の人との対話、そして肌で感じた文化の違いという「生きた体験」です。",
@@ -62,7 +62,7 @@ export default function InformationSection() {
             <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
 
                 <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-42 md:gap-8 lg:gap-12"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 md:gap-8 lg:gap-12"
                     variants={containerVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
@@ -102,8 +102,24 @@ export default function InformationSection() {
                             </a>
 
                             <div className="flex flex-col space-y-3">
-                                <h3 className="font-biz text-xl font-bold tracking-widest uppercase mt-2">
-                                    {topic.title}
+                                <h3 className="font-biz text-xl font-bold tracking-widest uppercase mt-2 flex items-center gap-2">
+                                    <a href={topic.link} className="md:pointer-events-none md:cursor-auto">
+                                        {topic.title}
+                                    </a>
+                                    <a
+                                        href={topic.link}
+                                        className="md:hidden flex items-center justify-center p-1 opacity-80 hover:opacity-100 transition-opacity text-gray-500"
+                                    >
+                                        <svg
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                    </a>
                                 </h3>
                                 <p className="font-kaku text-gray-600 text-xs leading-relaxed">
                                     {topic.description}
@@ -112,7 +128,7 @@ export default function InformationSection() {
 
                             <a
                                 href={topic.link}
-                                className="block transition-transform duration-300 hover:scale-105 pt-2"
+                                className="hidden md:block transition-transform duration-300 hover:scale-105 pt-2"
                             >
                                 <Image
                                     src="/main/ViewMore.png"

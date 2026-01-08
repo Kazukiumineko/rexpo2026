@@ -46,10 +46,12 @@ export default function ConceptSection() {
                         </h2>
 
                         <h2 className="font-jp text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight flex items-center gap-3">
-                            R-EXPO が目指す場所
+                            <a href="/event-concept" className="md:pointer-events-none md:cursor-auto">
+                                R-EXPO が目指す場所
+                            </a>
                             <a
                                 href="/event-concept"
-                                className="md:hidden flex items-center justify-center p-1 opacity-80 hover:opacity-100 transition-opacity"
+                                className="md:hidden flex items-center justify-center p-1 opacity-80 hover:opacity-100 transition-opacity text-white"
                             >
                                 <svg
                                     width="20"
