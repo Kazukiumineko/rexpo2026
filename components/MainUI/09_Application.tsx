@@ -19,7 +19,7 @@ export default function Application() {
                 />
 
                 {/* 全体コンテンツコンテナ */}
-                <div className="absolute inset-0 z-10 flex flex-col items-center pt-20 md:pt-28 px-6">
+                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6">
 
                     {/* 1. APPLICATION (最上部センター) */}
                     <motion.div
