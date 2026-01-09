@@ -9,7 +9,7 @@ export default function Introduction() {
             <div className="absolute inset-0 z-[200] flex justify-center px-6 md:px-24 lg:px-32 pointer-events-none">
                 <div className="w-full max-w-4xl relative h-full">
 
-                    <div className="absolute top-32 -left-2 md:-left-16 lg:-left-24">
+                    <div className="absolute top-32 -left-2 md:-left-16 lg:-left-16">
                         <motion.p
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
@@ -102,7 +102,7 @@ export default function Introduction() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: false }}
-                        className="font-oswald text-white/30 text-5xl md:text-8xl lg:text-9xl font-bold tracking-normal drop-shadow-lg [writing-mode:vertical-rl] z-[100] translate-y-40 md:translate-y-52 lg:translate-y-32"
+                        className="font-oswald text-white/30 text-5xl md:text-8xl lg:text-[10rem] font-bold tracking-normal drop-shadow-lg [writing-mode:vertical-rl] z-[100] translate-y-40 md:translate-y-52 lg:translate-y-32"
                     >
                         INTRODUCTION
                     </motion.h1>

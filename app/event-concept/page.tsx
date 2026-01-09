@@ -17,7 +17,7 @@ export default function EventConceptPage() {
     const [showHeader, setShowHeader] = useState(true);
 
     return (
-        <main className="relative w-full min-h-screen text-white">
+        <main className="relative w-full min-h-screen text-white overflow-x-hidden">
             {/* 固定背景画像 */}
             <div className="fixed inset-0 z-0">
                 <div className="relative w-full h-full">
