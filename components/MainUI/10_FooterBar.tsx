@@ -92,18 +92,22 @@ export default function FooterBar({ variant = "default" }: FooterBarProps) {
 
                 {/* 左側: 立命館ロゴ */}
                 <div className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2">
-                    <Image
-                        src="/main/Ritsumeikan.png"
-                        alt="Ritsumeikan Logo"
-                        width={80}
-                        height={30}
-                        className="object-contain h-6 w-auto md:h-6"
-                    />
+                    <a href="https://www2.spc.ritsumei.ac.jp/top_menu/topmenu.html" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+                        <Image
+                            src="/main/Ritsumeikan.png"
+                            alt="Ritsumeikan Logo"
+                            width={80}
+                            height={30}
+                            className="object-contain h-6 w-auto md:h-6"
+                        />
+                    </a>
                 </div>
 
                 {/* 中央: 学校名テキスト（スマホでは非表示） */}
                 <div className="hidden md:block text-center font-light text-xs px-2">
-                    Ritsumeikan Keishi Junior Senior High School
+                    <a href="https://www2.spc.ritsumei.ac.jp/top_menu/topmenu.html" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+                        Ritsumeikan Keishi Junior Senior High School
+                    </a>
                 </div>
 
                 {/* 右側: R-EXPOテキスト */}
