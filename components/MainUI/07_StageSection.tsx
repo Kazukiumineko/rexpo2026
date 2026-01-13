@@ -58,7 +58,7 @@ export default function StageSection() {
 
             <div className="absolute inset-0 -z-10">
                 <Image
-                    src="/main/StageBG.jpg"
+                    src="/main/Satoryo1.png"
                     alt="Stage Background"
                     fill
                     className="object-cover"

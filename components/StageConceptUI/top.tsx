@@ -8,7 +8,7 @@ export default function StageTop() {
         <section className="relative w-full h-screen bg-black overflow-hidden">
             {/* 1. メイン背景画像：ソースを変更し、brightnessを下げて暗くする */}
             <Image
-                src="/main/StageBG.jpg"
+                src="/main/Satoryo1.png"
                 alt="Stage Concept Background"
                 fill
                 className="object-cover brightness-50" // ここで暗さを調整（50%）
