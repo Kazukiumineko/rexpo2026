@@ -78,7 +78,7 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
                 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
             >
                 <span
-                    className={`block w-12 h-0.5 ${invert ? "bg-white lg:bg-black" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-2" : ""
+                    className={`block w-12 h-0.5 ${invert ? "bg-white lg:bg-black" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-2.5" : ""
                         }`}
                 />
                 <span
@@ -86,7 +86,7 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
                         }`}
                 />
                 <span
-                    className={`block w-12 h-0.5 ${invert ? "bg-white lg:bg-black" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "-rotate-45 -translate-y-2" : ""
+                    className={`block w-12 h-0.5 ${invert ? "bg-white lg:bg-black" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "-rotate-45 -translate-y-2.5" : ""
                         }`}
                 />
             </button>
