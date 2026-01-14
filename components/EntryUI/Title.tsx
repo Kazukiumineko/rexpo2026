@@ -26,16 +26,9 @@ export default function EntryTitle() {
                     variants={sectionVariants}
                     className="pt-16 pb-8 md:pt-24 md:pb-12 text-center md:text-left"
                 >
-                    <h2 className="text-2xl md:text-3xl font-bold leading-relaxed tracking-wide mb-8 text-black">
-                        立命館慶祥中学校・高等学校が主催する、<br className="hidden md:block" />
-                        生徒の個性を発信する万博形式のイベント「R-EXPO 2026」。
-                    </h2>
-                    <p className="text-base md:text-lg text-gray-600 leading-8">
-                        パスポートのいらない「世界旅行」へ、皆様をご招待いたします。
-                    </p>
+
                 </motion.div>
 
-                <div className="w-full h-[1px] bg-gray-200 mb-38" />
 
                 {/* 2. 開催概要 */}
                 <motion.div

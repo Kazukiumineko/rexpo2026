@@ -16,7 +16,7 @@ export default function Pic() {
                     className="relative w-full max-w-xl md:max-w-2xl lg:max-w-3xl"
                 >
                     <Image
-                        src="/event-concept-page/ThemeMessage.png"
+                        src="/event-concept-page/ThemeMessage2.png"
                         alt="Theme Message"
                         width={1200}
                         height={800}
