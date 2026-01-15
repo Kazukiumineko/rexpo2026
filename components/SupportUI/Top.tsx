@@ -22,7 +22,7 @@ export default function MessageTop() {
                 スマホの pt (padding-top) を 6 から 16 に増やし、画像との距離を広げました。
             */}
 
-            <div className="relative w-full h-auto md:h-[25vh] bg-white flex items-start md:items-end pt-16 md:pt-0 pb-12 md:pb-6 px-6 md:px-20 lg:px-32 overflow-hidden">
+            <div className="relative w-full h-auto md:h-[25vh] bg-white flex items-start md:items-end pt-24 md:pt-0 pb-12 md:pb-0 px-6 md:px-20 lg:px-32 overflow-hidden">
                 {/* 開祭にあたって */}
                 <div className="w-full max-w-[1600px] mx-auto">
                     <div className="w-min md:w-full">
@@ -30,9 +30,9 @@ export default function MessageTop() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                            className="relative z-10 text-black text-3xl md:text-5xl lg:text-6xl font-bold tracking-widest leading-none whitespace-nowrap md:whitespace-normal"
+                            className="relative z-10 text-black text-3xl md:text-5xl lg:text-6xl font-bold tracking-widest leading-snug whitespace-nowrap md:whitespace-normal"
                         >
-                            協賛いただいた<br className="md:hidden" />企業のみなさま
+                            ご支援いただいた<br />企業・団体の皆様
                         </motion.p>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ export default function MessageTop() {
                             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                             className="relative z-10 text-gray-700 text-sm md:text-base mt-4 md:mt-6 font-medium leading-relaxed max-w-2xl"
                         >
-                            R-EXPO2026の開催にあたり、ご協力いただいた企業のみなさまを紹介します。※五十音順
+                            R-EXPO2026の開催にあたり、ご支援いただいたみなさまを紹介します。※五十音順
                         </motion.p>
                     </div>
                 </div>

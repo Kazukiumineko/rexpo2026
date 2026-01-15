@@ -2,88 +2,162 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
-// 協賛企業データ（ダミー）
+// 協賛企業データ（画像から抽出）
+// ※ logoのパスは仮定のものです。実際の画像ファイル名に合わせて変更するか、
+//   public/sponsors/ フォルダに以下の名前で画像を保存してください。
 const sponsors = [
     {
-        name: "株式会社 北海商事",
-        logo: "/sponsors/logo_placeholder_1.jpg", // 適切なパスに変更してください
-        desc: "北海道の物流を支える総合物流企業。地域社会への貢献を第一に掲げ、持続可能な未来社会の実現を目指しています。教育支援活動にも力を入れており、次世代のリーダー育成をサポートしています。",
-        url: "https://example.com",
+        name: "医療法人明日葉会 札幌マタニティウィメンズホスピタル",
+        color: "#FF6B6B",
+        url: "https://www.smwh.or.jp/",
     },
     {
-        name: "札幌テックソリューションズ",
-        logo: "/sponsors/logo_placeholder_2.jpg",
-        desc: "AIとIoT技術で新しい価値を創造するITスタートアップ。生徒たちの革新的なアイデアに共感し、技術的なアドバイスや機材提供を通じて、本イベントのデジタル領域をバックアップしています。",
-        url: "https://example.com",
+        name: "株式会社VOREAS（ヴォレアス）",
+        color: "#4ECDC4",
+        url: "https://voreas.co.jp/",
     },
     {
-        name: "みらい食品株式会社",
-        logo: "/sponsors/logo_placeholder_3.jpg",
-        desc: "「食で笑顔を」をモットーに、安全で美味しい道産食材を全国へ届けています。今回はフードエリアへの食材提供だけでなく、食育をテーマにしたワークショップも共同開催します。",
-        url: "https://example.com",
+        name: "株式会社MLP",
+        color: "#45B7D1",
+        url: "https://jobsolution.jp/",
     },
     {
-        name: "グローバル・エデュケーション・ラボ",
-        logo: "/sponsors/logo_placeholder_4.jpg",
-        desc: "世界と繋がる教育プログラムを開発・提供する教育機関。生徒たちの英語スピーチコンテストへの審査員派遣や、海外姉妹校とのオンライン交流のコーディネートを担当しています。",
-        url: "https://example.com",
+        name: "北昴",
+        logo: "/support/kitasubaru.jpg",
+        url: "https://www.instagram.com/kitasubaru/",
+    },
+    {
+        name: "草野作工株式会社",
+        color: "#96CEB4",
+        url: "https://www.kusanosk.co.jp/",
+    },
+    {
+        name: "株式会社グロースアソシエーション",
+        color: "#9B59B6",
+        url: "https://g-assoc.co.jp/",
+    },
+    {
+        name: "株式会社JTB",
+        color: "#3498DB",
+        url: "https://www.jtbcorp.jp/jp/",
+    },
+    {
+        name: "株式会社鈴木商会",
+        color: "#E67E22",
+        url: "https://www.suzuki-shokai.co.jp/",
+    },
+    {
+        name: "株式会社SOUSHINホールディングス",
+        color: "#1ABC9C",
+        url: "https://k-soushin.co.jp/",
+    },
+    {
+        name: "電制コムテック株式会社",
+        logo: "/support/dencom.jpg",
+        url: "https://www.dencom.co.jp/",
+    },
+    {
+        name: "東京科学大学（梅室博行研究室）",
+        color: "#E74C3C",
+        url: "https://www.affectivelaboratory.org/index.php/ja/",
+    },
+    {
+        name: "北海道医療大学",
+        color: "#2ECC71",
+        url: "https://www.hoku-iryo-u.ac.jp/",
+    },
+    {
+        name: "北海道ポラコン株式会社",
+        color: "#8E44AD",
+        url: "https://poracon.jp/",
+    },
+    {
+        name: "株式会社北海道イエロースターズ",
+        color: "#F39C12",
+        url: "https://hy-stars.jp/",
+    },
+    {
+        name: "株式会社ミライシアホールディング",
+        color: "#34495E",
+        url: "https://miraisia.co.jp/",
+    },
+    {
+        name: "株式会社レコハイ",
+        color: "#16A085",
+        url: "https://smaspisport2000.wixsite.com/home",
+    },
+    {
+        name: "Letara株式会社",
+        color: "#27AE60",
+        url: "https://www.letaranext.com/ja-jp",
     },
 ];
 
+// アニメーション設定
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5 }
+    }
+};
+
 export default function SponsorsSection() {
     return (
-        <section className="w-full bg-white text-black pt-12 pb-20 px-6 md:px-12 lg:px-20">
-            <div className="max-w-[1600px] mx-auto">
-                <div className="flex flex-col space-y-12 max-w-6xl mx-auto">
+        <section className="w-full bg-white text-black py-20 px-6 md:px-12 lg:px-20">
+            <div className="max-w-[1400px] mx-auto">
 
-                    {/* 企業リストの表示 */}
+                {/* グリッドレイアウト: PCで2列、スマホで1列 */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 md:gap-y-8">
+
                     {sponsors.map((sponsor, index) => (
-                        <motion.div
-                            key={sponsor.name}
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                        <motion.a
+                            key={index} // URLや名前が重複する可能性も考慮しindexも使用可能ですが、今回はユニークなのでnameでもOK
+                            href={sponsor.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            initial="hidden"
+                            whileInView="visible"
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                            // 最後の要素以外に下線を入れるなどの装飾が必要であればここで調整
-                            className="flex flex-row items-center space-x-6 md:space-x-12 border-b border-gray-100 pb-12 last:border-none last:pb-0"
+                            variants={itemVariants}
+                            // 少し浮き出るようなホバーエフェクト
+                            className="group flex items-center p-4 border border-gray-100 rounded-lg hover:bg-gray-50 hover:shadow-sm transition-all duration-300"
                         >
-                            {/* 1. ロゴ画像エリア */}
-                            <div className="relative w-20 h-20 md:w-32 md:h-32 flex-shrink-0 overflow-hidden rounded-full border border-gray-200 bg-gray-50">
-                                {/* ロゴがない場合は代替画像を表示するか、object-contain等で調整してください */}
-                                <Image
-                                    src={sponsor.logo}
-                                    alt={sponsor.name}
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
-
-                            {/* 2. テキストエリア */}
-                            <div className="flex-1 flex flex-col justify-center py-2">
-                                {/* 企業名 + 三角形 (リンク) */}
-                                <div className="mb-3">
-                                    <a
-                                        href={sponsor.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center group cursor-pointer"
+                            {/* 1. ロゴ画像エリア（左） */}
+                            <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 bg-white mr-5 flex items-center justify-center">
+                                {sponsor.logo ? (
+                                    <Image
+                                        src={sponsor.logo}
+                                        alt={sponsor.name}
+                                        fill
+                                        className="object-contain p-2"
+                                    />
+                                ) : (
+                                    <div
+                                        className="w-full h-full flex items-center justify-center text-white font-bold text-2xl md:text-3xl select-none"
+                                        style={{ backgroundColor: sponsor.color || '#ccc' }}
                                     >
-                                        <h3 className="font-oswald text-xl md:text-3xl font-bold text-black group-hover:text-blue-700 transition-colors duration-300">
-                                            {sponsor.name}
-                                        </h3>
-                                        {/* 三角形アイコン */}
-                                        <Play className="w-4 h-4 md:w-5 md:h-5 ml-3 fill-current text-gray-400 group-hover:text-blue-700 transition-colors duration-300" />
-                                    </a>
-                                </div>
-
-                                {/* 紹介文 */}
-                                <p className="text-gray-600 text-sm md:text-base leading-loose font-jp text-justify">
-                                    {sponsor.desc}
-                                </p>
+                                        {sponsor.name.charAt(0)}
+                                    </div>
+                                )}
                             </div>
-                        </motion.div>
+
+                            {/* 2. 会社名（右） */}
+                            <div className="flex-1 min-w-0"> {/* min-w-0 はテキスト切り詰め用 */}
+                                <h3 className="font-oswald text-base md:text-lg font-bold text-gray-800 group-hover:text-blue-700 transition-colors break-words">
+                                    {sponsor.name}
+                                </h3>
+                            </div>
+
+                            {/* 3. 外部リンクマーク（さらに右端） */}
+                            <div className="ml-4 flex-shrink-0">
+                                <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-blue-700 transition-colors" />
+                            </div>
+
+                        </motion.a>
                     ))}
 
                 </div>
