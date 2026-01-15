@@ -27,7 +27,7 @@ export default function InformationSection() {
         },
         {
             title: "一般来場の方",
-            src: "/topic/Signup.jpg",
+            src: "/topic/Form.jpg",
             link: "/entry",
             description: "本イベントは一般公開を行っており、保護者の方をはじめ、どなたでも無料でご入場いただけます。 ご来場の皆様に安全かつ快適に楽しんでいただくため、事前に申し込み手続きと注意事項のご確認をお願いしています。詳細をご覧の上、ぜひお気軽にお越しください。",
         },
