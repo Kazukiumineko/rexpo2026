@@ -124,7 +124,7 @@ export default function Message() {
                                 className="relative aspect-[3/2] w-full rounded-sm overflow-hidden border border-black/10 bg-gray-100"
                             >
                                 <Image
-                                    src="/message/Students.jpg"
+                                    src="/message/Ueno.JPG"
                                     alt="行事改革実行委員会の生徒たち"
                                     fill
                                     className="object-cover hover:scale-105 transition-transform duration-700"
