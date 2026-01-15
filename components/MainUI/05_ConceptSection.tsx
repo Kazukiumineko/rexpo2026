@@ -87,7 +87,7 @@ export default function ConceptSection() {
                                 {carouselImages.map((src, index) => (
                                     <CarouselItem key={index} className="basis-full lg:basis-[28%]">
                                         <div className="p-1">
-                                            <div className="relative aspect-[2/1] w-full overflow-hidden rounded-[32px] z-40 shadow-2xl border border-white/10">
+                                            <div className="relative aspect-[2/1] w-full overflow-hidden rounded-2xl z-40 shadow-2xl border border-white/10">
                                                 <a href="/event-concept">
                                                     <Image
                                                         src={src}

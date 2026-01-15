@@ -10,11 +10,12 @@ interface FooterBarProps {
 export default function FooterBar({ variant = "default" }: FooterBarProps) {
     // ナビゲーション項目の定義 (Moved from EventInfo)
     const navItems = [
-        { label: "R-EXPOとは", href: "event-concept" },
+        { label: "TOPにもどる", href: "/" },
+        { label: "コンセプト", href: "event-concept" },
         { label: "ステージ", href: "stage-concept" },
         { label: "会場", href: "location" },
-        { label: "開祭にあたって", href: "message" },
         { label: "協賛企業", href: "support" },
+        { label: "開祭にあたって", href: "message" },
         { label: "一般来場の方", href: "entry" },
         { label: "特設アプリ", href: "application" },
     ];
