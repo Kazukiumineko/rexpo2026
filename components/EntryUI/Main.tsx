@@ -17,7 +17,7 @@ const sectionVariants: Variants = {
 
 export default function EntryMain() {
     return (
-        <section className="w-full bg-white pb-24 px-6 md:px-20 lg:px-32">
+        <section className="w-full bg-white pb-12 px-6 md:px-20 lg:px-32">
             <div className="w-full max-w-[1600px] mx-auto">
 
                 {/* 3. 情報エリア (2カラムレイアウト) */}
@@ -25,7 +25,7 @@ export default function EntryMain() {
                     スマホ時の縦並びの間隔を gap-20 (80px) に広げました。
                     PC時 (md:grid-cols-2) は md:gap-20 が適用され、横の間隔が保たれます。
                 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-32 md:gap-20 mb-32">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-32 md:gap-20 mb-4">
 
                     {/* お申込みについて */}
                     <motion.div
@@ -42,13 +42,9 @@ export default function EntryMain() {
                         <div className="space-y-6 text-sm md:text-base text-gray-600 leading-7">
                             <div>
                                 <span className="font-bold text-gray-900 block mb-1">入場対象者</span>
-                                <p>本イベントはどなたでも無料でご入場いただけます。</p>
+                                <p>本イベントはどなたでも無料でご入場いただけます。在校生保護者の方につきましても、事前登録が必要です。</p>
                             </div>
 
-                            <div>
-                                <span className="font-bold text-gray-900 block mb-1">在校生の保護者様へ</span>
-                                <p>在校生の保護者の方も、本ページよりお申込みが必要です。</p>
-                            </div>
 
                             <div>
                                 <span className="font-bold text-gray-900 block mb-1">入場方法</span>

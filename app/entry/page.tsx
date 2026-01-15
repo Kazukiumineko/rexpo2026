@@ -6,7 +6,7 @@ import FooterBar from "@/components/MainUI/10_FooterBar";
 import Top from "@/components/EntryUI/Top";
 import Title from "@/components/EntryUI/Title";
 import Main from "@/components/EntryUI/Main";
-import Form from "@/components/EntryUI/Form";
+import Entry from "@/components/EntryUI/Entry";
 
 export default function TimeTablePage() {
     const [showHeader] = useState(true);
@@ -22,13 +22,12 @@ export default function TimeTablePage() {
                 {/* メインコンテンツ */}
                 <Title />
                 <Main />
-                {/* 申込みフォーム */}
-                <Form />
+                <Entry />
 
             </div>
 
             {/* フッター */}
-            <FooterBar />
+            <FooterBar variant="black" />
         </main>
     );
 }

@@ -81,12 +81,12 @@ export default function LocationInfo() {
                                 key={index}
                                 className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
                             >
-                                <div className="relative aspect-video w-full overflow-hidden bg-gray-100 group">
+                                <div className="relative aspect-video w-full overflow-hidden bg-gray-100 rounded-xl">
                                     <Image
                                         src={src}
                                         alt={`Sapporo Convention Center ${index + 1}`}
                                         fill
-                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                        className="object-cover"
                                     />
                                 </div>
                             </CarouselItem>

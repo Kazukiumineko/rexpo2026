@@ -30,76 +30,64 @@ export default function ConceptSection() {
             <div ref={sectionRef} className="w-full max-w-[1600px] mx-auto px-6 lg:px-20">
 
                 <motion.div
-                    className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 lg:gap-24 items-center"
+                    className="flex flex-col gap-8 md:gap-16 lg:gap-24 items-center"
                     variants={containerVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                 >
 
                     <motion.div
-                        className="flex flex-col items-center lg:items-start space-y-8"
+                        className="flex flex-col items-center space-y-8"
                         variants={itemVariants}
                     >
 
-                        <h2 className="font-oswald text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight">
+                        <h2 className="font-oswald text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tight whitespace-nowrap">
                             INTRODUCTION
                         </h2>
 
-                        <h2 className="font-jp text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight flex items-center gap-3">
-                            <a href="/event-concept" className="md:pointer-events-none md:cursor-auto">
-                                R-EXPO が目指す場所
-                            </a>
-                            <a
-                                href="/event-concept"
-                                className="md:hidden flex items-center justify-center p-1 opacity-80 hover:opacity-100 transition-opacity text-white"
-                            >
-                                <svg
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    xmlns="http://www.w3.org/2000/svg"
+                        <div className="flex flex-col items-center space-y-4 lg:space-y-20">
+                            <h2 className="font-jp text-2xl md:text-5xl font-bold tracking-tight flex items-center gap-3">
+                                <a href="/event-concept" className="hover:opacity-80 transition-opacity">
+                                    R-EXPO が目指す場所
+                                </a>
+                                <a
+                                    href="/event-concept"
+                                    className="flex items-center justify-center p-1 opacity-80 hover:opacity-100 transition-opacity text-white"
                                 >
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </a>
-                        </h2>
+                                    <svg
+                                        className="w-5 h-5 md:w-8 md:h-8"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </a>
+                            </h2>
 
 
 
-                        <a
-                            href="/event-concept"
-                            className="hidden md:block transition-transform duration-300 hover:scale-105"
-                        >
-                            <Image
-                                src="/main/ViewMore.png"
-                                alt="View More"
-                                width={128}
-                                height={128}
-                                className="object-contain"
-                            />
-                        </a>
+                        </div>
                     </motion.div>
 
 
                     <motion.div
-                        className="w-full flex justify-center lg:justify-end"
+                        className="w-full flex justify-center"
                         variants={itemVariants}
                     >
                         <Carousel
                             plugins={[plugin.current]}
-                            className="w-full max-w-lg"
+                            className="w-full"
                             opts={{
-                                align: "start",
+                                align: "center",
                                 loop: true,
                             }}
                         >
                             <CarouselContent>
                                 {carouselImages.map((src, index) => (
-                                    // ★修正箇所: basis-1/1 は存在しないクラスのため basis-full に修正
-                                    <CarouselItem key={index} className="basis-full">
+                                    <CarouselItem key={index} className="basis-full lg:basis-[28%]">
                                         <div className="p-1">
-                                            <div className="relative aspect-video w-full overflow-hidden rounded-lg z-40 shadow-2xl border border-white/10">
+                                            <div className="relative aspect-[2/1] w-full overflow-hidden rounded-[32px] z-40 shadow-2xl border border-white/10">
                                                 <a href="/event-concept">
                                                     <Image
                                                         src={src}
