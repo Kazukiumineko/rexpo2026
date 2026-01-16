@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
+import LazyImage from "@/components/Shared/LazyImage";
 import { motion, useInView, Variants } from "framer-motion";
 
 export default function StageSection() {
@@ -57,7 +58,7 @@ export default function StageSection() {
         >
 
             <div className="absolute inset-0 -z-10">
-                <Image
+                <LazyImage
                     src="/main/Satoryo1.png"
                     alt="Stage Background"
                     fill
@@ -125,7 +126,7 @@ export default function StageSection() {
                                     href={stage.href}
                                     className="mt-auto hidden md:block transition-transform duration-300 hover:scale-105"
                                 >
-                                    <Image
+                                    <LazyImage
                                         src="/main/ViewMore.png"
                                         alt="View More"
                                         width={100}

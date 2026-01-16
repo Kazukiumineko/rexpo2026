@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
+import LazyImage from "@/components/Shared/LazyImage";
 
 export default function DownloadSection() {
     return (
@@ -30,7 +30,7 @@ export default function DownloadSection() {
                         whileTap={{ scale: 0.95 }}
                         className="relative w-[140px] h-[46px] md:w-[200px] md:h-[65px]"
                     >
-                        <Image
+                        <LazyImage
                             src="/application/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
                             alt="Download on the App Store"
                             fill
@@ -47,7 +47,7 @@ export default function DownloadSection() {
                         whileTap={{ scale: 0.95 }}
                         className="relative w-[155px] h-[46px] md:w-[220px] md:h-[65px]" // Google Playの方が横長のデザインが多いため少し幅を広げています
                     >
-                        <Image
+                        <LazyImage
                             src="/application/GetItOnGooglePlay_Badge_Web_color_Japanese.svg"
                             alt="Get it on Google Play"
                             fill

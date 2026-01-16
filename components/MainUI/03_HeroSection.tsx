@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import LazyImage from "@/components/Shared/LazyImage";
 
 interface HeroSectionProps {
     opacity: number;
@@ -16,7 +17,7 @@ export default function HeroSection({ opacity, isLogoLoaded, isScrollLoaded }: H
             <div className={`transition-opacity duration-1000 ease-out mb-8
         ${isLogoLoaded ? "opacity-100" : "opacity-0"}`}>
 
-                <Image
+                <LazyImage
                     src="/main/R-EXPO-LOGO1.png"
                     alt="R-EXPO LOGO"
                     width={500}

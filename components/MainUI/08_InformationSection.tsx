@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRef } from "react";
-import Image from "next/image";
+import LazyImage from "@/components/Shared/LazyImage";
 import { motion, useInView, Variants } from "framer-motion";
 
 export default function InformationSection() {
@@ -94,7 +94,7 @@ export default function InformationSection() {
                                 href={topic.link}
                                 className="block relative w-full aspect-video overflow-hidden rounded-sm shadow-lg border border-gray-200 cursor-pointer"
                             >
-                                <Image
+                                <LazyImage
                                     src={topic.src}
                                     alt={topic.title}
                                     fill
@@ -131,7 +131,7 @@ export default function InformationSection() {
                                 href={topic.link}
                                 className="hidden md:block transition-transform duration-300 hover:scale-105 pt-2"
                             >
-                                <Image
+                                <LazyImage
                                     src="/main/ViewMore.png"
                                     alt="View More"
                                     width={100}

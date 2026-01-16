@@ -1,7 +1,5 @@
-"use client";
-
-import Image from "next/image"; // 追加
 import { motion } from "framer-motion";
+import LazyImage from "@/components/Shared/LazyImage";
 
 // 画像データの配列
 const appImages = [
@@ -81,7 +79,7 @@ export default function ApplicationTop() {
                             >
                                 {/* 画像コンテナ: スマホ画面らしい縦長比率を維持しても良いですし、autoでもOK */}
                                 <div className="relative w-full h-auto aspect-[9/19] md:aspect-[9/18] overflow-hidden rounded-2xl shadow-xl border border-gray-100">
-                                    <Image
+                                    <LazyImage
                                         src={src}
                                         alt={`Application Screen ${index + 1}`}
                                         fill

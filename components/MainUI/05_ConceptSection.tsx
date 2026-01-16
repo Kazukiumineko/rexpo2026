@@ -3,6 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import LazyImage from "@/components/Shared/LazyImage";
 import {
     Carousel,
     CarouselContent,
@@ -89,7 +90,7 @@ export default function ConceptSection() {
                                         <div className="p-1">
                                             <div className="relative aspect-[2/1] w-full overflow-hidden rounded-2xl z-40 shadow-2xl border border-white/10">
                                                 <a href="/event-concept">
-                                                    <Image
+                                                    <LazyImage
                                                         src={src}
                                                         alt={`Event Photo ${index + 1}`}
                                                         fill

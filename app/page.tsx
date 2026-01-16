@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useLoadingSequence } from "@/hooks/useLoadingSequence";
 import { useScrollEffects } from "@/hooks/useScrollEffects";
 import BackgroundVideo from "@/components/MainUI/01_BackgroundVideo";
@@ -12,19 +12,28 @@ import StageSection from "@/components/MainUI/07_StageSection";
 import InformationSection from "@/components/MainUI/08_InformationSection";
 import Application from "@/components/MainUI/09_Application";
 import FooterBar from "@/components/MainUI/10_FooterBar";
+import Opening from "@/components/MainUI/Opening";
 
 
 export default function Home() {
   const textRef = useRef<HTMLHeadingElement>(null);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
+  // useLoadingSequence内でロゴなどのアニメーション開始タイミングを制御していますが、
+  // ここでは「画面全体のローディング」として Opening コンポーネントを使用します。
   const { isLogoLoaded, isScrollLoaded } = useLoadingSequence();
   const { opacity, showMiniLogo, overlayOpacity } = useScrollEffects(textRef);
 
   return (
     <main className="relative w-full">
+      {/* オープニング（ローディング）画面 */}
+      <Opening isLoaded={isVideoLoaded} />
 
       <div className="fixed top-0 left-0 w-full h-screen -z-10">
-        <BackgroundVideo overlayOpacity={overlayOpacity} />
+        <BackgroundVideo
+          overlayOpacity={overlayOpacity}
+          onLoaded={() => setIsVideoLoaded(true)}
+        />
 
         <HeroSection
           opacity={opacity}
