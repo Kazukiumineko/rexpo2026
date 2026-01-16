@@ -11,10 +11,18 @@ export default function Opening({ isLoaded }: OpeningProps) {
     const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
+        // セッションストレージを確認（クライアントサイドのみ）
+        const hasVisited = sessionStorage.getItem("hasVisited");
+        if (hasVisited) {
+            setIsVisible(false);
+            return;
+        }
+
         if (isLoaded) {
             // 少し待ってからフェードアウトさせる（演出用）
             const timer = setTimeout(() => {
                 setIsVisible(false);
+                sessionStorage.setItem("hasVisited", "true");
             }, 800); // 0.8秒待機
             return () => clearTimeout(timer);
         }
