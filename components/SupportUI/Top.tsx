@@ -23,7 +23,7 @@ export default function MessageTop() {
                 - overflow-hidden を overflow-visible に変更 (文字が枠からはみ出ても表示されるように)
                 - z-index を 30 に設定し、画像(z-0)より手前に配置
             */}
-            <div className="relative z-30 w-full h-auto md:h-[25vh] bg-transparent flex items-start md:items-end md:mt-20 pt-12 md:pt-0 pb-12 md:pb-0 px-6 md:px-20 lg:px-32 overflow-visible">
+            <div className="relative z-30 w-full h-auto md:h-[25vh] bg-transparent flex items-start md:items-end md:mt-20 pt-12 md:pt-0 pb-4 md:pb-0 px-6 md:px-20 lg:px-32 overflow-visible">
 
                 <div className="w-full max-w-[1600px] mx-auto pointer-events-none">
                     {/* pointer-events-none を入れておくと、文字の上の透明な余白がクリックを邪魔しません（文字自体は pointer-events-auto で操作可能にできます） */}
