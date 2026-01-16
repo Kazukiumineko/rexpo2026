@@ -128,11 +128,12 @@ export default function InformationSection() {
                                 </p>
                             </div>
 
-                            <ViewMoreButton
-                                href={topic.link}
-                                className="hidden md:block pt-2"
-                                theme="dark"
-                            />
+                            <div className="hidden md:block pt-2">
+                                <ViewMoreButton
+                                    href={topic.link}
+                                    theme="dark"
+                                />
+                            </div>
                         </motion.div>
                     ))}
                 </motion.div>

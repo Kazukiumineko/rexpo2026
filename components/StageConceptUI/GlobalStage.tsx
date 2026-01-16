@@ -44,17 +44,17 @@ export default function GlobalStage() {
         <section id="global" className="relative w-full pt-24 pb-0 md:pt-32 md:pb-0 bg-transparent text-white overflow-hidden">
 
             <motion.div
-                className="w-full max-w-[1600px] mx-auto px-6 lg:px-20"
+                className="w-full max-w-[1600px] mx-auto px-0 md:px-6 lg:px-20 relative"
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
             >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 md:gap-12 lg:gap-20 items-stretch lg:items-center">
 
                     {/* --- 左側: タイトルエリア --- */}
                     <motion.div
-                        className="flex flex-col items-start space-y-6"
+                        className="col-start-1 row-start-1 md:col-auto md:row-auto flex flex-col items-start space-y-6 relative z-10 px-6 py-24 md:px-0 md:py-0 pointer-events-none md:pointer-events-auto"
                         variants={itemVariants}
                     >
                         <h2 className="font-oswald text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none text-white">
@@ -74,26 +74,26 @@ export default function GlobalStage() {
 
                     {/* --- 右側: カルーセルエリア --- */}
                     <motion.div
-                        className="w-full relative"
+                        className="col-start-1 row-start-1 md:col-auto md:row-auto w-full h-full md:h-auto z-0"
                         variants={itemVariants}
                     >
                         <Carousel
                             plugins={[plugin.current]}
-                            className="w-full"
+                            className="w-full h-full md:h-auto"
                             opts={{
                                 align: "center",
                                 loop: true,
                             }}
                         >
-                            <CarouselContent className="-ml-4">
+                            <CarouselContent className="-ml-0 md:-ml-4 h-full md:h-auto">
                                 {carouselImages.map((src, index) => (
-                                    <CarouselItem key={index} className="pl-4 basis-full md:basis-[60%] lg:basis-[65%]">
-                                        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm border border-white/10 bg-gray-900">
+                                    <CarouselItem key={index} className="pl-0 md:pl-4 basis-full md:basis-[60%] lg:basis-[65%] h-full md:h-auto">
+                                        <div className="relative w-full h-full md:aspect-[4/3] overflow-hidden rounded-none md:rounded-sm border-none md:border md:border-white/10 bg-gray-900">
                                             <LazyImage
                                                 src={src}
                                                 alt={`Global Stage ${index + 1}`}
                                                 fill
-                                                className="object-cover"
+                                                className="object-cover brightness-[0.3] md:brightness-100"
                                             />
                                         </div>
                                     </CarouselItem>

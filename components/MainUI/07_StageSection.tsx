@@ -103,7 +103,7 @@ export default function StageSection() {
                                     </a>
                                     <a
                                         href={stage.href}
-                                        className="md:hidden flex items-center justify-center p-1 opacity-80 hover:opacity-100 transition-opacity text-white mt-2"
+                                        className="md:hidden flex items-center justify-center p-1 opacity-80 hover:opacity-100 transition-opacity text-white mt-2 mb-1"
                                     >
                                         <svg
                                             width="20"
@@ -115,6 +115,7 @@ export default function StageSection() {
                                             <path d="M8 5v14l11-7z" />
                                         </svg>
                                     </a>
+
                                 </h3>
 
                                 <p className="text-gray-200 text-sm lg:text-sm leading-loose text-left">
@@ -123,10 +124,11 @@ export default function StageSection() {
                                     </a>
                                 </p>
 
-                                <ViewMoreButton
-                                    href={stage.href}
-                                    className="mt-auto hidden md:block"
-                                />
+                                <div className="mt-auto hidden md:block">
+                                    <ViewMoreButton
+                                        href={stage.href}
+                                    />
+                                </div>
                             </motion.div>
                         ))}
                     </div>

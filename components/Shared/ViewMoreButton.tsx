@@ -12,7 +12,7 @@ export default function ViewMoreButton({ href, className = "", theme = "light" }
 
     const containerClasses = isLight
         ? "border-white text-white bg-white/5 hover:bg-white hover:text-black"
-        : "border-gray-800 text-gray-800 bg-gray-800/5 hover:bg-gray-800 hover:text-white";
+        : "border-gray-800 text-gray-800 bg-white hover:bg-gray-800 hover:text-white";
 
     return (
         <Link
