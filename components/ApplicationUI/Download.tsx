@@ -19,7 +19,7 @@ export default function DownloadSection() {
                 </h2>
 
                 {/* 2. ダウンロードバッジ (App Store & Google Play) */}
-                <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 mb-16">
+                <div className="flex flex-row items-center justify-center gap-3 md:gap-8 mb-16">
 
                     {/* App Store Badge (左) */}
                     <motion.a
@@ -28,7 +28,7 @@ export default function DownloadSection() {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="relative w-[180px] h-[60px] md:w-[200px] md:h-[65px]"
+                        className="relative w-[140px] h-[46px] md:w-[200px] md:h-[65px]"
                     >
                         <Image
                             src="/application/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
@@ -45,7 +45,7 @@ export default function DownloadSection() {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="relative w-[200px] h-[60px] md:w-[220px] md:h-[65px]" // Google Playの方が横長のデザインが多いため少し幅を広げています
+                        className="relative w-[155px] h-[46px] md:w-[220px] md:h-[65px]" // Google Playの方が横長のデザインが多いため少し幅を広げています
                     >
                         <Image
                             src="/application/GetItOnGooglePlay_Badge_Web_color_Japanese.svg"
