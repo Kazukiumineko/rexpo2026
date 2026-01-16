@@ -34,10 +34,10 @@ export default function Opening({ isLoaded }: OpeningProps) {
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 1.1 }}
                         transition={{ duration: 0.8 }}
-                        className="relative w-[100px] h-[100px]" // ロゴサイズ
+                        className="flex flex-col items-center justify-center gap-6"
                     >
                         <div
-                            className="w-full h-full"
+                            className="w-[100px] h-[100px]"
                             style={{
                                 backgroundImage: 'url("/main/RmarkRED.png")',
                                 backgroundSize: 'contain',
@@ -45,6 +45,9 @@ export default function Opening({ isLoaded }: OpeningProps) {
                                 backgroundRepeat: 'no-repeat',
                             }}
                         />
+                        <p className="text-sm font-medium tracking-widest text-gray-600 font-kaku pl-2">
+                            Loading...
+                        </p>
                     </motion.div>
                 </motion.div>
             )}
