@@ -44,9 +44,9 @@ export default function Jump() {
                             {/* テキストボタンに変更 */}
                             <Link
                                 href="/location"
-                                className="inline-block border border-white px-8 py-3 text-sm tracking-widest hover:bg-white hover:text-black transition-colors duration-300"
+                                className="inline-block border border-white px-8 py-3 text-sm tracking-widest hover:bg-white hover:text-black transition-colors duration-300 rounded-full"
                             >
-                                詳細を見る →
+                                詳細を見る
                             </Link>
                         </div>
                     </motion.div>
@@ -62,7 +62,7 @@ export default function Jump() {
                     >
                         {/* 写真比率を自然な 3:2 (スマホは 4:3) に調整 */}
                         <Link href="/location" className="block w-full h-full cursor-pointer group">
-                            <div className="relative w-full aspect-[4/3] md:aspect-[2/1] rounded-sm overflow-hidden border border-white/10">
+                            <div className="relative w-full aspect-[4/3] md:aspect-[2/1] rounded-3xl overflow-hidden border border-white/10">
                                 <Image
                                     src="/topic/Location.jpg"
                                     alt="Location Image"

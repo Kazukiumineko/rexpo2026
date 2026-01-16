@@ -44,9 +44,9 @@ export default function Jump() {
                             {/* テキストボタンに変更 */}
                             <Link
                                 href="/stage-concept"
-                                className="inline-block border border-white px-8 py-3 text-sm tracking-widest hover:bg-white hover:text-black transition-colors duration-300"
+                                className="inline-block border border-white px-8 py-3 text-sm tracking-widest hover:bg-white hover:text-black transition-colors duration-300 rounded-full"
                             >
-                                詳細を見る →
+                                詳細を見る
                             </Link>
                         </div>
                     </motion.div>
@@ -62,9 +62,9 @@ export default function Jump() {
                     >
                         {/* 写真比率を自然な 3:2 (スマホは 4:3) に調整 */}
                         <Link href="/stage-concept" className="block w-full h-full cursor-pointer group">
-                            <div className="relative w-full aspect-[4/3] md:aspect-[2/1] rounded-sm overflow-hidden border border-white/10">
+                            <div className="relative w-full aspect-[4/3] md:aspect-[2/1] rounded-3xl overflow-hidden border border-white/10">
                                 <Image
-                                    src="/main/StageBG.jpg"
+                                    src="/main/Satoryo1.png"
                                     alt="Stage Concept Image"
                                     fill
                                     className="object-cover hover:scale-105 transition-transform duration-700"
@@ -102,9 +102,9 @@ export default function Jump() {
                             {/* テキストボタンに変更 */}
                             <Link
                                 href="/message"
-                                className="inline-block border border-white px-8 py-3 text-sm tracking-widest hover:bg-white hover:text-black transition-colors duration-300"
+                                className="inline-block border border-white px-8 py-3 text-sm tracking-widest hover:bg-white hover:text-black transition-colors duration-300 rounded-full"
                             >
-                                詳細を見る →
+                                詳細を見る
                             </Link>
                         </div>
                     </motion.div>
@@ -120,7 +120,7 @@ export default function Jump() {
                     >
                         {/* 写真比率を自然な 3:2 (スマホは 4:3) に調整 */}
                         <Link href="/message" className="block w-full h-full cursor-pointer group">
-                            <div className="relative w-full aspect-[4/3] md:aspect-[2/1] rounded-sm overflow-hidden border border-white/10">
+                            <div className="relative w-full aspect-[4/3] md:aspect-[2/1] rounded-3xl overflow-hidden border border-white/10">
                                 <Image
                                     src="/message/Kocho.jpg"
                                     alt="Message Image"

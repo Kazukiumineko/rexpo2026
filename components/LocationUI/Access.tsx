@@ -66,9 +66,9 @@ export default function Access() {
                             href="https://www.google.com/maps/search/?api=1&query=札幌コンベンションセンター"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block border border-black/30 px-6 py-3 text-sm hover:bg-black hover:text-white transition-colors duration-300"
+                            className="inline-block border border-black/30 px-6 py-3 text-sm hover:bg-black hover:text-white transition-colors duration-300 rounded-full"
                         >
-                            Google Mapで見る →
+                            Google Mapで見る
                         </a>
                     </div>
                 </motion.div>
