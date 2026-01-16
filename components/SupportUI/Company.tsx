@@ -2,8 +2,8 @@
 
 
 import LazyImage from "@/components/Shared/LazyImage";
-import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
 
 // 協賛企業データ（画像から抽出）
 // ※ logoのパスは仮定のものです。実際の画像ファイル名に合わせて変更するか、
@@ -96,15 +96,6 @@ const sponsors = [
     },
 ];
 
-// アニメーション設定
-const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.5 }
-    }
-};
 
 export default function SponsorsSection() {
     return (
@@ -114,16 +105,18 @@ export default function SponsorsSection() {
                 {/* グリッドレイアウト: PCで2列、スマホで1列 */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 md:gap-y-8">
 
+
+
                     {sponsors.map((sponsor, index) => (
                         <motion.a
                             key={index} // URLや名前が重複する可能性も考慮しindexも使用可能ですが、今回はユニークなのでnameでもOK
                             href={sponsor.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            initial="hidden"
-                            whileInView="visible"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
-                            variants={itemVariants}
+                            transition={{ duration: 0.5, delay: index * 0.05 }} // 少しずつ順番に出現させる
                             // 少し浮き出るようなホバーエフェクト
                             className="group flex items-center p-4 border border-gray-100 rounded-lg hover:bg-gray-50 hover:shadow-sm transition-all duration-300"
                         >
@@ -161,6 +154,8 @@ export default function SponsorsSection() {
 
                         </motion.a>
                     ))}
+
+
 
                 </div>
             </div>

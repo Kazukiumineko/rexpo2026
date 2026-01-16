@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRef } from "react";
 import LazyImage from "@/components/Shared/LazyImage";
+import ViewMoreButton from "@/components/Shared/ViewMoreButton";
 import { motion, useInView, Variants } from "framer-motion";
 
 export default function InformationSection() {
@@ -127,18 +128,11 @@ export default function InformationSection() {
                                 </p>
                             </div>
 
-                            <Link
+                            <ViewMoreButton
                                 href={topic.link}
-                                className="hidden md:block transition-transform duration-300 hover:scale-105 pt-2"
-                            >
-                                <LazyImage
-                                    src="/main/ViewMore.png"
-                                    alt="View More"
-                                    width={100}
-                                    height={40}
-                                    className="object-contain invert"
-                                />
-                            </Link>
+                                className="hidden md:block pt-2"
+                                theme="dark"
+                            />
                         </motion.div>
                     ))}
                 </motion.div>

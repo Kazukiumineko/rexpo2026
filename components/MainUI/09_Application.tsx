@@ -4,6 +4,7 @@
 import LazyImage from "@/components/Shared/LazyImage";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import ViewMoreButton from "@/components/Shared/ViewMoreButton";
 
 export default function Application() {
     return (
@@ -63,16 +64,7 @@ export default function Application() {
                         viewport={{ once: true }}
                         className="mt-10 md:mt-12"
                     >
-                        <Link href="/application" className="group relative transition-transform duration-300 hover:scale-105 inline-block">
-                            <LazyImage
-                                src="/main/ViewMore.png"
-                                alt="View More"
-                                width={240}
-                                height={80}
-                                containerClassName="h-auto w-[85px] md:w-[100px] lg:w-[120px] bg-transparent"
-                                className="object-contain"
-                            />
-                        </Link>
+                        <ViewMoreButton href="/application" />
                     </motion.div>
 
                 </div>

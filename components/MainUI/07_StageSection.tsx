@@ -3,6 +3,7 @@
 import { useRef } from "react";
 
 import LazyImage from "@/components/Shared/LazyImage";
+import ViewMoreButton from "@/components/Shared/ViewMoreButton";
 import { motion, useInView, Variants } from "framer-motion";
 
 export default function StageSection() {
@@ -122,19 +123,10 @@ export default function StageSection() {
                                     </a>
                                 </p>
 
-                                <a
+                                <ViewMoreButton
                                     href={stage.href}
-                                    className="mt-auto hidden md:block transition-transform duration-300 hover:scale-105"
-                                >
-                                    <LazyImage
-                                        src="/main/ViewMore.png"
-                                        alt="View More"
-                                        width={100}
-                                        height={40}
-                                        containerClassName="w-[100px] bg-transparent"
-                                        className="object-contain"
-                                    />
-                                </a>
+                                    className="mt-auto hidden md:block"
+                                />
                             </motion.div>
                         ))}
                     </div>
