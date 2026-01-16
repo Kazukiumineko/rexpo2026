@@ -16,7 +16,7 @@ const sectionVariants: Variants = {
 
 export default function EntryMain() {
     return (
-        <section className="w-full bg-white pb-12 px-6 md:px-20 lg:px-32">
+        <section className="w-full bg-white pb-60 px-6 md:px-20 lg:px-32">
             <div className="w-full max-w-[1600px] mx-auto">
 
                 {/* 3. 情報エリア (2カラムレイアウト) */}

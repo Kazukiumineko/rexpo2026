@@ -37,7 +37,7 @@ export default function EntryTitle() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                     variants={sectionVariants}
-                    className="mb-32 md:-mb-24"
+                    className="mb-40 md:-mb-12"
                 >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
                         <div className="w-full">
@@ -49,19 +49,19 @@ export default function EntryTitle() {
 
                                 {/* === 日時 === */}
                                 <dt className="text-lg font-bold text-gray-900 h-fit">日時</dt>
-                                <dd className="text-base font-normal md:text-lg md:font-bold text-gray-700 mb-8 md:mb-0">
+                                <dd className="text-base font-normal md:text-lg md:font-bold text-gray-700 mb-4 md:mb-0">
                                     2026年2月11日（水・祝）
                                 </dd>
 
                                 {/* === 一般公開 === */}
                                 <dt className="text-lg font-bold text-gray-900 h-fit">一般公開</dt>
-                                <dd className="text-base font-normal md:text-lg md:font-bold text-gray-700 mb-8 md:mb-0">
+                                <dd className="text-base font-normal md:text-lg md:font-bold text-gray-700 mb-4 md:mb-0">
                                     10:30 ～ 16:30
                                 </dd>
 
                                 {/* === 会場 === */}
                                 <dt className="text-lg font-bold text-gray-900 h-fit">会場</dt>
-                                <dd className="text-base font-normal md:text-lg md:font-bold text-gray-700 flex items-center mb-8 md:mb-0">
+                                <dd className="text-base font-normal md:text-lg md:font-bold text-gray-700 flex items-center mb-4 md:mb-0">
                                     <Link
                                         href="/location"
                                         className="group inline-flex items-center transition-colors hover:text-blue-600"
@@ -85,9 +85,19 @@ export default function EntryTitle() {
                                     </a>
                                 </dd>
                             </dl>
+
+                            {/* === 申し込みボタン === */}
+                            <div className="mt-10">
+                                <a
+                                    href="#" // リンク先は手動で設定
+                                    className="group relative inline-flex h-16 w-full md:w-[300px] items-center justify-center bg-white px-12 text-lg font-bold text-black border border-black transition-colors duration-300 hover:bg-black hover:text-white rounded-full"
+                                >
+                                    <span className="text-xl">今すぐ申込む</span>
+                                </a>
+                            </div>
                         </div>
 
-                        <div className="w-full h-full hidden md:flex items-start justify-center md:justify-end md:mt-4">
+                        <div className="w-full h-full hidden md:flex items-start justify-center md:justify-end md:mt-20">
                             <div className="relative w-full max-w-[500px] aspect-square">
                                 <LazyImage
                                     src="/entry/Logo.png"
