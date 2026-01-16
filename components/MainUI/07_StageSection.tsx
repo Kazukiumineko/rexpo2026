@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
+
 import LazyImage from "@/components/Shared/LazyImage";
 import { motion, useInView, Variants } from "framer-motion";
 
@@ -131,6 +131,7 @@ export default function StageSection() {
                                         alt="View More"
                                         width={100}
                                         height={40}
+                                        containerClassName="w-[100px] bg-transparent"
                                         className="object-contain"
                                     />
                                 </a>

@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
+
+
 import { motion } from "framer-motion";
 import LazyImage from "@/components/Shared/LazyImage";
 import {

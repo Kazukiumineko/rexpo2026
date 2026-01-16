@@ -1,6 +1,7 @@
 "use client";
 
-import Image from "next/image";
+
+import LazyImage from "@/components/Shared/LazyImage";
 import { motion } from "framer-motion";
 
 export default function LocationTop() {
@@ -8,7 +9,7 @@ export default function LocationTop() {
         /* 文字の突き抜けを許可するため overflow-hidden はなし */
         <section className="relative w-full h-[60vh] bg-white">
             {/* 1. メイン背景画像 */}
-            <Image
+            <LazyImage
                 src="/location/Location.jpg"
                 alt="Location Background"
                 fill
@@ -50,11 +51,12 @@ export default function LocationTop() {
                 // left-8 ............ 左寄りに配置
                 className="absolute z-30 w-24 top-20 left-8 block md:hidden"
             >
-                <Image
+                <LazyImage
                     src="/location/TOPYerrow.png"
                     alt="2/11全館貸切！"
                     width={300}
                     height={300}
+                    containerClassName="w-full h-full bg-transparent"
                     className="object-contain drop-shadow-xl"
                 />
             </motion.div>
@@ -71,7 +73,7 @@ export default function LocationTop() {
                 // translate-y-1/2 ... 下に食い込ませる
                 className="absolute z-30 w-28 lg:w-32 bottom-0 left-24 transform translate-y-1/2 hidden md:block"
             >
-                <Image
+                <LazyImage
                     src="/location/TOPYerrow.png"
                     alt="2/11全館貸切！"
                     width={300}

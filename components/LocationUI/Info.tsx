@@ -1,7 +1,8 @@
 "use client";
 
+
+import LazyImage from "@/components/Shared/LazyImage";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import {
     Carousel,
     CarouselContent,
@@ -82,7 +83,7 @@ export default function LocationInfo() {
                                 className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
                             >
                                 <div className="relative aspect-video w-full overflow-hidden bg-gray-100 rounded-xl">
-                                    <Image
+                                    <LazyImage
                                         src={src}
                                         alt={`Sapporo Convention Center ${index + 1}`}
                                         fill

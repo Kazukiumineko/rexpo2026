@@ -1,6 +1,7 @@
 "use client";
 
-import Image from "next/image";
+
+import LazyImage from "@/components/Shared/LazyImage";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
@@ -129,10 +130,11 @@ export default function SponsorsSection() {
                             {/* 1. ロゴ画像エリア（左） */}
                             <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 bg-white mr-5 flex items-center justify-center">
                                 {sponsor.logo ? (
-                                    <Image
+                                    <LazyImage
                                         src={sponsor.logo}
                                         alt={sponsor.name}
                                         fill
+                                        containerClassName="w-full h-full bg-transparent"
                                         className="object-contain p-2"
                                     />
                                 ) : (

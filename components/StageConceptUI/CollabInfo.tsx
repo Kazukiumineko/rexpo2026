@@ -1,7 +1,8 @@
 "use client";
 
+
 import { useState, useRef } from "react";
-import Image from "next/image";
+import LazyImage from "@/components/Shared/LazyImage";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
@@ -70,7 +71,7 @@ export default function CollabInfo() {
                                 >
                                     {/* 1. 画像エリア (円形アイコン) */}
                                     <div className="relative w-20 h-20 md:w-32 md:h-32 flex-shrink-0 overflow-hidden rounded-full border-2 border-white/20">
-                                        <Image
+                                        <LazyImage
                                             src={project.img}
                                             alt={project.title}
                                             fill

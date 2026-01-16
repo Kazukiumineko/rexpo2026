@@ -1,6 +1,7 @@
 "use client";
 
-import Image from "next/image";
+
+import LazyImage from "@/components/Shared/LazyImage";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -10,7 +11,7 @@ export default function Application() {
 
             {/* --- 画像エリア --- */}
             <div className="relative w-full h-[65vh] md:h-[65vh] lg:h-[90vh] overflow-hidden bg-gray-900">
-                <Image
+                <LazyImage
                     src="/main/Application.jpg"
                     alt="Event Background"
                     fill
@@ -63,12 +64,13 @@ export default function Application() {
                         className="mt-10 md:mt-12"
                     >
                         <Link href="/application" className="group relative transition-transform duration-300 hover:scale-105 inline-block">
-                            <Image
+                            <LazyImage
                                 src="/main/ViewMore.png"
                                 alt="View More"
                                 width={240}
                                 height={80}
-                                className="h-auto w-[85px] md:w-[100px] lg:w-[120px] object-contain"
+                                containerClassName="h-auto w-[85px] md:w-[100px] lg:w-[120px] bg-transparent"
+                                className="object-contain"
                             />
                         </Link>
                     </motion.div>

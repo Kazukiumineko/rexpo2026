@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+
 import LazyImage from "@/components/Shared/LazyImage";
 
 interface HeroSectionProps {

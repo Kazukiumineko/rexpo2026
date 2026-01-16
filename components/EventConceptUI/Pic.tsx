@@ -1,6 +1,7 @@
 "use client";
 
-import Image from "next/image";
+
+import LazyImage from "@/components/Shared/LazyImage";
 import { motion } from "framer-motion";
 
 export default function Pic() {
@@ -15,11 +16,12 @@ export default function Pic() {
                     viewport={{ once: true }}
                     className="relative w-full max-w-xl md:max-w-2xl lg:max-w-3xl"
                 >
-                    <Image
+                    <LazyImage
                         src="/event-concept-page/ThemeMessage2.png"
                         alt="Theme Message"
                         width={1200}
                         height={800}
+                        containerClassName="w-full h-full bg-transparent"
                         className="w-full h-auto object-contain drop-shadow-2xl"
                         priority
                     />

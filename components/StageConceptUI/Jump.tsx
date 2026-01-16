@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import Image from "next/image";
+import LazyImage from "@/components/Shared/LazyImage";
 import Link from "next/link";
 
 export default function Jump() {
@@ -63,7 +63,7 @@ export default function Jump() {
                         {/* 写真比率を自然な 3:2 (スマホは 4:3) に調整 */}
                         <Link href="/location" className="block w-full h-full cursor-pointer group">
                             <div className="relative w-full aspect-[4/3] md:aspect-[2/1] rounded-3xl overflow-hidden border border-white/10">
-                                <Image
+                                <LazyImage
                                     src="/topic/Location.jpg"
                                     alt="Location Image"
                                     fill

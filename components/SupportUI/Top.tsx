@@ -1,6 +1,7 @@
 "use client";
 
-import Image from "next/image";
+
+import LazyImage from "@/components/Shared/LazyImage";
 import { motion } from "framer-motion";
 
 export default function MessageTop() {
@@ -8,7 +9,7 @@ export default function MessageTop() {
         <section className="relative w-full bg-white isolate">
             {/* 1. 画像エリア */}
             <div className="relative w-full h-[55vh] z-0">
-                <Image
+                <LazyImage
                     src="/event-concept-page/Atrium.jpg"
                     alt="Message Background"
                     fill

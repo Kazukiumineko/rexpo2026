@@ -2,7 +2,8 @@
 
 
 
-import Image from "next/image";
+
+import LazyImage from "@/components/Shared/LazyImage";
 
 import { motion } from "framer-motion";
 
@@ -18,18 +19,12 @@ export default function MessageTop() {
 
             <div className="relative w-full h-[55vh]">
 
-                <Image
-
+                <LazyImage
                     src="/event-concept-page/Cotan.jpg"
-
                     alt="Message Background"
-
                     fill
-
                     className="object-cover object-center"
-
                     priority
-
                 />
 
             </div>

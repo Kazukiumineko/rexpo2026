@@ -1,6 +1,7 @@
 "use client";
 
-import Image from "next/image";
+
+import LazyImage from "@/components/Shared/LazyImage";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 
@@ -88,10 +89,11 @@ export default function EntryTitle() {
 
                         <div className="w-full h-full hidden md:flex items-start justify-center md:justify-end md:mt-4">
                             <div className="relative w-full max-w-[500px] aspect-square">
-                                <Image
+                                <LazyImage
                                     src="/entry/Logo.png"
                                     alt="R-EXPO 2026 Logo"
                                     fill
+                                    containerClassName="w-full h-full bg-transparent"
                                     className="object-contain object-top"
                                 />
                             </div>

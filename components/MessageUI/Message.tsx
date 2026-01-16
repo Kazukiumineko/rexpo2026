@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import Image from "next/image";
+import LazyImage from "@/components/Shared/LazyImage";
 
 export default function Message() {
     // アニメーション設定
@@ -81,7 +81,7 @@ export default function Message() {
                                 variants={itemVariants}
                                 className="relative aspect-[3/2] w-full rounded-sm overflow-hidden border border-black/10 bg-gray-100"
                             >
-                                <Image
+                                <LazyImage
                                     src="/message/Kocho.jpg"
                                     alt="菊地賢司 学校長"
                                     fill
@@ -128,7 +128,7 @@ export default function Message() {
                                 variants={itemVariants}
                                 className="relative aspect-[3/2] w-full rounded-sm overflow-hidden border border-black/10 bg-gray-100"
                             >
-                                <Image
+                                <LazyImage
                                     src="/message/Ueno.JPG"
                                     alt="行事改革実行委員会の生徒たち"
                                     fill

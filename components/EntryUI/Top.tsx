@@ -1,6 +1,7 @@
 "use client";
 
-import Image from "next/image";
+
+import LazyImage from "@/components/Shared/LazyImage";
 import { motion } from "framer-motion";
 
 export default function EntryTop() {
@@ -8,7 +9,7 @@ export default function EntryTop() {
         <section className="relative w-full bg-white">
             {/* 1. 画像エリア */}
             <div className="relative w-full h-[55vh]">
-                <Image
+                <LazyImage
                     src="/entry/SchoolView.jpg"
                     alt="Entry Background"
                     fill

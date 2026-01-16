@@ -1,6 +1,7 @@
 "use client";
 
-import Image from "next/image";
+
+import LazyImage from "@/components/Shared/LazyImage";
 import { motion } from "framer-motion";
 
 export default function Introduction() {
@@ -65,7 +66,7 @@ export default function Introduction() {
 
                 {/* 背景画像エリア */}
                 <div className="absolute inset-0 overflow-hidden">
-                    <Image
+                    <LazyImage
                         src="/event-concept-page/Introduction2.jpg"
                         alt="Introduction Background"
                         fill

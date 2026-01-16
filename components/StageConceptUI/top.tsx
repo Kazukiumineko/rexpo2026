@@ -1,13 +1,14 @@
 "use client";
 
-import Image from "next/image";
+
+import LazyImage from "@/components/Shared/LazyImage";
 import { motion } from "framer-motion";
 
 export default function StageTop() {
     return (
         <section className="relative w-full h-screen bg-black overflow-hidden">
             {/* 1. メイン背景画像：ソースを変更し、brightnessを下げて暗くする */}
-            <Image
+            <LazyImage
                 src="/main/Satoryo1.png"
                 alt="Stage Concept Background"
                 fill
