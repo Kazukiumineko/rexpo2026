@@ -28,7 +28,7 @@ export function MiniLogo({ isVisible, invert = false }: { isVisible: boolean; in
                     width={150}
                     height={50}
                     // lg:invert に変更してスマホ時は白のままにする
-                    className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] ${invert ? "lg:[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)]" : "lg:mix-blend-difference"}`}
+                    className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] ${invert ? "lg:[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)]" : ""}`}
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 />
             ) : (
@@ -39,7 +39,7 @@ export function MiniLogo({ isVisible, invert = false }: { isVisible: boolean; in
                         width={150}
                         height={50}
                         // lg:invert に変更してスマホ時は白のままにする
-                        className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] ${invert ? "lg:[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)]" : "lg:mix-blend-difference"}`}
+                        className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] ${invert ? "lg:[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)]" : ""}`}
                     />
                 </Link>
             )}
@@ -74,7 +74,7 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
             <button
                 onClick={toggleMenu}
                 aria-label="Toggle Menu"
-                className={`absolute -top-2 md:top-0 right-4 z-50 w-16 h-16 flex flex-col justify-center items-center gap-2 transition-opacity duration-500 ease-in-out cursor-pointer ${invert ? "" : "lg:mix-blend-difference"}
+                className={`absolute -top-2 md:top-0 right-4 z-50 w-16 h-16 flex flex-col justify-center items-center gap-2 transition-opacity duration-500 ease-in-out cursor-pointer
                 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
             >
                 <span
