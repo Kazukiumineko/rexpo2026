@@ -23,7 +23,7 @@ export default function LocationInfo() {
            これにより、内部のカルーセルもテキストも左右に同じ余白（マージン）が生まれ、
            そのラインで写真が消えるようになります。
         */
-        <section className="relative w-full bg-white text-black pt-16 md:pt-32 pb-48 px-6 md:px-20 lg:px-32 z-10 overflow-hidden">
+        <section className="relative w-full bg-white text-[#092040] pt-16 md:pt-32 pb-48 px-6 md:px-20 lg:px-32 z-10 overflow-hidden">
 
             {/* テキストエリア（親のPaddingに従うため、個別のPaddingは削除） */}
             <div className="w-full max-w-4xl mb-24">
@@ -34,7 +34,7 @@ export default function LocationInfo() {
                     transition={{ duration: 1 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-2xl sm:text-3xl md:text-6xl lg:text-7xl font-bold mb-8 tracking-tighter text-black whitespace-nowrap">
+                    <h2 className="text-2xl sm:text-3xl md:text-6xl lg:text-7xl font-bold mb-8 tracking-tighter text-[#092040] whitespace-nowrap">
                         札幌コンベンションセンター
                     </h2>
                 </motion.div>

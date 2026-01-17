@@ -28,7 +28,7 @@ export function MiniLogo({ isVisible, invert = false }: { isVisible: boolean; in
                     width={150}
                     height={50}
                     // lg:invert に変更してスマホ時は白のままにする
-                    className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] ${invert ? "lg:invert" : "lg:mix-blend-difference"}`}
+                    className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] ${invert ? "lg:[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)]" : "lg:mix-blend-difference"}`}
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 />
             ) : (
@@ -39,7 +39,7 @@ export function MiniLogo({ isVisible, invert = false }: { isVisible: boolean; in
                         width={150}
                         height={50}
                         // lg:invert に変更してスマホ時は白のままにする
-                        className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] ${invert ? "lg:invert" : "lg:mix-blend-difference"}`}
+                        className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] ${invert ? "lg:[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)]" : "lg:mix-blend-difference"}`}
                     />
                 </Link>
             )}
@@ -78,15 +78,15 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
                 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
             >
                 <span
-                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : invert ? "bg-white lg:bg-black" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-2.5" : ""
+                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : invert ? "bg-white lg:bg-[#092040]" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-2.5" : ""
                         }`}
                 />
                 <span
-                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : invert ? "bg-white lg:bg-black" : "bg-white"} transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-0" : "opacity-100"
+                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : invert ? "bg-white lg:bg-[#092040]" : "bg-white"} transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-0" : "opacity-100"
                         }`}
                 />
                 <span
-                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : invert ? "bg-white lg:bg-black" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "-rotate-45 -translate-y-2.5" : ""
+                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : invert ? "bg-white lg:bg-[#092040]" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "-rotate-45 -translate-y-2.5" : ""
                         }`}
                 />
             </button>
@@ -107,7 +107,7 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
                             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                            className="fixed top-0 right-0 h-full w-full max-w-sm bg-[#1a1a1a]/60 backdrop-blur-sm text-white z-40 shadow-2xl flex flex-col justify-center p-10 border-l border-white/10"
+                            className="fixed top-0 right-0 h-full w-full max-w-sm bg-[#092040]/90 backdrop-blur-sm text-white z-40 shadow-2xl flex flex-col justify-center p-10 border-l border-white/10"
                         >
                             <nav className="flex flex-col space-y-6">
                                 {menuItems.map((item, index) => (
@@ -149,7 +149,7 @@ export default function Header({ isVisible, invert }: HeaderProps) {
     return (
         <div className="fixed top-0 left-0 w-full z-[1000] pointer-events-none">
             <div
-                className={`absolute top-0 left-0 w-full h-14 lg:h-18 bg-black/85 md:bg-black/85 lg:bg-black/0 transition-opacity duration-500 ease-in-out
+                className={`absolute top-0 left-0 w-full h-14 lg:h-18 bg-[#092040] md:bg-[#092040] lg:bg-black/0 transition-opacity duration-500 ease-in-out
           ${isVisible ? "opacity-100" : "opacity-0"}`}
             ></div>
 

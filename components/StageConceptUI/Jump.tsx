@@ -44,7 +44,7 @@ export default function Jump() {
                             {/* テキストボタンに変更 */}
                             <Link
                                 href="/location"
-                                className="inline-block border border-white px-8 py-3 text-sm tracking-widest hover:bg-white hover:text-black transition-colors duration-300 rounded-full"
+                                className="inline-block border border-white px-8 py-3 text-sm tracking-widest hover:bg-white hover:text-[#092040] transition-colors duration-300 rounded-full"
                             >
                                 詳細を見る
                             </Link>

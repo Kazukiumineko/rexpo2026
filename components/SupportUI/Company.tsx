@@ -99,7 +99,7 @@ const sponsors = [
 
 export default function SponsorsSection() {
     return (
-        <section className="w-full bg-white text-black pt-0 pb-20 md:py-20 px-6 md:px-12 lg:px-20">
+        <section className="w-full bg-white text-[#092040] pt-0 pb-20 md:py-20 px-6 md:px-12 lg:px-20">
             <div className="max-w-[1400px] mx-auto">
 
                 {/* グリッドレイアウト: PCで2列、スマホで1列 */}
@@ -118,7 +118,7 @@ export default function SponsorsSection() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.05 }} // 少しずつ順番に出現させる
                             // 少し浮き出るようなホバーエフェクト
-                            className="group flex items-center p-4 border border-gray-100 rounded-lg hover:bg-gray-50 hover:shadow-sm transition-all duration-300"
+                            className="group flex items-center p-4 border border-gray-100 rounded-lg hover:bg-white hover:border-[#092040] hover:shadow-lg transition-all duration-300"
                         >
                             {/* 1. ロゴ画像エリア（左） */}
                             <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 bg-white mr-5 flex items-center justify-center">
@@ -142,14 +142,14 @@ export default function SponsorsSection() {
 
                             {/* 2. 会社名（右） */}
                             <div className="flex-1 min-w-0"> {/* min-w-0 はテキスト切り詰め用 */}
-                                <h3 className="font-oswald text-base md:text-lg font-bold text-gray-800 group-hover:text-blue-700 transition-colors break-words">
+                                <h3 className="font-oswald text-base md:text-lg font-bold text-[#092040] group-hover:text-[#092040] transition-colors break-words">
                                     {sponsor.name}
                                 </h3>
                             </div>
 
                             {/* 3. 外部リンクマーク（さらに右端） */}
                             <div className="ml-4 flex-shrink-0">
-                                <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-blue-700 transition-colors" />
+                                <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-[#092040] transition-colors" />
                             </div>
 
                         </motion.a>

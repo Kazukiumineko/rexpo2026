@@ -75,11 +75,11 @@ export default function InformationSection() {
                         className="col-span-full flex flex-col items-center mb-8 lg:mb-32"
                         variants={itemVariants}
                     >
-                        <h2 className="text-gray-800 font-oswald text-6xl md:text-8xl lg:text-[10rem] tracking-tight font-bold leading-none">
+                        <h2 className="text-[#092040] font-oswald text-6xl md:text-8xl lg:text-[10rem] tracking-tight font-bold leading-none">
                             INFORMATION
                         </h2>
                         {/* ▼ 追加した文字 ▼ */}
-                        <p className="mt-4 text-sm md:text-2xl font-bold text-gray-800 font-jp tracking-widest">
+                        <p className="mt-4 text-sm md:text-2xl font-bold text-[#092040] font-jp tracking-widest">
                             R-EXPOをもっと知る
                         </p>
                     </motion.div>

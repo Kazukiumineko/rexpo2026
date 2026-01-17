@@ -127,6 +127,7 @@ export default function StageSection() {
                                 <div className="mt-auto hidden md:block">
                                     <ViewMoreButton
                                         href={stage.href}
+                                        hoverMode="white"
                                     />
                                 </div>
                             </motion.div>

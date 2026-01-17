@@ -5,14 +5,19 @@ interface ViewMoreButtonProps {
     href: string;
     className?: string;
     theme?: "light" | "dark";
+    hoverMode?: "default" | "white";
 }
 
-export default function ViewMoreButton({ href, className = "", theme = "light" }: ViewMoreButtonProps) {
+export default function ViewMoreButton({ href, className = "", theme = "light", hoverMode = "default" }: ViewMoreButtonProps) {
     const isLight = theme === "light";
 
+    const hoverClasses = hoverMode === "white"
+        ? "hover:bg-white hover:text-[#092040] hover:border-white"
+        : "hover:bg-[#092040] hover:text-white hover:border-[#092040]";
+
     const containerClasses = isLight
-        ? "border-white text-white bg-white/5 hover:bg-white hover:text-black"
-        : "border-gray-800 text-gray-800 bg-white hover:bg-gray-800 hover:text-white";
+        ? `border-white text-white bg-white/5 ${hoverClasses}`
+        : `border-gray-800 text-gray-800 bg-white ${hoverClasses}`;
 
     return (
         <Link

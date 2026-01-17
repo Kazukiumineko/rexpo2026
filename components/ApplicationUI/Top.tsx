@@ -41,7 +41,7 @@ export default function ApplicationTop() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                        className="text-black font-bold text-4xl md:text-6xl lg:text-7xl tracking-widest drop-shadow-sm font-jp"
+                        className="text-[#092040] font-bold text-4xl md:text-6xl lg:text-7xl tracking-widest drop-shadow-sm font-jp"
                     >
                         R-EXPO公式アプリ
                     </motion.h1>
@@ -51,7 +51,7 @@ export default function ApplicationTop() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                        className="mt-6 text-black md:text-gray-800 text-lg md:text-2xl font-medium tracking-wider drop-shadow-sm font-jp"
+                        className="mt-6 text-[#092040] md:text-[#092040] text-lg md:text-2xl font-medium tracking-wider drop-shadow-sm font-jp"
                     >
                         すべての企画を、あなたの掌に
                     </motion.p>

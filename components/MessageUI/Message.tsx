@@ -25,7 +25,7 @@ export default function Message() {
     };
 
     return (
-        <section className="w-full bg-white text-black py-24 md:py-32 px-6 md:px-20 lg:px-32 overflow-hidden">
+        <section className="w-full bg-white text-[#092040] py-24 md:py-32 px-6 md:px-20 lg:px-32 overflow-hidden">
             <motion.div
                 variants={containerVariants}
                 initial="hidden"
@@ -54,7 +54,7 @@ export default function Message() {
                                         菊地 賢司
                                     </h2>
                                 </div>
-                                <div className="font-jp text-gray-800 leading-relaxed space-y-4 text-justify">
+                                <div className="font-jp text-[#092040] leading-relaxed space-y-4 text-justify">
                                     <p>
                                         平素より本校の教育活動にご理解とご協力を賜り、心より感謝申し上げます。2025年、本校は「北の立命館」としてから北海道に誕生してから、開校30周年の節目の年を迎えました。1996年の開校より、本校は、立命館学園の建学の精神である、「自由と清新」と教学理念である、「平和と民主主義」を具現化するため、常に時代の先端と人類が抱える課題の現場を学習の場として、教育を実践してきました。現在、世界は大きな危機を迎えています。終わりの見えない紛争、異常気象、差別など「地球規模の課題」は、その深刻さを益々深めています。そのような中、本校は、自分の目で真実を見つめ、自分の肌で感じ、自分が何をすべきなのかを決意させる教育を展開してきました。
                                     </p>

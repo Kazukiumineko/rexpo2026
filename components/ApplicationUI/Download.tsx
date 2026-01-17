@@ -14,7 +14,7 @@ export default function DownloadSection() {
                 className="max-w-4xl mx-auto flex flex-col items-center"
             >
                 {/* 1. タイトル */}
-                <h2 className="text-black font-bold text-3xl md:text-4xl lg:text-5xl tracking-wider font-jp mb-12">
+                <h2 className="text-[#092040] font-bold text-3xl md:text-4xl lg:text-5xl tracking-wider font-jp mb-12">
                     いますぐインストール
                 </h2>
 
