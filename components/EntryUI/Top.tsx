@@ -15,7 +15,7 @@ export default function EntryTop() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                    className="relative z-10 text-[#092040] text-3xl md:text-5xl lg:text-6xl font-bold tracking-widest leading-none"
+                    className="relative z-10 text-[#092040] text-3xl md:text-5xl lg:text-6xl font-bold tracking-widest leading-none whitespace-nowrap md:whitespace-normal"
                 >
                     一般来場の方
                 </motion.p>
