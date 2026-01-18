@@ -4,7 +4,7 @@
 import LazyImage from "@/components/Shared/LazyImage";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import ViewMoreButton from "@/components/Shared/ViewMoreButton";
+
 
 export default function Application() {
     return (
@@ -12,13 +12,7 @@ export default function Application() {
 
             {/* --- 画像エリア --- */}
             <div className="relative w-full h-[65vh] md:h-[65vh] lg:h-[90vh] overflow-hidden bg-gray-900">
-                <LazyImage
-                    src="/main/Application.jpg"
-                    alt="Event Background"
-                    fill
-                    className="object-cover brightness-[0.2]"
-                    priority
-                />
+                <div className="absolute inset-0 bg-r-expo-blue" />
 
                 {/* 全体コンテンツコンテナ */}
                 <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6">
@@ -36,7 +30,7 @@ export default function Application() {
                         </h2>
 
                         {/* 2. サブタイトル */}
-                        <p className="mt-4 text-sm md:text-xl lg:text-2xl font-bold tracking-widest text-white">
+                        <p className="mt-4 font-jp text-2xl md:text-4xl font-bold tracking-tight text-white">
                             R-EXPOをもっと楽しむ
                         </p>
                     </motion.div>
@@ -64,7 +58,12 @@ export default function Application() {
                         viewport={{ once: true }}
                         className="mt-10 md:mt-12"
                     >
-                        <ViewMoreButton href="/application" />
+                        <Link
+                            href="/application"
+                            className="inline-flex items-center justify-center px-8 py-3 md:px-16 md:py-4 border border-white text-white text-base md:text-xl font-bold tracking-widest rounded-full hover:bg-white hover:text-[#092040] hover:border-[#092040] transition-colors duration-300"
+                        >
+                            今すぐアプリをインストール
+                        </Link>
                     </motion.div>
 
                 </div>
