@@ -75,7 +75,7 @@ export default function InformationSection() {
                         className="col-span-full flex flex-col items-center mb-8 lg:mb-32"
                         variants={itemVariants}
                     >
-                        <h2 className="text-[#092040] font-oswald text-6xl md:text-8xl lg:text-[10rem] tracking-tight font-bold leading-none">
+                        <h2 className="text-[#092040] font-oswald text-6xl md:text-8xl lg:text-[10rem] tracking-tighter font-bold leading-none">
                             INFORMATION
                         </h2>
                         {/* ▼ 追加した文字 ▼ */}
@@ -105,16 +105,17 @@ export default function InformationSection() {
 
                             <div className="flex flex-col space-y-3 flex-grow">
                                 <h3 className="font-biz text-2xl font-bold tracking-widest uppercase mt-2 flex items-center gap-2">
+                                    <div className="w-[5px] h-6 bg-[#113f7d]"></div>
                                     <Link href={topic.link} className="md:pointer-events-none md:cursor-auto">
                                         {topic.title}
                                     </Link>
                                     <Link
                                         href={topic.link}
-                                        className="md:hidden flex items-center justify-center p-1 opacity-80 hover:opacity-100 transition-opacity text-gray-500"
+                                        className="md:hidden flex items-center justify-center p-1 -ml-1 hover:opacity-100 transition-opacity text-[#113f7d]"
                                     >
                                         <svg
-                                            width="20"
-                                            height="20"
+                                            width="26"
+                                            height="26"
                                             viewBox="0 0 24 24"
                                             fill="currentColor"
                                             xmlns="http://www.w3.org/2000/svg"
