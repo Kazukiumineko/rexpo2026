@@ -118,7 +118,7 @@ export default function SponsorsSection() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.05 }} // 少しずつ順番に出現させる
                             // 少し浮き出るようなホバーエフェクト
-                            className="group flex items-center p-4 border border-gray-100 rounded-lg hover:bg-white hover:border-[#092040] hover:shadow-lg transition-all duration-300"
+                            className="group flex items-center p-4 border border-gray-100 rounded-lg hover:bg-white hover:border-[#113f7d] hover:shadow-lg transition-all duration-300"
                         >
                             {/* 1. ロゴ画像エリア（左） */}
                             <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 bg-white mr-5 flex items-center justify-center">
