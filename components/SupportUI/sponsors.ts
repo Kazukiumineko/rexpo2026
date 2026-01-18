@@ -86,7 +86,7 @@ export const sponsors: Sponsor[] = [
     },
     {
         name: "株式会社レコハイ",
-        color: "#16A085",
+        logo: "/support/recohigh.jpg",
         url: "https://smaspisport2000.wixsite.com/home",
     },
     {
