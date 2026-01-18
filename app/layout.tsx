@@ -1,26 +1,13 @@
 import type { Metadata } from "next";
 // 必要なフォントだけをインポート
-import { Inter, Noto_Sans_JP, Cinzel, Oswald, Zen_Kaku_Gothic_New, BIZ_UDPGothic } from "next/font/google";
+import { Noto_Sans_JP, Oswald, Zen_Kaku_Gothic_New, BIZ_UDPGothic } from "next/font/google";
 import "./globals.css";
-
-// 1. 基本英語 (予備)
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter"
-});
 
 // 2. 基本日本語 (予備)
 const notoSansJP = Noto_Sans_JP({
   weight: ["400", "700"],
   subsets: ["latin"],
   variable: "--font-noto-sans-jp",
-});
-
-// 3. 英語見出し (ファンタジー風)
-const cinzel = Cinzel({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  variable: "--font-cinzel",
 });
 
 // 4. 強調・見出し (採用サイト風)
@@ -58,9 +45,7 @@ export default function RootLayout({
     <html lang="ja">
       <body
         className={`
-          ${inter.variable} 
           ${notoSansJP.variable} 
-          ${cinzel.variable} 
           ${oswald.variable} 
           ${bizUdp.variable} 
           antialiased

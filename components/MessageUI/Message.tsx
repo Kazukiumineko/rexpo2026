@@ -25,7 +25,7 @@ export default function Message() {
     };
 
     return (
-        <section className="w-full bg-white text-[#092040] py-24 md:py-32 px-6 md:px-20 lg:px-32 overflow-hidden">
+        <section className="w-full bg-white text-r-expo-navy py-24 md:py-32 px-6 md:px-20 lg:px-32 overflow-hidden">
             <motion.div
                 variants={containerVariants}
                 initial="hidden"

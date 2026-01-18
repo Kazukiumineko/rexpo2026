@@ -51,7 +51,7 @@ export default function ApplicationTop() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                        className="mt-6 text-[#092040] md:text-[#092040] text-lg md:text-2xl font-medium tracking-wider drop-shadow-sm font-jp"
+                        className="mt-6 text-r-expo-navy md:text-r-expo-navy text-lg md:text-2xl font-medium tracking-wider drop-shadow-sm font-jp"
                     >
                         すべての企画を、あなたの掌に
                     </motion.p>

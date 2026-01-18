@@ -41,26 +41,26 @@ export default function EntryTitle() {
                 >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
                         <div className="w-full">
-                            <h3 className="hidden md:block text-3xl md:text-4xl font-bold mb-10 tracking-wide text-[#092040]">
+                            <h3 className="hidden md:block text-3xl md:text-4xl font-bold mb-10 tracking-wide text-r-expo-navy">
                                 開催概要
                             </h3>
 
                             <dl className="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-y-1 md:gap-y-5 gap-x-8 text-left">
 
                                 {/* === 日時 === */}
-                                <dt className="text-lg font-bold text-[#092040] h-fit">日時</dt>
+                                <dt className="text-lg font-bold text-r-expo-navy h-fit">日時</dt>
                                 <dd className="text-base font-normal md:text-lg md:font-bold text-gray-700 mb-2 md:mb-0">
                                     2026年2月11日（水・祝）
                                 </dd>
 
                                 {/* === 一般公開 === */}
-                                <dt className="text-lg font-bold text-[#092040] h-fit">一般公開</dt>
+                                <dt className="text-lg font-bold text-r-expo-navy h-fit">一般公開</dt>
                                 <dd className="text-base font-normal md:text-lg md:font-bold text-gray-700 mb-2 md:mb-0">
                                     10:30 ～ 16:30
                                 </dd>
 
                                 {/* === 会場 === */}
-                                <dt className="text-lg font-bold text-[#092040] h-fit">会場</dt>
+                                <dt className="text-lg font-bold text-r-expo-navy h-fit">会場</dt>
                                 <dd className="text-base font-normal md:text-lg md:font-bold text-gray-700 flex items-center mb-2 md:mb-0">
                                     <Link
                                         href="/location"
@@ -72,7 +72,7 @@ export default function EntryTitle() {
                                 </dd>
 
                                 {/* === 主催 === */}
-                                <dt className="text-lg font-bold text-[#092040] h-fit">主催</dt>
+                                <dt className="text-lg font-bold text-r-expo-navy h-fit">主催</dt>
                                 <dd className="text-base font-normal md:text-lg md:font-bold text-gray-700 flex items-center">
                                     <a
                                         href="https://www2.spc.ritsumei.ac.jp/top_menu/topmenu.html"

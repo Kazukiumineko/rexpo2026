@@ -15,13 +15,11 @@
   --font-jp: var(--font-noto-sans-jp);
 
   /* 4. その他の英語・デザインフォント */
-  --font-inter: var(--font-inter);
   --font-oswald: var(--font-oswald);
-  --font-cinzel: var(--font-cinzel);
 
   /* ▼ font-sans (指定なしのデフォルト) の優先順位 */
-  /* Zen角 > BIZ UDP > Inter の順で適用されます */
-  --font-sans: var(--font-zen-kaku), var(--font-biz-udp), var(--font-inter), sans-serif;
+  /* Zen角 > BIZ UDP > それ以外 の順で適用されます */
+  --font-sans: var(--font-zen-kaku), var(--font-biz-udp), sans-serif;
 }
 
 :root {

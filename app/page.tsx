@@ -7,12 +7,14 @@ import BackgroundVideo from "@/components/MainUI/01_BackgroundVideo";
 import Header from "@/components/MainUI/02_Header";
 import HeroSection from "@/components/MainUI/03_HeroSection";
 import ScrollTextSection from "@/components/MainUI/04_ScrollTextSection";
-import ConceptSection from "@/components/MainUI/05_ConceptSection";
-import StageSection from "@/components/MainUI/07_StageSection";
-import InformationSection from "@/components/MainUI/08_InformationSection";
-import Application from "@/components/MainUI/09_Application";
-import FooterBar from "@/components/MainUI/10_FooterBar";
+import dynamic from "next/dynamic";
 import Opening from "@/components/MainUI/Opening";
+
+const ConceptSection = dynamic(() => import("@/components/MainUI/05_ConceptSection"));
+const StageSection = dynamic(() => import("@/components/MainUI/07_StageSection"));
+const InformationSection = dynamic(() => import("@/components/MainUI/08_InformationSection"));
+const Application = dynamic(() => import("@/components/MainUI/09_Application"));
+const FooterBar = dynamic(() => import("@/components/MainUI/10_FooterBar"));
 
 
 export default function Home() {

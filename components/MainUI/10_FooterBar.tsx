@@ -61,7 +61,7 @@ export default function FooterBar({ variant = "default" }: FooterBarProps) {
                                     href={item.href}
                                     className="group flex items-center text-xs md:text-sm font-medium tracking-wider hover:opacity-60 transition-opacity"
                                 >
-                                    <span className={`mr-2 text-[10px] md:text-xs ${isBlack ? "text-white" : "text-[#092040]"}`}>▶</span>
+                                    <span className={`mr-2 text-[10px] md:text-xs ${isBlack ? "text-white" : "text-r-expo-navy"}`}>▶</span>
                                     <span className={`border-b border-transparent ${hoverBorderClass} transition-all`}>
                                         {item.label}
                                     </span>
@@ -89,7 +89,7 @@ export default function FooterBar({ variant = "default" }: FooterBarProps) {
 
             {/* --- ③ 既存の黒いバー --- */}
             {/* ここに以前のfooterタグのスタイルを適用します */}
-            <div className={`w-full ${isBlack ? "bg-[#092040] border-t border-white/20" : "bg-[#092040]"} text-white h-10 flex items-center justify-center px-4 md:px-8 relative`}>
+            <div className={`w-full ${isBlack ? "bg-r-expo-navy border-t border-white/20" : "bg-r-expo-navy"} text-white h-10 flex items-center justify-center px-4 md:px-8 relative`}>
 
                 {/* 左側: 立命館ロゴ */}
                 <div className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2">

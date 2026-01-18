@@ -15,12 +15,10 @@ module.exports = {
         // sansは globals.css で定義します
         kaku: ["var(--font-zen-kaku)"],
         jp: ["var(--font-noto-sans-jp)"],
-        cinzel: ["var(--font-cinzel)"],
         oswald: ["var(--font-oswald)"],
       },
       colors: {
         "r-expo-blue": "#0066FF",
-        "r-expo-green": "#00CC66",
       },
     },
   },
