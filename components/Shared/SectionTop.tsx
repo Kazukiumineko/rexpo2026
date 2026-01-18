@@ -18,6 +18,11 @@ interface SectionTopProps {
      * padding, background, z-index, overflow などを指定する
      */
     containerClassName: string;
+    /**
+     * 画像の上に重ねるオーバーレイ要素 (オプション)
+     * 色付きフィルターなどを適用する場合に使用
+     */
+    imageOverlay?: ReactNode;
     children: ReactNode;
 }
 
@@ -27,6 +32,7 @@ export default function SectionTop({
     backTitle,
     backTitleClassName,
     containerClassName,
+    imageOverlay,
     children
 }: SectionTopProps) {
     return (
@@ -40,6 +46,7 @@ export default function SectionTop({
                     className="object-cover object-center"
                     priority
                 />
+                {imageOverlay}
             </div>
 
             {/* 2. 下部エリア (テキスト用) */}

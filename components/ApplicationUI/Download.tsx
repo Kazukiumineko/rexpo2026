@@ -40,11 +40,9 @@ export default function DownloadSection() {
 
                     {/* Google Play Badge (右) */}
                     <motion.a
-                        onClick={(e) => {
-                            e.preventDefault();
-                            alert("Coming Soon");
-                        }}
-                        href="#"
+                        href="https://play.google.com/store/apps/details?id=com.ichi.rexpo"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="relative w-[155px] h-[46px] md:w-[220px] md:h-[65px]" // Google Playの方が横長のデザインが多いため少し幅を広げています
