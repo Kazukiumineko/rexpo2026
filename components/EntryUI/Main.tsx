@@ -33,25 +33,25 @@ export default function EntryMain() {
                         viewport={{ once: true, margin: "-100px" }}
                         variants={sectionVariants}
                     >
-                        <h4 className="text-xl font-bold mb-6 flex items-center text-r-expo-navy">
+                        <h4 className="text-xl font-bold mb-6 flex items-center text-[#092040]">
                             <span className="w-2 h-8 bg-gray-200 mr-3"></span>
                             お申込みについて
                         </h4>
 
                         <div className="space-y-6 text-sm md:text-base text-gray-600 leading-7">
                             <div>
-                                <span className="font-bold text-r-expo-navy block mb-1">入場対象者</span>
+                                <span className="font-bold text-[#092040] block mb-1">入場対象者</span>
                                 <p>本イベントはどなたでも無料でご入場いただけます。在校生保護者の方につきましても、事前登録が必要です。</p>
                             </div>
 
 
                             <div>
-                                <span className="font-bold text-r-expo-navy block mb-1">入場方法</span>
+                                <span className="font-bold text-[#092040] block mb-1">入場方法</span>
                                 <p>申込み完了後に発行される「受付用バーコード」をスマートフォン等に保存し、当日受付にてご提示ください。</p>
                             </div>
 
                             <div>
-                                <span className="font-bold text-r-expo-navy block mb-1">当日申込み</span>
+                                <span className="font-bold text-[#092040] block mb-1">当日申込み</span>
                                 <p>当日、会場での申込みも可能ですが、混雑緩和のため事前登録をおすすめいたします。</p>
                             </div>
                         </div>

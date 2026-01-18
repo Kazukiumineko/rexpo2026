@@ -10,11 +10,12 @@ import ScrollTextSection from "@/components/MainUI/04_ScrollTextSection";
 import dynamic from "next/dynamic";
 import Opening from "@/components/MainUI/Opening";
 
+import FooterBar from "@/components/MainUI/10_FooterBar";
+
 const ConceptSection = dynamic(() => import("@/components/MainUI/05_ConceptSection"));
 const StageSection = dynamic(() => import("@/components/MainUI/07_StageSection"));
 const InformationSection = dynamic(() => import("@/components/MainUI/08_InformationSection"));
 const Application = dynamic(() => import("@/components/MainUI/09_Application"));
-const FooterBar = dynamic(() => import("@/components/MainUI/10_FooterBar"));
 
 
 export default function Home() {

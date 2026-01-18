@@ -18,7 +18,7 @@ export default function Access() {
                 >
                     {/* タイトルエリア */}
                     <div>
-                        <h2 className="font-oswald text-5xl md:text-7xl font-bold tracking-tight mb-2 text-r-expo-navy">
+                        <h2 className="font-oswald text-5xl md:text-7xl font-bold tracking-tight mb-2 text-[#092040]">
                             ACCESS
                         </h2>
 
@@ -27,7 +27,7 @@ export default function Access() {
                     {/* 詳細テキスト */}
                     <div className="space-y-8 text-gray-700 leading-relaxed font-jp">
                         <div>
-                            <h3 className="text-r-expo-navy font-bold text-xl mb-2">
+                            <h3 className="text-[#092040] font-bold text-xl mb-2">
                                 <a
                                     href="https://www.sora-scc.jp/"
                                     target="_blank"
@@ -35,7 +35,7 @@ export default function Access() {
                                     className="inline-flex items-center gap-2 hover:opacity-70 transition-opacity"
                                 >
                                     札幌コンベンションセンター
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="translate-y-[1px] text-r-expo-navy">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="translate-y-[1px] text-[#092040]">
                                         <path d="M8 5v14l11-7z" />
                                     </svg>
                                 </a>
@@ -47,14 +47,14 @@ export default function Access() {
 
                         <div className="space-y-4 border-l-2 border-black/20 pl-6">
                             <div>
-                                <span className="block text-r-expo-navy font-bold mb-1">地下鉄でお越しの方</span>
+                                <span className="block text-[#092040] font-bold mb-1">地下鉄でお越しの方</span>
                                 <p className="font-light text-sm">
                                     地下鉄東西線 東札幌駅 1番出口より徒歩約8分
                                 </p>
                             </div>
 
                             <div>
-                                <span className="block text-r-expo-navy font-bold mb-1">お車でお越しの方</span>
+                                <span className="block text-[#092040] font-bold mb-1">お車でお越しの方</span>
                                 <p className="font-light text-sm">
                                     当日は駐車場をご用意しておりますが、混雑緩和のため公共交通機関の利用を推奨します。
                                 </p>

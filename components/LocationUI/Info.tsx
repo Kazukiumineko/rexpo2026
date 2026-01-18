@@ -34,7 +34,7 @@ export default function LocationInfo() {
                     transition={{ duration: 1 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-2xl sm:text-3xl md:text-6xl lg:text-7xl font-bold mb-8 tracking-tighter text-r-expo-navy whitespace-nowrap">
+                    <h2 className="text-2xl sm:text-3xl md:text-6xl lg:text-7xl font-bold mb-8 tracking-tighter text-[#092040] whitespace-nowrap">
                         札幌コンベンションセンター
                     </h2>
                 </motion.div>

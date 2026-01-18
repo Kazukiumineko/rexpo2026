@@ -107,7 +107,7 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
                             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                            className="fixed top-0 right-0 h-full w-full max-w-sm bg-r-expo-navy/90 backdrop-blur-sm text-white z-40 shadow-2xl flex flex-col justify-center p-10 border-l border-white/10"
+                            className="fixed top-0 right-0 h-full w-full max-w-sm bg-[#092040]/90 backdrop-blur-sm text-white z-40 shadow-2xl flex flex-col justify-center p-10 border-l border-white/10"
                         >
                             <nav className="flex flex-col space-y-6">
                                 {menuItems.map((item, index) => (
@@ -149,7 +149,7 @@ export default function Header({ isVisible, invert }: HeaderProps) {
     return (
         <div className="fixed top-0 left-0 w-full z-[1000] pointer-events-none">
             <div
-                className={`absolute top-0 left-0 w-full h-14 lg:h-18 bg-r-expo-navy md:bg-r-expo-navy lg:bg-black/0 transition-opacity duration-500 ease-in-out
+                className={`absolute top-0 left-0 w-full h-14 lg:h-18 bg-[#092040] md:bg-[#092040] lg:bg-black/0 transition-opacity duration-500 ease-in-out
           ${isVisible ? "opacity-100" : "opacity-0"}`}
             ></div>
 
