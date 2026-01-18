@@ -30,7 +30,7 @@ export default function SponsorCard({ sponsor, index }: SponsorCardProps) {
                         alt={sponsor.name}
                         fill
                         containerClassName="w-full h-full bg-transparent"
-                        className="object-contain p-2"
+                        className="object-cover"
                     />
                 ) : (
                     <div
