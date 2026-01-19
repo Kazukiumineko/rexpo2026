@@ -23,7 +23,7 @@ export default function LocationInfo() {
            これにより、内部のカルーセルもテキストも左右に同じ余白（マージン）が生まれ、
            そのラインで写真が消えるようになります。
         */
-        <section className="relative w-full bg-white text-[#092040] pt-16 md:pt-32 pb-48 px-6 md:px-20 lg:px-32 z-10 overflow-hidden">
+        <section className="relative w-full bg-[#f1f1f1] text-[#092040] pt-16 md:pt-32 pb-48 px-6 md:px-20 lg:px-32 z-10 overflow-hidden">
 
             {/* テキストエリア（親のPaddingに従うため、個別のPaddingは削除） */}
             <div className="w-full max-w-4xl mb-24">

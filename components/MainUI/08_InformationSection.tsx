@@ -58,7 +58,7 @@ export default function InformationSection() {
 
     return (
         <section
-            className="relative w-full py-24 bg-transparent text-black overflow-hidden"
+            className="relative w-full py-24 bg-[#f1f1f1] text-black overflow-hidden"
             ref={sectionRef}
         >
             <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">

@@ -8,7 +8,7 @@ export default function MessageTop() {
             imageAlt="Message Background"
             backTitle="MESSAGE"
             backTitleClassName="absolute right-4 md:right-8 lg:right-16 top-[20vh] md:top-auto md:-bottom-[15vh] z-0 font-oswald text-[13vh] md:text-[15vh] lg:text-[25vh] font-bold tracking-tight text-black/20 select-none pointer-events-none leading-none origin-bottom-right"
-            containerClassName="relative w-full h-auto md:h-[25vh] bg-white flex items-start md:items-end pt-4 md:pt-0 pb-12 md:pb-6 px-6 md:px-20 lg:px-32 overflow-hidden"
+            containerClassName="relative w-full h-auto md:h-[25vh] bg-[#f1f1f1] flex items-start md:items-end pt-4 md:pt-0 pb-12 md:pb-6 px-6 md:px-20 lg:px-32 overflow-hidden"
         >
             <div className="w-full max-w-[1600px] mx-auto">
                 <div className="w-min md:w-full">

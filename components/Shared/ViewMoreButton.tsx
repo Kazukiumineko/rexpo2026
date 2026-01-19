@@ -12,8 +12,8 @@ export default function ViewMoreButton({ href, className = "", theme = "light", 
     const isLight = theme === "light";
 
     const hoverClasses = hoverMode === "white"
-        ? "hover:bg-white hover:text-[#092040] hover:border-white"
-        : "hover:bg-[#092040] hover:text-white hover:border-[#092040]";
+        ? "hover:!bg-white hover:text-[#092040] hover:border-white"
+        : "hover:!bg-[#092040] hover:text-white hover:border-[#092040]";
 
     const containerClasses = isLight
         ? `border-white text-white bg-white/5 ${hoverClasses}`

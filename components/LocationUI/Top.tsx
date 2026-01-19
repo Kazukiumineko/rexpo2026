@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function LocationTop() {
     return (
         /* 文字の突き抜けを許可するため overflow-hidden はなし */
-        <section className="relative w-full h-[60vh] bg-white">
+        <section className="relative w-full h-[60vh] bg-[#f1f1f1]">
             {/* 1. メイン背景画像 */}
             <LazyImage
                 src="/location/Location.jpg"
@@ -18,7 +18,7 @@ export default function LocationTop() {
             />
 
             {/* 2. 下部のごく薄いグラデーション（Infoセクションへの繋ぎ） */}
-            <div className="absolute inset-0 z-10 bg-gradient-to-t from-white/30 via-transparent to-transparent" />
+            <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#f1f1f1]/30 via-transparent to-transparent" />
 
             {/* 3. 右端の縦書き "LOCATION" テキスト */}
             <div className="absolute inset-y-0 right-0 flex items-start pt-20 z-20 pr-4 md:pr-8 pointer-events-none">

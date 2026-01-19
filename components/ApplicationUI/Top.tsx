@@ -12,7 +12,7 @@ const appImages = [
 export default function ApplicationTop() {
     return (
         <>
-            <section className="relative w-full h-screen overflow-hidden bg-white">
+            <section className="relative w-full h-screen overflow-hidden bg-[#f1f1f1]">
 
                 {/* 1. 背景動画 */}
                 <div className="absolute inset-0 z-0">
@@ -30,7 +30,7 @@ export default function ApplicationTop() {
 
                 {/* 2. 下部の白いぼかし（グラデーション） */}
                 {/* 動画の下から白くフェードアウトさせ、次のコンテンツへ自然に繋げます */}
-                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none z-10" />
+                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#f1f1f1] via-[#f1f1f1]/80 to-transparent pointer-events-none z-10" />
 
                 {/* 3. テキストコンテンツ */}
                 <div className="absolute bottom-0 left-0 w-full z-20 flex flex-col items-center justify-end pb-12 md:pb-24 text-center px-6">
@@ -61,7 +61,7 @@ export default function ApplicationTop() {
 
             {/* 4. アプリ画像セクション */}
             {/* 動画の直下に配置。背景は白で統一 */}
-            <section className="w-full bg-white pb-20 px-6 md:px-12 lg:px-20 pt-10">
+            <section className="w-full bg-[#f1f1f1] pb-20 px-6 md:px-12 lg:px-20 pt-10">
                 <div className="max-w-[1200px] mx-auto">
 
                     {/* グリッドレイアウトの設定 */}

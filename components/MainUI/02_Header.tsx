@@ -78,15 +78,15 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
                 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
             >
                 <span
-                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : invert ? "bg-white lg:bg-[#092040]" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-2.5" : ""
+                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : invert ? "bg-white lg:!bg-[#092040]" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-2.5" : ""
                         }`}
                 />
                 <span
-                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : invert ? "bg-white lg:bg-[#092040]" : "bg-white"} transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-0" : "opacity-100"
+                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : invert ? "bg-white lg:!bg-[#092040]" : "bg-white"} transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-0" : "opacity-100"
                         }`}
                 />
                 <span
-                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : invert ? "bg-white lg:bg-[#092040]" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "-rotate-45 -translate-y-2.5" : ""
+                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : invert ? "bg-white lg:!bg-[#092040]" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "-rotate-45 -translate-y-2.5" : ""
                         }`}
                 />
             </button>

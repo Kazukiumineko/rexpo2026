@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Access() {
     return (
-        <section className="w-full bg-white text-black py-6 md:py-12 px-6 md:px-20 lg:px-32 overflow-hidden">
+        <section className="w-full bg-[#f1f1f1] text-black py-6 md:py-12 px-6 md:px-20 lg:px-32 overflow-hidden">
 
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-16 items-start">
 

@@ -23,7 +23,7 @@
 }
 
 :root {
-  --background: #ffffff;
+  --background: #f1f1f1;
   --foreground: #171717;
 }
 
@@ -37,4 +37,9 @@
 body {
   color: var(--foreground);
   background: var(--background);
+}
+
+/* 一括変更: bg-white クラスの色を強制的に #f1f1f1 に変更 */
+.bg-white {
+  background-color: #f1f1f1 !important;
 }

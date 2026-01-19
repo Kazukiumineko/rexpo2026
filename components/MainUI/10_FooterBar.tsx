@@ -22,8 +22,8 @@ export default function FooterBar({ variant = "default" }: FooterBarProps) {
 
     const isBlack = variant === "black";
     const bgClass = isBlack ? "bg-[#092040]" : "bg-white";
-    const textClass = isBlack ? "text-white" : "text-[#092040]";
-    const hoverBorderClass = isBlack ? "group-hover:border-white" : "group-hover:border-black";
+    const textClass = isBlack ? "text-[#f1f1f1]" : "text-[#092040]";
+    const hoverBorderClass = isBlack ? "group-hover:border-[#f1f1f1]" : "group-hover:border-black";
 
     return (
 
@@ -61,7 +61,7 @@ export default function FooterBar({ variant = "default" }: FooterBarProps) {
                                     href={item.href}
                                     className="group flex items-center text-xs md:text-sm font-medium tracking-wider hover:opacity-60 transition-opacity"
                                 >
-                                    <span className={`mr-2 text-[10px] md:text-xs ${isBlack ? "text-white" : "text-[#092040]"}`}>▶</span>
+                                    <span className={`mr-2 text-[10px] md:text-xs ${isBlack ? "text-[#f1f1f1]" : "text-[#092040]"}`}>▶</span>
                                     <span className={`border-b border-transparent ${hoverBorderClass} transition-all`}>
                                         {item.label}
                                     </span>

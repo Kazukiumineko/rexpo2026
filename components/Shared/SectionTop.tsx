@@ -36,7 +36,7 @@ export default function SectionTop({
     children
 }: SectionTopProps) {
     return (
-        <section className="relative w-full bg-white isolate">
+        <section className="relative w-full bg-[#f1f1f1] isolate">
             {/* 1. 画像エリア */}
             <div className="relative w-full h-[55vh] z-0">
                 <LazyImage

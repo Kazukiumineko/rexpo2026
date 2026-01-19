@@ -17,7 +17,7 @@ const sectionVariants: Variants = {
 
 export default function EntryTitle() {
     return (
-        <section className="w-full bg-white px-6 md:px-20 lg:px-32">
+        <section className="w-full bg-[#f1f1f1] px-6 md:px-20 lg:px-32">
             <div className="w-full max-w-[1600px] mx-auto">
                 {/* 1. イントロダクション */}
                 <motion.div
@@ -64,7 +64,7 @@ export default function EntryTitle() {
                                 <dd className="text-base font-normal md:text-lg md:font-bold text-gray-700 flex items-center mb-2 md:mb-0">
                                     <Link
                                         href="/location"
-                                        className="group inline-flex items-center transition-colors hover:text-blue-600"
+                                        className="group inline-flex items-center transition-colors"
                                     >
                                         札幌コンベンションセンター
                                         <span className="text-xs ml-2 transition-transform group-hover:translate-x-1">▶</span>
@@ -78,7 +78,7 @@ export default function EntryTitle() {
                                         href="https://www2.spc.ritsumei.ac.jp/top_menu/topmenu.html"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="group inline-flex items-center transition-colors hover:text-blue-600"
+                                        className="group inline-flex items-center transition-colors"
                                     >
                                         立命館慶祥中学校・高等学校
                                         <span className="text-xs ml-2 transition-transform group-hover:translate-x-1">▶</span>
@@ -90,7 +90,7 @@ export default function EntryTitle() {
                             <div className="mt-10">
                                 <a
                                     href="https://program-service.ritsumei.ac.jp/public/seminar/view/40459" // リンク先は手動で設定
-                                    className="group relative inline-flex h-16 w-full md:w-[300px] items-center justify-center bg-white px-12 text-lg font-bold text-black border border-black transition-colors duration-300 hover:bg-[#092040] hover:text-white hover:border-[#092040] rounded-full"
+                                    className="group relative inline-flex h-16 w-full md:w-[300px] items-center justify-center bg-white px-12 text-lg font-bold text-black border border-black transition-colors duration-300 hover:!bg-[#092040] hover:text-white hover:border-[#092040] rounded-full"
                                 >
                                     <span className="text-xl">今すぐ申込む</span>
                                 </a>

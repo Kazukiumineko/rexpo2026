@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function Application() {
     return (
-        <section className="relative w-full bg-white flex flex-col">
+        <section className="relative w-full bg-[#f1f1f1] flex flex-col">
 
             {/* --- 画像エリア --- */}
             <div className="relative w-full h-[65vh] md:h-[65vh] lg:h-[90vh] overflow-hidden bg-gray-900">
@@ -70,7 +70,7 @@ export default function Application() {
             </div>
 
             {/* FooterBarとの隙間を埋める */}
-            <div className="w-full h-px bg-white" />
+            <div className="w-full h-px bg-[#f1f1f1]" />
         </section>
     );
 }
