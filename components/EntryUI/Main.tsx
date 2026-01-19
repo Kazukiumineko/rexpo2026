@@ -33,8 +33,8 @@ export default function EntryMain() {
                         viewport={{ once: true, margin: "-100px" }}
                         variants={sectionVariants}
                     >
-                        <h4 className="text-xl font-bold mb-6 flex items-center text-[#092040]">
-                            <span className="w-2 h-8 bg-gray-200 mr-3"></span>
+                        <h4 className="text-xl font-bold mb-6 flex items-center text-black">
+                            <span className="w-2 h-8 bg-[#092040] mr-3"></span>
                             お申込みについて
                         </h4>
 
@@ -64,8 +64,8 @@ export default function EntryMain() {
                         viewport={{ once: true, margin: "-100px" }}
                         variants={sectionVariants}
                     >
-                        <h4 className="text-xl font-bold mb-6 flex items-center text-[#092040]">
-                            <span className="w-2 h-8 bg-gray-200 mr-3"></span>
+                        <h4 className="text-xl font-bold mb-6 flex items-center text-black">
+                            <span className="w-2 h-8 bg-[#092040] mr-3"></span>
                             ご来場の方へのお願い
                         </h4>
                         <div className="space-y-6 text-sm md:text-base text-gray-600 leading-7">

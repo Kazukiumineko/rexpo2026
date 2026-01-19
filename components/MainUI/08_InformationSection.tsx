@@ -105,7 +105,7 @@ export default function InformationSection() {
 
                             <div className="flex flex-col space-y-3 flex-grow">
                                 <h3 className="font-biz text-2xl font-bold tracking-widest uppercase mt-2 flex items-center gap-2">
-                                    <div className="w-[5px] h-6 bg-[#113f7d]"></div>
+                                    <div className="w-[5px] h-6 bg-[#092040]"></div>
                                     <Link href={topic.link} className="md:pointer-events-none md:cursor-auto">
                                         {topic.title}
                                     </Link>
