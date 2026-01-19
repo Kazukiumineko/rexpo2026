@@ -96,6 +96,9 @@ export default function LicensePage() {
                             This software includes open source software distributed under the licenses above.<br />
                             Each license is the property of its respective owner.
                         </p>
+                        <p className="mt-8 text-xs opacity-50 text-center">
+                            © 2026 R-EXPO Kazuki Nishijima
+                        </p>
                     </section>
 
                 </div>
