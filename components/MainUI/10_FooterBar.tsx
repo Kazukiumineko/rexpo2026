@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 interface FooterBarProps {
@@ -113,7 +114,9 @@ export default function FooterBar({ variant = "default" }: FooterBarProps) {
 
                 {/* 右側: R-EXPOテキスト */}
                 <div className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 text-[10px] md:text-xs opacity-90">
-                    © 2026 R-EXPO Kazuki Nishijima
+                    <Link href="/license" className="hover:opacity-70 transition-opacity">
+                        © 2026 R-EXPO Kazuki Nishijima
+                    </Link>
                 </div>
 
             </div>
