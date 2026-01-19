@@ -8,7 +8,7 @@ export default function Message() {
         hidden: {},
         visible: {
             transition: {
-                staggerChildren: 0.4, // 0.4秒ごとに次のブロックを表示
+                staggerChildren: 0.2, // 0.4秒ごとに次のブロックを表示
             },
         },
     };
