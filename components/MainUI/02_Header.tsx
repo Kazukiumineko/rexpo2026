@@ -121,10 +121,8 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
                                     </Link>
                                 ))}
                                 <div className="pt-10">
-                                    <a
-                                        href="https://www2.spc.ritsumei.ac.jp/top_menu/topmenu.html"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                    <Link
+                                        href="/license"
                                         className="block w-fit"
                                     >
                                         <Image
@@ -134,7 +132,7 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
                                             height={60}
                                             className="object-contain w-14 h-auto opacity-50 hover:opacity-100 transition-opacity"
                                         />
-                                    </a>
+                                    </Link>
                                 </div>
                             </nav>
                         </motion.div>
