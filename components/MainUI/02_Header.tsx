@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -15,6 +15,7 @@ interface HeaderProps {
 export function MiniLogo({ isVisible, invert = false }: { isVisible: boolean; invert?: boolean }) {
     const pathname = usePathname();
     const isHomePage = pathname === "/";
+    const isTimetable = pathname === "/timetable";
 
     return (
         <div
@@ -28,7 +29,7 @@ export function MiniLogo({ isVisible, invert = false }: { isVisible: boolean; in
                     width={150}
                     height={50}
                     // lg:invert に変更してスマホ時は白のままにする
-                    className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] ${invert ? "lg:[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)_drop-shadow(0_1px_2px_rgba(255,255,255,0.5))]" : ""}`}
+                    className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] ${(invert || isTimetable) ? (isTimetable ? "[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)_drop-shadow(0_1px_2px_rgba(255,255,255,0.5))]" : "lg:[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)_drop-shadow(0_1px_2px_rgba(255,255,255,0.5))]") : ""}`}
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 />
             ) : (
@@ -39,7 +40,7 @@ export function MiniLogo({ isVisible, invert = false }: { isVisible: boolean; in
                         width={150}
                         height={50}
                         // lg:invert に変更してスマホ時は白のままにする
-                        className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] ${invert ? "lg:[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)_drop-shadow(0_1px_2px_rgba(255,255,255,0.5))]" : ""}`}
+                        className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] ${(invert || isTimetable) ? (isTimetable ? "[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)_drop-shadow(0_1px_2px_rgba(255,255,255,0.5))]" : "lg:[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)_drop-shadow(0_1px_2px_rgba(255,255,255,0.5))]") : ""}`}
                     />
                 </Link>
             )}
@@ -49,6 +50,8 @@ export function MiniLogo({ isVisible, invert = false }: { isVisible: boolean; in
 
 export function MenuButton({ isVisible = true, invert = false }: { isVisible?: boolean; invert?: boolean }) {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
+    const isTimetable = pathname === "/timetable";
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -79,15 +82,15 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
                 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
             >
                 <span
-                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : invert ? "bg-white lg:!bg-[#092040]" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-2.5" : ""
+                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : isTimetable ? "!bg-[#092040]" : invert ? "bg-white lg:!bg-[#092040]" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-2.5" : ""
                         }`}
                 />
                 <span
-                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : invert ? "bg-white lg:!bg-[#092040]" : "bg-white"} transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-0" : "opacity-100"
+                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : isTimetable ? "!bg-[#092040]" : invert ? "bg-white lg:!bg-[#092040]" : "bg-white"} transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-0" : "opacity-100"
                         }`}
                 />
                 <span
-                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : invert ? "bg-white lg:!bg-[#092040]" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "-rotate-45 -translate-y-2.5" : ""
+                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : isTimetable ? "!bg-[#092040]" : invert ? "bg-white lg:!bg-[#092040]" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "-rotate-45 -translate-y-2.5" : ""
                         }`}
                 />
             </button>
@@ -143,11 +146,36 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
 }
 
 export default function Header({ isVisible, invert }: HeaderProps) {
+    const pathname = usePathname();
+    const isTimetable = pathname === "/timetable";
+
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        if (!isTimetable) return;
+
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [isTimetable]);
+
+    const bgClass = isTimetable
+        ? (isScrolled ? "bg-white shadow-sm" : "bg-transparent")
+        : "bg-[#092040] md:bg-[#092040] lg:bg-black/0";
+
     return (
         <div className="fixed top-0 left-0 w-full z-[1000] pointer-events-none">
             <div
-                className={`absolute top-0 left-0 w-full h-14 lg:h-18 bg-[#092040] md:bg-[#092040] lg:bg-black/0 transition-opacity duration-500 ease-in-out
-          ${isVisible ? "opacity-100" : "opacity-0"}`}
+                className={`absolute top-0 left-0 w-full h-14 lg:h-18 transition-all duration-300 ease-in-out ${bgClass}
+          ${isVisible || isTimetable ? "opacity-100" : "opacity-0"}`}
             ></div>
 
             <div className="relative pointer-events-auto">

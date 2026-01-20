@@ -3,6 +3,7 @@
 import SectionTop from "@/components/Shared/SectionTop";
 import FooterBar from "@/components/MainUI/10_FooterBar";
 import Header from "@/components/MainUI/02_Header";
+import TimeTable from "@/components/TimeTableUI/Main";
 import { useState } from "react";
 
 export default function TimetablePage() {
@@ -26,13 +27,7 @@ export default function TimetablePage() {
                 </div>
             </SectionTop>
 
-            <div className="flex-grow w-full max-w-7xl mx-auto px-6 py-24 flex items-center justify-center">
-                <p className="text-center text-lg md:text-xl text-[#092040] leading-loose">
-                    タイムテーブルは現在準備中です。
-                    <br />
-                    公開まで今しばらくお待ちください。
-                </p>
-            </div>
+            <TimeTable />
 
             <FooterBar variant="black" />
         </main>
