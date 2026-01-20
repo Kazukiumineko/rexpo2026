@@ -79,13 +79,18 @@ export default function TimeTable() {
                             style={{ width: CONFIG.TIME_COL_WIDTH, height: (CONFIG.END_HOUR - CONFIG.START_HOUR) * CONFIG.HOUR_HEIGHT }}
                         >
                             <div className="relative w-full h-full">
-                                {Array.from({ length: CONFIG.END_HOUR - CONFIG.START_HOUR + 1 }, (_, i) => CONFIG.START_HOUR + i).map((hour) => (
+                                {Array.from({ length: (CONFIG.END_HOUR - CONFIG.START_HOUR) * 2 + 1 }, (_, i) => {
+                                    const totalMinutes = i * 30;
+                                    const hour = CONFIG.START_HOUR + Math.floor(totalMinutes / 60);
+                                    const minute = totalMinutes % 60;
+                                    return { hour, minute, offset: i };
+                                }).map(({ hour, minute, offset }) => (
                                     <div
-                                        key={hour}
+                                        key={`${hour}-${minute}`}
                                         className="absolute w-full text-right pr-2 text-xs font-bold text-gray-500 transform -translate-y-1/2"
-                                        style={{ top: (hour - CONFIG.START_HOUR) * 60 * (CONFIG.HOUR_HEIGHT / 60) }}
+                                        style={{ top: offset * 30 * (CONFIG.HOUR_HEIGHT / 60) }}
                                     >
-                                        {hour === 9 ? "" : `${hour}:00`}
+                                        {hour === 9 && minute === 0 ? "" : `${hour}:${minute === 0 ? "00" : "30"}`}
                                     </div>
                                 ))}
                             </div>
@@ -101,11 +106,16 @@ export default function TimeTable() {
                         >
                             {/* グリッド背景 (横線) */}
                             <div className="absolute top-0 left-0 w-full pointer-events-none z-0">
-                                {Array.from({ length: CONFIG.END_HOUR - CONFIG.START_HOUR + 1 }, (_, i) => CONFIG.START_HOUR + i).map((hour) => (
+                                {Array.from({ length: (CONFIG.END_HOUR - CONFIG.START_HOUR) * 2 + 1 }, (_, i) => {
+                                    const totalMinutes = i * 30;
+                                    const offset = i;
+                                    const isHour = totalMinutes % 60 === 0;
+                                    return { offset, isHour };
+                                }).map(({ offset, isHour }) => (
                                     <div
-                                        key={hour}
-                                        className="absolute w-full border-t border-gray-100 border-dashed"
-                                        style={{ top: (hour - CONFIG.START_HOUR) * CONFIG.HOUR_HEIGHT }}
+                                        key={`grid-${offset}`}
+                                        className={`absolute w-full border-t ${isHour ? "border-gray-200 border-dashed" : "border-gray-50 border-dotted"}`}
+                                        style={{ top: offset * 30 * (CONFIG.HOUR_HEIGHT / 60) }}
                                     />
                                 ))}
                             </div>
@@ -149,7 +159,7 @@ export default function TimeTable() {
                                             <p className="text-[10px] md:text-xs text-gray-500 font-mono mb-0.5 leading-none">
                                                 {evt.start} - {evt.end}
                                             </p>
-                                            <h3 className="text-xs md:text-sm font-bold text-gray-800 leading-tight line-clamp-3">
+                                            <h3 className="text-xs md:text-sm font-bold text-gray-800 leading-tight line-clamp-3 whitespace-pre-wrap">
                                                 {evt.title}
                                             </h3>
                                         </div>

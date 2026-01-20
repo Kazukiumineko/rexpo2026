@@ -1,12 +1,30 @@
 "use client";
 
-import SectionTop from "@/components/Shared/SectionTop";
-import FooterBar from "@/components/MainUI/10_FooterBar";
+import UnderConstruction from "@/components/Shared/UnderConstruction";
 import Header from "@/components/MainUI/02_Header";
-import TimeTable from "@/components/TimeTableUI/Main";
+import FooterBar from "@/components/MainUI/10_FooterBar";
 import { useState } from "react";
 
 export default function TimetablePage() {
+    const [showHeader] = useState(true);
+
+    return (
+        <main className="flex flex-col min-h-screen bg-[#f1f1f1]">
+            <Header isVisible={showHeader} invert />
+            <div className="pt-20"> {/* ヘッダー分の余白 */}
+                <UnderConstruction />
+            </div>
+            <FooterBar variant="black" />
+        </main>
+    );
+}
+
+/*
+// Original Code
+import SectionTop from "@/components/Shared/SectionTop";
+import TimeTable from "@/components/TimeTableUI/Main";
+
+export default function TimetablePageOriginal() {
     const [showHeader] = useState(true);
 
     return (
@@ -33,3 +51,4 @@ export default function TimetablePage() {
         </main>
     );
 }
+*/
