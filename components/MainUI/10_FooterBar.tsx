@@ -93,24 +93,44 @@ export default function FooterBar({ variant = "default" }: FooterBarProps) {
             {/* ここに以前のfooterタグのスタイルを適用します */}
             <div className={`w-full ${isBlack ? "bg-[#092040] border-t border-white/20" : "bg-[#092040]"} text-white h-10 flex items-center justify-center px-4 md:px-8 relative`}>
 
-                {/* 左側: 立命館ロゴ */}
-                <div className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2">
-                    <a href="https://www2.spc.ritsumei.ac.jp/top_menu/topmenu.html" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                        <Image
-                            src="/main/Ritsumeikan.png"
-                            alt="Ritsumeikan Logo"
-                            width={80}
-                            height={30}
-                            className="object-contain h-6 w-auto md:h-6"
-                        />
-                    </a>
-                </div>
+                {/* 左側: 立命館ロゴ と SNSアイコン */}
+                <div className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 flex items-center gap-4 md:gap-6">
+                    <Image
+                        src="/main/Ritsumeikan.png"
+                        alt="Ritsumeikan Logo"
+                        width={80}
+                        height={30}
+                        className="object-contain h-6 w-auto md:h-6"
+                    />
 
-                {/* 中央: 学校名テキスト（スマホでは非表示） */}
-                <div className="hidden md:block text-center font-light text-xs px-2">
-                    <a href="https://www2.spc.ritsumei.ac.jp/top_menu/topmenu.html" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                        Ritsumeikan Keishi Junior Senior High School
-                    </a>
+                    {/* アイコン群 */}
+                    <div className="flex items-center gap-3">
+                        <a href="https://www2.spc.ritsumei.ac.jp/top_menu/topmenu.html" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/ritsumeikan_keisho_official/?hl=ja" target="_blank" rel="noopener noreferrer" className="opacity-50 hover:opacity-100 transition-opacity">
+                            <Image
+                                src="/main/Instagram_Glyph_White.svg"
+                                alt="Instagram"
+                                width={16}
+                                height={16}
+                                className="object-contain w-4 h-4"
+                            />
+                        </a>
+                    </div>
                 </div>
 
                 {/* 右側: R-EXPOテキスト */}
