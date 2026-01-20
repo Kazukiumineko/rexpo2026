@@ -46,9 +46,9 @@ export default function FloatingEntryButton() {
                             whileTap={{ scale: 0.9 }}
                         >
                             <span className="text-xs md:text-lg font-bold leading-tight text-center font-jp tracking-wider">
-                                申込みは
+                                申し込みは
                                 <br />
-                                <span className="text-sm md:text-lg mt-1 block">こちら</span>
+                                <span className="text-xs md:text-lg mt-1 block">こちら</span>
                             </span>
                         </motion.div>
                     </Link>

@@ -15,9 +15,10 @@ export default function FooterBar({ variant = "default" }: FooterBarProps) {
         { label: "コンセプト", href: "event-concept" },
         { label: "ステージ", href: "stage-concept" },
         { label: "会場", href: "location" },
-        { label: "ご支援", href: "support" },
+        { label: "タイムテーブル", href: "timetable" },
         { label: "開祭にあたって", href: "message" },
-        { label: "一般来場の方", href: "entry" },
+        { label: "ご支援", href: "support" },
+        { label: "参加申し込み", href: "entry" },
         { label: "特設アプリ", href: "application" },
     ];
 

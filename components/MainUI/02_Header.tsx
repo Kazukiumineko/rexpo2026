@@ -63,8 +63,9 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
         { label: "INTRODUCTION", href: "/event-concept" },
         { label: "STAGE", href: "/stage-concept" },
         { label: "LOCATION", href: "/location" },
-        { label: "SUPPORT", href: "/support" },
+        { label: "TIME TABLE", href: "/timetable" },
         { label: "MESSAGE", href: "/message" },
+        { label: "SUPPORT", href: "/support" },
         { label: "JOIN US", href: "/entry" },
         { label: "APPLICATION", href: "/application" },
     ];
@@ -120,19 +121,17 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
                                         {item.label}
                                     </Link>
                                 ))}
-                                <div className="pt-10">
+                                <div className="pt-10 flex flex-col gap-4">
                                     <Link
                                         href="/license"
-                                        className="block w-fit"
+                                        className="block w-fit text-xs text-white/50 hover:text-white transition-colors font-kaku tracking-wider"
+                                        onClick={handleLinkClick}
                                     >
-                                        <Image
-                                            src="/main/Rmark.png"
-                                            alt="R Mark"
-                                            width={60}
-                                            height={60}
-                                            className="object-contain w-14 h-auto opacity-50 hover:opacity-100 transition-opacity"
-                                        />
+                                        LICENSE
                                     </Link>
+                                    <span className="block w-fit text-xs text-white/50 font-kaku tracking-wider">
+                                        © 2026 R-EXPO Kazuki Nishijima
+                                    </span>
                                 </div>
                             </nav>
                         </motion.div>
