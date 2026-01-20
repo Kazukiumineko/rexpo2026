@@ -59,6 +59,10 @@ export const metadata: Metadata = {
   },
 };
 
+import FloatingEntryButton from "@/components/Shared/FloatingEntryButton";
+
+// ... (existing imports)
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -76,6 +80,7 @@ export default function RootLayout({
         `}
       >
         {children}
+        <FloatingEntryButton />
       </body>
     </html>
   );
