@@ -32,6 +32,12 @@ export default function InformationSection() {
             link: "/entry",
             description: "本イベントは一般公開を行っており、保護者の方をはじめ、どなたでも無料でご入場いただけます。 ご来場の皆様に安全かつ快適に楽しんでいただくため、事前に申し込み手続きと注意事項のご確認をお願いしています。詳細をご覧の上、ぜひお気軽にお越しください。",
         },
+        {
+            title: "タイムテーブル",
+            src: "/topic/TimeTable.jpg",
+            link: "/timetable",
+            description: "当日のステージ発表や各エリアのタイムスケジュールをご案内します。見逃せないイベントの時間をチェックして、R-EXPOを存分に楽しんでください。",
+        },
     ];
 
     const sectionRef = useRef(null);

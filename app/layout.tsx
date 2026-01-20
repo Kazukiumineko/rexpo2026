@@ -31,9 +31,32 @@ const bizUdp = BIZ_UDPGothic({
   variable: "--font-biz-udp",
 });
 
+// サイトのURL（本番環境のドメイン）
+const siteUrl = "https://www.r-expo.site/";
+
 export const metadata: Metadata = {
-  title: "REXPO 2026",
-  description: "REXPO 2026 Official Site",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "R-EXPO 2026",
+    template: "%s | R-EXPO 2026", // 各ページで "Page Name | R-EXPO 2026" となる
+  },
+  description: "R-EXPO 2026の公式サイトです。イベント情報、スケジュール、スポンサー情報などを掲載しています。",
+
+  // SNSや検索結果で画像を表示するための設定（OGP）
+  openGraph: {
+    title: "R-EXPO 2026",
+    description: "立命館慶祥中高がお届けするイベント R-EXPO2026の公式サイトです。2月3日札幌コンベンションセンターで開催されます。",
+    url: siteUrl,
+    siteName: "R-EXPO 2026",
+    locale: "ja_JP",
+    type: "website",
+  },
+
+  // Googleのロボットに対する指示
+  robots: {
+    index: true, // 検索結果に表示する
+    follow: true, // リンクを辿らせる
+  },
 };
 
 export default function RootLayout({
