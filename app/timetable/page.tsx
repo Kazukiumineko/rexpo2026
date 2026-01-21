@@ -1,8 +1,10 @@
 "use client";
 
-import UnderConstruction from "@/components/Shared/UnderConstruction";
-import Header from "@/components/MainUI/02_Header";
+import SectionTop from "@/components/Shared/SectionTop";
 import FooterBar from "@/components/MainUI/10_FooterBar";
+import Header from "@/components/MainUI/02_Header";
+import TimeTable from "@/components/TimeTableUI/TimeTable";
+import ComingSoonPopup from "@/components/Shared/ComingSoonPopup";
 import { useState } from "react";
 
 export default function TimetablePage() {
@@ -10,25 +12,7 @@ export default function TimetablePage() {
 
     return (
         <main className="flex flex-col min-h-screen bg-[#f1f1f1]">
-            <Header isVisible={showHeader} invert />
-            <div className="pt-20"> {/* ヘッダー分の余白 */}
-                <UnderConstruction />
-            </div>
-            <FooterBar variant="black" />
-        </main>
-    );
-}
-
-/*
-// Original Code
-import SectionTop from "@/components/Shared/SectionTop";
-import TimeTable from "@/components/TimeTableUI/Main";
-
-export default function TimetablePageOriginal() {
-    const [showHeader] = useState(true);
-
-    return (
-        <main className="flex flex-col min-h-screen bg-[#f1f1f1]">
+            <ComingSoonPopup />
             <Header isVisible={showHeader} invert />
 
             <SectionTop
@@ -47,6 +31,27 @@ export default function TimetablePageOriginal() {
 
             <TimeTable />
 
+            <FooterBar variant="black" />
+        </main>
+    );
+}
+
+/*
+// Under Construction Code (Backup)
+import UnderConstruction from "@/components/Shared/UnderConstruction";
+import Header from "@/components/MainUI/02_Header";
+import FooterBar from "@/components/MainUI/10_FooterBar";
+import { useState } from "react";
+
+export default function TimetablePageBackup() {
+    const [showHeader] = useState(true);
+
+    return (
+        <main className="flex flex-col min-h-screen bg-[#f1f1f1]">
+            <Header isVisible={showHeader} invert />
+            <div className="pt-20"> {/* ヘッダー分の余白 * /}
+                <UnderConstruction />
+            </div>
             <FooterBar variant="black" />
         </main>
     );
