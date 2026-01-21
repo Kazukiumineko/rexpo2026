@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 
 export const CATEGORY_COLORS = {
-    1: "#03045e", // グローバル
+    1: "#f29e4c", // グローバル
     2: "#48c97e", // アカデミック
     3: "#48cae4", // エンターテイメント
     4: "#0077b6", // コラボレーション
