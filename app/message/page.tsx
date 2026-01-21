@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Header from "@/components/MainUI/02_Header";
-import FooterBar from "@/components/MainUI/10_FooterBar";
-import Message from "@/components/MessageUI/Message";
-import MessageTop from "@/components/MessageUI/Top";
-import ComingSoonPopup from "@/components/Shared/ComingSoonPopup";
+import Header from "@/components/main-ui/header";
+import FooterBar from "@/components/main-ui/footer-bar";
+import Message from "@/components/message-ui/message";
+import MessageTop from "@/components/message-ui/top";
+import ComingSoonPopup from "@/components/shared/coming-soon-popup";
 
 export default function MessagePage() {
     const [showHeader] = useState(true);

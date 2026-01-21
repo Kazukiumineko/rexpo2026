@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Header from "@/components/MainUI/02_Header";
-import FooterBar from "@/components/MainUI/10_FooterBar";
-import Top from "@/components/EntryUI/Top";
-import Title from "@/components/EntryUI/Title";
-import Main from "@/components/EntryUI/Main";
+import Header from "@/components/main-ui/header";
+import FooterBar from "@/components/main-ui/footer-bar";
+import Top from "@/components/entry-ui/top";
+import Title from "@/components/entry-ui/title";
+import Main from "@/components/entry-ui/main";
 
 export default function TimeTablePage() {
     const [showHeader] = useState(true);

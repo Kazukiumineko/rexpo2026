@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Header from "@/components/MainUI/02_Header";
-import FooterBar from "@/components/MainUI/10_FooterBar";
-import Top from "@/components/LocationUI/Top";
-import Info from "@/components/LocationUI/Info";
-import Access from "@/components/LocationUI/Access";
+import Header from "@/components/main-ui/header";
+import FooterBar from "@/components/main-ui/footer-bar";
+import Top from "@/components/location-ui/top";
+import Info from "@/components/location-ui/info";
+import Access from "@/components/location-ui/access";
 
 export default function LocationPage() {
     const [showHeader] = useState(true);

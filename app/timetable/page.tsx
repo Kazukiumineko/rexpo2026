@@ -1,11 +1,11 @@
 "use client";
 
-import SectionTop from "@/components/Shared/SectionTop";
-import FooterBar from "@/components/MainUI/10_FooterBar";
-import Header from "@/components/MainUI/02_Header";
-import TimeTable from "@/components/TimeTableUI/TimeTable";
-import Jump from "@/components/TimeTableUI/Jump";
-import ComingSoonPopup from "@/components/Shared/ComingSoonPopup";
+import SectionTop from "@/components/shared/section-top";
+import FooterBar from "@/components/main-ui/footer-bar";
+import Header from "@/components/main-ui/header";
+import TimeTable from "@/components/time-table-ui/time-table";
+import Jump from "@/components/time-table-ui/jump";
+import ComingSoonPopup from "@/components/shared/coming-soon-popup";
 import { useState } from "react";
 
 export default function TimetablePage() {
@@ -40,9 +40,9 @@ export default function TimetablePage() {
 
 /*
 // Under Construction Code (Backup)
-import UnderConstruction from "@/components/Shared/UnderConstruction";
-import Header from "@/components/MainUI/02_Header";
-import FooterBar from "@/components/MainUI/10_FooterBar";
+import UnderConstruction from "@/components/shared/under-construction";
+import Header from "@/components/main-ui/header";
+import FooterBar from "@/components/main-ui/footer-bar";
 import { useState } from "react";
 
 export default function TimetablePageBackup() {

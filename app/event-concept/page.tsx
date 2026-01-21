@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 
 // ★UIコンポーネントのインポート
 // (フォルダ構成が components/MainUI になっている前提です)
-import Header from "@/components/MainUI/02_Header";
-import FooterBar from "@/components/MainUI/10_FooterBar";
-import Introduction from "@/components/EventConceptUI/Introduction";
-import Topic from "@/components/EventConceptUI/Topic";
-import Message from "@/components/EventConceptUI/Message";
-import Pic from "@/components/EventConceptUI/Pic";
-import Jump from "@/components/EventConceptUI/Jump";
+import Header from "@/components/main-ui/header";
+import FooterBar from "@/components/main-ui/footer-bar";
+import Introduction from "@/components/event-concept-ui/introduction";
+import Topic from "@/components/event-concept-ui/topic";
+import Message from "@/components/event-concept-ui/message";
+import Pic from "@/components/event-concept-ui/pic";
+import Jump from "@/components/event-concept-ui/jump";
 
 export default function EventConceptPage() {
 

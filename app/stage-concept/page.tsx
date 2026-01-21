@@ -1,19 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import Header from "@/components/MainUI/02_Header";
-import FooterBar from "@/components/MainUI/10_FooterBar";
-import StageTop from "@/components/StageConceptUI/top";
-import GlobalStage from "@/components/StageConceptUI/GlobalStage";
-import GlobalInfo from "@/components/StageConceptUI/GlobalInfo";
-import AcademicStage from "@/components/StageConceptUI/AcademicStage";
-import AcademicInfo from "@/components/StageConceptUI/AcademicInfo";
-import EntertainmentStage from "@/components/StageConceptUI/EntertainmentStage";
-import EntertainmentInfo from "@/components/StageConceptUI/EntertainmentInfo";
-import CollabStage from "@/components/StageConceptUI/CollabStage";
-import CollabInfo from "@/components/StageConceptUI/CollabInfo";
-import Jump from "@/components/StageConceptUI/Jump";
-import ComingSoonPopup from "@/components/Shared/ComingSoonPopup";
+import Header from "@/components/main-ui/header";
+import FooterBar from "@/components/main-ui/footer-bar";
+import StageTop from "@/components/stage-concept-ui/top";
+import GlobalStage from "@/components/stage-concept-ui/global-stage";
+import GlobalInfo from "@/components/stage-concept-ui/global-info";
+import AcademicStage from "@/components/stage-concept-ui/academic-stage";
+import AcademicInfo from "@/components/stage-concept-ui/academic-info";
+import EntertainmentStage from "@/components/stage-concept-ui/entertainment-stage";
+import EntertainmentInfo from "@/components/stage-concept-ui/entertainment-info";
+import CollabStage from "@/components/stage-concept-ui/collab-stage";
+import CollabInfo from "@/components/stage-concept-ui/collab-info";
+import Jump from "@/components/stage-concept-ui/jump";
+import ComingSoonPopup from "@/components/shared/coming-soon-popup";
 
 
 export default function StageConceptPage() {
@@ -66,9 +66,9 @@ export default function StageConceptPage() {
 
 /*
 // Under Construction Code (Backup)
-import UnderConstruction from "@/components/Shared/UnderConstruction";
-import Header from "@/components/MainUI/02_Header";
-import FooterBar from "@/components/MainUI/10_FooterBar";
+import UnderConstruction from "@/components/shared/under-construction";
+import Header from "@/components/main-ui/header";
+import FooterBar from "@/components/main-ui/footer-bar";
 import { useState } from "react";
 
 export default function StageConceptPageBackup() {

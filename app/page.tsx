@@ -3,19 +3,19 @@
 import { useRef, useState } from "react";
 import { useLoadingSequence } from "@/hooks/useLoadingSequence";
 import { useScrollEffects } from "@/hooks/useScrollEffects";
-import BackgroundVideo from "@/components/MainUI/01_BackgroundVideo";
-import Header from "@/components/MainUI/02_Header";
-import HeroSection from "@/components/MainUI/03_HeroSection";
-import ScrollTextSection from "@/components/MainUI/04_ScrollTextSection";
+import BackgroundVideo from "@/components/main-ui/background-video";
+import Header from "@/components/main-ui/header";
+import HeroSection from "@/components/main-ui/hero-section";
+import ScrollTextSection from "@/components/main-ui/scroll-text-section";
 import dynamic from "next/dynamic";
-import Opening from "@/components/MainUI/Opening";
+import Opening from "@/components/main-ui/opening";
 
-import FooterBar from "@/components/MainUI/10_FooterBar";
+import FooterBar from "@/components/main-ui/footer-bar";
 
-const ConceptSection = dynamic(() => import("@/components/MainUI/05_ConceptSection"));
-const StageSection = dynamic(() => import("@/components/MainUI/07_StageSection"));
-const InformationSection = dynamic(() => import("@/components/MainUI/08_InformationSection"));
-const Application = dynamic(() => import("@/components/MainUI/09_Application"));
+const ConceptSection = dynamic(() => import("@/components/main-ui/concept-section"));
+const StageSection = dynamic(() => import("@/components/main-ui/stage-section"));
+const InformationSection = dynamic(() => import("@/components/main-ui/information-section"));
+const Application = dynamic(() => import("@/components/main-ui/application"));
 
 
 export default function Home() {

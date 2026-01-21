@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
 };
 
-import FloatingEntryButton from "@/components/Shared/FloatingEntryButton";
+import FloatingEntryButton from "@/components/Shared/floating-entry-button";
 
 // ... (existing imports)
 

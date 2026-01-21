@@ -1,0 +1,76 @@
+"use client";
+
+
+import LazyImage from "@/components/shared/lazy-image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+
+export default function Application() {
+    return (
+        <section className="relative w-full bg-[#f1f1f1] flex flex-col">
+
+            {/* --- 画像エリア --- */}
+            <div className="relative w-full h-[65vh] md:h-[65vh] lg:h-[90vh] overflow-hidden bg-gray-900">
+                <div className="absolute inset-0 bg-r-expo-blue" />
+
+                {/* 全体コンテンツコンテナ */}
+                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6">
+
+                    {/* 1. APPLICATION (最上部センター) */}
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="text-center"
+                    >
+                        <h2 className="font-oswald text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tight text-white leading-none">
+                            APPLICATION
+                        </h2>
+
+                        {/* 2. サブタイトル */}
+                        <p className="mt-4 font-jp text-2xl md:text-4xl font-bold tracking-tight text-white">
+                            R-EXPOをもっと楽しむ
+                        </p>
+                    </motion.div>
+
+                    {/* 3. 説明文 (中央・3行・細字) */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 1.2, delay: 0.4 }}
+                        viewport={{ once: true }}
+                        className="mt-12 md:mt-16 text-center max-w-2xl"
+                    >
+                        <div className="text-white text-xs md:text-sm lg:text-base font-extralight leading-[2.2] tracking-[0.15em]">
+                            <p>当日のタイムスケジュールや展示内容を、あなたの手のひらに。</p>
+                            <p>会場限定のスタンプラリーに参加して、特別な体験をアンロックしましょう。</p>
+                            <p>慶祥生が創り上げる「新しい世界」を、このアプリと共に歩んでください。</p>
+                        </div>
+                    </motion.div>
+
+                    {/* 【追加】5. ViewMore ボタン */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.6 }}
+                        viewport={{ once: true }}
+                        className="mt-10 md:mt-12"
+                    >
+                        <Link
+                            href="/application"
+                            className="inline-flex items-center justify-center px-8 py-3 md:px-16 md:py-4 border border-white text-white text-base md:text-xl font-bold tracking-widest rounded-full hover:bg-white hover:text-[#092040] hover:border-[#092040] transition-colors duration-300"
+                        >
+                            今すぐアプリをインストール
+                        </Link>
+                    </motion.div>
+
+                </div>
+            </div>
+
+            {/* FooterBarとの隙間を埋める */}
+            <div className="w-full h-px bg-[#f1f1f1]" />
+        </section>
+    );
+}

@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Header from "@/components/MainUI/02_Header";
-import FooterBar from "@/components/MainUI/10_FooterBar";
-import SupportTop from "@/components/SupportUI/Top";
-import Company from "@/components/SupportUI/Company";
+import Header from "@/components/main-ui/header";
+import FooterBar from "@/components/main-ui/footer-bar";
+import SupportTop from "@/components/support-ui/top";
+import Company from "@/components/support-ui/company";
 
 export default function SupportPage() {
     const [showHeader] = useState(true);
