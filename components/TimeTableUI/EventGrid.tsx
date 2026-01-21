@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { venues, events, CONFIG } from "./Data";
+
+import { venues, events, CONFIG, CATEGORY_COLORS } from "./Data";
 
 // 時間文字列 ("HH:MM") を 分（startからの経過時間）に変換するヘルパー関数
 const timeToMinutes = (timeStr: string) => {
@@ -52,12 +52,12 @@ export default function EventGrid() {
                 const top = startMins * (CONFIG.HOUR_HEIGHT / 60);
                 const height = Math.max(durationMins * (CONFIG.HOUR_HEIGHT / 60), 40);
 
+                // colorId が無いときはデフォルト色 or 黒
+                const accentColor = evt.colorId ? CATEGORY_COLORS[evt.colorId] : "#092040";
+
                 return (
-                    <motion.div
+                    <div
                         key={evt.id}
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
                         className="absolute px-1 py-1"
                         style={{
                             left: evt.venueIndex * CONFIG.COLUMN_WIDTH,
@@ -66,15 +66,18 @@ export default function EventGrid() {
                             height: height,
                         }}
                     >
-                        <div className="w-full h-full bg-white rounded-md shadow-md border border-[#092040] p-2 overflow-hidden flex flex-col justify-start hover:bg-blue-50 transition-colors">
-                            <p className="text-[10px] md:text-xs text-gray-500 font-mono mb-0.5 leading-none">
+                        <div
+                            className="w-full h-full rounded-md shadow-md p-2 overflow-hidden flex flex-col justify-start hover:brightness-105 transition-all text-white"
+                            style={{ backgroundColor: accentColor }}
+                        >
+                            <p className="text-[10px] md:text-xs text-white/90 font-mono mb-0.5 leading-none">
                                 {evt.start} - {evt.end}
                             </p>
-                            <h3 className="text-xs md:text-sm font-bold text-[#092040] leading-tight whitespace-pre-wrap">
+                            <h3 className="text-xs md:text-sm font-bold leading-tight whitespace-pre-wrap">
                                 {evt.title}
                             </h3>
                         </div>
-                    </motion.div>
+                    </div>
                 );
             })}
         </div>

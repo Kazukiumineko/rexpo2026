@@ -2,13 +2,20 @@
 import { ReactNode } from "react";
 
 
+export const CATEGORY_COLORS = {
+    1: "#3a633f", // グローバル
+    2: "#3b3a63", // アカデミック
+    3: "#635f3a", // エンターテイメント
+    4: "#a15c7e", // コラボレーション
+} as const;
+
 export type EventItem = {
     id: string;
     venueIndex: number; // venues配列のインデックス (0-14)
     title: string | ReactNode;
     start: string; // "HH:MM"
     end: string;   // "HH:MM"
-    color?: string; // オプションで色分け可能
+    colorId?: keyof typeof CATEGORY_COLORS; // 1:Global, 2:Academic, 3:Entertainment, 4:Collaboration
 };
 
 // ▼ 設定定数（レイアウト調整用）
@@ -43,69 +50,69 @@ export const venues = [
 // ▼ タイムテーブルデータ
 export const events: EventItem[] = [
     // --- 大ホール (Index 0) ---
-    { id: "m-1", venueIndex: 0, title: "開会式典", start: "09:45", end: "10:15" },
-    { id: "m-2", venueIndex: 0, title: "立命館附属校\n課題研究発表会", start: "10:40", end: "11:30" },
-    { id: "m-3", venueIndex: 0, title: "SSH国際共同課題研究発表", start: "11:40", end: "12:30" },
-    { id: "m-4", venueIndex: 0, title: "第2部開会式", start: "14:00", end: "14:30" },
-    { id: "m-5", venueIndex: 0, title: "有志生徒バンド発表", start: "14:50", end: "16:20" },
+    { id: "m-1", venueIndex: 0, title: "開会式典", start: "09:45", end: "10:15", colorId: 3 },
+    { id: "m-2", venueIndex: 0, title: "立命館附属校\n課題研究発表会", start: "10:40", end: "11:30", colorId: 4 },
+    { id: "m-3", venueIndex: 0, title: "SSH国際共同課題研究発表", start: "11:40", end: "12:30", colorId: 2 },
+    { id: "m-4", venueIndex: 0, title: "第2部開会式", start: "14:00", end: "14:30", colorId: 3 },
+    { id: "m-5", venueIndex: 0, title: "有志生徒バンド発表", start: "14:50", end: "16:20", colorId: 3 },
 
     // --- 中ホール (Index 1) ---
-    { id: "s-1", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nFashion部門", start: "10:40", end: "11:20" },
-    { id: "s-2", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nPeace部門", start: "11:20", end: "12:05" },
-    { id: "s-3", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nFood部門", start: "12:05", end: "12:45" },
-    { id: "s-4", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nTraditional Culture部門", start: "12:45", end: "13:45" },
-    { id: "s-5", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nSnow部門", start: "14:45", end: "15:15" },
-    { id: "s-6", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nSports部門", start: "15:15", end: "15:45" },
+    { id: "s-1", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nFashion部門", start: "10:40", end: "11:20", colorId: 4 },
+    { id: "s-2", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nPeace部門", start: "11:20", end: "12:05", colorId: 4 },
+    { id: "s-3", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nFood部門", start: "12:05", end: "12:45", colorId: 4 },
+    { id: "s-4", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nTraditional Culture部門", start: "12:45", end: "13:45", colorId: 4 },
+    { id: "s-5", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nSnow部門", start: "14:45", end: "15:15", colorId: 4 },
+    { id: "s-6", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nSports部門", start: "15:15", end: "15:45", colorId: 4 },
 
     // --- 小ホール (Index 2) ---
-    { id: "md-1", venueIndex: 2, title: "RED Talks\n弁論研究部", start: "10:30", end: "12:00" },
-    { id: "md-2", venueIndex: 2, title: "株式会社Progate\nCEO加藤氏講演会", start: "12:20", end: "13:50" },
-    { id: "md-3", venueIndex: 2, title: "生徒主催e-sports大会\nスマブラ王決定戦", start: "14:45", end: "16:30" },
+    { id: "md-1", venueIndex: 2, title: "RED Talks\n弁論研究部", start: "10:30", end: "12:00", colorId: 2 },
+    { id: "md-2", venueIndex: 2, title: "株式会社Progate\nCEO加藤氏講演会", start: "12:20", end: "13:50", colorId: 4 },
+    { id: "md-3", venueIndex: 2, title: "生徒主催e-sports大会\nスマブラ王決定戦", start: "14:45", end: "16:30", colorId: 3 },
 
 
     // --- 特別会議場 (Index 3) ---
-    { id: "sp-1", venueIndex: 3, title: "高校3年生授業\n演劇表現卒業公演", start: "10:30", end: "11:10" },
-    { id: "sp-2", venueIndex: 3, title: "中学演劇部\nR-EXPO特別公演", start: "11:25", end: "12:05" },
-    { id: "sp-3", venueIndex: 3, title: "有志生徒\n芸術発表", start: "12:30", end: "13:45" },
-    { id: "sp-4", venueIndex: 3, title: "有志生徒\nダンスステージ", start: "14:45", end: "16:30" },
+    { id: "sp-1", venueIndex: 3, title: "高校3年生授業\n演劇表現卒業公演", start: "10:30", end: "11:10", colorId: 3 },
+    { id: "sp-2", venueIndex: 3, title: "中学演劇部\nR-EXPO特別公演", start: "11:25", end: "12:05", colorId: 3 },
+    { id: "sp-3", venueIndex: 3, title: "有志生徒\n芸術発表", start: "12:30", end: "13:45", colorId: 3 },
+    { id: "sp-4", venueIndex: 3, title: "有志生徒\nダンスステージ", start: "14:45", end: "16:30", colorId: 3 },
 
     // --- 104・105 (Index 4) ---
-    { id: "en-1", venueIndex: 4, title: "中学研修報告\n【A会場】\nNZ/京都/北海道", start: "10:30", end: "11:25" },
-    { id: "en-2", venueIndex: 4, title: "高2海外研修報告\n【A会場】\nタイ/マレーシア/アメリカ", start: "11:35", end: "12:30" },
-    { id: "en-3", venueIndex: 4, title: `立命館附属校\n課題研究体験ブース${SPACER}立命館高校\n立命館宇治高校\n立命館守山高校`, start: "11:35", end: "12:30" },
+    { id: "en-1", venueIndex: 4, title: "中学研修報告\n【A会場】\nNZ/京都/北海道", start: "10:30", end: "11:25", colorId: 1 },
+    { id: "en-2", venueIndex: 4, title: "高2海外研修報告\n【A会場】\nタイ/マレーシア/アメリカ", start: "11:35", end: "12:30", colorId: 1 },
+    { id: "en-3", venueIndex: 4, title: `立命館附属校\n課題研究体験ブース${SPACER}立命館高校\n立命館宇治高校\n立命館守山高校`, start: "11:35", end: "12:30", colorId: 2 },
 
     // --- 107・108 (Index 5) ---
-    { id: "wa-1", venueIndex: 5, title: "R-Union\n立命館大学生による\n大学生活のすゝめ", start: "10:30", end: "13:00" },
-    { id: "wa-2", venueIndex: 5, title: "北海道大学コラボ企画\nもののけアート展\n×\n慶祥美術部\nArt Gallery", start: "14:45", end: "16:30" },
+    { id: "wa-1", venueIndex: 5, title: "R-Union\n立命館大学生による\n大学生活のすゝめ", start: "10:30", end: "13:00", colorId: 4 },
+    { id: "wa-2", venueIndex: 5, title: "北海道大学コラボ企画\nもののけアート展\n×\n慶祥美術部\nArt Gallery", start: "14:45", end: "16:30", colorId: 4 },
 
     // --- 201 (Index 6) ---
-    { id: "r104-1", venueIndex: 6, title: "APU国際交流\n結MUSUBU", start: "10:30", end: "12:00" },
-    { id: "r104-2", venueIndex: 6, title: `囲碁将棋部\n【対局】${SPACER}K-Tech\n【ゲーム体験】${SPACER}生徒討論\n【核兵器の力とその代償】`, start: "14:45", end: "16:30" },
+    { id: "r104-1", venueIndex: 6, title: "APU国際交流\n結MUSUBU", start: "10:30", end: "12:00", colorId: 4 },
+    { id: "r104-2", venueIndex: 6, title: `囲碁将棋部\n【対局】${SPACER}K-Tech\n【ゲーム体験】${SPACER}生徒討論\n【核兵器の力とその代償】`, start: "14:45", end: "16:30", colorId: 3 },
 
     // --- 202 (Index 7) ---
-    { id: "r105-1", venueIndex: 7, title: `国際部\n留学研修報告会${SPACER}・モルドバ\n・ネパール\n・フィリピン\n・トビタテ留学JAPAN`, start: "10:30", end: "11:40" },
-    { id: "r105-2", venueIndex: 7, title: "東北メディカルツアー報告会", start: "11:50", end: "12:30" },
-    { id: "r105-3", venueIndex: 7, title: `トビタテ留学JAPAN${SPACER}学生団体Smile\n留学のススメ`, start: "14:45", end: "16:30" },
+    { id: "r105-1", venueIndex: 7, title: `国際部\n留学研修報告会${SPACER}・モルドバ\n・ネパール\n・フィリピン\n・トビタテ留学JAPAN`, start: "10:30", end: "11:40", colorId: 1 },
+    { id: "r105-2", venueIndex: 7, title: "東北メディカルツアー報告会", start: "11:50", end: "12:30", colorId: 2 },
+    { id: "r105-3", venueIndex: 7, title: `トビタテ留学JAPAN${SPACER}学生団体Smile\n留学のススメ`, start: "14:45", end: "16:30", colorId: 1 },
 
     // --- 204 (Index 8) ---
-    { id: "r107-1", venueIndex: 8, title: "課題研究\nポスターセッション", start: "10:30", end: "12:30" },
-    { id: "r107-2", venueIndex: 8, title: "自然科学部展示発表", start: "14:45", end: "16:30" },
+    { id: "r107-1", venueIndex: 8, title: "課題研究\nポスターセッション", start: "10:30", end: "12:30", colorId: 2 },
+    { id: "r107-2", venueIndex: 8, title: "自然科学部展示発表", start: "14:45", end: "16:30", colorId: 2 },
 
     // --- 206 (Index 9) ---
-    { id: "r108-1", venueIndex: 9, title: "中学研修報告\n【B会場】\nNZ/京都/北海道", start: "10:30", end: "11:25" },
-    { id: "r108-2", venueIndex: 9, title: "高2海外研修報告\n【B会場】\n台湾/インドネシア/ベトナム", start: "11:35", end: "12:30" },
-    { id: "r108-3", venueIndex: 9, title: "ライスボールセミナー\n立命館大学院生による講演会", start: "12:40", end: "13:40" },
-    { id: "r108-4", venueIndex: 9, title: "クイズ研究会\n体験型発表", start: "14:45", end: "16:30" },
+    { id: "r108-1", venueIndex: 9, title: "中学研修報告\n【B会場】\nNZ/京都/北海道", start: "10:30", end: "11:25", colorId: 1 },
+    { id: "r108-2", venueIndex: 9, title: "高2海外研修報告\n【B会場】\n台湾/インドネシア/ベトナム", start: "11:35", end: "12:30", colorId: 1 },
+    { id: "r108-3", venueIndex: 9, title: "ライスボールセミナー\n立命館大学院生による講演会", start: "12:40", end: "13:40", colorId: 4 },
+    { id: "r108-4", venueIndex: 9, title: "クイズ研究会\n体験型発表", start: "14:45", end: "16:30", colorId: 3 },
 
     // --- 207 (Index 10) ---
-    { id: "207-1", venueIndex: 10, title: "中学研修報告\n【C会場】\nNZ/京都/北海道", start: "10:30", end: "11:25" },
-    { id: "207-2", venueIndex: 10, title: "高2海外研修報告\n【C会場】\nオーストラリア/リトアニア/ガラパゴス", start: "11:35", end: "12:30" },
-    { id: "207-3", venueIndex: 10, title: `羽幌町チャレンジ企画\n特産品販売${SPACER}お悩み相談\n天満の部屋${SPACER}和菓子企画\n和菓子作成体験`, start: "14:45", end: "16:30" },
+    { id: "207-1", venueIndex: 10, title: "中学研修報告\n【C会場】\nNZ/京都/北海道", start: "10:30", end: "11:25", colorId: 1 },
+    { id: "207-2", venueIndex: 10, title: "高2海外研修報告\n【C会場】\nオーストラリア/リトアニア/ガラパゴス", start: "11:35", end: "12:30", colorId: 1 },
+    { id: "207-3", venueIndex: 10, title: `羽幌町チャレンジ企画\n特産品販売${SPACER}お悩み相談\n天満の部屋${SPACER}和菓子企画\n和菓子作成体験`, start: "14:45", end: "16:30", colorId: 3 },
 
     // --- 和室 (Index 11) ---
-    { id: "r201-1", venueIndex: 11, title: "茶道部\nR-EXPOお茶会", start: "14:45", end: "16:30" },
+    { id: "r201-1", venueIndex: 11, title: "茶道部\nR-EXPOお茶会", start: "14:45", end: "16:30", colorId: 3 },
 
     // --- エントランスホール (Index 12)
-    { id: "r204-1", venueIndex: 12, title: `協賛企業\nキャリア学習体験ブース`, start: "10:30", end: "16:30" },
+    { id: "r204-1", venueIndex: 12, title: `協賛企業\nキャリア学習体験ブース`, start: "10:30", end: "16:30", colorId: 4 },
 
 ];

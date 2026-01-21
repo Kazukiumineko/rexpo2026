@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { venues, CONFIG } from "./Data";
 import ScrollHint from "./ScrollHint";
 import TableHeader from "./TableHeader";
@@ -28,6 +28,30 @@ export default function TimeTable() {
             }
         }
     };
+
+    // ▼ 縦スクロール監視（表の下端が見えたらヒントを消す）
+    const footerRef = useRef<HTMLParagraphElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && showHint) {
+                    setShowHint(false);
+                }
+            },
+            { threshold: 0.1 } // 10%見えたら反応
+        );
+
+        if (footerRef.current) {
+            observer.observe(footerRef.current);
+        }
+
+        return () => {
+            if (footerRef.current) {
+                observer.unobserve(footerRef.current);
+            }
+        };
+    }, [showHint]);
 
     return (
         <section className="w-full bg-[#f1f1f1] py-12 px-0 md:px-2 font-jp">
@@ -61,7 +85,10 @@ export default function TimeTable() {
                     </div>
                 </div>
 
-                <p className="mt-4 text-xs text-gray-500 text-right px-4">
+                <p
+                    ref={footerRef}
+                    className="mt-4 text-xs text-gray-500 text-right px-4"
+                >
                     ※ スケジュールは進行状況により前後する可能性があります。<br />
                     ※ 横にスクロールして全会場を確認できます。
                 </p>

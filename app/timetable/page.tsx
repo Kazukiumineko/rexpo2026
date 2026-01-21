@@ -4,6 +4,7 @@ import SectionTop from "@/components/Shared/SectionTop";
 import FooterBar from "@/components/MainUI/10_FooterBar";
 import Header from "@/components/MainUI/02_Header";
 import TimeTable from "@/components/TimeTableUI/TimeTable";
+import Jump from "@/components/TimeTableUI/Jump";
 import ComingSoonPopup from "@/components/Shared/ComingSoonPopup";
 import { useState } from "react";
 
@@ -19,17 +20,18 @@ export default function TimetablePage() {
                 imageSrc="/topic/TimeTable.jpg"
                 imageAlt="Timetable Background"
                 backTitle="TIMETABLE"
-                backTitleClassName="absolute right-4 md:right-12 top-[20vh] md:top-auto md:-bottom-[10vh] z-0 font-oswald text-[12vh] md:text-[20vh] font-bold text-black/10 select-none pointer-events-none leading-none origin-bottom-right"
+                backTitleClassName="absolute right-4 md:right-12 top-[10vh] md:top-auto md:-bottom-[2vh] z-0 font-oswald text-[12vh] md:text-[15vh] font-bold text-black/10 select-none pointer-events-none leading-none origin-bottom-right"
                 containerClassName="relative w-full h-auto md:h-[25vh] bg-[#f1f1f1] flex items-start md:items-end pt-8 md:pt-0 pb-12 md:pb-6 px-6 md:px-20 lg:px-32 overflow-hidden"
             >
                 <div className="w-full max-w-[1600px] mx-auto">
-                    <h1 className="relative z-10 text-[#092040] text-4xl md:text-6xl font-bold tracking-widest leading-none">
+                    <h1 className="relative z-10 text-[#092040] text-3xl sm:text-4xl md:text-6xl font-bold tracking-widest leading-none whitespace-nowrap">
                         タイムテーブル
                     </h1>
                 </div>
             </SectionTop>
 
             <TimeTable />
+            <Jump />
 
             <FooterBar variant="black" />
         </main>
