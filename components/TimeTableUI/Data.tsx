@@ -3,10 +3,10 @@ import { ReactNode } from "react";
 
 
 export const CATEGORY_COLORS = {
-    1: "#3a633f", // グローバル
-    2: "#3b3a63", // アカデミック
-    3: "#635f3a", // エンターテイメント
-    4: "#a15c7e", // コラボレーション
+    1: "#03045e", // グローバル
+    2: "#48c97e", // アカデミック
+    3: "#48cae4", // エンターテイメント
+    4: "#0077b6", // コラボレーション
 } as const;
 
 export type EventItem = {
