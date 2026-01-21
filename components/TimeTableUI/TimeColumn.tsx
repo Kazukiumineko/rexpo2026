@@ -21,7 +21,7 @@ export default function TimeColumn() {
                             className="absolute w-full text-right pr-2 text-sm md:text-base font-bold text-gray-500 transform -translate-y-1/2"
                             style={{ top: offset * 30 * (CONFIG.HOUR_HEIGHT / 60) }}
                         >
-                            {hour === 9 && minute === 0 ? "" : `${hour}:${minute === 0 ? "00" : "30"}`}
+                            {hour === 9 && minute === 0 ? "" : (hour === 17 && minute === 30 ? "" : `${hour}:${minute === 0 ? "00" : "30"}`)}
                         </div>
                     </div>
                 ))}

@@ -33,7 +33,7 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                     <h2 ref={headerRef}
                         /* whitespace-nowrapでスマホの見出し1行を強制 */
                         className="text-4xl md:text-5xl lg:text-6xl font-bold mb-10 text-center text-white whitespace-nowrap md:whitespace-normal">
-                        教室には収まらない
+                        教室を飛び出せ
                     </h2>
 
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-32 text-center text-white">
@@ -50,7 +50,7 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                     className="w-full break-keep word-break-keep"
                 >
                     <p className="text-base md:text-xl text-center leading-relaxed mb-10">
-                        R-EXPOが目指すのは、未来社会の縮図を描くこと。
+                        R-EXPOは、生徒の個性を発信するイベントです。
                     </p>
 
                     <p className="text-base md:text-xl text-center leading-relaxed mb-10">

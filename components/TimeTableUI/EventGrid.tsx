@@ -43,6 +43,39 @@ export default function EventGrid() {
                 />
             ))}
 
+            {/* 特別な横断イベント: 一般公開開始 & 終了 */}
+            {[
+                { start: "10:15", end: "10:30", text: "一般公開開始 10:00" },
+                { start: "16:30", end: "16:45", text: "一般公開終了 16:30" }
+            ].map((item, idx) => {
+                const startMins = timeToMinutes(item.start);
+                const endMins = timeToMinutes(item.end);
+                const durationMins = endMins - startMins;
+                const top = startMins * (CONFIG.HOUR_HEIGHT / 60);
+                const height = durationMins * (CONFIG.HOUR_HEIGHT / 60);
+
+                return (
+                    <div
+                        key={`banner-${idx}`}
+                        className="absolute px-0 py-1 z-10 pointer-events-none"
+                        style={{
+                            left: 0,
+                            width: venues.length * CONFIG.COLUMN_WIDTH,
+                            top: top,
+                            height: height,
+                        }}
+                    >
+                        <div className="w-full h-full bg-gray-600/90 flex items-center justify-around shadow-md">
+                            {[...Array(3)].map((_, i) => (
+                                <span key={i} className="text-white font-bold text-lg tracking-widest whitespace-nowrap">
+                                    {item.text}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                );
+            })}
+
             {/* イベントカード */}
             {events.map((evt) => {
                 const startMins = timeToMinutes(evt.start);

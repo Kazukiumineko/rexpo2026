@@ -21,7 +21,7 @@ export type EventItem = {
 // ▼ 設定定数（レイアウト調整用）
 export const CONFIG = {
     START_HOUR: 9,       // 9:00開始
-    END_HOUR: 17,        // 17:00終了
+    END_HOUR: 17.5,      // 17.5 = 17:30終了
     HOUR_HEIGHT: 180,    // 1時間あたりの高さ(px)
     HEADER_HEIGHT: 60,   // ヘッダーの高さ
     COLUMN_WIDTH: 200,   // 各会場カラムの幅
@@ -55,6 +55,7 @@ export const events: EventItem[] = [
     { id: "m-3", venueIndex: 0, title: "SSH国際共同課題研究発表", start: "11:40", end: "12:30", colorId: 2 },
     { id: "m-4", venueIndex: 0, title: "第2部開会式", start: "14:00", end: "14:30", colorId: 3 },
     { id: "m-5", venueIndex: 0, title: "有志生徒バンド発表", start: "14:50", end: "16:20", colorId: 3 },
+    { id: "m-6", venueIndex: 0, title: "閉会式典", start: "16:45", end: "17:15", colorId: 3 },
 
     // --- 中ホール (Index 1) ---
     { id: "s-1", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nFashion部門", start: "10:40", end: "11:20", colorId: 4 },
