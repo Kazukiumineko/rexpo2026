@@ -29,6 +29,30 @@ export default function TimeTable() {
         }
     };
 
+    // ▼ ドラッグスクロール実装
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeftState, setScrollLeftState] = useState(0);
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+        if (!bodyScrollRef.current) return;
+        setIsDragging(true);
+        setStartX(e.pageX - bodyScrollRef.current.offsetLeft);
+        setScrollLeftState(bodyScrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (!isDragging || !bodyScrollRef.current) return;
+        e.preventDefault();
+        const x = e.pageX - bodyScrollRef.current.offsetLeft;
+        const walk = (x - startX) * 1.5; // ドラッグ倍率
+        bodyScrollRef.current.scrollLeft = scrollLeftState - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
     // ▼ 縦スクロール監視（表の下端が見えたらヒントを消す）
     const footerRef = useRef<HTMLParagraphElement>(null);
 
@@ -66,9 +90,13 @@ export default function TimeTable() {
 
                 {/* ボディエリア (横スクロール本体) */}
                 <div
-                    className="overflow-x-auto overflow-y-hidden custom-scrollbar bg-white relative"
+                    className={`overflow-x-auto overflow-y-hidden custom-scrollbar bg-white relative ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
                     ref={bodyScrollRef}
                     onScroll={handleScroll}
+                    onMouseDown={handleMouseDown}
+                    onMouseMove={handleMouseMove}
+                    onMouseUp={handleMouseUp}
+                    onMouseLeave={handleMouseUp}
                 >
                     <div
                         className="relative flex"

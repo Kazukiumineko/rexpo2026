@@ -1,7 +1,7 @@
 "use client";
 
 import { sponsors } from "./sponsors";
-import SponsorCard from "./SponsorCard";
+import SponsorCard from "./sponsor-card";
 
 export default function SponsorsSection() {
     return (
