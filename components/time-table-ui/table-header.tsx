@@ -10,9 +10,11 @@ type TableHeaderProps = {
 export default function TableHeader({ scrollRef }: TableHeaderProps) {
     return (
         <div
-            className="sticky top-14 lg:top-[72px] z-[70] w-full overflow-hidden print-table-header print:hidden"
+            className="w-full overflow-hidden print-table-header print:hidden"
             ref={scrollRef}
-            style={{ backgroundColor: "var(--table-bg)" }}
+            style={{
+                backgroundColor: "var(--table-bg)",
+            }}
         >
             <div
                 className="flex"

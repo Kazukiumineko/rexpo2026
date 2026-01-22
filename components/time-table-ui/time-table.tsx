@@ -136,18 +136,21 @@ export default function TimeTable() {
 
                 <div className="max-w-[1600px] mx-auto relative min-h-[80vh]">
 
-                    {/* ▼ ズームバー (スマホのみ) */}
-                    <ZoomBar scale={zoomScale} onScaleChange={setZoomScale} />
-
-                    {/* ▼ ScrollHint ギミック */}
+                    {/* ▼ ScrollHint ギミック (スライダー移動中も邪魔にならないよう最上部に) */}
                     <div>
                         <ScrollHint showHint={showHint} />
                     </div>
 
-                    <div className="relative">
+                    {/* ▼ スライダーと固定ヘッダー (まとめてSticky化) */}
+                    <div className="sticky top-0 z-[95] bg-[#f1f1f1] w-full print:hidden pb-1 pt-14 lg:pt-[72px]">
+                        {/* ▼ ズームバー (スマホのみ -> PCも表示) */}
+                        <ZoomBar scale={zoomScale} onScaleChange={setZoomScale} />
+
                         {/* ヘッダーエリア (Web表示用) */}
                         <TableHeader scrollRef={headerScrollRef} />
+                    </div>
 
+                    <div className="relative">
                         {/* ボディエリア (横スクロール本体) */}
                         <div
                             className={`overflow-x-auto overflow-y-hidden custom-scrollbar relative select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}

@@ -172,7 +172,7 @@ export default function Header({ isVisible, invert }: HeaderProps) {
     }, [isTimetable]);
 
     const bgClass = isTimetable
-        ? (isScrolled ? "bg-[#092040] lg:bg-white lg:shadow-sm" : "bg-[#092040] lg:bg-transparent")
+        ? "bg-[#092040] lg:bg-black/0"
         : "bg-[#092040] md:bg-[#092040] lg:bg-black/0";
 
     return (
