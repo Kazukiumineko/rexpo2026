@@ -4,7 +4,8 @@ import { venues } from "./data";
 import ScrollHint from "./scroll-hint";
 import TableHeader from "./table-header";
 import PrintOverlay from "./print-overlay";
-import { Printer, X, FileText, Maximize2, Download } from "lucide-react";
+import PrintModal from "./print-modal";
+import TableFooter from "./table-footer";
 
 export default function TimeTable() {
     // ヘッダー（会場名）のスクロール位置を同期させるためのRef
@@ -52,29 +53,12 @@ export default function TimeTable() {
         setIsDragging(false);
     };
 
-    // ▼ 縦スクロール監視（表の下端が見えたらヒントを消す）
-    const footerRef = useRef<HTMLParagraphElement>(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting && showHint) {
-                    setShowHint(false);
-                }
-            },
-            { threshold: 0.1 } // 10%見えたら反応
-        );
-
-        if (footerRef.current) {
-            observer.observe(footerRef.current);
+    // ▼ 縦スクロール監視コールバック
+    const handleFooterInView = (inView: boolean) => {
+        if (inView && showHint) {
+            setShowHint(false);
         }
-
-        return () => {
-            if (footerRef.current) {
-                observer.unobserve(footerRef.current);
-            }
-        };
-    }, [showHint]);
+    };
 
     // ▼ 印刷モーダル関連
     const [isPrintModalOpen, setIsPrintModalOpen] = useState(false);
@@ -84,16 +68,8 @@ export default function TimeTable() {
         setIsPrintModalOpen(true);
     };
 
-    const handlePrintA4 = () => {
-        setPrintScale(1);
-        setIsPrintModalOpen(false);
-        setTimeout(() => {
-            window.print();
-        }, 100);
-    };
-
-    const handlePrintA3 = () => {
-        setPrintScale(1.41); // A4 -> A3 拡大率 (約√2)
+    const handlePrint = (scale: number) => {
+        setPrintScale(scale);
         setIsPrintModalOpen(false);
         setTimeout(() => {
             window.print();
@@ -101,126 +77,55 @@ export default function TimeTable() {
     };
 
     return (
-        <section
-            className="w-full py-12 px-0 md:px-2 font-jp relative print:py-0 print:bg-[#ffffff]"
-            style={{
-                "--col-width": "200px",
-                "--hour-height": "180px",
-                "--header-height": "60px",
-                "--time-col-width": "60px",
-                "--min-card-height": "40px",
-                "--table-bg": "#f1f1f1",
-                "--print-scale": printScale,
-                backgroundColor: "var(--table-bg)",
-            } as React.CSSProperties}
-        >
+        <>
+            <section
+                className="w-full pt-12 pb-2 md:py-12 px-0 md:px-2 font-jp relative print:py-0 print:bg-[#ffffff]"
+                style={{
+                    "--col-width": "200px",
+                    "--hour-height": "180px",
+                    "--header-height": "60px",
+                    "--time-col-width": "60px",
+                    "--min-card-height": "40px",
+                    "--table-bg": "#f1f1f1",
+                    "--print-scale": printScale,
+                    backgroundColor: "var(--table-bg)",
+                } as React.CSSProperties}
+            >
 
-            <div className="max-w-[1600px] mx-auto relative min-h-[80vh] print:min-h-0 print-container">
+                <div className="max-w-[1600px] mx-auto relative min-h-[80vh] print:min-h-0 print-container">
 
 
-                {/* ▼ ScrollHint ギミック */}
-                <div className="print:hidden">
-                    <ScrollHint showHint={showHint} />
-                </div>
-
-                <div className="relative">
-                    {/* ヘッダーエリア (Web表示用) */}
-                    <TableHeader scrollRef={headerScrollRef} />
-
-                    {/* ボディエリア (横スクロール本体) */}
-                    <div
-                        className={`overflow-x-auto overflow-y-hidden custom-scrollbar relative select-none print-scroll-container ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
-                        ref={bodyScrollRef}
-                        onScroll={handleScroll}
-                        onMouseDown={handleMouseDown}
-                        onMouseMove={handleMouseMove}
-                        onMouseUp={handleMouseUp}
-                        onMouseLeave={handleMouseUp}
-                        style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
-                    >
-                        {/* コンテンツラッパー (全幅) */}
-                        <PrintOverlay />
-                    </div>
-                </div>
-
-                <div className="mt-4 px-4 flex flex-col md:flex-row justify-between items-end gap-4 print:hidden">
-                    <div className="flex items-center gap-4">
-                        <button
-                            onClick={handlePrintClick}
-                            className="flex items-center gap-2 bg-[#092040] text-white px-4 py-2 rounded-lg hover:bg-[#092040]/90 transition-all hover:scale-105 active:scale-95 shadow-lg"
-                        >
-                            <Download size={20} />
-                            <span className="font-bold">PDFでダウンロード</span>
-                        </button>
-                        <span className="text-sm text-gray-500 font-medium">
-                            最終更新：{process.env.NEXT_PUBLIC_LAST_UPDATED}
-                        </span>
+                    {/* ▼ ScrollHint ギミック */}
+                    <div className="print:hidden">
+                        <ScrollHint showHint={showHint} />
                     </div>
 
-                    <p
-                        ref={footerRef}
-                        className="text-xs text-gray-500 text-right"
-                    >
-                        ※ スケジュールは進行状況により前後する可能性があります。<br />
-                        ※ 横にスクロールして全会場を確認できます。
-                    </p>
-                </div>
+                    <div className="relative">
+                        {/* ヘッダーエリア (Web表示用) */}
+                        <TableHeader scrollRef={headerScrollRef} />
 
-                <div className="hidden print:block text-right mt-2 mr-1 text-[8px] text-gray-500">
-                    最終更新：{process.env.NEXT_PUBLIC_LAST_UPDATED}
-                </div>
-            </div>
-
-            {/* 印刷サイズ選択モーダル */}
-            {isPrintModalOpen && (
-                <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 print:hidden animate-in fade-in duration-200">
-                    <div className="bg-white rounded-xl shadow-2xl w-full max-w-md p-6 relative animate-in zoom-in-95 duration-200">
-                        <button
-                            onClick={() => setIsPrintModalOpen(false)}
-                            className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+                        {/* ボディエリア (横スクロール本体) */}
+                        <div
+                            className={`overflow-x-auto overflow-y-hidden custom-scrollbar relative select-none print-scroll-container ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+                            ref={bodyScrollRef}
+                            onScroll={handleScroll}
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseUp}
+                            style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
                         >
-                            <X size={24} />
-                        </button>
-
-                        <h3 className="text-xl font-bold text-[#092040] mb-2 flex items-center gap-2">
-                            <Download className="text-[#092040]" />
-                            保存サイズを選択
-                        </h3>
-                        <p className="text-base text-gray-500 mb-6">
-                            用途に合わせてPDFのサイズを選択してください。
-                        </p>
-
-                        <div className="grid grid-cols-2 gap-4">
-                            <button
-                                onClick={handlePrintA4}
-                                className="flex flex-col items-center justify-center p-6 border-2 border-gray-200 rounded-xl hover:border-[#092040] hover:bg-blue-50 transition-all group"
-                            >
-                                <FileText size={40} className="text-gray-400 group-hover:text-[#092040] mb-3 transition-colors" />
-                                <span className="font-bold text-lg text-gray-700 group-hover:text-[#092040]">A4</span>
-                                <span className="text-xs text-gray-400 mt-1">標準サイズ</span>
-                            </button>
-
-                            <button
-                                onClick={handlePrintA3}
-                                className="flex flex-col items-center justify-center p-6 border-2 border-gray-200 rounded-xl hover:border-[#092040] hover:bg-blue-50 transition-all group"
-                            >
-                                <Maximize2 size={40} className="text-gray-400 group-hover:text-[#092040] mb-3 transition-colors" />
-                                <span className="font-bold text-lg text-gray-700 group-hover:text-[#092040]">A3</span>
-                                <span className="text-xs text-gray-400 mt-1">拡大サイズ</span>
-                            </button>
-                        </div>
-
-                        <div className="mt-6 p-3 bg-red-500 rounded-lg text-base text-[#f1f1f1f1] flex gap-2 items-start text-left">
-                            <span className="font-bold text-[#f1f1f1f1] whitespace-nowrap">ご注意：</span>
-                            <span>
-                                印刷画面が開いたら、用紙サイズをご自身でA4またはA3に設定してください。<br />用紙サイズに最適化されたタイムテーブルが印刷されます。
-                            </span>
+                            {/* コンテンツラッパー (全幅) */}
+                            <PrintOverlay />
                         </div>
                     </div>
-                </div>
-            )}
 
-            <style jsx global>{`
+                    <div className="hidden print:block text-right mt-2 mr-1 text-[8px] text-gray-500">
+                        最終更新：{process.env.NEXT_PUBLIC_LAST_UPDATED}
+                    </div>
+                </div>
+
+                <style jsx global>{`
         .custom-scrollbar::-webkit-scrollbar {
           width: 10px;
           height: 10px;
@@ -321,6 +226,21 @@ export default function TimeTable() {
             }
         }
       `}</style>
-        </section >
+            </section >
+
+            {/* フッターエリア (別セクション) */}
+            <TableFooter
+                onPrintClick={handlePrintClick}
+                lastUpdated={process.env.NEXT_PUBLIC_LAST_UPDATED}
+                onInView={handleFooterInView}
+            />
+
+            {/* 印刷サイズ選択モーダル */}
+            <PrintModal
+                isOpen={isPrintModalOpen}
+                onClose={() => setIsPrintModalOpen(false)}
+                onPrint={handlePrint}
+            />
+        </>
     );
 }
