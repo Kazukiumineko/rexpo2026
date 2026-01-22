@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
-import EntryTitle from "./Title";
+import EntryTitle from "./title";
 
 // セクションごとのアニメーション設定
 const sectionVariants: Variants = {
