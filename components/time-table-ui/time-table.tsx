@@ -97,99 +97,104 @@ export default function TimeTable() {
         >
 
             <div className="max-w-[1600px] mx-auto relative min-h-[80vh] print-container">
-
-                {/* 印刷ボタン */}
-                <div className="absolute -top-12 right-4 md:right-0 z-50 print:hidden">
-                    <button
-                        onClick={handlePrint}
-                        className="flex items-center gap-2 bg-[#092040] text-white px-4 py-2 rounded-lg hover:bg-[#092040]/90 transition-all hover:scale-105 active:scale-95 shadow-lg"
-                    >
-                        <Printer size={20} />
-                        <span className="font-bold">印刷する</span>
-                    </button>
-                </div>
-
                 {/* ▼ ScrollHint ギミック */}
                 <div className="print:hidden">
                     <ScrollHint showHint={showHint} />
                 </div>
 
-                {/* ヘッダーエリア (Web表示用) */}
-                <TableHeader scrollRef={headerScrollRef} />
+                <div className="relative">
+                    {/* ヘッダーエリア (Web表示用) */}
+                    <TableHeader scrollRef={headerScrollRef} />
 
-                {/* ボディエリア (横スクロール本体) */}
-                <div
-                    className={`overflow-x-auto overflow-y-hidden custom-scrollbar relative select-none print-scroll-container ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
-                    ref={bodyScrollRef}
-                    onScroll={handleScroll}
-                    onMouseDown={handleMouseDown}
-                    onMouseMove={handleMouseMove}
-                    onMouseUp={handleMouseUp}
-                    onMouseLeave={handleMouseUp}
-                    style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
-                >
-                    {/* コンテンツラッパー (全幅) */}
+                    {/* ボディエリア (横スクロール本体) */}
                     <div
-                        className="print:overflow-hidden print:mt-10 relative"
-                        style={{ width: `calc(var(--time-col-width) + ${venues.length} * var(--col-width))` }}
+                        className={`overflow-x-auto overflow-y-hidden custom-scrollbar relative select-none print-scroll-container ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+                        ref={bodyScrollRef}
+                        onScroll={handleScroll}
+                        onMouseDown={handleMouseDown}
+                        onMouseMove={handleMouseMove}
+                        onMouseUp={handleMouseUp}
+                        onMouseLeave={handleMouseUp}
+                        style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
                     >
-                        {/* 印刷用外枠 (時間軸を除いたエリアを囲む) */}
+                        {/* コンテンツラッパー (全幅) */}
                         <div
-                            className="hidden print:block absolute top-0 bottom-0 right-0 border-t border-b border-r border-gray-300 pointer-events-none z-[60]"
-                            style={{ left: 'var(--time-col-width)' }}
-                        />
-
-                        {/* 印刷用：縦線の一本化 (ヘッダーから表底まで貫通) */}
-                        {venues.slice(0, -1).map((_, i) => (
-                            <div
-                                key={`print-vline-${i}`}
-                                className="hidden print:block absolute top-0 bottom-0 border-r border-gray-300 pointer-events-none z-[55]"
-                                style={{ left: `calc(var(--time-col-width) + ${i + 1} * var(--col-width))` }}
-                            />
-                        ))}
-
-                        {/* 印刷用ヘッダー (本体と一体化させるためここに配置) */}
-                        <div className="hidden print:flex w-full relative z-40" style={{ height: 'var(--header-height)' }}>
-                            {/* 左上（時間軸上） */}
-                            <div
-                                className="flex-shrink-0 border-r border-white/20 invisible"
-                                style={{ width: 'var(--time-col-width)' }}
-                            />
-                            {/* 会場名 */}
-                            {venues.map((venue, i) => (
-                                <div
-                                    key={`print-header-${i}`}
-                                    className="flex-shrink-0 flex items-center justify-center text-center font-bold text-white bg-[#092040] last:border-none print-venue-header"
-                                    style={{ width: 'var(--col-width)' }}
-                                >
-                                    {venue}
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* 本体グリッド */}
-                        <div
-                            className="relative flex print-grid-offset"
-                            style={{
-                                height: `calc(${CONFIG.END_HOUR - CONFIG.START_HOUR} * var(--hour-height))`,
-                            }}
+                            className="print:overflow-hidden print:mt-10 relative"
+                            style={{ width: `calc(var(--time-col-width) + ${venues.length} * var(--col-width))` }}
                         >
-                            {/* 左側：時間軸 (Sticky left) */}
-                            <TimeColumn />
+                            {/* 印刷用外枠 (時間軸を除いたエリアを囲む) */}
+                            <div
+                                className="hidden print:block absolute top-0 bottom-0 right-0 border-t border-b border-r border-gray-300 pointer-events-none z-[60]"
+                                style={{ left: 'var(--time-col-width)' }}
+                            />
 
-                            {/* 右側：メイングリッド */}
-                            <EventGrid />
+                            {/* 印刷用：縦線の一本化 (ヘッダーから表底まで貫通) */}
+                            {venues.slice(0, -1).map((_, i) => (
+                                <div
+                                    key={`print-vline-${i}`}
+                                    className="hidden print:block absolute top-0 bottom-0 border-r border-gray-300 pointer-events-none z-[55]"
+                                    style={{ left: `calc(var(--time-col-width) + ${i + 1} * var(--col-width))` }}
+                                />
+                            ))}
+
+                            {/* 印刷用ヘッダー (本体と一体化させるためここに配置) */}
+                            <div className="hidden print:flex w-full relative z-40" style={{ height: 'var(--header-height)' }}>
+                                {/* 左上（時間軸上） */}
+                                <div
+                                    className="flex-shrink-0 border-r border-white/20 invisible"
+                                    style={{ width: 'var(--time-col-width)' }}
+                                />
+                                {/* 会場名 */}
+                                {venues.map((venue, i) => (
+                                    <div
+                                        key={`print-header-${i}`}
+                                        className="flex-shrink-0 flex items-center justify-center text-center font-bold text-white bg-[#092040] last:border-none print-venue-header"
+                                        style={{ width: 'var(--col-width)' }}
+                                    >
+                                        {venue}
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* 本体グリッド */}
+                            <div
+                                className="relative flex print-grid-offset"
+                                style={{
+                                    height: `calc(${CONFIG.END_HOUR - CONFIG.START_HOUR} * var(--hour-height))`,
+                                }}
+                            >
+                                {/* 左側：時間軸 (Sticky left) */}
+                                <TimeColumn />
+
+                                {/* 右側：メイングリッド */}
+                                <EventGrid />
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <p
-                    ref={footerRef}
-                    className="mt-4 text-xs text-gray-500 text-right px-4 print:hidden"
-                >
-                    ※ スケジュールは進行状況により前後する可能性があります。<br />
-                    ※ 横にスクロールして全会場を確認できます。
-                </p>
+                <div className="mt-4 px-4 flex flex-col md:flex-row justify-between items-end gap-4 print:hidden">
+                    <div className="flex items-center gap-4">
+                        <button
+                            onClick={handlePrint}
+                            className="flex items-center gap-2 bg-[#092040] text-white px-4 py-2 rounded-lg hover:bg-[#092040]/90 transition-all hover:scale-105 active:scale-95 shadow-lg"
+                        >
+                            <Printer size={20} />
+                            <span className="font-bold">印刷する</span>
+                        </button>
+                        <span className="text-sm text-gray-500 font-medium">
+                            最終更新：{process.env.NEXT_PUBLIC_LAST_UPDATED}
+                        </span>
+                    </div>
+
+                    <p
+                        ref={footerRef}
+                        className="text-xs text-gray-500 text-right"
+                    >
+                        ※ スケジュールは進行状況により前後する可能性があります。<br />
+                        ※ 横にスクロールして全会場を確認できます。
+                    </p>
+                </div>
             </div>
 
             <style jsx global>{`
@@ -288,6 +293,6 @@ export default function TimeTable() {
             }
         }
       `}</style>
-        </section>
+        </section >
     );
 }
