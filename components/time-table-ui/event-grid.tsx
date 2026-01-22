@@ -12,10 +12,10 @@ const timeToMinutes = (timeStr: string) => {
 export default function EventGrid() {
     return (
         <div
-            className="relative bg-white"
+            className="relative"
             style={{
-                width: venues.length * CONFIG.COLUMN_WIDTH,
-                height: (CONFIG.END_HOUR - CONFIG.START_HOUR) * CONFIG.HOUR_HEIGHT
+                width: `calc(${venues.length} * var(--col-width))`,
+                height: `calc(${CONFIG.END_HOUR - CONFIG.START_HOUR} * var(--hour-height))`
             }}
         >
             {/* グリッド背景 (横線) */}
@@ -26,8 +26,8 @@ export default function EventGrid() {
                 }).map(({ offset }) => (
                     <div
                         key={`grid-${offset}`}
-                        className="absolute w-full border-t border-gray-400 solid"
-                        style={{ top: offset * 30 * (CONFIG.HOUR_HEIGHT / 60) }}
+                        className="absolute w-full border-t border-gray-400 print:border-gray-300 solid"
+                        style={{ top: `calc(${offset} * 30 * var(--hour-height) / 60)` }}
                     />
                 ))}
             </div>
@@ -36,9 +36,9 @@ export default function EventGrid() {
             {venues.map((_, i) => (
                 <div
                     key={i}
-                    className="absolute border-r border-gray-200 h-full top-0"
+                    className="absolute border-r border-gray-200 h-full top-0 print:hidden"
                     style={{
-                        left: (i + 1) * CONFIG.COLUMN_WIDTH,
+                        left: `calc(${i + 1} * var(--col-width))`,
                     }}
                 />
             ))}
@@ -51,23 +51,21 @@ export default function EventGrid() {
                 const startMins = timeToMinutes(item.start);
                 const endMins = timeToMinutes(item.end);
                 const durationMins = endMins - startMins;
-                const top = startMins * (CONFIG.HOUR_HEIGHT / 60);
-                const height = durationMins * (CONFIG.HOUR_HEIGHT / 60);
 
                 return (
                     <div
                         key={`banner-${idx}`}
-                        className="absolute px-0 py-1 z-10 pointer-events-none"
+                        className="absolute px-0 py-1 z-10 print:z-[70] pointer-events-none"
                         style={{
                             left: 0,
-                            width: venues.length * CONFIG.COLUMN_WIDTH,
-                            top: top,
-                            height: height,
+                            width: `calc(${venues.length} * var(--col-width))`,
+                            top: `calc(${startMins} * var(--hour-height) / 60)`,
+                            height: `calc(${durationMins} * var(--hour-height) / 60)`,
                         }}
                     >
                         <div className="w-full h-full bg-gray-600/90 flex items-center justify-around shadow-md">
                             {[...Array(3)].map((_, i) => (
-                                <span key={i} className="text-white font-bold text-lg tracking-widest whitespace-nowrap">
+                                <span key={i} className="text-white font-bold text-lg tracking-widest whitespace-nowrap print-public-banner-text">
                                     {item.text}
                                 </span>
                             ))}
@@ -82,31 +80,28 @@ export default function EventGrid() {
                 const endMins = timeToMinutes(evt.end);
                 const durationMins = endMins - startMins;
 
-                const top = startMins * (CONFIG.HOUR_HEIGHT / 60);
-                const height = Math.max(durationMins * (CONFIG.HOUR_HEIGHT / 60), 40);
-
                 // colorId が無いときはデフォルト色 or 黒
                 const accentColor = evt.colorId ? CATEGORY_COLORS[evt.colorId] : "#092040";
 
                 return (
                     <div
                         key={evt.id}
-                        className="absolute px-1 py-1"
+                        className="absolute px-1 py-[2px] print:z-[65]"
                         style={{
-                            left: evt.venueIndex * CONFIG.COLUMN_WIDTH,
-                            top: top,
-                            width: CONFIG.COLUMN_WIDTH,
-                            height: height,
+                            left: `calc(${evt.venueIndex} * var(--col-width))`,
+                            top: `calc(${startMins} * var(--hour-height) / 60)`,
+                            width: `var(--col-width)`,
+                            height: `max(calc(${durationMins} * var(--hour-height) / 60), var(--min-card-height))`,
                         }}
                     >
                         <div
                             className="w-full h-full rounded-md shadow-md p-2 overflow-hidden flex flex-col justify-start hover:brightness-105 transition-all text-white"
                             style={{ backgroundColor: accentColor }}
                         >
-                            <p className="text-[10px] md:text-xs text-white/90 font-mono mb-0.5 leading-none">
+                            <p className="text-[10px] md:text-xs text-white/90 font-mono mb-0.5 leading-none print-event-time">
                                 {evt.start} - {evt.end}
                             </p>
-                            <h3 className="text-xs md:text-sm font-bold leading-tight whitespace-pre-wrap">
+                            <h3 className="text-xs md:text-sm font-bold leading-tight whitespace-pre-wrap print-event-title">
                                 {evt.title}
                             </h3>
                         </div>

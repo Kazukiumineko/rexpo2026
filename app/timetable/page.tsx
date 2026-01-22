@@ -12,28 +12,36 @@ export default function TimetablePage() {
     const [showHeader] = useState(true);
 
     return (
-        <main className="flex flex-col min-h-screen bg-[#f1f1f1]">
-            <ComingSoonPopup />
-            <Header isVisible={showHeader} invert />
+        <main className="flex flex-col min-h-screen bg-[#f1f1f1] print:bg-[#ffffff]">
+            <div className="print:hidden">
+                <ComingSoonPopup />
+            </div>
+            <div className="print:hidden">
+                <Header isVisible={showHeader} invert />
+            </div>
 
-            <SectionTop
-                imageSrc="/topic/TimeTable.jpg"
-                imageAlt="Timetable Background"
-                backTitle="TIMETABLE"
-                backTitleClassName="absolute right-4 md:right-12 top-[10vh] md:top-auto md:-bottom-[2vh] z-0 font-oswald text-[12vh] md:text-[15vh] font-bold text-black/10 select-none pointer-events-none leading-none origin-bottom-right"
-                containerClassName="relative w-full h-auto md:h-[25vh] bg-[#f1f1f1] flex items-start md:items-end pt-8 md:pt-0 pb-12 md:pb-6 px-6 md:px-20 lg:px-32 overflow-hidden"
-            >
-                <div className="w-full max-w-[1600px] mx-auto">
-                    <h1 className="relative z-10 text-[#092040] text-3xl sm:text-4xl md:text-6xl font-bold tracking-widest leading-none whitespace-nowrap">
-                        タイムテーブル
-                    </h1>
-                </div>
-            </SectionTop>
+            <div className="print:hidden">
+                <SectionTop
+                    imageSrc="/topic/TimeTable.jpg"
+                    imageAlt="Timetable Background"
+                    backTitle="TIMETABLE"
+                    backTitleClassName="absolute right-4 md:right-12 top-[10vh] md:top-auto md:-bottom-[2vh] z-0 font-oswald text-[12vh] md:text-[15vh] font-bold text-black/10 select-none pointer-events-none leading-none origin-bottom-right"
+                    containerClassName="relative w-full h-auto md:h-[25vh] bg-[#f1f1f1] flex items-start md:items-end pt-8 md:pt-0 pb-12 md:pb-6 px-6 md:px-20 lg:px-32 overflow-hidden"
+                >
+                    <div className="w-full max-w-[1600px] mx-auto">
+                        <h1 className="relative z-10 text-[#092040] text-3xl sm:text-4xl md:text-6xl font-bold tracking-widest leading-none whitespace-nowrap">
+                            タイムテーブル
+                        </h1>
+                    </div>
+                </SectionTop>
+            </div>
 
             <TimeTable />
-            <Jump />
 
-            <FooterBar variant="black" />
+            <div className="print:hidden">
+                <Jump />
+                <FooterBar variant="black" />
+            </div>
         </main>
     );
 }

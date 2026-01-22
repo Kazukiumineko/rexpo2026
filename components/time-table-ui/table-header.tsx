@@ -10,25 +10,26 @@ type TableHeaderProps = {
 export default function TableHeader({ scrollRef }: TableHeaderProps) {
     return (
         <div
-            className="sticky top-14 lg:top-[72px] z-[70] bg-[#f1f1f1] w-full overflow-hidden shadow-sm"
+            className="sticky top-14 lg:top-[72px] z-[70] w-full overflow-hidden print-table-header print:hidden"
             ref={scrollRef}
+            style={{ backgroundColor: "var(--table-bg)" }}
         >
             <div
-                className="flex border-b border-gray-300 bg-[#092040]"
-                style={{ width: CONFIG.TIME_COL_WIDTH + venues.length * CONFIG.COLUMN_WIDTH }}
+                className="flex"
+                style={{ width: `calc(var(--time-col-width) + ${venues.length} * var(--col-width))` }}
             >
                 {/* 左上の角（時間軸の真上） */}
                 <div
-                    className="flex-shrink-0 bg-[#092040] border-r border-white/20 z-20 sticky left-0"
-                    style={{ width: CONFIG.TIME_COL_WIDTH, height: CONFIG.HEADER_HEIGHT }}
+                    className="flex-shrink-0 bg-[#f1f1f1] z-20 sticky left-0"
+                    style={{ width: `var(--time-col-width)`, height: `var(--header-height)` }}
                 ></div>
 
                 {/* 会場名ヘッダー列 */}
                 {venues.map((venue, i) => (
                     <div
                         key={i}
-                        className="flex-shrink-0 bg-[#092040] text-white text-base md:text-lg font-bold flex items-center justify-center text-center px-2 border-r border-white/20 last:border-none"
-                        style={{ width: CONFIG.COLUMN_WIDTH, height: CONFIG.HEADER_HEIGHT }}
+                        className="flex-shrink-0 bg-[#092040] text-white text-base md:text-lg font-bold flex items-center justify-center text-center px-2 border-r border-b border-white/20 border-b-gray-300 last:border-none print-venue-header"
+                        style={{ width: `var(--col-width)`, height: `var(--header-height)` }}
                     >
                         {venue}
                     </div>
