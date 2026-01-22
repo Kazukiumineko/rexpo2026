@@ -90,13 +90,14 @@ export default function TimeTable() {
 
                 {/* ボディエリア (横スクロール本体) */}
                 <div
-                    className={`overflow-x-auto overflow-y-hidden custom-scrollbar bg-white relative ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+                    className={`overflow-x-auto overflow-y-hidden custom-scrollbar bg-white relative select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
                     ref={bodyScrollRef}
                     onScroll={handleScroll}
                     onMouseDown={handleMouseDown}
                     onMouseMove={handleMouseMove}
                     onMouseUp={handleMouseUp}
                     onMouseLeave={handleMouseUp}
+                    style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
                 >
                     <div
                         className="relative flex"
@@ -141,4 +142,3 @@ export default function TimeTable() {
         </section>
     );
 }
-// Update scroll logic
