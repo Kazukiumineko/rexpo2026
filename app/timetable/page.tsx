@@ -12,7 +12,7 @@ export default function TimetablePage() {
     const [showHeader] = useState(true);
 
     return (
-        <main className="flex flex-col min-h-screen bg-[#f1f1f1] print:bg-[#ffffff] w-full">
+        <main className="flex flex-col min-h-screen bg-[#f1f1f1] print:bg-[#ffffff] w-full" style={{ overflowX: "clip" }}>
             <div className="print:hidden">
                 <ComingSoonPopup />
             </div>
