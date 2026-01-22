@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   // SNSや検索結果で画像を表示するための設定（OGP）
   openGraph: {
     title: "R-EXPO 2026",
-    description: "立命館慶祥中高がお届けするイベント R-EXPO2026の公式サイトです。2月3日札幌コンベンションセンターで開催されます。",
+    description: "立命館慶祥中高がお届けするイベント R-EXPO2026の公式サイトです。2月11日札幌コンベンションセンターで開催されます。",
     url: siteUrl,
     siteName: "R-EXPO 2026",
     locale: "ja_JP",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
 };
 
-import FloatingEntryButton from "@/components/Shared/floating-entry-button";
+import FloatingEntryButton from "@/components/shared/floating-entry-button";
 
 // ... (existing imports)
 
