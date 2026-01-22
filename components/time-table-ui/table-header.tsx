@@ -20,7 +20,7 @@ export default function TableHeader({ scrollRef }: TableHeaderProps) {
             >
                 {/* 左上の角（時間軸の真上） */}
                 <div
-                    className="flex-shrink-0 bg-[#f1f1f1] z-20 sticky left-0"
+                    className="flex-shrink-0 bg-[#f1f1f1] border-r border-gray-300 z-[80] sticky left-0"
                     style={{ width: `var(--time-col-width)`, height: `var(--header-height)` }}
                 ></div>
 
