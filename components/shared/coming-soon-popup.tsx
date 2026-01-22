@@ -44,7 +44,7 @@ export default function ComingSoonPopup() {
 
                         <p className="text-sm md:text-base text-gray-600 mb-8 leading-relaxed font-medium">
                             本ページの内容・写真は<br className="hidden md:block" />
-                            実際のイベントのものとは異なります
+                            ダミーデータです
                         </p>
 
                         <div className="flex items-center justify-center space-x-3 select-none">
