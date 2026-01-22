@@ -141,3 +141,4 @@ export default function TimeTable() {
         </section>
     );
 }
+// Update scroll logic
