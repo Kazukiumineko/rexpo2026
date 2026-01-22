@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const configDate = new Date();
-const lastUpdated = `${configDate.getMonth() + 1}月${configDate.getDate()}日 ${configDate.getHours()}:${configDate.getMinutes().toString().padStart(2, '0')}`;
+// UTC時間を計算し、日本時間（+9時間）に変換
+const jstOffset = 9 * 60 * 60 * 1000;
+const utcCurent = configDate.getTime() + (configDate.getTimezoneOffset() * 60 * 1000);
+const jstDate = new Date(utcCurent + jstOffset);
+
+const lastUpdated = `${jstDate.getMonth() + 1}月${jstDate.getDate()}日 ${jstDate.getHours()}:${jstDate.getMinutes().toString().padStart(2, '0')}`;
 
 const nextConfig: NextConfig = {
   env: {

@@ -153,7 +153,13 @@ export default function TimeTable() {
                                         className="flex-shrink-0 flex items-center justify-center text-center font-bold text-white bg-[#092040] last:border-none print-venue-header"
                                         style={{ width: 'var(--col-width)' }}
                                     >
-                                        {venue}
+                                        {venue === "エントランスホール" ? (
+                                            <>
+                                                エントランス<br />ホール
+                                            </>
+                                        ) : (
+                                            venue
+                                        )}
                                     </div>
                                 ))}
                             </div>
