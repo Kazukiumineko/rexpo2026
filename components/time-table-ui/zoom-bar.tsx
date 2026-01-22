@@ -11,8 +11,8 @@ export default function ZoomBar({ scale, onScaleChange }: ZoomBarProps) {
     };
 
     return (
-        <div className="w-full max-w-[1600px] mx-auto px-4 md:hidden mb-4 print:hidden">
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-2 shadow-sm border border-gray-200 flex items-center gap-3">
+        <div className="w-full max-w-[1600px] mx-auto px-4 md:px-0 mb-4 print:hidden">
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-2 shadow-sm border border-gray-200 flex items-center gap-3 w-full md:w-[400px] md:ml-14">
                 <ZoomOut size={16} className="text-gray-500" />
                 <input
                     type="range"

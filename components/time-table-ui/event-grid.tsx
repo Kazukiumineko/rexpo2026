@@ -68,7 +68,7 @@ export default function EventGrid() {
                                 <span
                                     key={i}
                                     className="text-white font-bold tracking-widest whitespace-nowrap print-public-banner-text"
-                                    style={{ fontSize: 'calc(18px * var(--zoom-scale, 1))' }}
+                                    style={{ fontSize: 'var(--fs-banner)' }}
                                 >
                                     {item.text}
                                 </span>
@@ -104,13 +104,13 @@ export default function EventGrid() {
                         >
                             <p
                                 className="text-white/90 font-mono mb-0.5 leading-none print-event-time"
-                                style={{ fontSize: 'calc(10px * var(--zoom-scale, 1))' }}
+                                style={{ fontSize: 'var(--fs-event-time)' }}
                             >
                                 {evt.start} - {evt.end}
                             </p>
                             <h3
                                 className="font-bold leading-tight whitespace-pre-wrap print-event-title"
-                                style={{ fontSize: 'calc(12px * var(--zoom-scale, 1))' }}
+                                style={{ fontSize: 'var(--fs-event-title)' }}
                             >
                                 {evt.title}
                             </h3>

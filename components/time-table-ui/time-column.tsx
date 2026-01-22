@@ -22,8 +22,11 @@ export default function TimeColumn() {
                 }).map(({ hour, minute, offset }) => (
                     <div key={`${hour}-${minute}`}>
                         <div
-                            className={`absolute w-full text-right pr-2 text-sm md:text-base font-bold text-gray-500 transform -translate-y-1/2 print-time-label ${hour === 9 && minute === 30 ? "print:hidden" : ""}`}
-                            style={{ top: `calc(${offset} * 30 * var(--hour-height) / 60)` }}
+                            className={`absolute w-full text-right pr-2 font-bold text-gray-500 transform -translate-y-1/2 print-time-label ${hour === 9 && minute === 30 ? "print:hidden" : ""}`}
+                            style={{
+                                top: `calc(${offset} * 30 * var(--hour-height) / 60)`,
+                                fontSize: 'var(--fs-time-col)'
+                            }}
                         >
                             {hour === 9 && minute === 0 ? "" : (hour === 17 && minute === 30 ? "" : `${hour}:${minute === 0 ? "00" : "30"}`)}
                         </div>

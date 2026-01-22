@@ -7,6 +7,7 @@ import PrintOverlay from "./print-overlay";
 import PrintModal from "./print-modal";
 import TableFooter from "./table-footer";
 import ZoomBar from "./zoom-bar";
+import PrintLayout from "./print-layout";
 
 export default function TimeTable() {
     // ヘッダー（会場名）のスクロール位置を同期させるためのRef
@@ -18,6 +19,16 @@ export default function TimeTable() {
 
     // ▼ ズーム倍率 (スマホ用)
     const [zoomScale, setZoomScale] = useState(1);
+
+    useEffect(() => {
+        // 初回ロード時のデフォルト倍率設定
+        // PC (>= 768px): 120%, スマホ (< 768px): 90%
+        if (window.innerWidth >= 768) {
+            setZoomScale(1.2);
+        } else {
+            setZoomScale(0.9);
+        }
+    }, []);
 
     // ベースサイズ定義
     const BASE_SIZES = {
@@ -94,8 +105,14 @@ export default function TimeTable() {
 
     return (
         <>
+            {/* 印刷専用レイアウト (Web変更の影響を受けず、Git上の固定レイアウトを維持) */}
+            <PrintLayout
+                scale={printScale}
+                lastUpdated={process.env.NEXT_PUBLIC_LAST_UPDATED}
+            />
+
             <section
-                className="w-full pt-12 pb-2 md:py-12 px-0 md:px-2 font-jp relative print:py-0 print:bg-[#ffffff]"
+                className="w-full pt-12 pb-2 md:py-12 px-0 md:px-2 font-jp relative print:hidden"
                 style={{
                     "--col-width": `${BASE_SIZES.colWidth * zoomScale}px`,
                     "--hour-height": `${BASE_SIZES.hourHeight * zoomScale}px`,
@@ -103,19 +120,27 @@ export default function TimeTable() {
                     "--time-col-width": `${BASE_SIZES.timeColWidth * zoomScale}px`,
                     "--min-card-height": `${BASE_SIZES.minCardHeight * zoomScale}px`,
                     "--zoom-scale": zoomScale,
+
+                    /* フォントサイズ変数 (Web用動的計算 - ズームスライダー連動) */
+                    "--fs-venue": `calc(14px * ${zoomScale})`,
+                    "--fs-time-col": `calc(12px * ${zoomScale})`,
+                    "--fs-banner": `calc(18px * ${zoomScale})`,
+                    "--fs-event-time": `calc(10px * ${zoomScale})`,
+                    "--fs-event-title": `calc(12px * ${zoomScale})`,
+
                     "--table-bg": "#f1f1f1",
                     "--print-scale": printScale,
                     backgroundColor: "var(--table-bg)",
                 } as React.CSSProperties}
             >
 
-                <div className="max-w-[1600px] mx-auto relative min-h-[80vh] print:min-h-0 print-container">
+                <div className="max-w-[1600px] mx-auto relative min-h-[80vh]">
 
                     {/* ▼ ズームバー (スマホのみ) */}
                     <ZoomBar scale={zoomScale} onScaleChange={setZoomScale} />
 
                     {/* ▼ ScrollHint ギミック */}
-                    <div className="print:hidden">
+                    <div>
                         <ScrollHint showHint={showHint} />
                     </div>
 
@@ -125,7 +150,7 @@ export default function TimeTable() {
 
                         {/* ボディエリア (横スクロール本体) */}
                         <div
-                            className={`overflow-x-auto overflow-y-hidden custom-scrollbar relative select-none print-scroll-container ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+                            className={`overflow-x-auto overflow-y-hidden custom-scrollbar relative select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
                             ref={bodyScrollRef}
                             onScroll={handleScroll}
                             onMouseDown={handleMouseDown}
@@ -139,7 +164,7 @@ export default function TimeTable() {
                         </div>
                     </div>
 
-                    <div className="hidden print:block text-right mt-2 mr-1 text-[8px] text-gray-500">
+                    <div className="hidden text-right mt-2 mr-1 text-[8px] text-gray-500">
                         最終更新：{process.env.NEXT_PUBLIC_LAST_UPDATED}
                     </div>
                 </div>
@@ -159,100 +184,17 @@ export default function TimeTable() {
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
           background: #a8a8a8;
         }
-
-        @media print {
-            @page {
-                size: landscape;
-                margin: 5mm;
-            }
-            body {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                background-color: white !important;
-            }
-            section {
-                --col-width: 90px !important;
-                --hour-height: 94px !important;
-                --time-col-width: 40px !important;
-                --header-height: 40px !important;
-                --min-card-height: 20px !important;
-                --table-bg: white !important;
-                background-color: white !important;
-                
-                /* スケーリング適用 */
-                transform: scale(var(--print-scale));
-                transform-origin: top left;
-                width: calc(100% / var(--print-scale)) !important;
-            }
-            /* 印刷時はスクロール無効化して見切れ部分を展開 */
-            .print-scroll-container {
-                overflow: visible !important;
-                display: block !important;
-                width: auto !important;
-                background-color: white !important;
-            }
-            .print-table-header {
-                overflow: visible !important;
-                position: relative !important;
-                width: auto !important;
-                background-color: white !important;
-                z-index: 100 !important;
-            }
-            .print-time-column {
-                position: relative !important;
-                z-index: auto !important;
-                border-right: 1px solid #ccc !important;
-                background-color: white !important;
-            }
-            /* コンテナのリセット (scaleはやめて変数制御にするが、入らない場合は多少scaleしてもOK) */
-            .print-container {
-                width: 100% !important;
-                max-width: none !important;
-                margin: 0 !important;
-                transform: none !important; /* 変数でサイズ制御するのでスケール不要 */
-            }
-            
-            /* フォントサイズ個別調整 */
-            .print-venue-header {
-                font-size: 11px !important;
-                line-height: normal !important;
-            }
-            .print-grid-offset {
-                margin-top: calc(var(--hour-height) * -0.5) !important;
-            }
-            .print-time-label {
-                font-size: 10px !important;
-                line-height: normal !important;
-            }
-            .print-event-time {
-                font-size: 8px !important;
-                line-height: 1.1 !important;
-            }
-            .print-event-title {
-                font-size: 9px !important;
-                line-height: 1.1 !important;
-            }
-            .print-public-banner-text {
-                font-size: 9px !important;
-                line-height: normal !important;
-            }
-            
-            /* 不要な余白をカット & 背景白 */
-            section {
-                padding: 0 !important;
-                margin: 0 !important;
-                background-color: white !important;
-            }
-        }
       `}</style>
             </section >
 
-            {/* フッターエリア (別セクション) */}
-            <TableFooter
-                onPrintClick={handlePrintClick}
-                lastUpdated={process.env.NEXT_PUBLIC_LAST_UPDATED}
-                onInView={handleFooterInView}
-            />
+            {/* フッターエリア (別セクション) - 印刷時は非表示 */}
+            <div className="print:hidden">
+                <TableFooter
+                    onPrintClick={handlePrintClick}
+                    lastUpdated={process.env.NEXT_PUBLIC_LAST_UPDATED}
+                    onInView={handleFooterInView}
+                />
+            </div>
 
             {/* 印刷サイズ選択モーダル */}
             <PrintModal

@@ -28,8 +28,12 @@ export default function TableHeader({ scrollRef }: TableHeaderProps) {
                 {venues.map((venue, i) => (
                     <div
                         key={i}
-                        className="flex-shrink-0 bg-[#092040] text-white text-base md:text-lg font-bold flex items-center justify-center text-center px-2 border-r border-b border-white/20 border-b-gray-300 last:border-none print-venue-header"
-                        style={{ width: `var(--col-width)`, height: `var(--header-height)` }}
+                        className="flex-shrink-0 bg-[#092040] text-white font-bold flex items-center justify-center text-center px-2 border-r border-b border-white/20 border-b-gray-300 last:border-none print-venue-header"
+                        style={{
+                            width: `var(--col-width)`,
+                            height: `var(--header-height)`,
+                            fontSize: 'var(--fs-venue)'
+                        }}
                     >
                         {venue}
                     </div>
