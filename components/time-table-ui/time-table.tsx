@@ -97,6 +97,8 @@ export default function TimeTable() {
         >
 
             <div className="max-w-[1600px] mx-auto relative min-h-[80vh] print-container">
+
+
                 {/* ▼ ScrollHint ギミック */}
                 <div className="print:hidden">
                     <ScrollHint showHint={showHint} />
@@ -119,7 +121,7 @@ export default function TimeTable() {
                     >
                         {/* コンテンツラッパー (全幅) */}
                         <div
-                            className="print:overflow-hidden print:mt-10 relative"
+                            className="print:overflow-hidden print:mt-2 relative"
                             style={{ width: `calc(var(--time-col-width) + ${venues.length} * var(--col-width))` }}
                         >
                             {/* 印刷用外枠 (時間軸を除いたエリアを囲む) */}
@@ -194,6 +196,10 @@ export default function TimeTable() {
                         ※ スケジュールは進行状況により前後する可能性があります。<br />
                         ※ 横にスクロールして全会場を確認できます。
                     </p>
+                </div>
+
+                <div className="hidden print:block text-right mt-2 mr-1 text-[8px] text-gray-500">
+                    最終更新：{process.env.NEXT_PUBLIC_LAST_UPDATED}
                 </div>
             </div>
 
