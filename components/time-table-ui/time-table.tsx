@@ -1,12 +1,10 @@
 "use client";
-
 import { useRef, useState, useEffect } from "react";
-import { venues, CONFIG } from "./data";
+import { venues } from "./data";
 import ScrollHint from "./scroll-hint";
 import TableHeader from "./table-header";
-import TimeColumn from "./time-column";
-import EventGrid from "./event-grid";
-import { Printer } from "lucide-react";
+import PrintOverlay from "./print-overlay";
+import { Printer, X, FileText, Maximize2, Download } from "lucide-react";
 
 export default function TimeTable() {
     // ヘッダー（会場名）のスクロール位置を同期させるためのRef
@@ -78,8 +76,28 @@ export default function TimeTable() {
         };
     }, [showHint]);
 
-    const handlePrint = () => {
-        window.print();
+    // ▼ 印刷モーダル関連
+    const [isPrintModalOpen, setIsPrintModalOpen] = useState(false);
+    const [printScale, setPrintScale] = useState(1);
+
+    const handlePrintClick = () => {
+        setIsPrintModalOpen(true);
+    };
+
+    const handlePrintA4 = () => {
+        setPrintScale(1);
+        setIsPrintModalOpen(false);
+        setTimeout(() => {
+            window.print();
+        }, 100);
+    };
+
+    const handlePrintA3 = () => {
+        setPrintScale(1.41); // A4 -> A3 拡大率 (約√2)
+        setIsPrintModalOpen(false);
+        setTimeout(() => {
+            window.print();
+        }, 100);
     };
 
     return (
@@ -92,11 +110,12 @@ export default function TimeTable() {
                 "--time-col-width": "60px",
                 "--min-card-height": "40px",
                 "--table-bg": "#f1f1f1",
+                "--print-scale": printScale,
                 backgroundColor: "var(--table-bg)",
             } as React.CSSProperties}
         >
 
-            <div className="max-w-[1600px] mx-auto relative min-h-[80vh] print-container">
+            <div className="max-w-[1600px] mx-auto relative min-h-[80vh] print:min-h-0 print-container">
 
 
                 {/* ▼ ScrollHint ギミック */}
@@ -120,75 +139,18 @@ export default function TimeTable() {
                         style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
                     >
                         {/* コンテンツラッパー (全幅) */}
-                        <div
-                            className="print:overflow-hidden print:mt-2 relative"
-                            style={{ width: `calc(var(--time-col-width) + ${venues.length} * var(--col-width))` }}
-                        >
-                            {/* 印刷用外枠 (時間軸を除いたエリアを囲む) */}
-                            <div
-                                className="hidden print:block absolute top-0 bottom-0 right-0 border-t border-b border-r border-gray-300 pointer-events-none z-[60]"
-                                style={{ left: 'var(--time-col-width)' }}
-                            />
-
-                            {/* 印刷用：縦線の一本化 (ヘッダーから表底まで貫通) */}
-                            {venues.slice(0, -1).map((_, i) => (
-                                <div
-                                    key={`print-vline-${i}`}
-                                    className="hidden print:block absolute top-0 bottom-0 border-r border-gray-300 pointer-events-none z-[55]"
-                                    style={{ left: `calc(var(--time-col-width) + ${i + 1} * var(--col-width))` }}
-                                />
-                            ))}
-
-                            {/* 印刷用ヘッダー (本体と一体化させるためここに配置) */}
-                            <div className="hidden print:flex w-full relative z-40" style={{ height: 'var(--header-height)' }}>
-                                {/* 左上（時間軸上） */}
-                                <div
-                                    className="flex-shrink-0 border-r border-white/20 invisible"
-                                    style={{ width: 'var(--time-col-width)' }}
-                                />
-                                {/* 会場名 */}
-                                {venues.map((venue, i) => (
-                                    <div
-                                        key={`print-header-${i}`}
-                                        className="flex-shrink-0 flex items-center justify-center text-center font-bold text-white bg-[#092040] last:border-none print-venue-header"
-                                        style={{ width: 'var(--col-width)' }}
-                                    >
-                                        {venue === "エントランスホール" ? (
-                                            <>
-                                                エントランス<br />ホール
-                                            </>
-                                        ) : (
-                                            venue
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* 本体グリッド */}
-                            <div
-                                className="relative flex print-grid-offset"
-                                style={{
-                                    height: `calc(${CONFIG.END_HOUR - CONFIG.START_HOUR} * var(--hour-height))`,
-                                }}
-                            >
-                                {/* 左側：時間軸 (Sticky left) */}
-                                <TimeColumn />
-
-                                {/* 右側：メイングリッド */}
-                                <EventGrid />
-                            </div>
-                        </div>
+                        <PrintOverlay />
                     </div>
                 </div>
 
                 <div className="mt-4 px-4 flex flex-col md:flex-row justify-between items-end gap-4 print:hidden">
                     <div className="flex items-center gap-4">
                         <button
-                            onClick={handlePrint}
+                            onClick={handlePrintClick}
                             className="flex items-center gap-2 bg-[#092040] text-white px-4 py-2 rounded-lg hover:bg-[#092040]/90 transition-all hover:scale-105 active:scale-95 shadow-lg"
                         >
-                            <Printer size={20} />
-                            <span className="font-bold">印刷する</span>
+                            <Download size={20} />
+                            <span className="font-bold">PDFでダウンロード</span>
                         </button>
                         <span className="text-sm text-gray-500 font-medium">
                             最終更新：{process.env.NEXT_PUBLIC_LAST_UPDATED}
@@ -208,6 +170,55 @@ export default function TimeTable() {
                     最終更新：{process.env.NEXT_PUBLIC_LAST_UPDATED}
                 </div>
             </div>
+
+            {/* 印刷サイズ選択モーダル */}
+            {isPrintModalOpen && (
+                <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 print:hidden animate-in fade-in duration-200">
+                    <div className="bg-white rounded-xl shadow-2xl w-full max-w-md p-6 relative animate-in zoom-in-95 duration-200">
+                        <button
+                            onClick={() => setIsPrintModalOpen(false)}
+                            className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+                        >
+                            <X size={24} />
+                        </button>
+
+                        <h3 className="text-xl font-bold text-[#092040] mb-2 flex items-center gap-2">
+                            <Download className="text-[#092040]" />
+                            保存サイズを選択
+                        </h3>
+                        <p className="text-base text-gray-500 mb-6">
+                            用途に合わせてPDFのサイズを選択してください。
+                        </p>
+
+                        <div className="grid grid-cols-2 gap-4">
+                            <button
+                                onClick={handlePrintA4}
+                                className="flex flex-col items-center justify-center p-6 border-2 border-gray-200 rounded-xl hover:border-[#092040] hover:bg-blue-50 transition-all group"
+                            >
+                                <FileText size={40} className="text-gray-400 group-hover:text-[#092040] mb-3 transition-colors" />
+                                <span className="font-bold text-lg text-gray-700 group-hover:text-[#092040]">A4</span>
+                                <span className="text-xs text-gray-400 mt-1">標準サイズ</span>
+                            </button>
+
+                            <button
+                                onClick={handlePrintA3}
+                                className="flex flex-col items-center justify-center p-6 border-2 border-gray-200 rounded-xl hover:border-[#092040] hover:bg-blue-50 transition-all group"
+                            >
+                                <Maximize2 size={40} className="text-gray-400 group-hover:text-[#092040] mb-3 transition-colors" />
+                                <span className="font-bold text-lg text-gray-700 group-hover:text-[#092040]">A3</span>
+                                <span className="text-xs text-gray-400 mt-1">拡大サイズ</span>
+                            </button>
+                        </div>
+
+                        <div className="mt-6 p-3 bg-red-500 rounded-lg text-base text-[#f1f1f1f1] flex gap-2 items-start text-left">
+                            <span className="font-bold text-[#f1f1f1f1] whitespace-nowrap">ご注意：</span>
+                            <span>
+                                印刷画面が開いたら、用紙サイズをご自身でA4またはA3に設定してください。<br />用紙サイズに最適化されたタイムテーブルが印刷されます。
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <style jsx global>{`
         .custom-scrollbar::-webkit-scrollbar {
@@ -243,6 +254,11 @@ export default function TimeTable() {
                 --min-card-height: 20px !important;
                 --table-bg: white !important;
                 background-color: white !important;
+                
+                /* スケーリング適用 */
+                transform: scale(var(--print-scale));
+                transform-origin: top left;
+                width: calc(100% / var(--print-scale)) !important;
             }
             /* 印刷時はスクロール無効化して見切れ部分を展開 */
             .print-scroll-container {
