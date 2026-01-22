@@ -29,7 +29,7 @@ export function MiniLogo({ isVisible, invert = false }: { isVisible: boolean; in
                     width={150}
                     height={50}
                     // lg:invert に変更してスマホ時は白のままにする
-                    className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] ${(invert || isTimetable) ? (isTimetable ? "[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)_drop-shadow(0_1px_2px_rgba(255,255,255,0.5))]" : "lg:[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)_drop-shadow(0_1px_2px_rgba(255,255,255,0.5))]") : ""}`}
+                    className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] ${(invert || isTimetable) ? (isTimetable ? "lg:[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)_drop-shadow(0_1px_2px_rgba(255,255,255,0.5))]" : "lg:[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)_drop-shadow(0_1px_2px_rgba(255,255,255,0.5))]") : ""}`}
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 />
             ) : (
@@ -40,7 +40,7 @@ export function MiniLogo({ isVisible, invert = false }: { isVisible: boolean; in
                         width={150}
                         height={50}
                         // lg:invert に変更してスマホ時は白のままにする
-                        className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] ${(invert || isTimetable) ? (isTimetable ? "[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)_drop-shadow(0_1px_2px_rgba(255,255,255,0.5))]" : "lg:[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)_drop-shadow(0_1px_2px_rgba(255,255,255,0.5))]") : ""}`}
+                        className={`object-contain cursor-pointer h-auto w-[100px] md:w-[110px] lg:w-[150px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] ${(invert || isTimetable) ? (isTimetable ? "lg:[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)_drop-shadow(0_1px_2px_rgba(255,255,255,0.5))]" : "lg:[filter:brightness(0)_saturate(100%)_invert(10%)_sepia(35%)_saturate(3086%)_hue-rotate(193deg)_brightness(95%)_contrast(100%)_drop-shadow(0_1px_2px_rgba(255,255,255,0.5))]") : ""}`}
                     />
                 </Link>
             )}
@@ -82,15 +82,15 @@ export function MenuButton({ isVisible = true, invert = false }: { isVisible?: b
                 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
             >
                 <span
-                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : isTimetable ? "!bg-[#092040]" : invert ? "bg-white lg:!bg-[#092040]" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-2.5" : ""
+                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : isTimetable ? "bg-white lg:!bg-[#092040]" : invert ? "bg-white lg:!bg-[#092040]" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-2.5" : ""
                         }`}
                 />
                 <span
-                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : isTimetable ? "!bg-[#092040]" : invert ? "bg-white lg:!bg-[#092040]" : "bg-white"} transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-0" : "opacity-100"
+                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : isTimetable ? "bg-white lg:!bg-[#092040]" : invert ? "bg-white lg:!bg-[#092040]" : "bg-white"} transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-0" : "opacity-100"
                         }`}
                 />
                 <span
-                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : isTimetable ? "!bg-[#092040]" : invert ? "bg-white lg:!bg-[#092040]" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "-rotate-45 -translate-y-2.5" : ""
+                    className={`block w-12 h-0.5 ${isOpen ? "bg-white" : isTimetable ? "bg-white lg:!bg-[#092040]" : invert ? "bg-white lg:!bg-[#092040]" : "bg-white"} transition-transform duration-300 ease-in-out ${isOpen ? "-rotate-45 -translate-y-2.5" : ""
                         }`}
                 />
             </button>
@@ -155,6 +155,9 @@ export default function Header({ isVisible, invert }: HeaderProps) {
         if (!isTimetable) return;
 
         const handleScroll = () => {
+            // モバイルではスクロール検知を行わない（再レンダリングによるちらつき防止）
+            if (window.innerWidth < 1024) return;
+
             if (window.scrollY > 100) {
                 setIsScrolled(true);
             } else {
@@ -163,12 +166,13 @@ export default function Header({ isVisible, invert }: HeaderProps) {
         };
 
         window.addEventListener("scroll", handleScroll);
+        // 初期判定
         handleScroll();
         return () => window.removeEventListener("scroll", handleScroll);
     }, [isTimetable]);
 
     const bgClass = isTimetable
-        ? (isScrolled ? "bg-white shadow-sm" : "bg-transparent")
+        ? (isScrolled ? "bg-[#092040] lg:bg-white lg:shadow-sm" : "bg-[#092040] lg:bg-transparent")
         : "bg-[#092040] md:bg-[#092040] lg:bg-black/0";
 
     return (

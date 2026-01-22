@@ -65,7 +65,11 @@ export default function EventGrid() {
                     >
                         <div className="w-full h-full bg-gray-600/90 flex items-center justify-around shadow-md">
                             {[...Array(3)].map((_, i) => (
-                                <span key={i} className="text-white font-bold text-lg tracking-widest whitespace-nowrap print-public-banner-text">
+                                <span
+                                    key={i}
+                                    className="text-white font-bold tracking-widest whitespace-nowrap print-public-banner-text"
+                                    style={{ fontSize: 'calc(18px * var(--zoom-scale, 1))' }}
+                                >
                                     {item.text}
                                 </span>
                             ))}
@@ -98,10 +102,16 @@ export default function EventGrid() {
                             className="w-full h-full rounded-md shadow-md p-2 overflow-hidden flex flex-col justify-start hover:brightness-105 transition-all text-white"
                             style={{ backgroundColor: accentColor }}
                         >
-                            <p className="text-[10px] md:text-xs text-white/90 font-mono mb-0.5 leading-none print-event-time">
+                            <p
+                                className="text-white/90 font-mono mb-0.5 leading-none print-event-time"
+                                style={{ fontSize: 'calc(10px * var(--zoom-scale, 1))' }}
+                            >
                                 {evt.start} - {evt.end}
                             </p>
-                            <h3 className="text-xs md:text-sm font-bold leading-tight whitespace-pre-wrap print-event-title">
+                            <h3
+                                className="font-bold leading-tight whitespace-pre-wrap print-event-title"
+                                style={{ fontSize: 'calc(12px * var(--zoom-scale, 1))' }}
+                            >
                                 {evt.title}
                             </h3>
                         </div>

@@ -6,6 +6,7 @@ import TableHeader from "./table-header";
 import PrintOverlay from "./print-overlay";
 import PrintModal from "./print-modal";
 import TableFooter from "./table-footer";
+import ZoomBar from "./zoom-bar";
 
 export default function TimeTable() {
     // ヘッダー（会場名）のスクロール位置を同期させるためのRef
@@ -14,6 +15,21 @@ export default function TimeTable() {
 
     // ▼ スクロールヒントの表示状態
     const [showHint, setShowHint] = useState(true);
+
+    // ▼ ズーム倍率 (スマホ用)
+    const [zoomScale, setZoomScale] = useState(1);
+
+    // ベースサイズ定義
+    const BASE_SIZES = {
+        colWidth: 200,      // PCベースだが、スマホではCSSで調整されているかも？要確認
+        hourHeight: 180,
+        headerHeight: 60,
+        timeColWidth: 60,
+        minCardHeight: 40
+    };
+
+    // ... handleScroll ...
+
 
     // ボディ側のスクロールに合わせてヘッダー側をスクロールさせる
     // ＋ スクロール検知でヒントを消す
@@ -81,11 +97,12 @@ export default function TimeTable() {
             <section
                 className="w-full pt-12 pb-2 md:py-12 px-0 md:px-2 font-jp relative print:py-0 print:bg-[#ffffff]"
                 style={{
-                    "--col-width": "200px",
-                    "--hour-height": "180px",
-                    "--header-height": "60px",
-                    "--time-col-width": "60px",
-                    "--min-card-height": "40px",
+                    "--col-width": `${BASE_SIZES.colWidth * zoomScale}px`,
+                    "--hour-height": `${BASE_SIZES.hourHeight * zoomScale}px`,
+                    "--header-height": `${BASE_SIZES.headerHeight * zoomScale}px`,
+                    "--time-col-width": `${BASE_SIZES.timeColWidth * zoomScale}px`,
+                    "--min-card-height": `${BASE_SIZES.minCardHeight * zoomScale}px`,
+                    "--zoom-scale": zoomScale,
                     "--table-bg": "#f1f1f1",
                     "--print-scale": printScale,
                     backgroundColor: "var(--table-bg)",
@@ -94,6 +111,8 @@ export default function TimeTable() {
 
                 <div className="max-w-[1600px] mx-auto relative min-h-[80vh] print:min-h-0 print-container">
 
+                    {/* ▼ ズームバー (スマホのみ) */}
+                    <ZoomBar scale={zoomScale} onScaleChange={setZoomScale} />
 
                     {/* ▼ ScrollHint ギミック */}
                     <div className="print:hidden">
