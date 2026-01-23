@@ -7,12 +7,12 @@ import { ReactNode } from "react";
 interface SectionTopProps {
     imageSrc: string;
     imageAlt: string;
-    backTitle: string;
+    backTitle?: string;
     /**
      * Vertical Title のクラス
      * 位置(top/bottom)や z-index を指定する
      */
-    backTitleClassName: string;
+    backTitleClassName?: string;
     /**
      * テキストエリアを含むコンテナのクラス
      * padding, background, z-index, overflow などを指定する
@@ -59,15 +59,17 @@ export default function SectionTop({
             </div>
 
             {/* 3. 背景タイトル (縦書き) */}
-            <motion.h1
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className={backTitleClassName}
-                style={{ writingMode: "vertical-rl" }}
-            >
-                {backTitle}
-            </motion.h1>
+            {backTitle && (
+                <motion.h1
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className={backTitleClassName}
+                    style={{ writingMode: "vertical-rl" }}
+                >
+                    {backTitle}
+                </motion.h1>
+            )}
         </section>
     );
 }
