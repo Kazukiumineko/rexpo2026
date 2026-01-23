@@ -27,7 +27,7 @@ export const sponsors: Sponsor[] = [
     {
         name: "北昴",
         logo: "/support/kitasubaru.jpg",
-        url: "https://www.instagram.com/kitasubaru/",
+        url: "https://kitasubaru.net",
     },
     {
         name: "草野作工株式会社",
