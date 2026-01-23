@@ -22,7 +22,7 @@ export const sponsors: Sponsor[] = [
     {
         name: "株式会社MLP",
         color: "#45B7D1",
-        url: "https://jobsolution.jp/",
+        url: "https://top.metulab.co.jp/",
     },
     {
         name: "北昴",
