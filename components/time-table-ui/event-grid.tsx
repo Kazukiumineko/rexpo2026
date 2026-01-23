@@ -26,7 +26,7 @@ export default function EventGrid() {
                 }).map(({ offset }) => (
                     <div
                         key={`grid-${offset}`}
-                        className="absolute w-full border-t border-gray-400 print:border-gray-300 solid"
+                        className={`absolute w-full border-t border-gray-400 print:border-gray-300 solid ${offset === 0 ? "print:hidden" : ""}`}
                         style={{ top: `calc(${offset} * 30 * var(--hour-height) / 60)` }}
                     />
                 ))}

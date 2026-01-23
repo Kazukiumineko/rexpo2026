@@ -58,12 +58,9 @@ export const events: EventItem[] = [
     { id: "m-6", venueIndex: 0, title: "閉会式典", start: "16:45", end: "17:15", colorId: 3 },
 
     // --- 中ホール (Index 1) ---
-    { id: "s-1", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nFashion部門", start: "10:40", end: "11:20", colorId: 4 },
-    { id: "s-2", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nPeace部門", start: "11:20", end: "12:05", colorId: 4 },
-    { id: "s-3", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nFood部門", start: "12:05", end: "12:45", colorId: 4 },
-    { id: "s-4", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nTraditional Culture部門", start: "12:45", end: "13:45", colorId: 4 },
-    { id: "s-5", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nSnow部門", start: "14:45", end: "15:15", colorId: 4 },
-    { id: "s-6", venueIndex: 1, title: "北海道大学コラボ企画\nRT Award\nSports部門", start: "15:15", end: "15:45", colorId: 4 },
+    { id: "s-1", venueIndex: 1, title: `北海道大学コラボ企画\nRising Teenage Award${SPACER}【第1部】\n開会式\nFashion部門\nPeace部門`, start: "10:30", end: "12:00", colorId: 4 },
+    { id: "s-2", venueIndex: 1, title: `北海道大学コラボ企画\nRising Teenage Award${SPACER}【第2部】\nFood部門\nTraditional Culture部門`, start: "12:00", end: "14:00", colorId: 4 },
+    { id: "s-3", venueIndex: 1, title: `北海道大学コラボ企画\nRising Teenage Award${SPACER}【第3部】\nSnow部門\nSports部門\n閉会式`, start: "14:30", end: "16:30", colorId: 4 },
 
     // --- 小ホール (Index 2) ---
     { id: "md-1", venueIndex: 2, title: "RED Talks\n弁論研究部", start: "10:30", end: "12:00", colorId: 2 },
@@ -80,7 +77,7 @@ export const events: EventItem[] = [
     // --- 104・105 (Index 4) ---
     { id: "en-1", venueIndex: 4, title: "中学研修報告\n【A会場】\nNZ/京都/北海道", start: "10:30", end: "11:25", colorId: 1 },
     { id: "en-2", venueIndex: 4, title: "高2海外研修報告\n【A会場】\nタイ/マレーシア/アメリカ", start: "11:35", end: "12:30", colorId: 1 },
-    { id: "en-3", venueIndex: 4, title: `立命館附属校\n課題研究体験ブース${SPACER}立命館高校\n立命館宇治高校\n立命館守山高校`, start: "11:35", end: "12:30", colorId: 2 },
+    { id: "en-3", venueIndex: 4, title: `立命館附属校\n課題研究体験ブース${SPACER}立命館高校\n立命館宇治高校\n立命館守山高校`, start: "14:45", end: "16:30", colorId: 2 },
 
     // --- 107・108 (Index 5) ---
     { id: "wa-1", venueIndex: 5, title: "R-Union\n立命館大学生による\n大学生活のすゝめ", start: "10:30", end: "13:00", colorId: 4 },

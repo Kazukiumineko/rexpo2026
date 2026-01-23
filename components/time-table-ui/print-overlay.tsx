@@ -8,9 +8,12 @@ export default function PrintOverlay() {
             className="print:overflow-hidden print:mt-2 relative"
             style={{ width: `calc(var(--time-col-width) + ${venues.length} * var(--col-width))` }}
         >
+            {/* 印刷用：ヘッダー上部の余白隠し (マイナスマージン対策) */}
+            <div className="hidden print:block absolute -top-20 left-0 right-0 h-20 bg-white z-[100]" />
+
             {/* 印刷用外枠 (時間軸を除いたエリアを囲む) */}
             <div
-                className="hidden print:block absolute top-0 bottom-0 right-0 border-t border-b border-r border-gray-300 pointer-events-none z-[60]"
+                className="hidden print:block absolute top-0 bottom-0 right-0 border-b border-r border-gray-300 pointer-events-none z-[60]"
                 style={{ left: 'var(--time-col-width)' }}
             />
 

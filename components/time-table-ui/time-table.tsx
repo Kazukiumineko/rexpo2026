@@ -112,7 +112,7 @@ export default function TimeTable() {
             />
 
             <section
-                className="w-full pt-12 pb-2 md:py-12 px-0 md:px-2 font-jp relative print:hidden"
+                className="w-full pt-12 pb-2 md:pt-12 md:pb-4 px-0 md:px-2 font-jp relative print:hidden"
                 style={{
                     "--col-width": `${BASE_SIZES.colWidth * zoomScale}px`,
                     "--hour-height": `${BASE_SIZES.hourHeight * zoomScale}px`,

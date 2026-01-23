@@ -35,7 +35,7 @@ export default function TableFooter({ onPrintClick, lastUpdated, onInView }: Tab
         <section className="w-full px-0 md:px-2 print:hidden">
             <div className="max-w-[1600px] mx-auto">
                 <div className="mt-2 md:mt-4 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 md:ml-20">
                         <button
                             onClick={onPrintClick}
                             className="flex items-center gap-2 bg-[#092040] text-white px-3 py-2 md:px-4 md:py-2 rounded-lg hover:bg-[#092040]/90 transition-all hover:scale-105 active:scale-95 shadow-lg"
