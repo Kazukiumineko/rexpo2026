@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function EntryTop() {
     return (
         <SectionTop
-            imageSrc="/event-concept-page/DB5A1637.jpg"
+            imageSrc="/event-concept-page/DB5A1637.JPG"
             imageAlt="Entry Background"
 
             containerClassName="relative w-full h-auto md:h-[25vh] bg-[#f1f1f1] flex items-start md:items-end pt-4 md:pt-0 pb-12 md:pb-6 px-6 md:px-20 lg:px-32 overflow-hidden"
