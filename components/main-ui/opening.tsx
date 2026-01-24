@@ -3,6 +3,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
+import Image from "next/image";
+
 interface OpeningProps {
     isLoaded: boolean; // 外部（動画など）の読み込み完了フラグ
 }
@@ -12,11 +14,11 @@ export default function Opening({ isLoaded }: OpeningProps) {
 
     useEffect(() => {
         // セッションストレージを確認（クライアントサイドのみ）
-        const hasVisited = sessionStorage.getItem("hasVisited");
-        if (hasVisited) {
-            setIsVisible(false);
-            return;
-        }
+        // const hasVisited = sessionStorage.getItem("hasVisited");
+        // if (hasVisited) {
+        //     setIsVisible(false);
+        //     return;
+        // }
 
         if (isLoaded) {
             // 少し待ってからフェードアウトさせる（演出用）
@@ -44,15 +46,16 @@ export default function Opening({ isLoaded }: OpeningProps) {
                         transition={{ duration: 0.8 }}
                         className="flex flex-col items-center justify-center gap-6"
                     >
-                        <div
-                            className="w-[100px] h-[100px]"
-                            style={{
-                                backgroundImage: 'url("/main/RmarkRED.png")',
-                                backgroundSize: 'contain',
-                                backgroundPosition: 'center',
-                                backgroundRepeat: 'no-repeat',
-                            }}
-                        />
+                        <div className="relative w-[100px] h-[100px]">
+                            <Image
+                                src="/main/RmarkRED.png"
+                                alt="Loading Logo"
+                                fill
+                                sizes="100px"
+                                className="object-contain"
+                                priority
+                            />
+                        </div>
                         <p className="text-sm font-medium tracking-widest text-gray-600 font-kaku pl-2">
                             Loading...
                         </p>

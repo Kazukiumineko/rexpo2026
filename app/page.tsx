@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useLoadingSequence } from "@/hooks/useLoadingSequence";
 import { useScrollEffects } from "@/hooks/useScrollEffects";
 import BackgroundVideo from "@/components/main-ui/background-video";
@@ -27,6 +27,14 @@ export default function Home() {
   const { isLogoLoaded, isScrollLoaded } = useLoadingSequence();
   const { opacity, showMiniLogo, overlayOpacity } = useScrollEffects(textRef);
 
+  // Fallback: If video loading takes too long (10s), force show the content
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVideoLoaded(true);
+    }, 10000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <main className="relative w-full">
       {/* オープニング（ローディング）画面 */}
@@ -37,7 +45,6 @@ export default function Home() {
           overlayOpacity={overlayOpacity}
           onLoaded={() => setIsVideoLoaded(true)}
         />
-
         <HeroSection
           opacity={opacity}
           isLogoLoaded={isLogoLoaded}

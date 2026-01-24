@@ -10,13 +10,16 @@ interface BackgroundVideoProps {
 
 export default function BackgroundVideo({ overlayOpacity, onLoaded }: BackgroundVideoProps) {
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+    const [showFallback, setShowFallback] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
+    const isPlayingRef = useRef(false);
 
     // Check if video is already playing on mount (for hydration edge cases)
     useEffect(() => {
         const video = videoRef.current;
         if (video && !video.paused) {
             setIsVideoPlaying(true);
+            isPlayingRef.current = true;
             if (onLoaded) onLoaded();
         }
     }, []);
@@ -41,24 +44,48 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
         return () => video.removeEventListener('timeupdate', handleMobileLoop);
     }, []);
 
+    // Mobile fallback: If video doesn't play in 8s, switch to image
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            const isMobile = window.innerWidth < 768;
+            if (isMobile && !isPlayingRef.current) {
+                setShowFallback(true);
+                // Do NOT call onLoaded here; wait for image to load
+            }
+        }, 8000);
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <>
-            <video
-                ref={videoRef}
-                className="absolute top-0 left-0 w-full h-full object-cover"
-                autoPlay
-                loop
-                muted
-                playsInline
-                onPlay={() => {
-                    setIsVideoPlaying(true);
-                    if (onLoaded) onLoaded();
-                }}
-            >
-                {/* Mobile optimized video (Please upload Drone_mobile.mp4) */}
-                <source src="/Drone_mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
-                <source src="/Drone.mp4" type="video/mp4" />
-            </video>
+            {showFallback ? (
+                <img
+                    src="/mobile.png"
+                    alt="Mobile Background"
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    onLoad={() => {
+                        if (onLoaded) onLoaded();
+                    }}
+                />
+            ) : (
+                <video
+                    ref={videoRef}
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    onPlay={() => {
+                        setIsVideoPlaying(true);
+                        isPlayingRef.current = true;
+                        if (onLoaded) onLoaded();
+                    }}
+                >
+                    {/* Mobile optimized video (Please upload Drone_mobile.mp4) */}
+                    <source src="/Drone_mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
+                    <source src="/Drone.mp4" type="video/mp4" />
+                </video>
+            )}
 
             <div
                 className="absolute top-0 left-0 w-full h-full bg-black transition-opacity duration-100 ease-linear"
