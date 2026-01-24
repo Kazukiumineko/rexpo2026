@@ -18,7 +18,8 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
     // Check if video is already playing on mount (for hydration edge cases)
     useEffect(() => {
         const video = videoRef.current;
-        if (video && !video.paused) {
+        // readyState >= 3 (HAVE_FUTURE_DATA) means we have enough data to play at least a bit
+        if (video && !video.paused && video.readyState >= 3) {
             setIsVideoPlaying(true);
             isPlayingRef.current = true;
             if (onLoaded) onLoaded();
@@ -94,7 +95,7 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
                     loop
                     muted
                     playsInline
-                    onPlay={() => {
+                    onPlaying={() => {
                         setIsVideoPlaying(true);
                         isPlayingRef.current = true;
                         setShowFallbackImage(false); // Hide image once video plays
