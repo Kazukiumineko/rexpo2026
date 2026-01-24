@@ -24,7 +24,7 @@ export function MiniLogo({ isVisible, invert = false }: { isVisible: boolean; in
         >
             {isHomePage ? (
                 <Image
-                    src="/main/R-EXPO-LOGO2.png"
+                    src="/main/header-logo.png"
                     alt="R-EXPO Mini Logo"
                     width={150}
                     height={50}
@@ -35,7 +35,7 @@ export function MiniLogo({ isVisible, invert = false }: { isVisible: boolean; in
             ) : (
                 <Link href="/">
                     <Image
-                        src="/main/R-EXPO-LOGO2.png"
+                        src="/main/header-logo.png"
                         alt="R-EXPO Mini Logo"
                         width={150}
                         height={50}
