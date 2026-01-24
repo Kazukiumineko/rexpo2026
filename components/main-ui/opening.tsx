@@ -2,37 +2,32 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-
 import Image from "next/image";
+import { useGlobalContext } from "@/context/GlobalContext";
 
 interface OpeningProps {
     isLoaded: boolean; // 外部（動画など）の読み込み完了フラグ
 }
 
 export default function Opening({ isLoaded }: OpeningProps) {
-    const [isVisible, setIsVisible] = useState(true);
+    const { hasIntroShown, setHasIntroShown } = useGlobalContext();
+    const [isVisible, setIsVisible] = useState(!hasIntroShown);
 
     useEffect(() => {
-        // セッションストレージを確認（クライアントサイドのみ）
-        // const hasVisited = sessionStorage.getItem("hasVisited");
-        // if (hasVisited) {
-        //     setIsVisible(false);
-        //     return;
-        // }
+        if (hasIntroShown) {
+            setIsVisible(false);
+            return;
+        }
 
         if (isLoaded) {
             // 少し待ってからフェードアウトさせる（演出用）
             const timer = setTimeout(() => {
                 setIsVisible(false);
-                try {
-                    sessionStorage.setItem("hasVisited", "true");
-                } catch (e) {
-                    console.warn("Session storage access failed:", e);
-                }
+                setHasIntroShown(true);
             }, 800); // 0.8秒待機
             return () => clearTimeout(timer);
         }
-    }, [isLoaded]);
+    }, [isLoaded, hasIntroShown, setHasIntroShown]);
 
     return (
         <AnimatePresence>

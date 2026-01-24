@@ -49,11 +49,10 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
         return () => video.removeEventListener('timeupdate', handleMobileLoop);
     }, [mountVideo]); // Re-run when video is remounted
 
-    // Mobile fallback: If video doesn't play in 8s, switch to image and unmount video
+    // Fallback: If video doesn't play in 8s, switch to image and unmount video
     useEffect(() => {
         const timer = setTimeout(() => {
-            const isMobile = window.innerWidth < 768;
-            if (isMobile && !isPlayingRef.current) {
+            if (!isPlayingRef.current) {
                 setShowFallbackImage(true);
                 setMountVideo(false); // Unmount video to stop loading/processing
                 // Do NOT call onLoaded here; wait for image to load
