@@ -11,9 +11,18 @@ interface BackgroundVideoProps {
 export default function BackgroundVideo({ overlayOpacity, onLoaded }: BackgroundVideoProps) {
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
     const [showFallbackImage, setShowFallbackImage] = useState(false);
-    const [mountVideo, setMountVideo] = useState(true);
+    // Start with mountVideo false to prevent bandwidth contention with Loading Logo (RmarkRED.png)
+    const [mountVideo, setMountVideo] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
     const isPlayingRef = useRef(false);
+
+    // Delay video mounting to prioritize Loading Image and UI
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setMountVideo(true);
+        }, 2500); // Wait 2.5s before starting heavy video download
+        return () => clearTimeout(timer);
+    }, []);
 
     // Check if video is already playing on mount (for hydration edge cases)
     useEffect(() => {
