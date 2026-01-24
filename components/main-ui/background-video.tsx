@@ -71,6 +71,26 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
         };
     }, [hasLoaded]);
 
+    // Mobile specific loop logic: Loop at 8 seconds (Only if using the long video)
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        const handleMobileLoop = () => {
+            if (window.innerWidth < 768) {
+                // Only enforce manual loop if the video is long (fallback to PC video)
+                // If a short mobile video is loaded (< 10s), let the native loop attribute handle it.
+                if (video.duration > 10 && video.currentTime >= 8) {
+                    video.currentTime = 0;
+                    video.play().catch(() => { });
+                }
+            }
+        };
+
+        video.addEventListener('timeupdate', handleMobileLoop);
+        return () => video.removeEventListener('timeupdate', handleMobileLoop);
+    }, []);
+
     return (
         <>
             <video
@@ -85,6 +105,8 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
                     handleLoaded();
                 }}
             >
+                {/* Mobile optimized video (Please upload Drone_mobile.mp4) */}
+                <source src="/Drone_mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
                 <source src="/Drone.mp4" type="video/mp4" />
             </video>
 
