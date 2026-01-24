@@ -130,7 +130,6 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
                 src="/mobile.png"
                 alt="Mobile Background"
                 fill
-                priority
                 className={`object-cover transition-opacity duration-1000 ${showFallbackImage ? 'opacity-30 z-10' : 'opacity-0 -z-20'}`}
                 onLoad={() => {
                     // Update loaded state only if falling back to image
