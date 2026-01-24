@@ -20,7 +20,7 @@ const oswald = Oswald({
 // 5. 本文用 (スマート・モダン) ★ここが主役
 const zenKaku = Zen_Kaku_Gothic_New({
   weight: ["300", "400", "500", "700"], // 細字(300)もあると綺麗です
-  preload: false,
+  subsets: ["latin"],
   variable: "--font-zen-kaku",
 });
 
