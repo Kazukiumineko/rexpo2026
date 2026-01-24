@@ -24,7 +24,11 @@ export default function Opening({ isLoaded }: OpeningProps) {
             // 少し待ってからフェードアウトさせる（演出用）
             const timer = setTimeout(() => {
                 setIsVisible(false);
-                sessionStorage.setItem("hasVisited", "true");
+                try {
+                    sessionStorage.setItem("hasVisited", "true");
+                } catch (e) {
+                    console.warn("Session storage access failed:", e);
+                }
             }, 800); // 0.8秒待機
             return () => clearTimeout(timer);
         }

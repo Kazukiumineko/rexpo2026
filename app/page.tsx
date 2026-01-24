@@ -38,7 +38,9 @@ export default function Home() {
   return (
     <main className="relative w-full">
       {/* オープニング（ローディング）画面 */}
-      <Opening isLoaded={isVideoLoaded} />
+      <div className={`transition-opacity duration-500 ${isVideoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <Opening isLoaded={isVideoLoaded} />
+      </div>
 
       <div className="fixed top-0 left-0 w-full h-screen -z-10">
         <BackgroundVideo
