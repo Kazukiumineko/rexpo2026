@@ -62,7 +62,7 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
                 <img
                     src="/mobile.png"
                     alt="Mobile Background"
-                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    className="absolute top-0 left-0 w-full h-full object-cover z-20"
                     onLoad={() => {
                         if (onLoaded) onLoaded();
                     }}
