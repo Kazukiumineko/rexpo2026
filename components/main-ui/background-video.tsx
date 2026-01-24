@@ -118,7 +118,7 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
                 <video
                     ref={videoRef}
                     className={`absolute top-0 left-0 w-full h-full object-cover bg-black transition-opacity duration-1000 ${showFallbackImage ? 'opacity-0' : 'opacity-100'}`}
-                    poster="/mobile.png"
+                    // poster removed to prevent "Loading -> Poster -> Video" flicker
                     autoPlay
                     loop
                     muted
@@ -127,7 +127,13 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
                         setIsVideoPlaying(true);
                         isPlayingRef.current = true;
                         setShowFallbackImage(false); // Hide image once video plays
-                        if (onLoaded) onLoaded();
+
+                        // Add slight delay to ensure video is actually rendering frames before removing loading screen
+                        if (onLoaded) {
+                            setTimeout(() => {
+                                onLoaded();
+                            }, 200);
+                        }
                     }}
                 >
                     {/* Mobile optimized video (Please upload Drone_mobile.mp4) */}
