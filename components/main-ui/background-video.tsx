@@ -81,19 +81,46 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
     // Reload logic: Retry 10s after fallback mode is triggered, but only if on homepage
     // If user navigates away, this timer clears (prioritizing new page load).
     // When they return to homepage, timer restarts, ensuring we only load video when bandwidth is likely free.
+
+    // Track mountVideo state in ref to access inside useEffect without triggering re-renders (avoiding loops)
+    const mountVideoRef = useRef(mountVideo);
+    useEffect(() => {
+        mountVideoRef.current = mountVideo;
+    }, [mountVideo]);
+
+    // Reload & Background Load Logic
+    // 1. On Home: Retry 10s after fallback (to avoid spamming). If returning from subpage with video already loading, keep loading.
+    // 2. On Subpage: Stop video immediately. Wait 3s (priority to subpage assets). Then start background load.
+    // 3. Navigation: Resets the subpage 3s timer, effectively throttling video load during rapid navigation.
     useEffect(() => {
         if (!showFallbackImage) return;
 
-        // Only load video when on homepage
-        if (pathname !== "/") return;
+        let timer: NodeJS.Timeout;
 
-        const timer = setTimeout(() => {
-            // Remount video to start loading again. 
-            setMountVideo(true);
-        }, 10000);
+        if (pathname !== "/") {
+            // Subpage: Throttling logic
+            // Stop video load to prioritize new page assets
+            setMountVideo(false);
+
+            // Resume background load after 3s
+            timer = setTimeout(() => {
+                setMountVideo(true);
+            }, 3000);
+        } else {
+            // Home: Retry logic
+            // If video is not currently mounted (just fell back, or returned from subpage quickly),
+            // wait 10s before trying again.
+            if (!mountVideoRef.current) {
+                timer = setTimeout(() => {
+                    setMountVideo(true);
+                }, 10000);
+            }
+            // If mountVideo is ALREADY true (e.g. returned from subpage after background load started),
+            // we do nothing, letting the load continue.
+        }
 
         return () => clearTimeout(timer);
-    }, [showFallbackImage, pathname]);
+    }, [pathname, showFallbackImage]);
 
     return (
         <>

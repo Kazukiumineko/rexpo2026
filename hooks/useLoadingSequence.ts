@@ -25,7 +25,7 @@ export function useLoadingSequence() {
         const scrollTimer = setTimeout(() => {
             setIsScrollLoaded(true);
             // Mark intro as fully shown after the last animation
-            setHasIntroShown(true);
+            // setHasIntroShown(true); // Removed to prevent premature loading screen dismissal. Now controlled by video loading.
         }, 2000);
 
         return () => {
