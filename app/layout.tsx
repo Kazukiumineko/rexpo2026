@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
 // 必要なフォントだけをインポート
-import { Noto_Sans_JP, Oswald, Zen_Kaku_Gothic_New, BIZ_UDPGothic } from "next/font/google";
+import { Oswald, Zen_Kaku_Gothic_New } from "next/font/google";
 import "./globals.css";
-
-// 2. 基本日本語 (予備)
-const notoSansJP = Noto_Sans_JP({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  variable: "--font-noto-sans-jp",
-});
 
 // 4. 強調・見出し (採用サイト風)
 const oswald = Oswald({
@@ -22,13 +15,6 @@ const zenKaku = Zen_Kaku_Gothic_New({
   weight: ["300", "400", "500", "700"], // 細字(300)もあると綺麗です
   subsets: ["latin"],
   variable: "--font-zen-kaku",
-});
-
-// 6. 強調・ユニバーサルデザイン (BIZ UDPGothic) ★ここが新主役
-const bizUdp = BIZ_UDPGothic({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  variable: "--font-biz-udp",
 });
 
 // サイトのURL（本番環境のドメイン）
@@ -70,7 +56,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${notoSansJP.variable} ${zenKaku.variable} ${bizUdp.variable} ${oswald.variable} font-sans`}>
+      <body className={`${zenKaku.variable} ${oswald.variable} font-sans`}>
         <GlobalProvider>
           <PersistentBackgroundVideo />
           {children}
