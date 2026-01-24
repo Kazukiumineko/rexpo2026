@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { useLoadingSequence } from "@/hooks/useLoadingSequence";
 import { useScrollEffects } from "@/hooks/useScrollEffects";
 import BackgroundVideo from "@/components/main-ui/background-video";
@@ -12,6 +12,8 @@ import Opening from "@/components/main-ui/opening";
 
 import FooterBar from "@/components/main-ui/footer-bar";
 
+import { useGlobalContext } from "@/context/GlobalContext";
+
 const ConceptSection = dynamic(() => import("@/components/main-ui/concept-section"));
 const StageSection = dynamic(() => import("@/components/main-ui/stage-section"));
 const InformationSection = dynamic(() => import("@/components/main-ui/information-section"));
@@ -20,7 +22,7 @@ const Application = dynamic(() => import("@/components/main-ui/application"));
 
 export default function Home() {
   const textRef = useRef<HTMLHeadingElement>(null);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const { isHomeVideoLoaded, setIsHomeVideoLoaded } = useGlobalContext();
 
   // useLoadingSequence内でロゴなどのアニメーション開始タイミングを制御していますが、
   // ここでは「画面全体のローディング」として Opening コンポーネントを使用します。
@@ -29,23 +31,25 @@ export default function Home() {
 
   // Fallback: If video loading takes too long (10s), force show the content
   useEffect(() => {
+    if (isHomeVideoLoaded) return; // Already loaded, skip timer
+
     const timer = setTimeout(() => {
-      setIsVideoLoaded(true);
+      setIsHomeVideoLoaded(true);
     }, 10000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [isHomeVideoLoaded, setIsHomeVideoLoaded]);
 
   return (
     <main className="relative w-full">
       {/* オープニング（ローディング）画面 */}
-      <div className={`transition-opacity duration-500 ${isVideoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-        <Opening isLoaded={isVideoLoaded} />
+      <div className={`transition-opacity duration-500 ${isHomeVideoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <Opening isLoaded={isHomeVideoLoaded} />
       </div>
 
       <div className="fixed top-0 left-0 w-full h-screen z-0">
         <BackgroundVideo
           overlayOpacity={overlayOpacity}
-          onLoaded={() => setIsVideoLoaded(true)}
+          onLoaded={() => setIsHomeVideoLoaded(true)}
         />
         <HeroSection
           opacity={opacity}
