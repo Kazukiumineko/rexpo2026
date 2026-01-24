@@ -34,16 +34,6 @@ export default function Home() {
     setVideoOverlayOpacity(overlayOpacity);
   }, [overlayOpacity, setVideoOverlayOpacity]);
 
-  // Fallback: If video loading takes too long (10s), force show the content
-  useEffect(() => {
-    if (isHomeVideoLoaded) return; // Already loaded, skip timer
-
-    const timer = setTimeout(() => {
-      setIsHomeVideoLoaded(true);
-    }, 10000);
-    return () => clearTimeout(timer);
-  }, [isHomeVideoLoaded, setIsHomeVideoLoaded]);
-
   return (
     <main className="relative w-full">
       {/* オープニング（ローディング）画面 */}
