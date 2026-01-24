@@ -13,10 +13,10 @@ import FooterBar from "@/components/main-ui/footer-bar";
 
 import { useGlobalContext } from "@/context/GlobalContext";
 
-const ConceptSection = dynamic(() => import("@/components/main-ui/concept-section"));
-const StageSection = dynamic(() => import("@/components/main-ui/stage-section"));
-const InformationSection = dynamic(() => import("@/components/main-ui/information-section"));
-const Application = dynamic(() => import("@/components/main-ui/application"));
+const ConceptSection = dynamic(() => import("@/components/main-ui/concept-section"), { ssr: false });
+const StageSection = dynamic(() => import("@/components/main-ui/stage-section"), { ssr: false });
+const InformationSection = dynamic(() => import("@/components/main-ui/information-section"), { ssr: false });
+const Application = dynamic(() => import("@/components/main-ui/application"), { ssr: false });
 
 
 export default function Home() {
