@@ -60,8 +60,8 @@ export const metadata: Metadata = {
 };
 
 import FloatingEntryButton from "@/components/shared/floating-entry-button";
-import BackgroundVideoPreloader from "@/components/shared/background-video-preloader";
 import { GlobalProvider } from "@/context/GlobalContext";
+import PersistentBackgroundVideo from "@/components/main-ui/persistent-background-video";
 
 export default function RootLayout({
   children,
@@ -72,7 +72,7 @@ export default function RootLayout({
     <html lang="ja">
       <body className={`${notoSansJP.variable} ${zenKaku.variable} ${bizUdp.variable} ${oswald.variable} font-sans`}>
         <GlobalProvider>
-          <BackgroundVideoPreloader />
+          <PersistentBackgroundVideo />
           {children}
           <FloatingEntryButton />
         </GlobalProvider>

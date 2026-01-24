@@ -7,6 +7,8 @@ interface GlobalContextType {
     setIsHomeVideoLoaded: (loaded: boolean) => void;
     hasIntroShown: boolean;
     setHasIntroShown: (shown: boolean) => void;
+    videoOverlayOpacity: number;
+    setVideoOverlayOpacity: (opacity: number) => void;
 }
 
 const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
@@ -14,6 +16,7 @@ const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
 export function GlobalProvider({ children }: { children: ReactNode }) {
     const [isHomeVideoLoaded, setIsHomeVideoLoaded] = useState(false);
     const [hasIntroShown, setHasIntroShown] = useState(false);
+    const [videoOverlayOpacity, setVideoOverlayOpacity] = useState(0);
 
     return (
         <GlobalContext.Provider
@@ -22,6 +25,8 @@ export function GlobalProvider({ children }: { children: ReactNode }) {
                 setIsHomeVideoLoaded,
                 hasIntroShown,
                 setHasIntroShown,
+                videoOverlayOpacity,
+                setVideoOverlayOpacity,
             }}
         >
             {children}

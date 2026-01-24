@@ -3,7 +3,6 @@
 import { useRef, useEffect } from "react";
 import { useLoadingSequence } from "@/hooks/useLoadingSequence";
 import { useScrollEffects } from "@/hooks/useScrollEffects";
-import BackgroundVideo from "@/components/main-ui/background-video";
 import Header from "@/components/main-ui/header";
 import HeroSection from "@/components/main-ui/hero-section";
 import ScrollTextSection from "@/components/main-ui/scroll-text-section";
@@ -28,6 +27,12 @@ export default function Home() {
   // ここでは「画面全体のローディング」として Opening コンポーネントを使用します。
   const { isLogoLoaded, isScrollLoaded } = useLoadingSequence();
   const { opacity, showMiniLogo, overlayOpacity } = useScrollEffects(textRef);
+  const { setVideoOverlayOpacity } = useGlobalContext();
+
+  // Sync overlay opacity to global context for the persistent video
+  useEffect(() => {
+    setVideoOverlayOpacity(overlayOpacity);
+  }, [overlayOpacity, setVideoOverlayOpacity]);
 
   // Fallback: If video loading takes too long (10s), force show the content
   useEffect(() => {
@@ -47,10 +52,6 @@ export default function Home() {
       </div>
 
       <div className="fixed top-0 left-0 w-full h-screen z-0">
-        <BackgroundVideo
-          overlayOpacity={overlayOpacity}
-          onLoaded={() => setIsHomeVideoLoaded(true)}
-        />
         <HeroSection
           opacity={opacity}
           isLogoLoaded={isLogoLoaded}
