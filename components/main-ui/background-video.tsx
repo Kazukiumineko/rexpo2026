@@ -10,7 +10,8 @@ interface BackgroundVideoProps {
 
 export default function BackgroundVideo({ overlayOpacity, onLoaded }: BackgroundVideoProps) {
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-    const [showFallback, setShowFallback] = useState(false);
+    const [showFallbackImage, setShowFallbackImage] = useState(false);
+    const [mountVideo, setMountVideo] = useState(true);
     const videoRef = useRef<HTMLVideoElement>(null);
     const isPlayingRef = useRef(false);
 
@@ -26,6 +27,10 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
 
     // Mobile specific loop logic: Loop at 8 seconds (Only if using the long video)
     useEffect(() => {
+        // If video is not mounted, we can't attach listeners
+        if (!mountVideo) return;
+
+        // We need to wait for ref to be populated after mountVideo becomes true
         const video = videoRef.current;
         if (!video) return;
 
@@ -42,35 +47,50 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
 
         video.addEventListener('timeupdate', handleMobileLoop);
         return () => video.removeEventListener('timeupdate', handleMobileLoop);
-    }, []);
+    }, [mountVideo]); // Re-run when video is remounted
 
-    // Mobile fallback: If video doesn't play in 8s, switch to image
+    // Mobile fallback: If video doesn't play in 8s, switch to image and unmount video
     useEffect(() => {
         const timer = setTimeout(() => {
             const isMobile = window.innerWidth < 768;
             if (isMobile && !isPlayingRef.current) {
-                setShowFallback(true);
+                setShowFallbackImage(true);
+                setMountVideo(false); // Unmount video to stop loading/processing
                 // Do NOT call onLoaded here; wait for image to load
             }
         }, 8000);
         return () => clearTimeout(timer);
     }, []);
 
+    // Reload logic: If user stays for 40s, try loading the video again
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            // Remount video to start loading again. 
+            // The image will stay visible until the video actually starts playing (onPlay).
+            setMountVideo(true);
+        }, 40000);
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <>
-            {showFallback ? (
-                <img
-                    src="/mobile.png"
-                    alt="Mobile Background"
-                    className="absolute top-0 left-0 w-full h-full object-cover z-20"
-                    onLoad={() => {
-                        if (onLoaded) onLoaded();
-                    }}
-                />
-            ) : (
+            <div className={`absolute top-0 left-0 w-full h-full bg-black transition-opacity duration-1000 ${showFallbackImage ? 'z-0' : '-z-10'}`} />
+
+            <img
+                src="/mobile.png"
+                alt="Mobile Background"
+                className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${showFallbackImage ? 'opacity-60 z-10' : 'opacity-0 -z-20'}`}
+                onLoad={() => {
+                    // Update loaded state only if falling back to image
+                    if (showFallbackImage && onLoaded) onLoaded();
+                }}
+            />
+
+            {mountVideo && (
                 <video
                     ref={videoRef}
-                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    className={`absolute top-0 left-0 w-full h-full object-cover bg-black transition-opacity duration-1000 ${showFallbackImage ? 'opacity-0' : 'opacity-100'}`}
+                    poster="/mobile.png"
                     autoPlay
                     loop
                     muted
@@ -78,6 +98,7 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
                     onPlay={() => {
                         setIsVideoPlaying(true);
                         isPlayingRef.current = true;
+                        setShowFallbackImage(false); // Hide image once video plays
                         if (onLoaded) onLoaded();
                     }}
                 >
@@ -88,7 +109,7 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
             )}
 
             <div
-                className="absolute top-0 left-0 w-full h-full bg-black transition-opacity duration-100 ease-linear"
+                className="absolute top-0 left-0 w-full h-full bg-black transition-opacity duration-100 ease-linear pointer-events-none"
                 style={{ opacity: overlayOpacity }}
             />
         </>

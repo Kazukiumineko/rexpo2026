@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   // SNSや検索結果で画像を表示するための設定（OGP）
   openGraph: {
     title: "R-EXPO 2026",
-    description: "立命館慶祥中高がお届けするイベント R-EXPO2026の公式サイトです。2月11日札幌コンベンションセンターで開催されます。",
+    description: "立命館慶祥中高がお届けする新しいイベント R-EXPO2026の公式サイトです。2月11日札幌コンベンションセンターで開催されます。",
     url: siteUrl,
     siteName: "R-EXPO 2026",
     locale: "ja_JP",
@@ -60,8 +60,7 @@ export const metadata: Metadata = {
 };
 
 import FloatingEntryButton from "@/components/shared/floating-entry-button";
-
-// ... (existing imports)
+import BackgroundVideoPreloader from "@/components/shared/background-video-preloader";
 
 export default function RootLayout({
   children,
@@ -70,15 +69,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body
-        className={`
-          ${notoSansJP.variable} 
-          ${oswald.variable} 
-          ${bizUdp.variable} 
-          antialiased
-          ${zenKaku.className}
-        `}
-      >
+      <body className={`${notoSansJP.variable} ${zenKaku.variable} ${bizUdp.variable} ${oswald.variable} font-sans`}>
+        <BackgroundVideoPreloader />
         {children}
         <FloatingEntryButton />
       </body>

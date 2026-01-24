@@ -42,7 +42,7 @@ export default function Home() {
         <Opening isLoaded={isVideoLoaded} />
       </div>
 
-      <div className="fixed top-0 left-0 w-full h-screen -z-10">
+      <div className="fixed top-0 left-0 w-full h-screen z-0">
         <BackgroundVideo
           overlayOpacity={overlayOpacity}
           onLoaded={() => setIsVideoLoaded(true)}
