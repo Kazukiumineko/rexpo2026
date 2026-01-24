@@ -68,7 +68,7 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
             // Remount video to start loading again. 
             // The image will stay visible until the video actually starts playing (onPlay).
             setMountVideo(true);
-        }, 40000);
+        }, 15000);
         return () => clearTimeout(timer);
     }, []);
 
@@ -79,7 +79,7 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
             <img
                 src="/mobile.png"
                 alt="Mobile Background"
-                className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${showFallbackImage ? 'opacity-60 z-10' : 'opacity-0 -z-20'}`}
+                className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${showFallbackImage ? 'opacity-30 z-10' : 'opacity-0 -z-20'}`}
                 onLoad={() => {
                     // Update loaded state only if falling back to image
                     if (showFallbackImage && onLoaded) onLoaded();
