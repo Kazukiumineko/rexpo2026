@@ -66,7 +66,10 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
             if (!isPlayingRef.current) {
                 setShowFallbackImage(true);
                 setMountVideo(false); // Unmount video to stop loading/processing
-                // Do NOT call onLoaded here; wait for image to load
+
+                // If we fallback, force load completion (assuming image is ready or will be soon)
+                // This covers the case where image loaded BEFORE the timeout.
+                if (onLoaded) onLoaded();
             }
         }, 8000);
         return () => clearTimeout(timer);
@@ -94,7 +97,10 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
                 className={`object-cover transition-opacity duration-1000 ${showFallbackImage ? 'opacity-30 z-10' : 'opacity-0 -z-20'}`}
                 onLoad={() => {
                     // Update loaded state only if falling back to image
-                    if (showFallbackImage && onLoaded) onLoaded();
+                    // Wait for video mount attempt (2.5s) before allowing image to dismiss loading
+                    if (mountVideo && showFallbackImage && onLoaded) {
+                        onLoaded();
+                    }
                 }}
             />
 
