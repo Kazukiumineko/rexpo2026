@@ -90,6 +90,8 @@ export default function EntryTitle() {
                             <div className="mt-10">
                                 <a
                                     href="https://program-service.ritsumei.ac.jp/public/seminar/view/40459" // リンク先は手動で設定
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="group relative inline-flex h-16 w-full md:w-[300px] items-center justify-center bg-white px-12 text-lg font-bold text-black border border-black transition-colors duration-300 hover:!bg-[#092040] hover:text-white hover:border-[#092040] rounded-full"
                                 >
                                     <span className="text-xl">今すぐ申込む</span>
