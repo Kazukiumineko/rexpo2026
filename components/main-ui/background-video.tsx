@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Image from "next/image";
+import { usePathname } from 'next/navigation';
 
 
 interface BackgroundVideoProps {
@@ -75,15 +76,24 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
         return () => clearTimeout(timer);
     }, []);
 
-    // Reload logic: If user stays for 40s, try loading the video again
+    const pathname = usePathname();
+
+    // Reload logic: Retry 10s after fallback mode is triggered, but only if on homepage
+    // If user navigates away, this timer clears (prioritizing new page load).
+    // When they return to homepage, timer restarts, ensuring we only load video when bandwidth is likely free.
     useEffect(() => {
+        if (!showFallbackImage) return;
+
+        // Only load video when on homepage
+        if (pathname !== "/") return;
+
         const timer = setTimeout(() => {
             // Remount video to start loading again. 
-            // The image will stay visible until the video actually starts playing (onPlay).
             setMountVideo(true);
-        }, 15000);
+        }, 10000);
+
         return () => clearTimeout(timer);
-    }, []);
+    }, [showFallbackImage, pathname]);
 
     return (
         <>
