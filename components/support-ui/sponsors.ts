@@ -11,17 +11,17 @@ export interface Sponsor {
 export const sponsors: Sponsor[] = [
     {
         name: "医療法人明日葉会 札幌マタニティウィメンズホスピタル",
-        color: "#FF6B6B",
+        logo: "/support/Hospital.png",
         url: "https://www.smwh.or.jp/",
     },
     {
         name: "株式会社VOREAS（ヴォレアス）",
-        color: "#4ECDC4",
+        color: "#FF4081",
         url: "https://voreas.co.jp/",
     },
     {
         name: "株式会社MLP",
-        color: "#45B7D1",
+        color: "#448AFF",
         url: "https://top.metulab.co.jp/",
     },
     {
@@ -31,57 +31,57 @@ export const sponsors: Sponsor[] = [
     },
     {
         name: "草野作工株式会社",
-        color: "#96CEB4",
+        logo: "/support/kusano.jpg",
         url: "https://www.kusanosk.co.jp/",
     },
     {
         name: "株式会社グロースアソシエーション",
-        color: "#9B59B6",
+        color: "#E040FB",
         url: "https://g-assoc.co.jp/",
     },
     {
         name: "株式会社JTB",
-        color: "#3498DB",
+        color: "#00BCD4",
         url: "https://www.jtbcorp.jp/jp/",
     },
     {
         name: "株式会社鈴木商会",
-        color: "#E67E22",
+        logo: "/support/Suzuki.jpg",
         url: "https://www.suzuki-shokai.co.jp/",
     },
     {
         name: "株式会社SOUSHINホールディングス",
-        color: "#1ABC9C",
+        logo: "/support/Soushin.jpg",
         url: "https://k-soushin.co.jp/",
     },
     {
         name: "電制コムテック株式会社",
-        logo: "/support/dencom.jpg",
+        logo: "/support/dencom_v2.jpg",
         url: "https://www.dencom.co.jp/",
     },
     {
         name: "東京科学大学（梅室博行研究室）",
-        color: "#E74C3C",
+        logo: "/support/Tokyo.jpg",
         url: "https://www.affectivelaboratory.org/index.php/ja/",
     },
     {
         name: "北海道医療大学",
-        color: "#2ECC71",
+        logo: "/support/Iryodai.jpg",
         url: "https://www.hoku-iryo-u.ac.jp/",
     },
     {
         name: "北海道ポラコン株式会社",
-        color: "#8E44AD",
+        logo: "/support/Porakon.jpg",
         url: "https://poracon.jp/",
     },
     {
         name: "株式会社北海道イエロースターズ",
-        color: "#F39C12",
+        color: "#FFAB40",
         url: "https://hy-stars.jp/",
     },
     {
         name: "株式会社ミライシアホールディング",
-        color: "#34495E",
+        color: "#B2FF59",
         url: "https://miraisia.co.jp/",
     },
     {
@@ -91,7 +91,7 @@ export const sponsors: Sponsor[] = [
     },
     {
         name: "Letara株式会社",
-        color: "#27AE60",
+        logo: "/support/Letara.jpg",
         url: "https://www.letaranext.com/ja-jp",
     },
 ];
