@@ -104,18 +104,18 @@ export default function InformationSection() {
                             </Link>
 
                             <div className="flex flex-col space-y-3 flex-grow">
-                                <h3 className="font-biz text-2xl font-bold tracking-widest uppercase mt-2 flex items-center gap-2">
-                                    <div className="w-[5px] h-6 bg-[#092040]"></div>
+                                <h3 className="font-biz text-xl font-bold tracking-widest uppercase mt-2 flex items-center gap-2">
+                                    <div className="hidden md:block w-[5px] h-6 bg-[#092040]"></div>
                                     <Link href={topic.link} className="md:pointer-events-none md:cursor-auto">
                                         {topic.title}
                                     </Link>
                                     <Link
                                         href={topic.link}
-                                        className="md:hidden flex items-center justify-center p-1 -ml-1 hover:opacity-100 transition-opacity text-[#113f7d]"
+                                        className="md:hidden"
                                     >
                                         <svg
-                                            width="26"
-                                            height="26"
+                                            width="24"
+                                            height="24"
                                             viewBox="0 0 24 24"
                                             fill="currentColor"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +124,7 @@ export default function InformationSection() {
                                         </svg>
                                     </Link>
                                 </h3>
-                                <p className="font-kaku text-gray-600 text-sm leading-relaxed">
+                                <p className="font-kaku text-gray-600 text-xs leading-relaxed">
                                     {topic.description}
                                 </p>
                             </div>
