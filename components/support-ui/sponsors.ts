@@ -31,7 +31,7 @@ export const sponsors: Sponsor[] = [
     },
     {
         name: "草野作工株式会社",
-        logo: "/support/kusano.jpg",
+        logo: "/support/Kusano.jpg",
         url: "https://www.kusanosk.co.jp/",
     },
     {
@@ -71,7 +71,7 @@ export const sponsors: Sponsor[] = [
     },
     {
         name: "北海道ポラコン株式会社",
-        logo: "/support/Porakon.jpg",
+        logo: "/support/porakon.jpg",
         url: "https://poracon.jp/",
     },
     {
