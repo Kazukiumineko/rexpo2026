@@ -91,12 +91,12 @@ export default function StageCarouselSection({
                                 {images.map((src, index) => (
                                     <CarouselItem key={index} className="pl-4 basis-full md:basis-[60%] lg:basis-[65%]">
                                         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm border border-white/10 bg-gray-900">
-                                            <LazyImage
+                                            {/* <LazyImage
                                                 src={src}
                                                 alt={`${title} ${index + 1}`}
                                                 fill
                                                 className="object-cover"
-                                            />
+                                            /> */}
                                         </div>
                                     </CarouselItem>
                                 ))}
