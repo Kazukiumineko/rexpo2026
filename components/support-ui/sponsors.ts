@@ -11,7 +11,7 @@ export interface Sponsor {
 export const sponsors: Sponsor[] = [
     {
         name: "医療法人明日葉会 札幌マタニティウィメンズホスピタル",
-        logo: "/support/Hospital.png",
+        logo: "/support/Hospital.jpg",
         url: "https://www.smwh.or.jp/",
     },
     {
