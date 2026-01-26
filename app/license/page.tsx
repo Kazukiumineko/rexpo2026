@@ -38,6 +38,12 @@ export default function LicensePage() {
                             </div>
                             <div>
                                 <h3 className="font-bold mb-2">
+                                    Photography</h3>
+                                <p className="opacity-80">Ryosei Kuroda</p>
+                                <p className="opacity-80">Ryosuke Takahashi</p>
+                            </div>
+                            <div>
+                                <h3 className="font-bold mb-2">
                                     Technical Cooperation</h3>
                                 <p className="opacity-80">Ichiro Ishikawa</p>
                             </div>
