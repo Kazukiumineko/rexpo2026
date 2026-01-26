@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 // 必要なフォントだけをインポート
 import { Oswald, Zen_Kaku_Gothic_New } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 // 4. 強調・見出し (採用サイト風)
 const oswald = Oswald({
@@ -57,6 +58,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${zenKaku.variable} ${oswald.variable}`}>
       <body className="font-sans">
+        <Analytics />
         <GlobalProvider>
           <PersistentBackgroundVideo />
           {children}
