@@ -16,6 +16,7 @@ export default function ApplicationTop() {
 
                 {/* 1. 背景動画 */}
                 <div className="absolute inset-0 z-0">
+                    {/* 
                     <video
                         src="/Drone.mp4"
                         autoPlay
@@ -24,7 +25,9 @@ export default function ApplicationTop() {
                         playsInline
                         poster="/mobile.png"
                         className="w-full h-full object-cover"
-                    />
+                    /> 
+                    */}
+                    <img src="/mobile.png" alt="Application Background" className="w-full h-full object-cover" />
                     {/* 動画を見やすくするための黒いフィルター（薄く） */}
                     <div className="absolute inset-0 bg-black/20" />
                 </div>

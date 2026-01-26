@@ -12,22 +12,25 @@ interface BackgroundVideoProps {
 
 export default function BackgroundVideo({ overlayOpacity, onLoaded }: BackgroundVideoProps) {
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-    const [showFallbackImage, setShowFallbackImage] = useState(false);
+    const [showFallbackImage, setShowFallbackImage] = useState(true); // Forced true for image-only mode
     // Start with mountVideo false to prevent bandwidth contention with Loading Logo (RmarkRED.png)
-    const [mountVideo, setMountVideo] = useState(false);
+    const [mountVideo, setMountVideo] = useState(false); // Forced false
     const videoRef = useRef<HTMLVideoElement>(null);
     const isPlayingRef = useRef(false);
 
     // Delay video mounting to prioritize Loading Image and UI
+    /* [PRESERVED: Video Mount Logic]
     useEffect(() => {
         const timer = setTimeout(() => {
             setMountVideo(true);
         }, 2500); // Wait 2.5s before starting heavy video download
         return () => clearTimeout(timer);
     }, []);
+    */
 
     // Check if video is already playing on mount (for hydration edge cases)
     useEffect(() => {
+        /* [PRESERVED: Video Autoplay Check]
         const video = videoRef.current;
         // readyState >= 3 (HAVE_FUTURE_DATA) means we have enough data to play at least a bit
         if (video && !video.paused && video.readyState >= 3) {
@@ -35,9 +38,13 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
             isPlayingRef.current = true;
             if (onLoaded) onLoaded();
         }
+        */
+        // Immediate load signal for image-only mode
+        if (onLoaded) onLoaded();
     }, []);
 
     // Mobile specific loop logic: Loop at 8 seconds (Only if using the long video)
+    /* [PRESERVED: Mobile Loop Logic]
     useEffect(() => {
         // If video is not mounted, we can't attach listeners
         if (!mountVideo) return;
@@ -60,8 +67,10 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
         video.addEventListener('timeupdate', handleMobileLoop);
         return () => video.removeEventListener('timeupdate', handleMobileLoop);
     }, [mountVideo]); // Re-run when video is remounted
+    */
 
     // Fallback: If video doesn't play in 8s, switch to image and unmount video
+    /* [PRESERVED: Fallback Timeout]
     useEffect(() => {
         const timer = setTimeout(() => {
             if (!isPlayingRef.current) {
@@ -75,6 +84,7 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
         }, 8000);
         return () => clearTimeout(timer);
     }, []);
+    */
 
     const pathname = usePathname();
 
@@ -89,9 +99,7 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
     }, [mountVideo]);
 
     // Reload & Background Load Logic
-    // 1. On Home: Retry 10s after fallback (to avoid spamming). If returning from subpage with video already loading, keep loading.
-    // 2. On Subpage: Stop video immediately. Wait 3s (priority to subpage assets). Then start background load.
-    // 3. Navigation: Resets the subpage 3s timer, effectively throttling video load during rapid navigation.
+    /* [PRESERVED: Reload Logic]
     useEffect(() => {
         if (!showFallbackImage) return;
 
@@ -121,6 +129,7 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
 
         return () => clearTimeout(timer);
     }, [pathname, showFallbackImage]);
+    */
 
     return (
         <>
@@ -132,14 +141,13 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
                 fill
                 className={`object-cover transition-opacity duration-1000 ${showFallbackImage ? 'opacity-30 z-10' : 'opacity-0 -z-20'}`}
                 onLoad={() => {
-                    // Update loaded state only if falling back to image
-                    // Wait for video mount attempt (2.5s) before allowing image to dismiss loading
-                    if (mountVideo && showFallbackImage && onLoaded) {
+                    if (onLoaded) {
                         onLoaded();
                     }
                 }}
             />
 
+            {/* Video Logic Preserved for Future Use
             {mountVideo && (
                 <video
                     ref={videoRef}
@@ -162,11 +170,11 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
                         }
                     }}
                 >
-                    {/* Mobile optimized video (Please upload Drone_mobile.mp4) */}
                     <source src="/Drone_mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
                     <source src="/Drone.mp4" type="video/mp4" />
                 </video>
             )}
+            */}
 
             <div
                 className="absolute top-0 left-0 w-full h-full bg-black transition-opacity duration-100 ease-linear pointer-events-none"
