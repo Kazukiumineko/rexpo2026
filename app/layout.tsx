@@ -50,6 +50,8 @@ import FloatingEntryButton from "@/components/shared/floating-entry-button";
 import { GlobalProvider } from "@/context/GlobalContext";
 import PersistentBackgroundVideo from "@/components/main-ui/persistent-background-video";
 
+import Script from "next/script";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -58,6 +60,19 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${zenKaku.variable} ${oswald.variable}`}>
       <body className="font-sans">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-85T7RJBRDM"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-85T7RJBRDM');
+          `}
+        </Script>
         <Analytics />
         <GlobalProvider>
           <PersistentBackgroundVideo />
