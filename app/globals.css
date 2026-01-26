@@ -6,7 +6,8 @@
   /* 右側: layout.tsx で定義した variable 名 */
 
   /* 1. font-biz で BIZ UDPGothic を使う */
-  --font-biz: var(--font-biz-udp);
+  /* 1. font-biz で BIZ UDPGothic を使う (未ロードのためコメントアウト) */
+  /* --font-biz: var(--font-biz-udp); */
 
   /* 2. font-kaku で Zen Kaku Gothic New を使う */
   --font-kaku: var(--font-zen-kaku);
@@ -19,7 +20,7 @@
 
   /* ▼ font-sans (指定なしのデフォルト) の優先順位 */
   /* Zen角 > BIZ UDP > それ以外 の順で適用されます */
-  --font-sans: var(--font-zen-kaku), var(--font-biz-udp), sans-serif;
+  --font-sans: var(--font-zen-kaku), sans-serif;
 }
 
 :root {
@@ -38,7 +39,7 @@ html,
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-zen-kaku), var(--font-biz-udp), sans-serif;
+  font-family: var(--font-zen-kaku), sans-serif;
 }
 
 /* 一括変更: bg-white クラスの色を強制的に #f1f1f1 に変更 */

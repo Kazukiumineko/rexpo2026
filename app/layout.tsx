@@ -55,8 +55,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
-      <body className={`${zenKaku.variable} ${oswald.variable} font-sans`}>
+    <html lang="ja" className={`${zenKaku.variable} ${oswald.variable}`}>
+      <body className="font-sans">
         <GlobalProvider>
           <PersistentBackgroundVideo />
           {children}
