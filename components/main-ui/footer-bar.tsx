@@ -89,7 +89,8 @@ export default function FooterBar({ variant = "default" }: FooterBarProps) {
 
             </motion.div>
 
-            {/* --- ③ 既存の黒いバー --- */}
+
+            {/* --- ③ 既存の黒いバーやっほー --- */}
             {/* ここに以前のfooterタグのスタイルを適用します */}
             <div className={`w-full ${isBlack ? "bg-[#092040] border-t border-white/20" : "bg-[#092040]"} text-white h-10 flex items-center justify-center px-4 md:px-8 relative`}>
 
