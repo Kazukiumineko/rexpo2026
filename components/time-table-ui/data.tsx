@@ -85,7 +85,7 @@ export const events: EventItem[] = [
 
     // --- 201 (Index 6) ---
     { id: "r104-1", venueIndex: 6, title: "APU国際交流\n結MUSUBU", start: "10:30", end: "12:00", colorId: 4 },
-    { id: "r104-2", venueIndex: 6, title: `囲碁将棋部\n【対局】${SPACER}K-Tech\n【ゲーム体験】${SPACER}生徒討論\n【核兵器の力とその代償】`, start: "14:45", end: "16:30", colorId: 3 },
+    { id: "r104-2", venueIndex: 6, title: `囲碁将棋部\n【対局】${SPACER}K-Tech\n【ゲーム体験】`, start: "14:45", end: "16:30", colorId: 3 },
 
     // --- 202 (Index 7) ---
     { id: "r105-1", venueIndex: 7, title: `国際部\n留学研修報告会${SPACER}・モルドバ\n・ネパール\n・フィリピン\n・トビタテ留学JAPAN`, start: "10:30", end: "11:40", colorId: 1 },
