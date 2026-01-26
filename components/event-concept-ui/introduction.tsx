@@ -60,7 +60,7 @@ export default function Introduction() {
             </div>
 
             <div className={
-                "relative w-full h-[80vh] md:h-[80vh] lg:h-[100vh] bg-transparent z-[100] " +
+                "relative w-full h-[80dvh] md:h-[80dvh] lg:h-[100dvh] bg-transparent z-[100] " +
                 "-mt-20 md:-mt-28"
             }>
 

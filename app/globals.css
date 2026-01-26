@@ -40,6 +40,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-zen-kaku), sans-serif;
+  overscroll-behavior-y: none;
 }
 
 /* 一括変更: bg-white クラスの色を強制的に #f1f1f1 に変更 */

@@ -12,7 +12,7 @@ const appImages = [
 export default function ApplicationTop() {
     return (
         <>
-            <section className="relative w-full h-screen overflow-hidden bg-[#f1f1f1]">
+            <section className="relative w-full h-dvh overflow-hidden bg-[#f1f1f1]">
 
                 {/* 1. 背景動画 */}
                 <div className="absolute inset-0 z-0">
@@ -22,6 +22,7 @@ export default function ApplicationTop() {
                         loop
                         muted
                         playsInline
+                        poster="/mobile.png"
                         className="w-full h-full object-cover"
                     />
                     {/* 動画を見やすくするための黒いフィルター（薄く） */}

@@ -11,7 +11,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ opacity, isLogoLoaded, isScrollLoaded }: HeroSectionProps) {
     return (
-        <div className="relative z-10 flex h-screen flex-col items-center justify-center pointer-events-none"
+        <div className="relative z-10 flex h-dvh flex-col items-center justify-center pointer-events-none"
             style={{ opacity: opacity }}>
 
             <div className={`transition-opacity duration-1000 ease-out mb-8

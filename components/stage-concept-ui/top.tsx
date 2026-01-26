@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function StageTop() {
     return (
-        <section className="relative w-full h-screen bg-black overflow-hidden">
+        <section className="relative w-full h-dvh bg-black overflow-hidden">
             {/* 1. メイン背景画像：ソースを変更し、brightnessを下げて暗くする */}
             <LazyImage
                 src="/main/Satoryo1.png"
