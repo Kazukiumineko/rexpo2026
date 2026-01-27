@@ -10,13 +10,13 @@ export default function PersistentBackgroundVideo() {
     const pathname = usePathname();
     const isHomePage = pathname === "/";
 
-    // Force open content after 10 seconds if video hasn't loaded (Persist this check globally)
+    // Force open content after 6 seconds if video/image logic hasn't finished (Safety net)
     useEffect(() => {
         if (isHomeVideoLoaded) return;
 
         const timer = setTimeout(() => {
             setIsHomeVideoLoaded(true);
-        }, 10000); // 10s timeout
+        }, 6000); // 6s strict timeout rule
 
         return () => clearTimeout(timer);
     }, [isHomeVideoLoaded, setIsHomeVideoLoaded]);
