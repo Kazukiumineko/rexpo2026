@@ -12,25 +12,22 @@ interface BackgroundVideoProps {
 
 export default function BackgroundVideo({ overlayOpacity, onLoaded }: BackgroundVideoProps) {
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-    const [showFallbackImage, setShowFallbackImage] = useState(true); // Forced true for image-only mode
+    const [showFallbackImage, setShowFallbackImage] = useState(true);
     // Start with mountVideo false to prevent bandwidth contention with Loading Logo (RmarkRED.png)
-    const [mountVideo, setMountVideo] = useState(false); // Forced false
+    const [mountVideo, setMountVideo] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
     const isPlayingRef = useRef(false);
 
     // Delay video mounting to prioritize Loading Image and UI
-    /* [PRESERVED: Video Mount Logic]
     useEffect(() => {
         const timer = setTimeout(() => {
             setMountVideo(true);
         }, 2500); // Wait 2.5s before starting heavy video download
         return () => clearTimeout(timer);
     }, []);
-    */
 
     // Check if video is already playing on mount (for hydration edge cases)
     useEffect(() => {
-        /* [PRESERVED: Video Autoplay Check]
         const video = videoRef.current;
         // readyState >= 3 (HAVE_FUTURE_DATA) means we have enough data to play at least a bit
         if (video && !video.paused && video.readyState >= 3) {
@@ -38,13 +35,16 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
             isPlayingRef.current = true;
             if (onLoaded) onLoaded();
         }
-        */
-        // Immediate load signal for image-only mode
-        if (onLoaded) onLoaded();
+
+        // Immediate load signal for image-only mode (if video fails or takes too long)
+        // Note: We don't call onLoaded immediately here if we expect video, 
+        // but we have fallback timeouts below.
+        // However, if we want to ensure *something* shows up, we can keep the previous logic 
+        // or rely on the fallback logic components.
+        // Let's rely on the video logic + fallback timeout to call onLoaded.
     }, []);
 
     // Mobile specific loop logic: Loop at 8 seconds (Only if using the long video)
-    /* [PRESERVED: Mobile Loop Logic]
     useEffect(() => {
         // If video is not mounted, we can't attach listeners
         if (!mountVideo) return;
@@ -67,10 +67,8 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
         video.addEventListener('timeupdate', handleMobileLoop);
         return () => video.removeEventListener('timeupdate', handleMobileLoop);
     }, [mountVideo]); // Re-run when video is remounted
-    */
 
     // Fallback: If video doesn't play in 8s, switch to image and unmount video
-    /* [PRESERVED: Fallback Timeout]
     useEffect(() => {
         const timer = setTimeout(() => {
             if (!isPlayingRef.current) {
@@ -84,7 +82,6 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
         }, 8000);
         return () => clearTimeout(timer);
     }, []);
-    */
 
     const pathname = usePathname();
 
@@ -99,7 +96,6 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
     }, [mountVideo]);
 
     // Reload & Background Load Logic
-    /* [PRESERVED: Reload Logic]
     useEffect(() => {
         if (!showFallbackImage) return;
 
@@ -129,7 +125,6 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
 
         return () => clearTimeout(timer);
     }, [pathname, showFallbackImage]);
-    */
 
     return (
         <>
@@ -141,13 +136,18 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
                 fill
                 className={`object-cover transition-opacity duration-1000 ${showFallbackImage ? 'opacity-30 z-10' : 'opacity-0 -z-20'}`}
                 onLoad={() => {
-                    if (onLoaded) {
+                    // If video is not playing yet, this image is the first thing seen.
+                    // We can signal loaded if we want image-first experience or wait for video.
+                    // The previous logic for pure image was to call onLoaded immediately.
+                    // Here we might wait for video or fallback.
+                    // But to be safe and prevent stuck loading screens:
+                    // If fallback is already true (e.g. error), call it.
+                    if (showFallbackImage && onLoaded) {
                         onLoaded();
                     }
                 }}
             />
 
-            {/* Video Logic Preserved for Future Use
             {mountVideo && (
                 <video
                     ref={videoRef}
@@ -174,7 +174,6 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
                     <source src="/Drone.mp4" type="video/mp4" />
                 </video>
             )}
-            */}
 
             <div
                 className="absolute top-0 left-0 w-full h-full bg-black transition-opacity duration-100 ease-linear pointer-events-none"
