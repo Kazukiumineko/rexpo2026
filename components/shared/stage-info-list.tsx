@@ -52,7 +52,7 @@ export default function StageInfoList({ projects }: StageInfoListProps) {
                                     {/* 2. テキストエリア */}
                                     <div className="flex-1 flex flex-col justify-center py-2">
                                         {/* 企画タイトル */}
-                                        <h3 className="font-oswald text-xl md:text-3xl font-bold mb-3 text-white">
+                                        <h3 className="font-kaku text-xl md:text-3xl font-bold mb-3 text-white">
                                             {project.title}
                                         </h3>
 

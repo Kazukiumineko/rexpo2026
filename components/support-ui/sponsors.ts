@@ -11,7 +11,7 @@ export interface Sponsor {
 export const sponsors: Sponsor[] = [
     {
         name: "医療法人明日葉会 札幌マタニティウィメンズホスピタル",
-        logo: "/support/Hospital.jpg",
+        logo: "/support/resize_Hospital.jpg",
         url: "https://www.smwh.or.jp/",
     },
     {
@@ -26,12 +26,12 @@ export const sponsors: Sponsor[] = [
     },
     {
         name: "北昴",
-        logo: "/support/kitasubaru.jpg",
+        logo: "/support/resize_kitasubaru.jpg",
         url: "https://kitasubaru.net",
     },
     {
         name: "草野作工株式会社",
-        logo: "/support/Kusano.jpg",
+        logo: "/support/resize_Kusano.jpg",
         url: "https://www.kusanosk.co.jp/",
     },
     {
@@ -46,32 +46,37 @@ export const sponsors: Sponsor[] = [
     },
     {
         name: "株式会社鈴木商会",
-        logo: "/support/Suzuki.jpg",
+        logo: "/support/resize_Suzuki.jpg",
         url: "https://www.suzuki-shokai.co.jp/",
     },
     {
         name: "株式会社SOUSHINホールディングス",
-        logo: "/support/Soushin.jpg",
+        logo: "/support/resize_Soushin.jpg",
         url: "https://k-soushin.co.jp/",
     },
     {
         name: "電制コムテック株式会社",
-        logo: "/support/dencom_v2.jpg",
+        logo: "/support/resize_dencom.jpg",
         url: "https://www.dencom.co.jp/",
     },
     {
         name: "東京科学大学（梅室博行研究室）",
-        logo: "/support/Tokyo.jpg",
+        logo: "/support/resize_Tokyo.jpg",
         url: "https://www.affectivelaboratory.org/index.php/ja/",
     },
     {
         name: "北海道医療大学",
-        logo: "/support/Iryodai.jpg",
+        logo: "/support/resize_Iryodai.jpg",
         url: "https://www.hoku-iryo-u.ac.jp/",
     },
     {
+        name: "北海道大学 社会・地域創発本部",
+        logo: "/support/resize_Hokudai.jpg",
+        url: "https://coi-next.fmi.hokudai.ac.jp/about",
+    },
+    {
         name: "北海道ポラコン株式会社",
-        logo: "/support/porakon.jpg",
+        logo: "/support/resize_porakon.jpg",
         url: "https://poracon.jp/",
     },
     {
@@ -91,7 +96,7 @@ export const sponsors: Sponsor[] = [
     },
     {
         name: "Letara株式会社",
-        logo: "/support/Letara.jpg",
+        logo: "/support/resize_Letara.jpg",
         url: "https://www.letaranext.com/ja-jp",
     },
 ];

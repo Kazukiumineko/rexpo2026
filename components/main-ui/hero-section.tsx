@@ -18,7 +18,7 @@ export default function HeroSection({ opacity, isLogoLoaded, isScrollLoaded }: H
         ${isLogoLoaded ? "opacity-100" : "opacity-0"}`}>
 
                 <LazyImage
-                    src="/main/hero-logo.png"
+                    src="/main/herologo.png"
                     alt="R-EXPO LOGO"
                     width={500}
                     height={200}
