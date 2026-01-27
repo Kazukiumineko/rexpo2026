@@ -3,6 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import LazyImage from "@/components/shared/lazy-image";
 import Link from "next/link";
+import Seito from "@/components/stage-concept-ui/seito";
 
 export default function Jump() {
     // アニメーション設定
@@ -18,6 +19,9 @@ export default function Jump() {
     return (
         <section className="w-full bg-transparent text-white py-24 md:py-32 px-6 md:px-20 lg:px-32 overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
+                <div className="mb-24">
+                    <Seito />
+                </div>
 
                 {/* === ブロック: TIME TABLE === */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
