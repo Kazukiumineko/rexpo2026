@@ -28,7 +28,7 @@ export default function InformationSection() {
         },
         {
             title: "ご支援",
-            src: "/topic/Support.jpg",
+            src: "/topic/Kitasubaru.jpg",
             link: "/support",
             description: "R-EXPO 2026は、20を超える企業・団体の皆様より多大なるご支援をいただいています。 当日は、講演会や企業ブース、そして生徒とのコラボステージなど、ここでしかできない特別なプログラムが満載です。",
         },
