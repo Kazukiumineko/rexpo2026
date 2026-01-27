@@ -26,6 +26,29 @@ export default function Seito() {
     return (
         <section className="w-full py-12 md:py-24 overflow-hidden bg-transparent">
             <div className="max-w-[1400px] mx-auto relative px-6 md:px-12">
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-10% 0px" }}
+                    variants={{
+                        hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+                        visible: {
+                            opacity: 1,
+                            y: 0,
+                            filter: "blur(0px)",
+                            transition: { duration: 1.2, ease: "easeOut" },
+                        },
+                    }}
+                    className="mb-12 md:mb-24 text-center"
+                >
+                    <h2 className="font-oswald text-6xl md:text-8xl font-bold tracking-tighter mb-4 text-white">
+                        DISCOVER YOUR WORLD
+                    </h2>
+                    <p className="text-2xl md:text-4xl font-bold tracking-widest text-white">
+                        個性が輝く慶祥生の取り組み
+                    </p>
+                </motion.div>
+
                 <Carousel
                     plugins={[plugin.current]}
                     className="w-full relative"
