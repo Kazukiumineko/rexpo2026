@@ -16,7 +16,7 @@ export default function InformationSection() {
         },
         {
             title: "タイムテーブル",
-            src: "/topic/Timetable.JPG",
+            src: "/main/Timetable-header3.JPG",
             link: "/timetable",
             description: "当日のステージ発表や各エリアのタイムスケジュールをご案内します。見逃せないイベントの時間をチェックして、R-EXPOを存分に楽しんでください。",
         },
