@@ -67,7 +67,9 @@ export default function EntryTitle() {
                                         className="group inline-flex items-center transition-colors"
                                     >
                                         札幌コンベンションセンター
-                                        <span className="text-xs ml-2 transition-transform group-hover:translate-x-1">▶</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="ml-2 w-3 h-3 transition-transform group-hover:translate-x-1">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
                                     </Link>
                                 </dd>
 
@@ -81,7 +83,9 @@ export default function EntryTitle() {
                                         className="group inline-flex items-center transition-colors"
                                     >
                                         立命館慶祥中学校・高等学校
-                                        <span className="text-xs ml-2 transition-transform group-hover:translate-x-1">▶</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="ml-2 w-3 h-3 transition-transform group-hover:translate-x-1">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
                                     </a>
                                 </dd>
                             </dl>
