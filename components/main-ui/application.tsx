@@ -11,7 +11,7 @@ export default function Application() {
         <section className="relative w-full bg-[#f1f1f1] flex flex-col">
 
             {/* --- 画像エリア --- */}
-            <div className="relative w-full h-[65vh] md:h-[65vh] lg:h-[90vh] overflow-hidden bg-gray-900">
+            <div className="relative w-full h-[75vh] md:h-[65vh] lg:h-[90vh] overflow-hidden bg-gray-900">
                 <img
                     src="/application/application-header.JPG"
                     alt="Application Header"
@@ -35,7 +35,7 @@ export default function Application() {
                         </h2>
 
                         {/* 2. サブタイトル */}
-                        <p className="mt-4 font-jp text-2xl md:text-4xl font-bold tracking-tight text-white">
+                        <p className="mt-8 md:mt-10 font-jp text-2xl md:text-4xl font-bold tracking-tight text-white">
                             R-EXPOをもっと楽しむ
                         </p>
                     </motion.div>
@@ -46,7 +46,7 @@ export default function Application() {
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 1.2, delay: 0.4 }}
                         viewport={{ once: true }}
-                        className="mt-12 md:mt-16 text-center max-w-2xl"
+                        className="mt-16 md:mt-24 text-center max-w-2xl"
                     >
                         <div className="text-white text-xs md:text-sm lg:text-base font-extralight leading-[2.2] tracking-[0.15em]">
                             <p>当日のタイムスケジュールや展示内容を、<br className="md:hidden" />あなたの手のひらに。</p>
@@ -61,7 +61,7 @@ export default function Application() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
                         viewport={{ once: true }}
-                        className="mt-10 md:mt-12"
+                        className="mt-16 md:mt-20"
                     >
                         <Link
                             href="/application"

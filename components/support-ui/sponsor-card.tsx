@@ -21,7 +21,7 @@ export default function SponsorCard({ sponsor, index }: SponsorCardProps) {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.05 }}
             style={{ willChange: "opacity" }}
-            className="group flex items-center p-4 border border-gray-100 rounded-lg shadow-md hover:border-[#113f7d] hover:shadow-lg transition-all duration-300"
+            className="group flex items-center p-4 border border-gray-100 rounded-lg shadow-md hover:border-[#113f7d] hover:shadow-lg transition-[border-color,box-shadow] duration-300"
         >
             {/* 1. ロゴ画像エリア（左） */}
             <div className="relative w-[70px] h-[70px] md:w-[74px] md:h-[74px] flex-shrink-0 overflow-hidden rounded-md border border-gray-200 bg-white mr-5 flex items-center justify-center">
