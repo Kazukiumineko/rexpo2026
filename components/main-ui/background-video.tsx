@@ -147,8 +147,8 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
                     playsInline
                     onPlaying={handleVideoPlay}
                 >
-                    <source src="/Drone_mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
-                    <source src="/Drone.mp4" type="video/mp4" />
+                    <source src="/Drone_mobile2.mp4" type="video/mp4" media="(max-width: 767px)" />
+                    <source src="/Drone2.mp4" type="video/mp4" />
                 </video>
             )}
 
