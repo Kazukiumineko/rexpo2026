@@ -12,7 +12,12 @@ export default function Application() {
 
             {/* --- 画像エリア --- */}
             <div className="relative w-full h-[65vh] md:h-[65vh] lg:h-[90vh] overflow-hidden bg-gray-900">
-                <div className="absolute inset-0 bg-r-expo-blue" />
+                <img
+                    src="/application/application-header.JPG"
+                    alt="Application Header"
+                    className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/60" />
 
                 {/* 全体コンテンツコンテナ */}
                 <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6">

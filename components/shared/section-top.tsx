@@ -23,6 +23,7 @@ interface SectionTopProps {
      * 色付きフィルターなどを適用する場合に使用
      */
     imageOverlay?: ReactNode;
+    imageClassName?: string;
     children: ReactNode;
 }
 
@@ -33,6 +34,7 @@ export default function SectionTop({
     backTitleClassName,
     containerClassName,
     imageOverlay,
+    imageClassName,
     children
 }: SectionTopProps) {
     return (
@@ -43,7 +45,7 @@ export default function SectionTop({
                     src={imageSrc}
                     alt={imageAlt}
                     fill
-                    className="object-cover object-center"
+                    className={`object-cover ${imageClassName || "object-center"}`}
                     priority
                 />
                 {imageOverlay}

@@ -14,27 +14,17 @@ export default function ApplicationTop() {
         <>
             <section className="relative w-full h-dvh overflow-hidden bg-[#f1f1f1]">
 
-                {/* 1. 背景動画 */}
-                <div className="absolute inset-0 z-0">
-                    {/* 
-                    <video
-                        src="/Drone.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        poster="/mobile.png"
-                        className="w-full h-full object-cover"
-                    /> 
-                    */}
-                    <img src="/mobile.png" alt="Application Background" className="w-full h-full object-cover" />
-                    {/* 動画を見やすくするための黒いフィルター（薄く） */}
-                    <div className="absolute inset-0 bg-black/20" />
-                </div>
+
+                {/* 1. 背景画像 */}
+                <img
+                    src="/application/application-header.JPG"
+                    alt="Application Header"
+                    className="absolute inset-0 z-0 w-full h-full object-cover md:object-bottom"
+                />
 
                 {/* 2. 下部の白いぼかし（グラデーション） */}
                 {/* 動画の下から白くフェードアウトさせ、次のコンテンツへ自然に繋げます */}
-                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#f1f1f1] via-[#f1f1f1]/80 to-transparent pointer-events-none z-10" />
+                <div className="absolute bottom-0 left-0 w-full h-1/2 md:h-1/3 bg-gradient-to-t from-[#f1f1f1] via-[#f1f1f1]/80 to-transparent pointer-events-none z-10" />
 
                 {/* 3. テキストコンテンツ */}
                 <div className="absolute bottom-0 left-0 w-full z-20 flex flex-col items-center justify-end pb-12 md:pb-24 text-center px-6">
