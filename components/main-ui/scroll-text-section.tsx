@@ -57,7 +57,7 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                         学校が用意したプログラムや<br className="md:hidden" />研究にとどまらず、
                     </p>
                     <p className="text-base md:text-xl text-center leading-relaxed mb-20">
-                        生徒の「やりたい！」を最大限尊重した、多様な企画が展開されます。
+                        生徒の「やりたい！」を最大限尊重した、<br className="md:hidden" />多様な企画が展開されます。
                     </p>
                 </motion.div>
 
