@@ -26,7 +26,7 @@ export default function LocationTop() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }} // クラス側で透明度を調整するため、アニメーションは1にする
                     transition={{ duration: 1.5, ease: "easeOut" }}
-                    className="font-oswald text-[12vh] md:text-[20vh] lg:text-[25vh] font-bold text-black/40 md:text-black/20 leading-none select-none"
+                    className="font-oswald text-[12vh] md:text-[14vh] lg:text-[25vh] font-bold text-black/40 md:text-black/20 leading-none select-none"
                     style={{
                         writingMode: "vertical-rl",
                         textOrientation: "mixed",
