@@ -15,8 +15,8 @@ const IMAGES = [
     "/stage-concept/Seito/Seito1.jpg",
     "/stage-concept/Seito/Seito2.jpg",
     "/stage-concept/Seito/Seito3.jpg",
-    "/stage-concept/Seito/Seito4.jpg",
-    "/stage-concept/Seito/Seito5.jpg",
+    "/stage-concept/Seito/Saito4.jpg",
+    "/stage-concept/Seito/Saito5.jpg",
 ];
 
 export default function Seito() {
