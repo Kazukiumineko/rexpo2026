@@ -18,8 +18,9 @@ export default function SponsorCard({ sponsor, index }: SponsorCardProps) {
             rel="noopener noreferrer"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.05 }}
+            viewport={{ once: true, margin: "-10%" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.05 }}
+            style={{ willChange: "opacity" }}
             className="group flex items-center p-4 border border-gray-100 rounded-lg shadow-md hover:border-[#113f7d] hover:shadow-lg transition-all duration-300"
         >
             {/* 1. ロゴ画像エリア（左） */}

@@ -49,9 +49,9 @@ export default function Application() {
                         className="mt-12 md:mt-16 text-center max-w-2xl"
                     >
                         <div className="text-white text-xs md:text-sm lg:text-base font-extralight leading-[2.2] tracking-[0.15em]">
-                            <p>当日のタイムスケジュールや展示内容を、あなたの手のひらに。</p>
-                            <p>気になる企画をブックマークし、当日の行動計画を立てよう。</p>
-                            <p>慶祥生が創り上げる「新しいイベント」を、このアプリと共に歩んでください。</p>
+                            <p>当日のタイムスケジュールや展示内容を、<br className="md:hidden" />あなたの手のひらに。</p>
+                            <p>気になる企画をブックマークし、<br className="md:hidden" />当日の行動計画を立てよう。</p>
+                            <p>慶祥生が創り上げる「新しいイベント」を、<br className="md:hidden" />このアプリと共に歩んでください。</p>
                         </div>
                     </motion.div>
 

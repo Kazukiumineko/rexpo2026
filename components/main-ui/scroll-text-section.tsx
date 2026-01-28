@@ -32,8 +32,7 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                     transition={{ duration: 1.8, ease: "easeOut" }}
                 >
                     <h2 ref={headerRef}
-                        /* whitespace-nowrapでスマホの見出し1行を強制 */
-                        className="text-4xl md:text-5xl lg:text-6xl font-bold mb-10 text-center text-white whitespace-nowrap md:whitespace-normal">
+                        className="text-4xl md:text-5xl lg:text-6xl font-bold mb-10 text-center text-white break-words px-2">
                         教室を飛び出せ
                     </h2>
 
@@ -47,8 +46,8 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 1.8, ease: "easeOut", delay: 0.6 }}
-                    /* break-keepで変な改行を防止。w-fullで横幅を使い切る */
-                    className="w-full break-keep word-break-keep"
+                    /* break-keepを削除し、naturalな改行を許可。px-4で余白確保 */
+                    className="w-full px-4 break-words"
                 >
                     <p className="text-base md:text-xl text-center leading-relaxed mb-10">
                         R-EXPOは、慶祥生の個性を発信するイベントです。
@@ -67,7 +66,7 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 1.8, ease: "easeOut", delay: 0.6 }}
-                    className="w-full break-keep word-break-keep"
+                    className="w-full px-4 break-words"
                 >
                     <p className="text-base md:text-xl text-center leading-relaxed mb-9">
                         立命館慶祥がお届けする、全く新しいイベントのカタチ
