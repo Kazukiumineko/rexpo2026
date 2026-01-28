@@ -21,7 +21,7 @@ export default function TimetablePage() {
             <div className="print:hidden relative z-10">
                 <SectionTop
                     imageSrc="/main/Timetable-header3.JPG"
-                    imageContainerClassName="h-[60vh] md:h-[55vh]"
+                    imageContainerClassName="h-[60vh] md:h-[60vh]"
                     imageClassName="object-center md:object-[center_80%]"
                     imageAlt="Timetable Background"
                     backTitle={<><span className="lg:inline-block lg:-translate-y-[20vh]">TIME</span><br className="hidden lg:block" />TABLE</>}
