@@ -6,8 +6,9 @@ export default function MessageTop() {
         <SectionTop
             imageSrc="/event-concept-page/Atrium.jpg"
             imageAlt="Message Background"
+            imageContainerClassName="h-[60vh] md:h-[55vh]"
             backTitle="SUPPORT"
-            backTitleClassName="absolute right-4 md:right-8 lg:right-16 top-[18vh] md:top-auto md:-bottom-[15vh] z-10 font-oswald text-[13vh] md:text-[15vh] lg:text-[25vh] font-bold tracking-tight text-black/20 select-none pointer-events-none leading-none origin-bottom-right"
+            backTitleClassName="absolute right-4 md:right-8 lg:right-16 top-[10vh] md:top-auto md:-bottom-[15vh] z-10 font-oswald text-[13vh] md:text-[15vh] lg:text-[25vh] font-bold tracking-tight text-black/40 md:text-black/20 select-none pointer-events-none leading-none origin-bottom-right"
             containerClassName="relative z-30 w-full h-auto md:h-[25vh] bg-transparent flex items-start md:items-end md:mt-20 pt-4 md:pt-0 pb-4 md:pb-0 px-6 md:px-20 lg:px-32 overflow-visible"
         >
             <motion.p

@@ -50,11 +50,11 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                     className="w-full px-4 break-words"
                 >
                     <p className="text-base md:text-xl text-center leading-relaxed mb-10">
-                        R-EXPOは、慶祥生の個性を発信するイベントです。
+                        R-EXPOは、慶祥生の<br className="md:hidden" />個性を発信するイベントです。
                     </p>
 
                     <p className="text-base md:text-xl text-center leading-relaxed mb-10">
-                        学校が用意したプログラムや研究にとどまらず、
+                        学校が用意したプログラムや<br className="md:hidden" />研究にとどまらず、
                     </p>
                     <p className="text-base md:text-xl text-center leading-relaxed mb-20">
                         生徒の「やりたい！」を最大限尊重した、多様な企画が展開されます。
@@ -69,7 +69,7 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                     className="w-full px-4 break-words"
                 >
                     <p className="text-base md:text-xl text-center leading-relaxed mb-9">
-                        立命館慶祥がお届けする、全く新しいイベントのカタチ
+                        立命館慶祥がお届けする、<br className="md:hidden" />全く新しいイベントのカタチ
                     </p>
 
                     <p className="text-base md:text-xl text-center leading-relaxed mb-9">
@@ -84,7 +84,7 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 1.8, ease: "easeOut", delay: 0.8 }}
-                    className="flex justify-center mt-8 pb-20"
+                    className="flex justify-center mt-8 pb-4"
                 >
                     <Link
                         href="/application"

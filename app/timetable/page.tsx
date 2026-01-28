@@ -18,13 +18,14 @@ export default function TimetablePage() {
                 <Header isVisible={showHeader} invert />
             </div>
 
-            <div className="print:hidden">
+            <div className="print:hidden relative z-10">
                 <SectionTop
                     imageSrc="/main/Timetable-header3.JPG"
+                    imageContainerClassName="h-[60vh] md:h-[55vh]"
                     imageClassName="object-center md:object-[center_80%]"
                     imageAlt="Timetable Background"
-                    backTitle="TIMETABLE"
-                    backTitleClassName="absolute right-4 md:right-12 top-[10vh] md:top-auto md:-bottom-[6vh] z-30 font-oswald text-[12vh] md:text-[20vh] font-bold text-black/10 select-none pointer-events-none leading-none origin-bottom-right"
+                    backTitle={<><span className="lg:inline-block lg:-translate-y-[20vh]">TIME</span><br className="hidden lg:block" />TABLE</>}
+                    backTitleClassName="absolute right-4 md:right-12 top-[7vh] md:top-auto md:-bottom-[6vh] lg:bottom-[5vh] z-50 font-oswald text-[12vh] md:text-[20vh] font-bold text-black/50 md:text-black/20 select-none pointer-events-none leading-none origin-bottom-right"
                     containerClassName="relative w-full h-auto md:h-[25vh] bg-[#f1f1f1] flex items-start md:items-end pt-8 md:pt-0 pb-6 md:pb-2 px-6 md:px-20 lg:px-32"
                 >
                     <div className="w-full max-w-[1600px] mx-auto">

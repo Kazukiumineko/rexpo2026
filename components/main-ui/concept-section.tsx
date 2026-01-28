@@ -25,7 +25,7 @@ export default function ConceptSection() {
     ];
 
     return (
-        <section className="relative w-full py-32 bg-transparent text-white overflow-hidden">
+        <section className="relative w-full pt-4 pb-32 bg-transparent text-white overflow-hidden">
 
             <div className="absolute inset-0 -z-10 opacity-40 "></div>
 

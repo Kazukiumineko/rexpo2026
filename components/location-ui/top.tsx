@@ -24,9 +24,9 @@ export default function LocationTop() {
             <div className="absolute inset-y-0 right-0 flex items-start pt-20 z-20 pr-4 md:pr-8 pointer-events-none">
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 0.2, y: 0 }} // 薄く黒文字を表示
+                    animate={{ opacity: 1, y: 0 }} // クラス側で透明度を調整するため、アニメーションは1にする
                     transition={{ duration: 1.5, ease: "easeOut" }}
-                    className="font-oswald text-[12vh] md:text-[20vh] lg:text-[25vh] font-bold text-[#092040] leading-none select-none"
+                    className="font-oswald text-[12vh] md:text-[20vh] lg:text-[25vh] font-bold text-black/40 md:text-black/20 leading-none select-none"
                     style={{
                         writingMode: "vertical-rl",
                         textOrientation: "mixed",
