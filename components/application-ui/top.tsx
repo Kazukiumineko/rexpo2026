@@ -27,7 +27,7 @@ export default function ApplicationTop() {
                 <div className="absolute bottom-0 left-0 w-full h-1/2 md:h-1/3 bg-gradient-to-t from-[#f1f1f1] via-[#f1f1f1]/80 to-transparent pointer-events-none z-10" />
 
                 {/* 3. テキストコンテンツ */}
-                <div className="absolute bottom-0 left-0 w-full z-20 flex flex-col items-center justify-end pb-12 md:pb-24 text-center px-6">
+                <div className="absolute bottom-0 left-0 w-full z-20 flex flex-col items-center justify-end pb-4 md:pb-16 text-center px-6">
                     {/* pb-32だと画像と離れすぎる可能性があるため、少し調整しました */}
 
                     {/* メインタイトル */}
@@ -35,7 +35,7 @@ export default function ApplicationTop() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                        className="text-[#092040] font-bold text-4xl md:text-6xl lg:text-7xl tracking-widest drop-shadow-sm font-jp"
+                        className="text-[#092040] font-bold text-3xl md:text-6xl lg:text-7xl tracking-widest drop-shadow-sm font-jp"
                     >
                         R-EXPO公式アプリ
                     </motion.h1>
