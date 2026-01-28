@@ -16,7 +16,7 @@ export const sponsors: Sponsor[] = [
     },
     {
         name: "株式会社VOREAS（ヴォレアス）",
-        color: "#FF4081",
+        logo: "/support/resize_Voreas.jpeg",
         url: "https://voreas.co.jp/",
     },
     {
@@ -81,7 +81,7 @@ export const sponsors: Sponsor[] = [
     },
     {
         name: "株式会社北海道イエロースターズ",
-        color: "#FFAB40",
+        logo: "/support/resize_Yellow.jpg",
         url: "https://hy-stars.jp/",
     },
     {
@@ -91,7 +91,7 @@ export const sponsors: Sponsor[] = [
     },
     {
         name: "株式会社レコハイ",
-        logo: "/support/rekohai.jpg",
+        logo: "/support/resize_rekohi.jpg",
         url: "https://smaspisport2000.wixsite.com/home",
     },
     {
