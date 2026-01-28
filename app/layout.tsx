@@ -27,12 +27,12 @@ export const metadata: Metadata = {
     default: "R-EXPO 2026",
     template: "%s | R-EXPO 2026", // 各ページで "Page Name | R-EXPO 2026" となる
   },
-  description: "R-EXPO 2026の公式サイトです。イベント情報、スケジュール、スポンサー情報などを掲載しています。",
+  description: "立命館慶祥中高がお届けする新しいイベント R-EXPO2026の公式サイトです。2月11日札幌コンベンションセンターで開催されます。イベント情報、参加申し込み、タイムテーブルをチェック！",
 
   // SNSや検索結果で画像を表示するための設定（OGP）
   openGraph: {
     title: "R-EXPO 2026",
-    description: "立命館慶祥中高がお届けする新しいイベント R-EXPO2026の公式サイトです。2月11日札幌コンベンションセンターで開催されます。",
+    description: "立命館慶祥中高がお届けする新しいイベント R-EXPO2026の公式サイトです。2月11日札幌コンベンションセンターで開催されます。イベント情報、参加申し込み、タイムテーブルをチェック！",
     url: siteUrl,
     siteName: "R-EXPO 2026",
     locale: "ja_JP",
