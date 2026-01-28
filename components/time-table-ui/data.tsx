@@ -53,7 +53,7 @@ export const events: EventItem[] = [
     { id: "m-1", venueIndex: 0, title: "開会式典", start: "09:45", end: "10:15", colorId: 3 },
     { id: "m-2", venueIndex: 0, title: "立命館附属校\n課題研究発表会", start: "10:40", end: "11:30", colorId: 4 },
     { id: "m-3", venueIndex: 0, title: "SSH国際共同課題研究発表", start: "11:40", end: "12:30", colorId: 1 },
-    { id: "m-4", venueIndex: 0, title: "第2部開会式", start: "14:00", end: "14:30", colorId: 3 },
+    { id: "m-4", venueIndex: 0, title: `第2部開会式${SPACER}※生徒・関係者のみの観覧となります`, start: "14:00", end: "14:30", colorId: 3 },
     { id: "m-5", venueIndex: 0, title: "有志生徒バンド発表", start: "14:50", end: "16:20", colorId: 3 },
     { id: "m-6", venueIndex: 0, title: "閉会式典", start: "16:45", end: "17:15", colorId: 3 },
 

@@ -45,7 +45,7 @@ export default function EventGrid() {
 
             {/* 特別な横断イベント: 一般公開開始 & 終了 */}
             {[
-                { start: "10:15", end: "10:30", text: "一般公開開始 10:00" },
+                { start: "10:15", end: "10:30", text: "一般公開開始 10:30" },
                 { start: "16:30", end: "16:45", text: "一般公開終了 16:30" }
             ].map((item, idx) => {
                 const startMins = timeToMinutes(item.start);

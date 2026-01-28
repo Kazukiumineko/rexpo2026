@@ -2,6 +2,7 @@
 
 import { useRef, RefObject } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import Link from "next/link";
 
 interface ScrollTextSectionProps {
     headerRef: RefObject<HTMLHeadingElement | null>;
@@ -50,14 +51,14 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                     className="w-full break-keep word-break-keep"
                 >
                     <p className="text-base md:text-xl text-center leading-relaxed mb-10">
-                        R-EXPOは、生徒の個性を発信するイベントです。
+                        R-EXPOは、慶祥生の個性を発信するイベントです。
                     </p>
 
                     <p className="text-base md:text-xl text-center leading-relaxed mb-10">
-                        会場に一歩足を踏み入れれば、そこには多様なレイヤーで構成された
+                        学校が用意したプログラムや研究にとどまらず、
                     </p>
                     <p className="text-base md:text-xl text-center leading-relaxed mb-20">
-                        「新しい世界」が広がっています。
+                        生徒の「やりたい！」を最大限尊重した、多様な企画が展開されます。
                     </p>
                 </motion.div>
 
@@ -69,33 +70,29 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                     className="w-full break-keep word-break-keep"
                 >
                     <p className="text-base md:text-xl text-center leading-relaxed mb-9">
-                        国境を超えた対話
+                        立命館慶祥がお届けする、全く新しいイベントのカタチ
                     </p>
 
                     <p className="text-base md:text-xl text-center leading-relaxed mb-9">
-                        知の冒険
+                        どうぞお楽しみください
                     </p>
-                    <p className="text-base md:text-xl text-center leading-relaxed mb-20">
-                        感性の爆発...
+                    <p className="text-base md:text-xl text-center leading-relaxed mb-35">
                     </p>
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 1.8, ease: "easeOut", delay: 0.6 }}
-                    className="w-full break-keep word-break-keep"
+                    transition={{ duration: 1.8, ease: "easeOut", delay: 0.8 }}
+                    className="flex justify-center mt-8 pb-20"
                 >
-                    <p className="text-base md:text-xl text-center leading-relaxed mb-9">
-                        完成された未来図はまだありません。しかしここには、
-                    </p>
-
-                    <p className="text-base md:text-xl text-center leading-relaxed mb-9">
-                        未来を創るための「種」が無限に撒かれています。
-                    </p>
-                    <p className="text-base md:text-xl text-center leading-relaxed mb-9">
-                    </p>
+                    <Link
+                        href="/application"
+                        className="bg-white text-black px-8 py-4 rounded-full font-bold text-lg md:text-xl hover:bg-gray-200 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transform hover:scale-105"
+                    >
+                        公式アプリをインストール
+                    </Link>
                 </motion.div>
 
             </motion.div>
