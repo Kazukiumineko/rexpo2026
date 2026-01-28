@@ -16,7 +16,7 @@ export const sponsors: Sponsor[] = [
     },
     {
         name: "株式会社VOREAS（ヴォレアス）",
-        logo: "/support/resize_Voreas.jpeg",
+        logo: "/support/resize_voreas.jpeg",
         url: "https://voreas.co.jp/",
     },
     {
