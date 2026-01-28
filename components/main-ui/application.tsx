@@ -11,7 +11,7 @@ export default function Application() {
         <section className="relative w-full bg-[#f1f1f1] flex flex-col">
 
             {/* --- 画像エリア --- */}
-            <div className="relative w-full h-[75vh] md:h-[65vh] lg:h-[90vh] overflow-hidden bg-gray-900">
+            <div className="relative w-full h-[75vh] md:h-[65vh] lg:h-[100vh] overflow-hidden bg-gray-900">
                 <img
                     src="/application/application-header.JPG"
                     alt="Application Header"
@@ -65,7 +65,7 @@ export default function Application() {
                     >
                         <Link
                             href="/application"
-                            className="inline-flex items-center justify-center px-8 py-3 md:px-16 md:py-4 border border-white text-white text-base md:text-xl font-bold tracking-widest rounded-full hover:bg-white hover:text-[#092040] hover:border-[#092040] transition-colors duration-300"
+                            className="inline-flex items-center justify-center px-8 py-3 md:px-16 md:py-4 border border-white text-white text-base md:text-xl font-bold tracking-widest rounded-full hover:bg-white hover:text-[#092040] hover:border-transparent transition-colors duration-300"
                         >
                             今すぐアプリをインストール
                         </Link>
