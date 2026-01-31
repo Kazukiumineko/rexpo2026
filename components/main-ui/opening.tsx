@@ -55,7 +55,7 @@ export default function Opening({ isLoaded }: OpeningProps) {
                                 priority
                             />
                         </div>
-                        <p className="text-sm font-medium tracking-widest text-gray-600 font-kaku pl-2">
+                        <p className="text-base font-bold tracking-widest text-gray-600 font-kaku pl-2">
                             Loading...
                         </p>
                     </motion.div>
