@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import Header from "@/components/main-ui/header";
 import FooterBar from "@/components/main-ui/footer-bar";
 import Top from "@/components/location-ui/top";
@@ -8,8 +5,6 @@ import Info from "@/components/location-ui/info";
 import Access from "@/components/location-ui/access";
 
 export default function LocationPage() {
-    const [showHeader] = useState(true);
-
     return (
         /* 【修正のポイント】
            1. flex flex-col: 子要素を縦に並べる
@@ -19,7 +14,7 @@ export default function LocationPage() {
         <main className="flex flex-col min-h-screen w-full bg-white overflow-hidden">
 
             {/* ヘッダー */}
-            <Header isVisible={showHeader} invert />
+            <Header isVisible={true} invert />
 
             {/* 【重要：コンテンツエリア】
                 flex-grow をつけることで、中身（TopやInfo）が少なくても、

@@ -1,4 +1,4 @@
-"use client";
+
 
 import { sponsors } from "./sponsors";
 import SponsorCard from "./sponsor-card";

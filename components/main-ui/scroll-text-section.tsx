@@ -1,37 +1,16 @@
-"use client";
-
-import { useRef, RefObject } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Link from "next/link";
+import { FadeIn } from "@/components/shared/anim-wrapper";
 
-interface ScrollTextSectionProps {
-    headerRef: RefObject<HTMLHeadingElement | null>;
-}
-
-export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps) {
-    const textSectionRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: textSectionRef,
-        offset: ["start end", "end start"],
-    });
-    const yRange = useTransform(scrollYProgress, [0, 1], [50, -50]);
-    const smoothY = useSpring(yRange, { stiffness: 20, damping: 10 });
-
+export default function ScrollTextSection() {
     return (
         /* px-2を削除しw-fullを徹底。はみ出し防止にoverflow-hiddenを追加 */
         <div className="w-full max-w-full mx-auto overflow-hidden">
-            <motion.div
-                ref={textSectionRef}
-                className="w-full mx-auto"
-                style={{ y: smoothY }}
-            >
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 1.8, ease: "easeOut" }}
+            <div className="w-full mx-auto">
+                <FadeIn
+                    duration={1.8}
+                    viewportAmount={0.3}
                 >
-                    <h2 ref={headerRef}
+                    <h2
                         className="text-4xl md:text-5xl lg:text-6xl font-bold mb-10 text-center text-white break-words px-2">
                         教室を飛び出せ
                     </h2>
@@ -39,13 +18,12 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-32 text-center text-white">
                         慶祥生の本気
                     </h2>
-                </motion.div>
+                </FadeIn>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 1.8, ease: "easeOut", delay: 0.6 }}
+                <FadeIn
+                    duration={1.8}
+                    viewportAmount={0.3}
+                    delay={0.6}
                     /* break-keepを削除し、naturalな改行を許可。px-4で余白確保 */
                     className="w-full px-4 break-words"
                 >
@@ -59,13 +37,12 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                     <p className="text-base md:text-xl text-center leading-relaxed mb-20">
                         生徒の「やりたい！」を最大限尊重した、<br className="md:hidden" />多様な企画が展開されます。
                     </p>
-                </motion.div>
+                </FadeIn>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 1.8, ease: "easeOut", delay: 0.6 }}
+                <FadeIn
+                    duration={1.8}
+                    viewportAmount={0.3}
+                    delay={0.6}
                     className="w-full px-4 break-words"
                 >
                     <p className="text-base md:text-xl text-center leading-relaxed mb-9">
@@ -77,13 +54,12 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                     </p>
                     <p className="text-base md:text-xl text-center leading-relaxed mb-35">
                     </p>
-                </motion.div>
+                </FadeIn>
 
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 1.8, ease: "easeOut", delay: 0.8 }}
+                <FadeIn
+                    duration={1.8}
+                    viewportAmount={0.3}
+                    delay={0.8}
                     className="flex justify-center mt-8 pb-4"
                 >
                     <Link
@@ -92,9 +68,9 @@ export default function ScrollTextSection({ headerRef }: ScrollTextSectionProps)
                     >
                         公式アプリをインストール
                     </Link>
-                </motion.div>
+                </FadeIn>
 
-            </motion.div>
+            </div>
         </div>
     );
 }

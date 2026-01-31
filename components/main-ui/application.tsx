@@ -1,9 +1,6 @@
-"use client";
-
-
 import LazyImage from "@/components/shared/lazy-image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/shared/anim-wrapper";
 
 
 export default function Application() {
@@ -12,22 +9,26 @@ export default function Application() {
 
             {/* --- 画像エリア --- */}
             <div className="relative w-full h-[75vh] md:h-[65vh] lg:h-[100vh] overflow-hidden bg-gray-900">
-                <img
+                <LazyImage
                     src="/application/application-header.JPG"
                     alt="Application Header"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    fill
+                    className="object-cover brightness-50" // オーバーレイの代わりにbrightness調整の方がパフォーマンス良いが、既存に合わせてオーバーレイdivを残すか、LazyImageで完結させるか。既存コードはオーバーレイdivがある。
+                // 既存: <div className="absolute inset-0 bg-black/60" />
+                // 画像のbrightness調整ではなく、別途オーバーレイdivがある方が調整しやすい場合もあるので、画像はそのままfillで、オーバーレイも残す。
                 />
-                <div className="absolute inset-0 bg-black/60" />
+                {/* LazyImageはfillの場合absoluteになる。既存のimgもabsoluteだった。 */}
+
+                {/* 明示的に暗くするオーバーレイ */}
+                <div className="absolute inset-0 bg-black/60 z-0" />
 
                 {/* 全体コンテンツコンテナ */}
                 <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6">
 
                     {/* 1. APPLICATION (最上部センター) */}
-                    <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
+                    <FadeIn
+                        direction="down"
+                        duration={0.8}
                         className="text-center"
                     >
                         <h2 className="font-oswald text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tight text-white leading-none">
@@ -38,14 +39,13 @@ export default function Application() {
                         <p className="mt-8 md:mt-10 font-jp text-2xl md:text-4xl font-bold tracking-tight text-white">
                             R-EXPOをもっと楽しむ
                         </p>
-                    </motion.div>
+                    </FadeIn>
 
                     {/* 3. 説明文 (中央・3行・細字) */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1.2, delay: 0.4 }}
-                        viewport={{ once: true }}
+                    <FadeIn
+                        direction="none"
+                        duration={1.2}
+                        delay={0.4}
                         className="mt-16 md:mt-24 text-center max-w-2xl"
                     >
                         <div className="text-white text-xs md:text-sm lg:text-base font-extralight leading-[2.2] tracking-[0.15em]">
@@ -53,14 +53,13 @@ export default function Application() {
                             <p>気になる企画をブックマークし、<br className="md:hidden" />当日の行動計画を立てよう。</p>
                             <p>慶祥生が創り上げる「新しいイベント」を、<br className="md:hidden" />このアプリと共に歩んでください。</p>
                         </div>
-                    </motion.div>
+                    </FadeIn>
 
                     {/* 【追加】5. ViewMore ボタン */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.6, delay: 0.6 }}
-                        viewport={{ once: true }}
+                    <FadeIn
+                        direction="none" // scaleエフェクトの代わりに単純なフェード
+                        duration={0.6}
+                        delay={0.6}
                         className="mt-16 md:mt-20"
                     >
                         <Link
@@ -69,7 +68,7 @@ export default function Application() {
                         >
                             今すぐアプリをインストール
                         </Link>
-                    </motion.div>
+                    </FadeIn>
 
                 </div>
             </div>

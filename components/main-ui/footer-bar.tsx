@@ -1,8 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/shared/anim-wrapper";
 
 interface FooterBarProps {
     variant?: "default" | "black";
@@ -33,11 +31,8 @@ export default function FooterBar({ variant = "default" }: FooterBarProps) {
         <footer className="w-full flex flex-col items-center relative z-[999]">
 
             {/* Content Wrapper */}
-            <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
+            <FadeIn
+                duration={0.8}
                 className={`w-full ${bgClass} pt-28`}
             >
                 {/* --- ① Moved from EventInfo: Text Content Area --- */}
@@ -87,7 +82,7 @@ export default function FooterBar({ variant = "default" }: FooterBarProps) {
 
 
 
-            </motion.div>
+            </FadeIn>
 
 
             {/* --- ③ 既存の黒いバーやっほー --- */}

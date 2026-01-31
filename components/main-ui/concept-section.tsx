@@ -1,46 +1,19 @@
-"use client";
-
-import * as React from "react";
-
-
-import { motion } from "framer-motion";
-import LazyImage from "@/components/shared/lazy-image";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-} from "@/components/main-ui/carousel";
-import { useCarouselAutoPlay } from "@/hooks/useCarouselAutoPlay";
-import { useEventConceptAnimation } from "@/hooks/useEventConceptAnimation";
+import { FadeIn } from "@/components/shared/anim-wrapper";
+import ConceptCarousel from "./concept-carousel";
 
 export default function ConceptSection() {
-    const plugin = useCarouselAutoPlay();
-    const { sectionRef, isInView, containerVariants, itemVariants } = useEventConceptAnimation();
-
-    const carouselImages = [
-        "/carouselpic/Carousel1.jpg",
-        "/carouselpic/Carousel2.jpg",
-        "/carouselpic/Carousel3.jpg",
-        "/carouselpic/Carousel4.jpg",
-    ];
-
     return (
         <section className="relative w-full pt-4 pb-32 bg-transparent text-white overflow-hidden">
 
             <div className="absolute inset-0 -z-10 opacity-40 "></div>
 
-            <div ref={sectionRef} className="w-full max-w-[1600px] mx-auto px-6 lg:px-20">
+            <div className="w-full max-w-[1600px] mx-auto px-6 lg:px-20">
 
-                <motion.div
-                    className="flex flex-col gap-8 md:gap-16 lg:gap-24 items-center"
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate={isInView ? "visible" : "hidden"}
-                >
+                <div className="flex flex-col gap-8 md:gap-16 lg:gap-24 items-center">
 
-                    <motion.div
+                    <FadeIn
+                        direction="down"
                         className="flex flex-col items-center space-y-8"
-                        variants={itemVariants}
                     >
 
                         <h2 className="font-oswald text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tight whitespace-nowrap">
@@ -66,47 +39,18 @@ export default function ConceptSection() {
                                     </svg>
                                 </a>
                             </h2>
-
-
-
                         </div>
-                    </motion.div>
+                    </FadeIn>
 
 
-                    <motion.div
+                    <FadeIn
+                        delay={0.2}
                         className="w-full flex justify-center"
-                        variants={itemVariants}
                     >
-                        <Carousel
-                            plugins={[plugin.current]}
-                            className="w-full"
-                            opts={{
-                                align: "center",
-                                loop: true,
-                            }}
-                        >
-                            <CarouselContent>
-                                {carouselImages.map((src, index) => (
-                                    <CarouselItem key={index} className="basis-full lg:basis-[28%]">
-                                        <div className="p-1">
-                                            <div className="relative aspect-[2/1] w-full overflow-hidden rounded-2xl z-40 shadow-2xl border border-white/10">
-                                                <a href="/event-concept">
-                                                    <LazyImage
-                                                        src={src}
-                                                        alt={`Event Photo ${index + 1}`}
-                                                        fill
-                                                        className="object-cover transition-transform duration-500 hover:scale-110"
-                                                    />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </CarouselItem>
-                                ))}
-                            </CarouselContent>
-                        </Carousel>
-                    </motion.div>
+                        <ConceptCarousel />
+                    </FadeIn>
 
-                </motion.div>
+                </div>
             </div>
         </section>
     );

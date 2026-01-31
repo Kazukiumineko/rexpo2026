@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/shared/anim-wrapper";
 
 export default function Topic() {
     // 【調整箇所②】01~04の各セクション間の距離
@@ -49,12 +47,11 @@ export default function Topic() {
 
                 <div className={`w-full flex flex-col ${sectionGap}`}>
                     {sections.map((item, idx) => (
-                        <motion.div
+                        <FadeIn
                             key={item.num}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            viewport={{ once: true }}
+                            duration={0.8}
+                            delay={0.2}
+                            viewportAmount={0.2}
                             /* items-stretch で左右のブロックの高さを揃える */
                             className={`flex flex-row items-stretch gap-6 md:gap-10 w-full max-w-2xl md:max-w-4xl ${idx % 2 === 0 ? "md:self-start" : "md:self-end"
                                 }`}
@@ -75,7 +72,7 @@ export default function Topic() {
                                     {item.desc}
                                 </p>
                             </div>
-                        </motion.div>
+                        </FadeIn>
                     ))}
                 </div>
             </div>

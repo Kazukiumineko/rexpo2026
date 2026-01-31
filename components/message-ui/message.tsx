@@ -1,38 +1,10 @@
-"use client";
-
-import { motion, Variants } from "framer-motion";
 import LazyImage from "@/components/shared/lazy-image";
+import { FadeIn } from "@/components/shared/anim-wrapper";
 
 export default function Message() {
-    // アニメーション設定
-    const containerVariants: Variants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.3, // 子要素を順番に表示
-            },
-        },
-    };
-
-    const itemVariants: Variants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.8, ease: "easeOut" },
-        },
-    };
-
     return (
         <section className="w-full bg-[#f1f1f1] text-[#092040] py-24 md:py-32 px-6 md:px-20 lg:px-32 overflow-hidden">
-            <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                className="max-w-[1600px] mx-auto"
-            >
+            <div className="max-w-[1600px] mx-auto">
                 {/* --- ページタイトル --- */}
 
 
@@ -45,7 +17,7 @@ export default function Message() {
 
                         {/* メッセージエリア (order-2: スマホでは写真の下) */}
                         <div className="order-2 lg:order-1">
-                            <motion.div variants={itemVariants} className="space-y-10">
+                            <FadeIn className="space-y-10">
                                 <div>
                                     <p className="text-gray-600 text-sm md:text-base tracking-wider font-light mb-1">
                                         立命館慶祥中学校・高等学校 学校長
@@ -78,14 +50,14 @@ export default function Message() {
 
                                     </p>
                                 </div>
-                            </motion.div>
+                            </FadeIn>
                         </div>
 
                         {/* 写真エリア (order-1: スマホでは上) */}
                         {/* 【修正点】mb-10 を削除し、下の文章との余白を削減しました */}
                         <div className="order-1 lg:order-2 lg:sticky lg:top-24 h-fit lg:mt-20 lg:mb-0">
-                            <motion.div
-                                variants={itemVariants}
+                            <FadeIn
+                                delay={0.2}
                                 className="relative aspect-[3/2] w-full rounded-sm overflow-hidden border border-black/10 bg-gray-100"
                             >
                                 <LazyImage
@@ -94,7 +66,7 @@ export default function Message() {
                                     fill
                                     className="object-cover hover:scale-105 transition-transform duration-700"
                                 />
-                            </motion.div>
+                            </FadeIn>
                         </div>
                     </div>
 
@@ -104,7 +76,7 @@ export default function Message() {
 
                         {/* メッセージエリア */}
                         <div className="order-2 lg:order-1">
-                            <motion.div variants={itemVariants} className="space-y-10">
+                            <FadeIn className="space-y-10">
                                 <div>
                                     <p className="text-gray-600 text-sm md:text-base tracking-wider font-light mb-1">
                                         行事改革実行委員会 委員長
@@ -124,14 +96,14 @@ export default function Message() {
                                         R-EXPOは、学校が用意したプログラムの成果を見せ合うだけの発表会ではありません。「個性の祭典」として生徒一人ひとりの色を最大限輝かせるためのイベントです。R-EXPOが「世界に通用する18歳」への一つの扉となり、自分の可能性を広げるための一歩となるようなイベントとなることを、心から願っています。
                                     </p>
                                 </div>
-                            </motion.div>
+                            </FadeIn>
                         </div>
 
                         {/* 写真エリア */}
                         {/* 【修正点】mb-10 を削除 */}
                         <div className="order-1 lg:order-2 lg:sticky lg:top-24 h-fit lg:mt-20 lg:mb-0">
-                            <motion.div
-                                variants={itemVariants}
+                            <FadeIn
+                                delay={0.2}
                                 className="relative aspect-[3/2] w-full rounded-sm overflow-hidden border border-black/10 bg-gray-100"
                             >
                                 <LazyImage
@@ -140,12 +112,12 @@ export default function Message() {
                                     fill
                                     className="object-cover hover:scale-105 transition-transform duration-700"
                                 />
-                            </motion.div>
+                            </FadeIn>
                         </div>
                     </div>
 
                 </div>
-            </motion.div>
+            </div>
         </section>
     );
 }

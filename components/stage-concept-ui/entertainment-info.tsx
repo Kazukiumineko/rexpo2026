@@ -1,4 +1,5 @@
 import StageInfoList from "@/components/shared/stage-info-list";
+import StageCarouselSection from "@/components/shared/stage-carousel-section";
 
 // 企画データ
 const projects = [
@@ -25,5 +26,16 @@ const projects = [
 ];
 
 export default function EntertainmentInfo() {
-    return <StageInfoList projects={projects} />;
+    return (
+        <>
+            <StageCarouselSection
+                id="entertainment"
+                title="ENTERTAINMENT STAGE"
+                subtitle="感性が共鳴する、創造の舞台"
+                description="バンド、ダンス、演劇などのステージで、生徒たちの情熱と創造性が爆発します。ステージ上のパフォーマンスだけでなく、美術作品展示やお茶会、E-Sports大会など、五感で楽しめる多彩なプログラムが会場を彩ります。"
+                image="/stage-concept/global1.jpg"
+            />
+            <StageInfoList projects={projects} />
+        </>
+    );
 }

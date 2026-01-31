@@ -1,5 +1,5 @@
 import SectionTop from "@/components/shared/section-top";
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/shared/anim-wrapper";
 
 export default function MessageTop() {
     return (
@@ -13,22 +13,22 @@ export default function MessageTop() {
         >
             <div className="w-full max-w-[1600px] mx-auto">
                 <div className="w-min md:w-full">
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                        className="relative z-10 text-[#092040] text-3xl md:text-5xl lg:text-6xl font-bold tracking-widest leading-none whitespace-nowrap md:whitespace-normal"
+                    <FadeIn
+                        duration={0.8}
+                        delay={0.2}
                     >
-                        開祭にあたって
-                    </motion.p>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                        className="relative z-10 text-gray-700 text-sm md:text-base mt-4 md:mt-6 font-medium leading-relaxed max-w-2xl"
+                        <p className="relative z-10 text-[#092040] text-3xl md:text-5xl lg:text-6xl font-bold tracking-widest leading-none whitespace-nowrap md:whitespace-normal">
+                            開祭にあたって
+                        </p>
+                    </FadeIn>
+                    <FadeIn
+                        duration={0.8}
+                        delay={0.4}
                     >
-                        R-EXPO2026の開祭にあたり、代表よりご挨拶申し上げます
-                    </motion.p>
+                        <p className="relative z-10 text-gray-700 text-sm md:text-base mt-4 md:mt-6 font-medium leading-relaxed max-w-2xl">
+                            R-EXPO2026の開祭にあたり、代表よりご挨拶申し上げます
+                        </p>
+                    </FadeIn>
                 </div>
             </div>
         </SectionTop>

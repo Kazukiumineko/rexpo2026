@@ -1,18 +1,4 @@
-"use client";
-
-import Link from "next/link";
-import { motion, Variants } from "framer-motion";
-import EntryTitle from "./title";
-
-// セクションごとのアニメーション設定
-const sectionVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.8, ease: "easeOut" }
-    }
-};
+import { FadeIn } from "@/components/shared/anim-wrapper";
 
 export default function EntryMain() {
     return (
@@ -27,11 +13,9 @@ export default function EntryMain() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-32 md:gap-20 mb-4">
 
                     {/* お申込みについて */}
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={sectionVariants}
+                    <FadeIn
+                        viewportAmount={0.2}
+                        duration={0.8}
                     >
                         <h4 className="text-xl font-bold mb-6 flex items-center text-black">
                             <span className="w-2 h-8 bg-[#092040] mr-3"></span>
@@ -55,14 +39,13 @@ export default function EntryMain() {
                                 <p>当日、会場での申込みも可能ですが、混雑緩和のため事前登録をおすすめいたします。</p>
                             </div>
                         </div>
-                    </motion.div>
+                    </FadeIn>
 
                     {/* ご来場の方へのお願い */}
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={sectionVariants}
+                    <FadeIn
+                        viewportAmount={0.2}
+                        duration={0.8}
+                        delay={0.2} // 少し遅らせる動きも再現可能か確認（FadeInの仕様によるが、通常はdelay propがあれば動作する）
                     >
                         <h4 className="text-xl font-bold mb-6 flex items-center text-black">
                             <span className="w-2 h-8 bg-[#092040] mr-3"></span>
@@ -84,7 +67,7 @@ export default function EntryMain() {
                                 </div>
                             </div>
                         </div>
-                    </motion.div>
+                    </FadeIn>
                 </div>
             </div>
         </section>

@@ -1,8 +1,6 @@
-"use client";
-
 import LazyImage from "@/components/shared/lazy-image";
-import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { FadeIn } from "@/components/shared/anim-wrapper";
+import { ReactNode, CSSProperties } from "react";
 
 interface SectionTopProps {
     imageSrc: string;
@@ -13,11 +11,15 @@ interface SectionTopProps {
      * 位置(top/bottom)や z-index を指定する
      */
     backTitleClassName?: string;
+    backTitleDirection?: "up" | "down" | "left" | "right";
+    backTitleStyle?: CSSProperties;
+    backTitleViewportAmount?: number;
     /**
      * テキストエリアを含むコンテナのクラス
      * padding, background, z-index, overflow などを指定する
+     * 指定がない場合は下部エリアを描画しない
      */
-    containerClassName: string;
+    containerClassName?: string;
     /**
      * 画像のコンテナのクラス (オプション)
      * 高さなどを指定する。デフォルトは h-[55vh]
@@ -29,7 +31,12 @@ interface SectionTopProps {
      */
     imageOverlay?: ReactNode;
     imageClassName?: string;
-    children: ReactNode;
+    /**
+     * 絶対配置で自由な場所に置くコンテンツ (LocationTopなどのポップアップ用)
+     */
+    absoluteContent?: ReactNode;
+    children?: ReactNode;
+    className?: string;
 }
 
 export default function SectionTop({
@@ -37,14 +44,19 @@ export default function SectionTop({
     imageAlt,
     backTitle,
     backTitleClassName,
+    backTitleDirection = "left",
+    backTitleStyle,
+    backTitleViewportAmount,
     containerClassName,
     imageContainerClassName,
     imageOverlay,
     imageClassName,
-    children
+    absoluteContent,
+    children,
+    className
 }: SectionTopProps) {
     return (
-        <section className="relative w-full bg-[#f1f1f1] isolate">
+        <section className={`relative w-full bg-[#f1f1f1] isolate ${className ?? ""}`}>
             {/* 1. 画像エリア */}
             <div className={`relative w-full z-0 ${imageContainerClassName ?? "h-[55vh]"}`}>
                 <LazyImage
@@ -57,27 +69,33 @@ export default function SectionTop({
                 {imageOverlay}
             </div>
 
-            {/* 2. 下部エリア (テキスト用) */}
-            <div className={containerClassName}>
-                <div className="w-full max-w-[1600px] mx-auto pointer-events-none">
-                    <div className="w-min md:w-full pointer-events-auto">
-                        {children}
+            {/* 2. 下部エリア (テキスト用) - containerClassNameがある場合のみ表示 */}
+            {containerClassName && (
+                <div className={containerClassName}>
+                    <div className="w-full max-w-[1600px] mx-auto pointer-events-none">
+                        <div className="w-min md:w-full pointer-events-auto">
+                            {children}
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
 
             {/* 3. 背景タイトル (縦書き) */}
             {backTitle && (
-                <motion.h1
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className={backTitleClassName}
-                    style={{ writingMode: "vertical-rl" }}
-                >
-                    {backTitle}
-                </motion.h1>
+                <div className={`pointer-events-none ${backTitleClassName}`}>
+                    <FadeIn
+                        duration={0.8}
+                        direction={backTitleDirection}
+                        viewportAmount={backTitleViewportAmount}
+                        style={{ writingMode: "vertical-rl", ...backTitleStyle }}
+                    >
+                        <h1>{backTitle}</h1>
+                    </FadeIn>
+                </div>
             )}
+
+            {/* 4. 絶対配置コンテンツ */}
+            {absoluteContent}
         </section>
     );
 }

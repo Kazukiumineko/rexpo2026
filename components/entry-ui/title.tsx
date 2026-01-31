@@ -1,42 +1,25 @@
-"use client";
-
-
 import LazyImage from "@/components/shared/lazy-image";
 import Link from "next/link";
-import { motion, Variants } from "framer-motion";
-
-// セクションごとのアニメーション設定
-const sectionVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.8, ease: "easeOut" }
-    }
-};
+import { FadeIn } from "@/components/shared/anim-wrapper";
 
 export default function EntryTitle() {
     return (
         <section className="w-full bg-[#f1f1f1] px-6 md:px-20 lg:px-32">
             <div className="w-full max-w-[1600px] mx-auto">
                 {/* 1. イントロダクション */}
-                <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    variants={sectionVariants}
+                <FadeIn
+                    viewportAmount={0.2}
+                    duration={0.8}
                     className="pt-16 pb-8 md:pt-24 md:pb-12 text-center md:text-left"
                 >
-
-                </motion.div>
+                    <></>
+                </FadeIn>
 
 
                 {/* 2. 開催概要 */}
-                <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    variants={sectionVariants}
+                <FadeIn
+                    viewportAmount={0.2}
+                    duration={0.8}
                     className="mb-40 md:-mb-12"
                 >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
@@ -115,7 +98,7 @@ export default function EntryTitle() {
                             </div>
                         </div>
                     </div>
-                </motion.div>
+                </FadeIn>
             </div>
         </section>
     );

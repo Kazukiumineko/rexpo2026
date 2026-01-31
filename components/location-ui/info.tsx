@@ -1,18 +1,7 @@
-"use client";
-
-
-import LazyImage from "@/components/shared/lazy-image";
-import { motion } from "framer-motion";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-} from "@/components/main-ui/carousel";
-import { useCarouselAutoPlay } from "@/hooks/useCarouselAutoPlay";
+import { FadeIn } from "@/components/shared/anim-wrapper";
+import AutoPlayCarousel from "@/components/shared/auto-play-carousel";
 
 export default function LocationInfo() {
-    const plugin = useCarouselAutoPlay();
-
     const locationImages = [1, 2, 3, 4, 5, 6, 7].map(
         (num) => `/location/convention${num}.jpg`
     );
@@ -28,23 +17,20 @@ export default function LocationInfo() {
             {/* テキストエリア（親のPaddingに従うため、個別のPaddingは削除） */}
             <div className="w-full max-w-4xl mb-24">
                 {/* 会場名 */}
-                <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1 }}
-                    viewport={{ once: true }}
+                <FadeIn
+                    direction="right"
+                    duration={1}
                 >
                     <h2 className="text-2xl sm:text-3xl md:text-6xl lg:text-7xl font-bold mb-8 tracking-tighter text-[#092040] whitespace-nowrap">
                         札幌コンベンションセンター
                     </h2>
-                </motion.div>
+                </FadeIn>
 
                 {/* 説明文 */}
-                <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1, delay: 0.3 }}
-                    viewport={{ once: true }}
+                <FadeIn
+                    direction="right"
+                    duration={1}
+                    delay={0.3}
                     className="space-y-6 text-sm md:text-base lg:text-lg font-light leading-relaxed tracking-widest text-gray-700 max-w-2xl"
                 >
                     <p>
@@ -53,48 +39,18 @@ export default function LocationInfo() {
                     <p>
                         地下鉄東西線 東札幌駅から徒歩圏内という好立地にあり、充実した設備が生徒たちの熱量を最大限に引き出します。アカデミックな議論から熱狂のパフォーマンスまで、あらゆる分野の”本気”を受け止めるこの場所で、かつてない体験をお届けします。
                     </p>
-                </motion.div>
+                </FadeIn>
             </div>
 
             {/* カルーセルエリア */}
-            <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.5 }}
-                viewport={{ once: true }}
+            <FadeIn
+                direction="up"
+                duration={1}
+                delay={0.5}
                 className="w-full"
             >
-                <Carousel
-                    plugins={[plugin.current]}
-                    className="w-full"
-                    opts={{
-                        align: "start",
-                        loop: true,
-                    }}
-                >
-                    <CarouselContent className="-ml-2 md:-ml-4">
-                        {locationImages.map((src, index) => (
-                            /* basis-full      : スマホで1枚表示
-                               md:basis-1/2    : タブレットで2枚
-                               lg:basis-1/3    : PCで3枚表示（適宜変更可能）
-                            */
-                            <CarouselItem
-                                key={index}
-                                className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
-                            >
-                                <div className="relative aspect-video w-full overflow-hidden bg-gray-100 rounded-xl">
-                                    <LazyImage
-                                        src={src}
-                                        alt={`Sapporo Convention Center ${index + 1}`}
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                </Carousel>
-            </motion.div>
+                <AutoPlayCarousel images={locationImages} />
+            </FadeIn>
         </section>
     );
 }

@@ -1,25 +1,15 @@
-"use client";
-
-import { useState } from "react";
 import Header from "@/components/main-ui/header";
 import FooterBar from "@/components/main-ui/footer-bar";
 import StageTop from "@/components/stage-concept-ui/top";
-import GlobalStage from "@/components/stage-concept-ui/global-stage";
 import GlobalInfo from "@/components/stage-concept-ui/global-info";
-import AcademicStage from "@/components/stage-concept-ui/academic-stage";
 import AcademicInfo from "@/components/stage-concept-ui/academic-info";
-import EntertainmentStage from "@/components/stage-concept-ui/entertainment-stage";
 import EntertainmentInfo from "@/components/stage-concept-ui/entertainment-info";
-import CollabStage from "@/components/stage-concept-ui/collab-stage";
 import CollabInfo from "@/components/stage-concept-ui/collab-info";
 import Jump from "@/components/stage-concept-ui/jump";
 import ComingSoonPopup from "@/components/shared/coming-soon-popup";
 
 
 export default function StageConceptPage() {
-    // ヘッダーを常に表示
-    const [showHeader] = useState(true);
-
     return (
         <main className="relative w-full min-h-screen text-white">
             <ComingSoonPopup />
@@ -38,22 +28,18 @@ export default function StageConceptPage() {
 
             {/* コンテンツラッパー */}
             <div className="relative z-10 w-full flex flex-col min-h-screen">
-                <Header isVisible={showHeader} />
+                <Header isVisible={true} />
 
                 {/* flex-growでフッターを下に押し下げる */}
                 <div className="flex-grow pb-20">
                     <StageTop />
                     <div className="h-32" />
-                    <GlobalStage />
                     <GlobalInfo />
                     <div className="h-32" />
-                    <AcademicStage />
                     <AcademicInfo />
                     <div className="h-32" />
-                    <EntertainmentStage />
                     <EntertainmentInfo />
                     <div className="h-32" />
-                    <CollabStage />
                     <CollabInfo />
                     <Jump />
                 </div>

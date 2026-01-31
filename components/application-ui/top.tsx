@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import LazyImage from "@/components/shared/lazy-image";
+import { FadeIn } from "@/components/shared/anim-wrapper";
 
 // 画像データの配列
 const appImages = [
@@ -13,7 +13,6 @@ export default function ApplicationTop() {
     return (
         <>
             <section className="relative w-full h-dvh overflow-hidden bg-[#f1f1f1]">
-
 
                 {/* 1. 背景画像 */}
                 <img
@@ -31,24 +30,18 @@ export default function ApplicationTop() {
                     {/* pb-32だと画像と離れすぎる可能性があるため、少し調整しました */}
 
                     {/* メインタイトル */}
-                    <motion.h1
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                        className="text-[#092040] font-bold text-3xl md:text-6xl lg:text-7xl tracking-widest drop-shadow-sm font-jp"
-                    >
-                        R-EXPO公式アプリ
-                    </motion.h1>
+                    <FadeIn delay={0.2} direction="up">
+                        <h1 className="text-[#092040] font-bold text-3xl md:text-6xl lg:text-7xl tracking-widest drop-shadow-sm font-jp">
+                            R-EXPO公式アプリ
+                        </h1>
+                    </FadeIn>
 
                     {/* サブタイトル */}
-                    <motion.p
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                        className="mt-6 text-[#092040] md:text-[#092040] text-lg md:text-2xl font-medium tracking-wider drop-shadow-sm font-jp"
-                    >
-                        すべての企画を、あなたの掌に
-                    </motion.p>
+                    <FadeIn delay={0.4} direction="up">
+                        <p className="mt-6 text-[#092040] md:text-[#092040] text-lg md:text-2xl font-medium tracking-wider drop-shadow-sm font-jp">
+                            すべての企画を、あなたの掌に
+                        </p>
+                    </FadeIn>
 
                 </div>
             </section>
@@ -63,16 +56,14 @@ export default function ApplicationTop() {
                     {/* md:grid-cols-4: PC(タブレット以上)で4列 */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
                         {appImages.map((src, index) => (
-                            <motion.div
+                            <FadeIn
                                 key={index}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "-50px" }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }} // 順番にふわっと表示
+                                delay={index * 0.1}
+                                viewportAmount={0.2}
                                 className="relative w-full"
                             >
                                 {/* 画像コンテナ: スマホ画面らしい縦長比率を維持しても良いですし、autoでもOK */}
-                                <div className="relative w-full h-auto aspect-[9/19] md:aspect-[9/18] overflow-hidden rounded-2xl shadow-xl border border-gray-100">
+                                <div className="relative w-full h-auto aspect-[9/19] md:aspect-[9/18] overflow-hidden rounded-2xl shadow-xl border border-gray-100 transition-transform duration-300 hover:-translate-y-2">
                                     <LazyImage
                                         src={src}
                                         alt={`Application Screen ${index + 1}`}
@@ -80,7 +71,7 @@ export default function ApplicationTop() {
                                         className="object-cover"
                                     />
                                 </div>
-                            </motion.div>
+                            </FadeIn>
                         ))}
                     </div>
                 </div>

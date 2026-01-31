@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/shared/anim-wrapper";
 
 export default function Access() {
     return (
@@ -9,11 +7,9 @@ export default function Access() {
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-16 items-start">
 
                 {/* --- 左側: アクセス情報 --- */}
-                <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
+                <FadeIn
+                    direction="right"
+                    duration={0.8}
                     className="flex flex-col space-y-8"
                 >
                     {/* タイトルエリア */}
@@ -70,14 +66,13 @@ export default function Access() {
                             Google Mapで見る
                         </a>
                     </div>
-                </motion.div>
+                </FadeIn>
 
                 {/* --- 右側: 地図 --- */}
-                <motion.div
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    viewport={{ once: true }}
+                <FadeIn
+                    direction="left"
+                    duration={0.8}
+                    delay={0.2}
                     className="relative w-full h-[400px] lg:h-[500px] rounded-sm overflow-hidden border border-black/10"
                 >
                     {/* 【修正】札幌コンベンションセンターを中心にした埋め込みURL */}
@@ -91,7 +86,7 @@ export default function Access() {
                         referrerPolicy="no-referrer-when-downgrade"
                         src="https://maps.google.com/maps?q=札幌コンベンションセンター&t=m&z=15&output=embed&iwloc=near"
                     ></iframe>
-                </motion.div>
+                </FadeIn>
 
             </div >
         </section >

@@ -8,7 +8,7 @@ import {
     Carousel,
     CarouselContent,
     CarouselItem,
-} from "@/components/main-ui/carousel";
+} from "@/components/shared/carousel";
 import { useCarouselAutoPlay } from "@/hooks/useCarouselAutoPlay";
 
 const IMAGES = [

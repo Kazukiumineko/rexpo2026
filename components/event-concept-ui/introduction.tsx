@@ -1,8 +1,5 @@
-"use client";
-
-
 import LazyImage from "@/components/shared/lazy-image";
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/shared/anim-wrapper";
 
 export default function Introduction() {
     return (
@@ -10,16 +7,18 @@ export default function Introduction() {
             <div className="absolute inset-0 z-[200] flex justify-center px-6 md:px-24 lg:px-32 pointer-events-none">
                 <div className="w-full max-w-4xl relative h-full">
 
+
+
                     <div className="absolute top-32 -left-2 md:-left-16 lg:-left-16">
-                        <motion.p
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: false }}
-                            transition={{ duration: 1.2, delay: 0.6 }}
-                            className="text-white/80 text-xs md:text-sm lg:text-base font-light tracking-[0.2em] [writing-mode:vertical-rl] rotate-180 uppercase drop-shadow-md"
+                        <FadeIn
+                            duration={1.2}
+                            delay={0.6}
+                            once={false}
                         >
-                            Discover Your Inner World
-                        </motion.p>
+                            <p className="text-white/80 text-xs md:text-sm lg:text-base font-light tracking-[0.2em] [writing-mode:vertical-rl] rotate-180 uppercase drop-shadow-md">
+                                Discover Your Inner World
+                            </p>
+                        </FadeIn>
                     </div>
 
                 </div>
@@ -36,25 +35,26 @@ export default function Introduction() {
                     "gap-10 md:gap-14"
                 }>
 
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false }}
-                        transition={{ duration: 0.8 }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-[0.2em]"
+                    <FadeIn
+                        duration={0.8}
+                        direction="up"
+                        once={false}
                     >
-                        まだ見ぬ
-                    </motion.h2>
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-[0.2em]">
+                            まだ見ぬ
+                        </h2>
+                    </FadeIn>
 
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-[0.2em]"
+                    <FadeIn
+                        duration={0.8}
+                        delay={0.2}
+                        direction="up"
+                        once={false}
                     >
-                        個性を
-                    </motion.h2>
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-[0.2em]">
+                            個性を
+                        </h2>
+                    </FadeIn>
 
                 </div>
             </div>
@@ -83,30 +83,30 @@ export default function Introduction() {
                     "pt-4 md:pt-8"
                 }>
                     <div className="max-w-4xl w-full flex flex-col items-start">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: false }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
+                        <FadeIn
+                            duration={0.8}
+                            delay={0.4}
+                            direction="up"
+                            once={false}
                             className="mt-0"
                         >
                             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-[0.2em] text-white pb-3 border-b-4 border-white inline-block">
                                 映し出せ。
                             </h2>
-                        </motion.div>
+                        </FadeIn>
                     </div>
                 </div>
 
                 <div className="absolute top-0 right-0 h-[130%] md:h-[140%] w-full flex items-center justify-end pr-4 md:pr-10 pointer-events-none">
-                    <motion.h1
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: false }}
-                        className="font-oswald text-white/30 text-5xl md:text-8xl lg:text-[10rem] font-bold tracking-normal drop-shadow-lg [writing-mode:vertical-rl] z-[100] translate-y-40 md:translate-y-52 lg:translate-y-32"
+                    <FadeIn
+                        duration={0.8}
+                        direction="right"
+                        once={false}
                     >
-                        INTRODUCTION
-                    </motion.h1>
+                        <h1 className="font-oswald text-white/30 text-5xl md:text-8xl lg:text-[10rem] font-bold tracking-normal drop-shadow-lg [writing-mode:vertical-rl] z-[100] translate-y-40 md:translate-y-52 lg:translate-y-32">
+                            INTRODUCTION
+                        </h1>
+                    </FadeIn>
                 </div>
 
             </div>

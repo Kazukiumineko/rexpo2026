@@ -59,7 +59,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className={`${zenKaku.variable} ${oswald.variable}`}>
-      <body className="font-sans">
+      <body className="font-sans" suppressHydrationWarning={true}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-85T7RJBRDM"
           strategy="afterInteractive"
