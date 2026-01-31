@@ -47,7 +47,7 @@ export default function Opening({ isLoaded }: OpeningProps) {
                     >
                         <div className="relative w-[100px] h-[100px]">
                             <Image
-                                src="/main/RmarkRED.png"
+                                src="/main/Loading.png"
                                 alt="Loading Logo"
                                 fill
                                 sizes="100px"
