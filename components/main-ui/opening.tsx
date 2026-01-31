@@ -45,9 +45,9 @@ export default function Opening({ isLoaded }: OpeningProps) {
                         transition={{ duration: 0.8 }}
                         className="flex flex-col items-center justify-center gap-6"
                     >
-                        <div className="relative w-[100px] h-[100px]">
+                        <div className="relative w-[150px] h-[150px]">
                             <Image
-                                src="/main/Loading.png"
+                                src="/main/Loading3.png"
                                 alt="Loading Logo"
                                 fill
                                 sizes="100px"
