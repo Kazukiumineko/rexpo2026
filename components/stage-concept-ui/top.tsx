@@ -5,11 +5,22 @@ export default function StageTop() {
     return (
         <section className="relative w-full h-dvh bg-black overflow-hidden">
             {/* 1. メイン背景画像：ソースを変更し、brightnessを下げて暗くする */}
+            {/* PC Image */}
             <LazyImage
                 src="/main/Satoryo1.png"
                 alt="Stage Concept Background"
                 fill
-                className="object-cover brightness-50" // ここで暗さを調整（50%）
+                containerClassName="hidden md:block" // PCのみ表示
+                className="object-cover brightness-50"
+                priority
+            />
+            {/* Mobile Image */}
+            <LazyImage
+                src="/mobile/Satoryo1_mobile.jpg"
+                alt="Stage Concept Background Mobile"
+                fill
+                containerClassName="block md:hidden" // Mobileのみ表示
+                className="object-cover brightness-50"
                 priority
             />
 

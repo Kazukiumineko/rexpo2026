@@ -59,10 +59,21 @@ export default function StageSection() {
         >
 
             <div className="absolute inset-0 -z-10">
+                {/* Desktop Image */}
                 <LazyImage
                     src="/main/Satoryo1.png"
                     alt="Stage Background"
                     fill
+                    containerClassName="hidden md:block"
+                    className="object-cover"
+                    style={{ objectPosition: "center" }}
+                />
+                {/* Mobile Image */}
+                <LazyImage
+                    src="/mobile/Satoryo1_mobile.jpg"
+                    alt="Stage Background Mobile"
+                    fill
+                    containerClassName="block md:hidden"
                     className="object-cover"
                     style={{ objectPosition: "center" }}
                 />

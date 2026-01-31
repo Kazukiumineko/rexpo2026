@@ -7,24 +7,14 @@ import EntertainmentInfo from "@/components/stage-concept-ui/entertainment-info"
 import CollabInfo from "@/components/stage-concept-ui/collab-info";
 import Jump from "@/components/stage-concept-ui/jump";
 import ComingSoonPopup from "@/components/shared/coming-soon-popup";
-
+import StageConceptBackground from "@/components/stage-concept-ui/background";
 
 export default function StageConceptPage() {
     return (
         <main className="relative w-full min-h-screen text-white">
             <ComingSoonPopup />
             {/* 固定背景画像 */}
-            <div className="fixed inset-0 z-0">
-                <div className="relative w-full h-full">
-                    <img
-                        src="/event-concept-page/Introduction.jpg"
-                        alt="Stage Concept Background"
-                        className="object-cover w-full h-full"
-                    />
-                    {/* 暗くするためのオーバーレイ */}
-                    <div className="absolute inset-0 bg-black/80" />
-                </div>
-            </div>
+            <StageConceptBackground />
 
             {/* コンテンツラッパー */}
             <div className="relative z-10 w-full flex flex-col min-h-screen">
