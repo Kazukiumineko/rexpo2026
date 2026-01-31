@@ -3,25 +3,11 @@
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useScrollThreshold } from "@/hooks/useScrollThreshold";
 
 export default function FloatingEntryButton() {
     const pathname = usePathname();
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            // スクロール検知：100px以上スクロールしたら表示
-            if (window.scrollY > 100) {
-                setIsVisible(true);
-            } else {
-                setIsVisible(false);
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    const isVisible = useScrollThreshold(100);
 
     // ホームディレクトリ（トップページ）以外では表示しない
     if (pathname !== "/") {

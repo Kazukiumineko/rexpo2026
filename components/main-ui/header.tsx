@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { useScrollThreshold } from "@/hooks/useScrollThreshold";
 
 interface HeaderProps {
     isVisible: boolean;
@@ -149,27 +150,7 @@ export default function Header({ isVisible, invert }: HeaderProps) {
     const pathname = usePathname();
     const isTimetable = pathname === "/timetable";
 
-    const [isScrolled, setIsScrolled] = useState(false);
-
-    useEffect(() => {
-        if (!isTimetable) return;
-
-        const handleScroll = () => {
-            // モバイルではスクロール検知を行わない（再レンダリングによるちらつき防止）
-            if (window.innerWidth < 1024) return;
-
-            if (window.scrollY > 100) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        // 初期判定
-        handleScroll();
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [isTimetable]);
+    const isScrolled = useScrollThreshold(100, { minWidth: 1024, enabled: isTimetable });
 
     const bgClass = isTimetable
         ? "bg-[#092040] lg:bg-black/0"
