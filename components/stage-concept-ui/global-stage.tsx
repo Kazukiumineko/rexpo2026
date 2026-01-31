@@ -3,11 +3,6 @@ import StageCarouselSection from "@/components/shared/stage-carousel-section";
 export default function GlobalStage() {
     const carouselImages = [
         "/stage-concept/global1.jpg",
-        "/stage-concept/global2.jpg",
-        "/stage-concept/global3.jpg",
-        "/stage-concept/global4.jpg",
-        "/stage-concept/global5.jpg",
-        "/stage-concept/global6.jpg",
     ];
 
     return (

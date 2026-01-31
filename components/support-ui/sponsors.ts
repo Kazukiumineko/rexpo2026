@@ -40,6 +40,11 @@ export const sponsors: Sponsor[] = [
         url: "https://g-assoc.co.jp/",
     },
     {
+        name: "株式会社サンゲツ",
+        logo: "/support/Sangetsu.jpg",
+        url: "https://www.sangetsu.co.jp/",
+    },
+    {
         name: "株式会社JTB",
         color: "#00BCD4",
         url: "https://www.jtbcorp.jp/jp/",
@@ -53,6 +58,16 @@ export const sponsors: Sponsor[] = [
         name: "株式会社SOUSHINホールディングス",
         logo: "/support/resize_Soushin.jpg",
         url: "https://k-soushin.co.jp/",
+    },
+    {
+        name: "株式会社ビズリーチ",
+        logo: "/support/Bizreach.jpg",
+        url: "https://www.bizreach.co.jp/sustainability/",
+    },
+    {
+        name: "株式会社HONNOW",
+        logo: "/support/honnow.jpg",
+        url: "https://honnow-tokyo.com/",
     },
     {
         name: "電制コムテック株式会社",

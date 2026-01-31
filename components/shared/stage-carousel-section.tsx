@@ -3,12 +3,6 @@
 import * as React from "react";
 import LazyImage from "@/components/shared/lazy-image";
 import { motion } from "framer-motion";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-} from "@/components/main-ui/carousel";
-import { useCarouselAutoPlay } from "@/hooks/useCarouselAutoPlay";
 
 // アニメーション用のVariants
 const containerVariants = {
@@ -42,7 +36,6 @@ export default function StageCarouselSection({
     description,
     images
 }: StageCarouselSectionProps) {
-    const plugin = useCarouselAutoPlay();
 
     return (
         <section id={id} className="relative w-full pt-24 pb-0 md:pt-32 md:pb-0 bg-transparent text-white overflow-hidden">
@@ -53,7 +46,7 @@ export default function StageCarouselSection({
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
             >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 
                     {/* --- 左側: タイトルエリア --- */}
                     <motion.div
@@ -74,34 +67,21 @@ export default function StageCarouselSection({
                         </div>
                     </motion.div>
 
-                    {/* --- 右側: カルーセルエリア --- */}
+                    {/* --- 右側: 画像エリア (1枚のみ) --- */}
                     <motion.div
-                        className="w-full relative"
+                        className="w-full relative lg:h-full"
                         variants={itemVariants}
                     >
-                        <Carousel
-                            plugins={[plugin.current]}
-                            className="w-full"
-                            opts={{
-                                align: "center",
-                                loop: true,
-                            }}
-                        >
-                            <CarouselContent className="-ml-4">
-                                {images.map((src, index) => (
-                                    <CarouselItem key={index} className="pl-4 basis-full md:basis-[60%] lg:basis-[65%]">
-                                        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm border border-white/10 bg-gray-900">
-                                            {/* <LazyImage
-                                                src={src}
-                                                alt={`${title} ${index + 1}`}
-                                                fill
-                                                className="object-cover"
-                                            /> */}
-                                        </div>
-                                    </CarouselItem>
-                                ))}
-                            </CarouselContent>
-                        </Carousel>
+                        <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full w-full overflow-hidden rounded-sm border border-white/10 bg-gray-900">
+                            {images.length > 0 && (
+                                <LazyImage
+                                    src={images[0]}
+                                    alt={title}
+                                    fill
+                                    className="object-cover"
+                                />
+                            )}
+                        </div>
                     </motion.div>
 
                 </div>
