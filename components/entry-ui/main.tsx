@@ -59,7 +59,7 @@ export default function EntryMain() {
                                 </div>
                                 <div className="flex flex-col">
                                     <span className="font-bold text-gray-900 mb-1">交通アクセスについて</span>
-                                    <p>会場の駐車場には限りがございます。可能な限り、公共交通機関にてご来場ください。</p>
+                                    <p>駐車可能な台数に限りがありますため、当日は公共交通機関でのご来場をお願いいたします。また、混雑緩和のため、送迎時等に会場周辺での駐車・停車はご遠慮いただきますよう併せてご協力をお願いいたします。</p>
                                 </div>
                                 <div className="flex flex-col">
                                     <span className="font-bold text-gray-900 mb-1">お食事について</span>

@@ -52,7 +52,7 @@ export default function Access() {
                             <div>
                                 <span className="block text-[#092040] font-bold mb-1">お車でお越しの方</span>
                                 <p className="font-light text-sm">
-                                    当日は駐車場をご用意しておりますが、混雑緩和のため公共交通機関の利用を推奨します。
+                                    駐車可能な台数に限りがありますため、当日は公共交通機関でのご来場をお願いいたします。また、混雑緩和のため、送迎時等に会場周辺での駐車・停車はご遠慮いただきますよう併せてご協力をお願いいたします。
                                 </p>
                             </div>
                         </div>
