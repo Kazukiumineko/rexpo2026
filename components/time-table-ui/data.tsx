@@ -64,7 +64,7 @@ export const events: EventItem[] = [
 
     // --- 小ホール (Index 2) ---
     { id: "md-1", venueIndex: 2, title: "RED Talks\n弁論研究部", start: "10:30", end: "12:00", colorId: 2 },
-    { id: "md-2", venueIndex: 2, title: "株式会社Progate\nCEO加藤氏講演会", start: "12:20", end: "13:20", colorId: 4 },
+    { id: "md-2", venueIndex: 2, title: "AIでプロダクトを作ってみよう\nProgateCEO講演会", start: "12:20", end: "13:20", colorId: 4 },
     { id: "md-3", venueIndex: 2, title: "生徒主催e-sports大会\nスマブラ王決定戦", start: "14:45", end: "16:30", colorId: 3 },
 
 
