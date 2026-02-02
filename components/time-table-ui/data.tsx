@@ -64,11 +64,11 @@ export const events: EventItem[] = [
 
     // --- 小ホール (Index 2) ---
     { id: "md-1", venueIndex: 2, title: "RED Talks\n弁論研究部", start: "10:30", end: "12:00", colorId: 2 },
-    { id: "md-2", venueIndex: 2, title: "AIでプロダクトを作ってみよう\nProgateCEO講演会", start: "12:20", end: "13:20", colorId: 4 },
+    { id: "md-2", venueIndex: 2, title: "AIを使って新しいプロダクトを作ろう\nProgateCEO講演会", start: "12:20", end: "13:20", colorId: 4 },
     { id: "md-3", venueIndex: 2, title: "生徒主催e-sports大会\nスマブラ王決定戦", start: "14:45", end: "16:30", colorId: 3 },
 
 
-    // --- 特別会議場 (Index 3) ---
+    // --- 特別会議場 (Index 3) -----
     { id: "sp-1", venueIndex: 3, title: "高校3年生授業\n演劇表現卒業公演", start: "10:30", end: "11:10", colorId: 3 },
     { id: "sp-2", venueIndex: 3, title: "中学演劇部\nR-EXPO特別公演", start: "11:25", end: "12:05", colorId: 3 },
     { id: "sp-3", venueIndex: 3, title: "有志生徒\n芸術発表", start: "12:30", end: "13:40", colorId: 3 },
