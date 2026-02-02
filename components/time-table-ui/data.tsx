@@ -58,9 +58,9 @@ export const events: EventItem[] = [
     { id: "m-6", venueIndex: 0, title: "閉会式典", start: "16:45", end: "17:15", colorId: 3 },
 
     // --- 中ホール (Index 1) ---
-    { id: "s-1", venueIndex: 1, title: `北海道大学コラボ企画\nRising Teenage Award${SPACER}【第1部】\n開会式\nFashion部門\nPeace部門`, start: "10:30", end: "12:00", colorId: 4 },
-    { id: "s-2", venueIndex: 1, title: `北海道大学コラボ企画\nRising Teenage Award${SPACER}【第2部】\nFood部門\nTraditional Culture部門`, start: "12:00", end: "14:00", colorId: 4 },
-    { id: "s-3", venueIndex: 1, title: `北海道大学コラボ企画\nRising Teenage Award${SPACER}【第3部】\nSnow部門\nSports部門\n閉会式`, start: "14:30", end: "16:30", colorId: 4 },
+    { id: "s-1", venueIndex: 1, title: `北海道大学コラボ企画\nRising Teenager Award${SPACER}【第1部】\n開会式\nFashion部門\nPeace部門`, start: "10:30", end: "12:00", colorId: 4 },
+    { id: "s-2", venueIndex: 1, title: `北海道大学コラボ企画\nRising Teenager Award${SPACER}【第2部】\nFood部門\nTraditional Culture部門`, start: "12:00", end: "14:00", colorId: 4 },
+    { id: "s-3", venueIndex: 1, title: `北海道大学コラボ企画\nRising Teenager Award${SPACER}【第3部】\nSnow部門\nSports部門\n閉会式`, start: "14:30", end: "16:30", colorId: 4 },
 
     // --- 小ホール (Index 2) ---
     { id: "md-1", venueIndex: 2, title: "RED Talks\n弁論研究部", start: "10:30", end: "12:00", colorId: 2 },
