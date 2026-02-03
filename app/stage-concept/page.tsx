@@ -6,13 +6,13 @@ import AcademicInfo from "@/components/stage-concept-ui/academic-info";
 import EntertainmentInfo from "@/components/stage-concept-ui/entertainment-info";
 import CollabInfo from "@/components/stage-concept-ui/collab-info";
 import Jump from "@/components/stage-concept-ui/jump";
-import ComingSoonPopup from "@/components/shared/coming-soon-popup";
+
 import StageConceptBackground from "@/components/stage-concept-ui/background";
 
 export default function StageConceptPage() {
     return (
         <main className="relative w-full min-h-screen text-white">
-            <ComingSoonPopup />
+
             {/* 固定背景画像 */}
             <StageConceptBackground />
 

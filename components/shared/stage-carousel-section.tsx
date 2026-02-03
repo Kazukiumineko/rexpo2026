@@ -46,7 +46,7 @@ export default function StageCarouselSection({
                         delay={0.2}
                         className="w-full relative lg:h-full"
                     >
-                        <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full w-full overflow-hidden rounded-sm border border-white/10 bg-gray-900">
+                        <div className="relative aspect-[4/3] lg:aspect-[16/9] w-full overflow-hidden rounded-sm border border-white/10 bg-gray-900">
                             <LazyImage
                                 src={image}
                                 alt={title}

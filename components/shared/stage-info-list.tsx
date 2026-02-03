@@ -41,12 +41,12 @@ export default function StageInfoList({ projects }: StageInfoListProps) {
                                 >
                                     {/* 1. 画像エリア (円形アイコン) */}
                                     <div className="relative w-20 h-20 md:w-32 md:h-32 flex-shrink-0 overflow-hidden rounded-full border-2 border-white/20">
-                                        {/* <LazyImage
-                                                src={project.img}
-                                                alt={project.title}
-                                                fill
-                                                className="object-cover"
-                                            /> */}
+                                        <LazyImage
+                                            src={project.img}
+                                            alt={project.title}
+                                            fill
+                                            className="object-cover"
+                                        />
                                     </div>
 
                                     {/* 2. テキストエリア */}

@@ -5,23 +5,18 @@ import StageCarouselSection from "@/components/shared/stage-carousel-section";
 const projects = [
     {
         title: "バンド・ダンス発表",
-        img: "/stage-concept/global1.jpg", // 仮の画像
-        desc: "コンクール入賞実績を持つ吹奏楽部による迫力の演奏。クラシックからポップスまで、息の合ったアンサンブルで披露。日々の練習が紡ぎ出す美しいハーモニーが、会場全体を感動で包み込みます。",
+        img: "/stage-concept/icon/band.jpg", // 仮の画像
+        desc: "有志の生徒たちが繰り広げる、熱気あふれるバンド＆ダンスステージ！ 個性豊かな5組のバンドと7組のダンスチームが集結しました。 それぞれの情熱が詰まったパフォーマンスが、次々とステージを彩ります。生徒たちが作り出す圧倒的なエネルギーを、ぜひライブで体感してください。",
     },
     {
         title: "芸術発表",
-        img: "/stage-concept/global2.jpg", // 仮の画像
-        desc: "生徒が脚本・演出を手掛けるオリジナル演劇。笑いあり涙ありの青春ストーリーや、社会問題を鋭く切り取るシリアスな作品。舞台上で輝く役者たちの熱演にご注目ください。",
+        img: "/stage-concept/icon/geijyutu.jpg", // 仮の画像
+        desc: "ピアノやヴァイオリン、バレエなど、多様な芸術領域に取り組む有志生徒による発表です。各分野で技術と感性を磨き続ける生徒たちが、日頃の練習の成果をステージ上で披露します。ぜひご覧ください。",
     },
     {
-        title: "生徒有志企画",
-        img: "/stage-concept/global3.jpg", // 仮の画像
-        desc: "ヒップホップ、ジャズ、創作ダンスなど多彩なジャンル。躍動感あふれる動きとキレのある振付で表現する、若さ漲るエネルギー。チームワーク抜群の群舞と個性際立つソロ、その融合をお楽しみください。",
-    },
-    {
-        title: "演劇公演",
-        img: "/stage-concept/global4.jpg", // 仮の画像
-        desc: "美術部・写真部による作品展示。絵画、彫刻、インスタレーション、風景写真、ポートレート。独自の感性で切り取られた世界観と、作品一つひとつに込められた作者の想いを感じてください。",
+        title: "e-Sports大会",
+        img: "/stage-concept/icon/esports.jpg", // 仮の画像
+        desc: "「大乱闘スマッシュブラザーズ」を使ったe-Sports大会を開催！白熱の対戦を通して、ゲームの魅力や競技としての面白さを伝えます。ゲームも一つの個性としてR-EXPOの場で表現し、多様性を発信します。",
     },
 ];
 
@@ -33,7 +28,7 @@ export default function EntertainmentInfo() {
                 title="ENTERTAINMENT STAGE"
                 subtitle="感性が共鳴する、創造の舞台"
                 description="バンド、ダンス、演劇などのステージで、生徒たちの情熱と創造性が爆発します。ステージ上のパフォーマンスだけでなく、美術作品展示やお茶会、E-Sports大会など、五感で楽しめる多彩なプログラムが会場を彩ります。"
-                image="/stage-concept/global1.jpg"
+                image="/stage-concept/Entame.jpg"
             />
             <StageInfoList projects={projects} />
         </>
