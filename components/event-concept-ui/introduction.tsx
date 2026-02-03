@@ -1,4 +1,5 @@
 import LazyImage from "@/components/shared/lazy-image";
+import ResponsiveImage from "@/components/shared/responsive-image";
 import { FadeIn } from "@/components/shared/anim-wrapper";
 
 export default function Introduction() {
@@ -66,8 +67,9 @@ export default function Introduction() {
 
                 {/* 背景画像エリア */}
                 <div className="absolute inset-0 overflow-hidden">
-                    <LazyImage
-                        src="/event-concept-page/Introduction2.jpg"
+                    <ResponsiveImage
+                        pcSrc="/main/introduction5.JPG"
+                        mobileSrc="/main/introduction6.JPG"
                         alt="Introduction Background"
                         fill
                         priority
@@ -103,7 +105,7 @@ export default function Introduction() {
                         direction="right"
                         once={false}
                     >
-                        <h1 className="font-oswald text-white/30 text-5xl md:text-8xl lg:text-[10rem] font-bold tracking-normal drop-shadow-lg [writing-mode:vertical-rl] z-[100] translate-y-40 md:translate-y-52 lg:translate-y-32">
+                        <h1 className="font-oswald text-white/30 text-7xl md:text-8xl lg:text-[10rem] font-bold tracking-normal drop-shadow-lg [writing-mode:vertical-rl] z-[100] translate-y-40 md:translate-y-52 lg:translate-y-32">
                             INTRODUCTION
                         </h1>
                     </FadeIn>
