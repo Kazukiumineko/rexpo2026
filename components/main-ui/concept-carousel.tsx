@@ -9,10 +9,12 @@ import { useCarouselAutoPlay } from "@/hooks/useCarouselAutoPlay";
 import LazyImage from "@/components/shared/lazy-image";
 
 const carouselImages = [
-    "/carouselpic/Carousel1.jpg",
-    "/carouselpic/Carousel2.jpg",
-    "/carouselpic/Carousel3.jpg",
-    "/carouselpic/Carousel4.jpg",
+    "/carouselpic/pic1.jpg",
+    "/carouselpic/pic2.jpg",
+    "/carouselpic/pic3.jpg",
+    "/carouselpic/pic4.jpg",
+    "/carouselpic/pic5.jpg",
+    "/carouselpic/pic6.jpg",
 ];
 
 export default function ConceptCarousel() {
