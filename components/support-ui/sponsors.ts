@@ -21,7 +21,7 @@ export const sponsors: Sponsor[] = [
     },
     {
         name: "株式会社MLP",
-        color: "#448AFF",
+        logo: "/support/mlp.jpg",
         url: "https://top.metulab.co.jp/",
     },
     {
