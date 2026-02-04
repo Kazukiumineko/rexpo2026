@@ -75,7 +75,7 @@ export const events: EventItem[] = [
     { id: "sp-4", venueIndex: 3, title: "有志生徒\nダンスステージ", start: "14:45", end: "16:30", colorId: 3 },
 
     // --- 104・105 (Index 4) ---
-    { id: "en-1", venueIndex: 4, title: "中学研修報告\n【A会場】\nNZ/京都/北海道", start: "10:30", end: "11:25", colorId: 1 },
+    { id: "en-1", venueIndex: 4, title: "中学研修報告\n【A会場】\nNZ/京都/北海道", start: "10:30", end: "11:30", colorId: 1 },
     { id: "en-2", venueIndex: 4, title: "高2海外研修報告\n【A会場】\nタイ/マレーシア/アメリカ", start: "11:35", end: "12:30", colorId: 1 },
     { id: "en-3", venueIndex: 4, title: `立命館附属校\n課題研究体験ブース${SPACER}立命館高校\n立命館宇治高校\n立命館守山高校`, start: "14:45", end: "16:30", colorId: 2 },
 
@@ -97,13 +97,13 @@ export const events: EventItem[] = [
     { id: "r107-2", venueIndex: 8, title: "自然科学部展示発表", start: "14:45", end: "16:30", colorId: 2 },
 
     // --- 206 (Index 9) ---
-    { id: "r108-1", venueIndex: 9, title: "中学研修報告\n【B会場】\nNZ/京都/北海道", start: "10:30", end: "11:25", colorId: 1 },
+    { id: "r108-1", venueIndex: 9, title: "中学研修報告\n【B会場】\nNZ/京都/北海道", start: "10:30", end: "11:30", colorId: 1 },
     { id: "r108-2", venueIndex: 9, title: "高2海外研修報告\n【B会場】\n台湾/インドネシア/ベトナム", start: "11:35", end: "12:30", colorId: 1 },
     { id: "r108-3", venueIndex: 9, title: "ライスボールセミナー\n立命館大学院生による講演会", start: "12:40", end: "13:40", colorId: 4 },
     { id: "r108-4", venueIndex: 9, title: "クイズ研究会\n体験型発表", start: "14:45", end: "16:30", colorId: 3 },
 
     // --- 207 (Index 10) ---
-    { id: "207-1", venueIndex: 10, title: "中学研修報告\n【C会場】\nNZ/京都/北海道", start: "10:30", end: "11:25", colorId: 1 },
+    { id: "207-1", venueIndex: 10, title: "中学研修報告\n【C会場】\nNZ/京都/北海道", start: "10:30", end: "11:30", colorId: 1 },
     { id: "207-2", venueIndex: 10, title: "高2海外研修報告\n【C会場】\nオーストラリア/リトアニア/ガラパゴス", start: "11:35", end: "12:30", colorId: 1 },
     { id: "207-3", venueIndex: 10, title: `羽幌町チャレンジ企画\n特産品販売${SPACER}お悩み相談\n天満の部屋${SPACER}和菓子企画\n和菓子作成体験`, start: "14:45", end: "16:30", colorId: 3 },
 

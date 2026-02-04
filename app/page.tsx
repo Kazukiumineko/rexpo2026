@@ -6,15 +6,20 @@ import InformationSection from "@/components/main-ui/information-section";
 import Application from "@/components/main-ui/application";
 import FooterBar from "@/components/main-ui/footer-bar";
 
+import HippySection from "@/components/main-ui/hippy";
+
 export default function Home() {
   return (
     <main className="relative w-full">
 
       {/* クライアントロジック層 */}
       <HomeTopController>
-        {/* ScrollTextSection は Server Component として渡されます */}
         <ScrollTextSection />
       </HomeTopController>
+
+      {/* <div className="relative z-10 -mt-20 md:-mt-32 pb-20 md:pb-32">
+        <HippySection />
+      </div> */}
 
       <div className="relative z-10">
         <ConceptSection />
