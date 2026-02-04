@@ -15,6 +15,8 @@ const carouselImages = [
     "/carouselpic/pic4.jpg",
     "/carouselpic/pic5.jpg",
     "/carouselpic/pic6.jpg",
+    "/carouselpic/pic7.jpg",
+    "/carouselpic/pic8.jpg",
 ];
 
 export default function ConceptCarousel() {
