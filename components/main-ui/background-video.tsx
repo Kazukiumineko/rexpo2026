@@ -104,7 +104,7 @@ export default function BackgroundVideo({ overlayOpacity, onLoaded }: Background
     // If we return to home, we might try again?
     // For now, sticking to the simple logic: If homepage, keep it as determined by the initial sequence.
     useEffect(() => {
-        if (pathname !== "/") {
+        if (pathname !== "/" && pathname !== "/secret") {
             setMountVideo(false);
         } else {
             // Returning to home:

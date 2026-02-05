@@ -8,7 +8,7 @@ import { useEffect } from "react";
 export default function PersistentBackgroundVideo() {
     const { videoOverlayOpacity, setIsHomeVideoLoaded, isHomeVideoLoaded } = useGlobalContext();
     const pathname = usePathname();
-    const isHomePage = pathname === "/";
+    const isHomePage = pathname === "/" || pathname === "/secret";
 
     // Force open content after 6 seconds if video/image logic hasn't finished (Safety net)
     useEffect(() => {
