@@ -25,16 +25,6 @@ export const sponsors: Sponsor[] = [
         url: "https://top.metulab.co.jp/",
     },
     {
-        name: "北昴",
-        logo: "/support/resize_kitasubaru.jpg",
-        url: "https://kitasubaru.net",
-    },
-    {
-        name: "草野作工株式会社",
-        logo: "/support/resize_Kusano.jpg",
-        url: "https://www.kusanosk.co.jp/",
-    },
-    {
         name: "株式会社グロースアソシエーション",
         color: "#E040FB",
         url: "https://g-assoc.co.jp/",
@@ -65,9 +55,35 @@ export const sponsors: Sponsor[] = [
         url: "https://www.bizreach.co.jp/sustainability/",
     },
     {
+        name: "株式会社北海道イエロースターズ",
+        logo: "/support/resize_Yellow.jpg",
+        url: "https://hy-stars.jp/",
+    },
+    {
         name: "株式会社HONNOW",
         logo: "/support/honnow.jpg",
         url: "https://honnow-tokyo.com/",
+    },
+    {
+        name: "株式会社ミライシアホールディング",
+        color: "#B2FF59",
+        url: "https://miraisia.co.jp/",
+    },
+
+    {
+        name: "株式会社レコハイ",
+        logo: "/support/resize_rekohi.jpg",
+        url: "https://smaspisport2000.wixsite.com/home",
+    },
+    {
+        name: "北昴",
+        logo: "/support/resize_kitasubaru.jpg",
+        url: "https://kitasubaru.net",
+    },
+    {
+        name: "草野作工株式会社",
+        logo: "/support/resize_Kusano.jpg",
+        url: "https://www.kusanosk.co.jp/",
     },
     {
         name: "電制コムテック株式会社",
@@ -94,21 +110,8 @@ export const sponsors: Sponsor[] = [
         logo: "/support/resize_porakon.jpg",
         url: "https://poracon.jp/",
     },
-    {
-        name: "株式会社北海道イエロースターズ",
-        logo: "/support/resize_Yellow.jpg",
-        url: "https://hy-stars.jp/",
-    },
-    {
-        name: "株式会社ミライシアホールディング",
-        color: "#B2FF59",
-        url: "https://miraisia.co.jp/",
-    },
-    {
-        name: "株式会社レコハイ",
-        logo: "/support/resize_rekohi.jpg",
-        url: "https://smaspisport2000.wixsite.com/home",
-    },
+
+
     {
         name: "Letara株式会社",
         logo: "/support/resize_Letara.jpg",
