@@ -69,7 +69,6 @@ export const sponsors: Sponsor[] = [
         color: "#B2FF59",
         url: "https://miraisia.co.jp/",
     },
-
     {
         name: "株式会社レコハイ",
         logo: "/support/resize_rekohi.jpg",
@@ -110,8 +109,6 @@ export const sponsors: Sponsor[] = [
         logo: "/support/resize_porakon.jpg",
         url: "https://poracon.jp/",
     },
-
-
     {
         name: "Letara株式会社",
         logo: "/support/resize_Letara.jpg",
