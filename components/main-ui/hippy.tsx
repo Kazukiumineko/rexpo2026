@@ -14,11 +14,11 @@ export default function HippySection() {
                     viewportAmount={0.3}
                     className="w-full lg:w-auto flex flex-col items-center lg:items-start text-center lg:text-left"
                 >
-                    <p className="text-base md:text-2xl lg:text-2xl font-bold mb-4 text-white tracking-normal opacity-90 whitespace-nowrap">
+                    <p className="text-base md:text-2xl lg:text-2xl font-bold mb-4 lg:mb-2 text-white tracking-normal opacity-90 whitespace-nowrap">
                         R-EXPO 2026 SPECIAL STAGE 決定！
                     </p>
 
-                    <div className="flex items-center gap-4 md:gap-6 lg:gap-10 mb-6">
+                    <div className="flex items-center gap-4 md:gap-6 lg:gap-10 mb-6 lg:mb-4">
                         <h2 className="text-6xl md:text-5xl lg:text-8xl font-bold text-white leading-tight">
                             HIPPY
                         </h2>
@@ -39,7 +39,7 @@ export default function HippySection() {
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-4 mb-10 text-white">
+                    <div className="flex items-center gap-4 mb-10 lg:mb-6 text-white">
                         <p className="text-1xl md:text-2xl font-bold tracking-wider">
                             1億人の背中を押した令和の応援ソング
                             <br />
@@ -47,7 +47,7 @@ export default function HippySection() {
                         </p>
                     </div>
 
-                    <p className="text-xs md:text-sm leading-relaxed text-gray-300 mb-8">
+                    <p className="text-xs md:text-sm leading-relaxed lg:leading-normal text-gray-300 mb-8 lg:mb-6">
                         困難を乗り越えていく人の背中を押す歌い手として、<br className="md:hidden" />全国各地で歌い続けている。<br />
                         当時代表曲でなかったこの曲が、<br className="md:hidden" />リリースから約10年を経て、<br />
                         YouTube、TikTok、ストリーミングで、<br className="md:hidden" />それぞれ1億回再生を超えを突破。<br />
