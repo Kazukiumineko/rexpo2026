@@ -21,7 +21,7 @@ export const sponsors: Sponsor[] = [
     },
     {
         name: "株式会社MLP",
-        logo: "/support/mlp.jpg",
+        logo: "/support/mlp-logo.jpg",
         url: "https://top.metulab.co.jp/",
     },
     {
