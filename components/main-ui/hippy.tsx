@@ -6,7 +6,7 @@ import { FadeIn } from "@/components/shared/anim-wrapper";
 export default function HippySection() {
     return (
         <div className="w-full max-w-[1920px] mx-auto overflow-hidden px-4 md:px-4 lg:px-4 py-20 relative z-20">
-            <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-12 lg:gap-16">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
 
                 {/* Left Side: Text */}
                 <FadeIn
@@ -14,7 +14,7 @@ export default function HippySection() {
                     viewportAmount={0.3}
                     className="w-full lg:w-auto flex flex-col items-center lg:items-start text-center lg:text-left"
                 >
-                    <p className="text-base md:text-2xl lg:text-3xl font-bold mb-4 text-white tracking-normal opacity-90 whitespace-nowrap">
+                    <p className="text-base md:text-2xl lg:text-2xl font-bold mb-4 text-white tracking-normal opacity-90 whitespace-nowrap">
                         R-EXPO 2026 SPECIAL STAGE 決定！
                     </p>
 
@@ -47,7 +47,7 @@ export default function HippySection() {
                         </p>
                     </div>
 
-                    <p className="text-xs md:text-base leading-relaxed text-gray-300 mb-8">
+                    <p className="text-xs md:text-sm leading-relaxed text-gray-300 mb-8">
                         困難を乗り越えていく人の背中を押す歌い手として、<br className="md:hidden" />全国各地で歌い続けている。<br />
                         当時代表曲でなかったこの曲が、<br className="md:hidden" />リリースから約10年を経て、<br />
                         YouTube、TikTok、ストリーミングで、<br className="md:hidden" />それぞれ1億回再生を超えを突破。<br />
@@ -80,13 +80,13 @@ export default function HippySection() {
                     delay={0.4}
                     className="w-full lg:flex-1 flex justify-center lg:justify-end"
                 >
-                    <div className="relative w-full shadow-2xl rounded-xl overflow-hidden lg:h-full">
+                    <div className="relative w-full shadow-2xl rounded-xl overflow-hidden">
                         <Image
                             src="/main/hippy.JPG"
                             alt="HIPPY Special Stage"
                             width={800}
                             height={600}
-                            className="w-full h-auto lg:h-full object-contain lg:object-cover"
+                            className="w-full h-auto object-contain"
                             sizes="(max-width: 768px) 100vw, 50vw"
                             priority
                         />
