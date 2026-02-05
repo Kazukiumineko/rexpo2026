@@ -5,20 +5,20 @@ import { FadeIn } from "@/components/shared/anim-wrapper";
 
 export default function HippySection() {
     return (
-        <div className="w-full max-w-[1920px] mx-auto overflow-hidden px-6 md:px-12 lg:px-20 py-20 relative z-20">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+        <div className="w-full max-w-[1920px] mx-auto overflow-hidden px-4 md:px-4 lg:px-4 py-20 relative z-20">
+            <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-12 lg:gap-16">
 
                 {/* Left Side: Text */}
                 <FadeIn
                     duration={1.8}
                     viewportAmount={0.3}
-                    className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left"
+                    className="w-full lg:w-auto flex flex-col items-center lg:items-start text-center lg:text-left"
                 >
-                    <p className="text-base md:text-2xl lg:text-3xl font-bold mb-4 text-white tracking-normal opacity-90">
+                    <p className="text-base md:text-2xl lg:text-3xl font-bold mb-4 text-white tracking-normal opacity-90 whitespace-nowrap">
                         R-EXPO 2026 SPECIAL STAGE 決定！
                     </p>
 
-                    <div className="flex items-center gap-4 md:gap-6 mb-6">
+                    <div className="flex items-center gap-4 md:gap-6 lg:gap-10 mb-6">
                         <h2 className="text-6xl md:text-5xl lg:text-8xl font-bold text-white leading-tight">
                             HIPPY
                         </h2>
@@ -78,15 +78,15 @@ export default function HippySection() {
                     duration={1.8}
                     viewportAmount={0.3}
                     delay={0.4}
-                    className="w-full lg:w-1/2 flex justify-center lg:justify-end"
+                    className="w-full lg:flex-1 flex justify-center lg:justify-end"
                 >
-                    <div className="relative w-full shadow-2xl rounded-xl overflow-hidden">
+                    <div className="relative w-full shadow-2xl rounded-xl overflow-hidden lg:h-full">
                         <Image
                             src="/main/hippy.JPG"
                             alt="HIPPY Special Stage"
                             width={800}
                             height={600}
-                            className="w-full h-auto object-contain"
+                            className="w-full h-auto lg:h-full object-contain lg:object-cover"
                             sizes="(max-width: 768px) 100vw, 50vw"
                             priority
                         />
