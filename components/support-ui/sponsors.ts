@@ -46,7 +46,7 @@ export const sponsors: Sponsor[] = [
     },
     {
         name: "株式会社JTB",
-        color: "#00BCD4",
+        logo: "/support/jtb.jpg",
         url: "https://www.jtbcorp.jp/jp/",
     },
     {
