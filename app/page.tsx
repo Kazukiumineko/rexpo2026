@@ -14,7 +14,7 @@ export default function Home() {
 
       {/* クライアントロジック層 */}
       <HomeTopController>
-        <ScrollTextSection />
+        <HippySection />
       </HomeTopController>
 
       {/* <div className="relative z-10 -mt-20 md:-mt-32 pb-20 md:pb-32">

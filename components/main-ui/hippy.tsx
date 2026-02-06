@@ -41,7 +41,7 @@ export default function HippySection() {
 
                     <div className="flex items-center gap-4 mb-10 lg:mb-6 text-white">
                         <p className="text-1xl md:text-2xl font-bold tracking-wider">
-                            1億人の背中を押した令和の応援ソング
+                            多くの人の背中を押した令和の応援ソング
                             <br />
                             「君に捧げる応援歌」
                         </p>
