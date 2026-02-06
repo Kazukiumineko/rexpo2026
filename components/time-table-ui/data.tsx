@@ -54,7 +54,7 @@ export const events: EventItem[] = [
     { id: "m-2", venueIndex: 0, title: "立命館附属校\n課題研究発表会", start: "10:40", end: "11:30", colorId: 4 },
     { id: "m-3", venueIndex: 0, title: "SSH国際共同課題研究発表", start: "11:40", end: "12:30", colorId: 1 },
     { id: "m-4", venueIndex: 0, title: `第2部開会式${SPACER}※生徒・関係者のみの観覧となります`, start: "14:00", end: "14:30", colorId: 3 },
-    { id: "m-5", venueIndex: 0, title: "有志生徒バンド発表", start: "14:50", end: "16:20", colorId: 3 },
+    { id: "m-5", venueIndex: 0, title: "有志生徒バンド発表", start: "14:45", end: "16:15", colorId: 3 },
     { id: "m-6", venueIndex: 0, title: "閉会式典", start: "16:45", end: "17:15", colorId: 3 },
 
     // --- 中ホール (Index 1) ---
@@ -69,7 +69,7 @@ export const events: EventItem[] = [
 
 
     // --- 特別会議場 (Index 3) -----
-    { id: "sp-1", venueIndex: 3, title: "高校3年生授業\n演劇表現卒業公演", start: "10:30", end: "11:10", colorId: 3 },
+    { id: "sp-1", venueIndex: 3, title: "高校3年生授業\n演劇表現卒業公演", start: "10:30", end: "11:20", colorId: 3 },
     { id: "sp-2", venueIndex: 3, title: "中学演劇部\nR-EXPO特別公演", start: "11:25", end: "12:05", colorId: 3 },
     { id: "sp-3", venueIndex: 3, title: "有志生徒\n芸術発表", start: "12:30", end: "13:40", colorId: 3 },
     { id: "sp-4", venueIndex: 3, title: "有志生徒\nダンスステージ", start: "14:45", end: "16:30", colorId: 3 },
