@@ -70,9 +70,9 @@ export const events: EventItem[] = [
 
     // --- 特別会議場 (Index 3) -----
     { id: "sp-1", venueIndex: 3, title: "高校3年生授業\n演劇表現卒業公演", start: "10:30", end: "11:20", colorId: 3 },
-    { id: "sp-2", venueIndex: 3, title: "中学演劇部\nR-EXPO特別公演", start: "11:25", end: "12:05", colorId: 3 },
-    { id: "sp-3", venueIndex: 3, title: "有志生徒\n芸術発表", start: "12:30", end: "13:40", colorId: 3 },
-    { id: "sp-4", venueIndex: 3, title: "有志生徒\nダンスステージ", start: "14:45", end: "16:30", colorId: 3 },
+    { id: "sp-2", venueIndex: 3, title: "中学演劇部\nR-EXPO特別公演", start: "11:20", end: "12:05", colorId: 3 },
+    { id: "sp-3", venueIndex: 3, title: "有志生徒\n芸術発表", start: "12:20", end: "13:30", colorId: 3 },
+    { id: "sp-4", venueIndex: 3, title: "有志生徒\n芸術発表\nダンスステージ", start: "14:40", end: "16:30", colorId: 3 },
 
     // --- 104・105 (Index 4) ---
     { id: "en-1", venueIndex: 4, title: "中学研修報告\n【A会場】\nNZ/京都/北海道", start: "10:30", end: "11:30", colorId: 1 },

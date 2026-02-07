@@ -26,7 +26,7 @@ export const sponsors: Sponsor[] = [
     },
     {
         name: "株式会社グロースアソシエーション",
-        color: "#E040FB",
+        logo: "/support/growth.jpg",
         url: "https://g-assoc.co.jp/",
     },
     {
