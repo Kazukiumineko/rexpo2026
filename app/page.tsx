@@ -8,9 +8,12 @@ import FooterBar from "@/components/main-ui/footer-bar";
 
 import HippySection from "@/components/main-ui/hippy";
 
+import AppMaintenanceBanner from "@/components/main-ui/apppop";
+
 export default function Home() {
   return (
     <main className="relative w-full">
+      <AppMaintenanceBanner />
 
       {/* クライアントロジック層 */}
       <HomeTopController>
