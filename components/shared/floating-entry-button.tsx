@@ -19,7 +19,7 @@ export default function FloatingEntryButton() {
             {isVisible && (
                 <motion.div
                     key="floating-entry-btn"
-                    className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-50"
+                    className="fixed bottom-28 right-6 md:bottom-24 md:right-10 z-50"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}

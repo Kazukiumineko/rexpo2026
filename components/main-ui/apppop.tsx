@@ -6,10 +6,10 @@ import { AlertCircle } from "lucide-react";
 export default function AppMaintenanceBanner() {
     return (
         <motion.div
-            initial={{ y: -100, opacity: 0 }}
+            initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="fixed top-0 left-0 w-full z-[9999] bg-gradient-to-r from-red-900/90 to-red-800/90 backdrop-blur-md border-b border-red-500/30 shadow-lg text-white px-4 py-3 md:py-4"
+            className="fixed bottom-0 left-0 w-full z-[9999] bg-gradient-to-r from-red-900/90 to-red-800/90 backdrop-blur-md border-t border-red-500/30 shadow-lg text-white px-4 py-3 md:py-4"
         >
             <div className="max-w-6xl mx-auto flex items-start md:items-center justify-center gap-3 md:gap-4">
                 <AlertCircle className="w-5 h-5 md:w-6 md:h-6 text-red-200 shrink-0 mt-0.5 md:mt-0" />
