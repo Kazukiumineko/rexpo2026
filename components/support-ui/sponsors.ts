@@ -66,7 +66,7 @@ export const sponsors: Sponsor[] = [
     },
     {
         name: "株式会社ミライシアホールディング",
-        color: "#B2FF59",
+        logo: "/support/mirisia.jpg",
         url: "https://miraisia.co.jp/",
     },
     {
