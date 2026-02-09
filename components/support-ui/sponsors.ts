@@ -45,6 +45,11 @@ export const sponsors: Sponsor[] = [
         url: "https://www.suzuki-shokai.co.jp/",
     },
     {
+        name: "株式会社セコマ",
+        logo: "/support/secoma.jpg",
+        url: "https://secoma.co.jp/",
+    },
+    {
         name: "株式会社SOUSHINホールディングス",
         logo: "/support/resize_Soushin.jpg",
         url: "https://k-soushin.co.jp/",
