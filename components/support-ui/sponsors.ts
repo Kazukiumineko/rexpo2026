@@ -55,6 +55,11 @@ export const sponsors: Sponsor[] = [
         url: "https://www.bizreach.co.jp/sustainability/",
     },
     {
+        name: "株式会社Progate",
+        logo: "/support/progate.jpg",
+        url: "https://prog-8.com/",
+    },
+    {
         name: "株式会社北海道イエロースターズ",
         logo: "/support/resize_Yellow.jpg",
         url: "https://hy-stars.jp/",
