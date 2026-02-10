@@ -78,8 +78,19 @@ export default function ClosingMessage() {
 
     return (
         <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black text-white px-4 overflow-hidden select-none">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                <Image
+                    src="/event-concept-page/Introduction.jpg"
+                    alt="Background"
+                    fill
+                    className="object-cover opacity-30"
+                    priority
+                />
+            </div>
+
             {/* Background Effects */}
-            <div className="absolute inset-0 z-0 opacity-50">
+            <div className="absolute inset-0 z-0 opacity-50 pointer-events-none">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[128px] animate-pulse" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-purple-900/20 rounded-full blur-[100px] animate-pulse delay-1000" />
             </div>
