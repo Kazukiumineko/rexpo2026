@@ -2,23 +2,28 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Play } from "lucide-react";
+
+import Image from "next/image";
 
 const MESSAGES = [
     <>
         R-EXPOは、立命館慶祥の、<br className="md:hidden" />30年の集大成です。
     </>,
     <>
-        牧場と山に囲まれた校舎からは、<br className="md:hidden" />30年の時を経て、<br />
+        緑豊かな校舎からは、<br className="md:hidden" />
         こんなにも輝きに満ちた、<br className="md:hidden" />才能に溢れる生徒が生まれました。
     </>,
     <>
-        今ここにいるみなさんは、<br className="md:hidden" />新たな30年を創る、<br className="md:hidden" />これからの人たちです。
+        これまでの30年。これからの30年。<br />
+        明日からの未来を、どう生きる？
+    </>,
+    <>
+        来たる慶祥生へ、<br className="md:hidden" />今こそ、輝こう。
     </>
 ];
 
 export default function ClosingMessage() {
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(true);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isFinished, setIsFinished] = useState(false);
 
@@ -51,15 +56,13 @@ export default function ClosingMessage() {
                         return prev + 1;
                     }
                 });
-            }, 5000);
+            }, 6000);
 
             return () => clearInterval(timer);
         }
     }, [isPlaying, isFinished]);
 
-    const handlePlay = () => {
-        setIsPlaying(true);
-    };
+
 
     return (
         <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black text-white px-4 overflow-hidden select-none">
@@ -70,57 +73,7 @@ export default function ClosingMessage() {
             </div>
 
             <AnimatePresence mode="wait">
-                {!isPlaying && !isFinished && (
-                    <motion.div
-                        key="start-screen"
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
-                        transition={{ duration: 1.5, ease: "easeOut" }}
-                        className="relative z-10 text-center flex flex-col items-center"
-                    >
-                        <div className="mb-16">
-                            <motion.div
-                                initial={{ width: 0 }}
-                                animate={{ width: "100px" }}
-                                transition={{ duration: 1.5, delay: 0.5 }}
-                                className="h-[1px] bg-white/30 mx-auto mb-8"
-                            />
 
-                            <motion.h1
-                                className="text-3xl md:text-5xl lg:text-6xl font-bold font-oswald tracking-[0.1em] mb-4 text-white"
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1, delay: 0.8 }}
-                            >
-                                R-EXPO 2026 Fin
-                            </motion.h1>
-
-                            <motion.div
-                                initial={{ width: 0 }}
-                                animate={{ width: "100px" }}
-                                transition={{ duration: 1.5, delay: 0.5 }}
-                                className="h-[1px] bg-white/30 mx-auto mt-8"
-                            />
-                        </div>
-
-                        <motion.button
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            transition={{ delay: 2, duration: 1 }}
-                            className="group relative flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-500 cursor-pointer"
-                            onClick={handlePlay}
-                        >
-                            {/* Ring Animations */}
-                            <div className="absolute inset-0 rounded-full border border-white/10 scale-100 opacity-0 group-hover:scale-125 group-hover:opacity-100 transition-all duration-700" />
-                            <div className="absolute inset-0 rounded-full border border-white/5 scale-100 opacity-0 group-hover:scale-150 group-hover:opacity-50 transition-all duration-1000 delay-100" />
-
-                            <Play className="w-8 h-8 md:w-10 md:h-10 text-white fill-white ml-1 opacity-80 group-hover:opacity-100 transition-all duration-300" />
-                        </motion.button>
-                    </motion.div>
-                )}
 
                 {isPlaying && !isFinished && currentIndex < MESSAGES.length && (
                     <motion.div
@@ -145,10 +98,20 @@ export default function ClosingMessage() {
                         key="finished"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 2 }}
-                        className="relative z-10"
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        className="relative z-10 p-8 flex flex-col items-center"
                     >
-                        {/* Empty state or final logo could go here. For now, just fading to black/empty as implied. */}
+                        <Image
+                            src="/main/hippy-text.png"
+                            alt="Final Message"
+                            width={600}
+                            height={300}
+                            className="w-full max-w-md md:max-w-xl lg:max-w-2xl h-auto object-contain"
+                            priority
+                        />
+                        <p className="mt-12 text-base md:text-lg font-bold font-zen-kaku tracking-widest text-white/50">
+                            R-EXPO2026 Fin
+                        </p>
                     </motion.div>
                 )}
             </AnimatePresence>
