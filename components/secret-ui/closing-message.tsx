@@ -6,20 +6,40 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const MESSAGES = [
-    <>
-        R-EXPOは、立命館慶祥の、<br className="md:hidden" />30年の集大成です。
-    </>,
-    <>
-        緑豊かな校舎からは、<br className="md:hidden" />
-        こんなにも輝きに満ちた、<br className="md:hidden" />才能に溢れる生徒が生まれました。
-    </>,
-    <>
-        これまでの30年。これからの30年。<br />
-        明日からの未来を、どう生きる？
-    </>,
-    <>
-        来たる慶祥生へ、<br className="md:hidden" />今こそ、輝こう。
-    </>
+    {
+        text: (
+            <>
+                R-EXPOは、立命館慶祥の、<br className="md:hidden" />30年の集大成です。
+            </>
+        ),
+        duration: 4000,
+    },
+    {
+        text: (
+            <>
+                緑豊かな校舎からは、<br className="md:hidden" />
+                こんなにも輝きに満ちた、<br className="md:hidden" />才能に溢れる生徒が生まれました。
+            </>
+        ),
+        duration: 6000,
+    },
+    {
+        text: (
+            <>
+                これまでの30年。これからの30年。<br />
+                明日からの未来を、どう生きる？
+            </>
+        ),
+        duration: 5400,
+    },
+    {
+        text: (
+            <>
+                来たる慶祥生へ、<br className="md:hidden" />今こそ、輝こう。
+            </>
+        ),
+        duration: 5400,
+    }
 ];
 
 export default function ClosingMessage() {
@@ -36,31 +56,23 @@ export default function ClosingMessage() {
     }, []);
 
     useEffect(() => {
-        if (isPlaying && !isFinished) {
-            // Initial delay to allow the "Fin" screen to fade out before first message appears?
-            // Or just start immediately. Let's start immediately but handle the transition.
+        if (!isPlaying || isFinished) return;
 
-            const timer = setInterval(() => {
-                setCurrentIndex((prev) => {
-                    if (prev < MESSAGES.length - 1) {
-                        return prev + 1;
-                    } else {
-                        clearInterval(timer);
-                        // Wait for the last message's duration to complete
-                        // Actually, the interval triggers AFTER 5s.
-                        // So at 0s: Msg 0 shows.
-                        // At 5s: Msg 1 shows.
-                        // At 10s: Msg 2 shows.
-                        // At 15s: We are here. We should stop.
-                        setIsFinished(true);
-                        return prev + 1;
-                    }
-                });
-            }, 5400);
+        const currentDuration = MESSAGES[currentIndex]?.duration || 5400;
 
-            return () => clearInterval(timer);
-        }
-    }, [isPlaying, isFinished]);
+        const timer = setTimeout(() => {
+            setCurrentIndex((prev) => {
+                if (prev < MESSAGES.length - 1) {
+                    return prev + 1;
+                } else {
+                    setIsFinished(true);
+                    return prev;
+                }
+            });
+        }, currentDuration);
+
+        return () => clearTimeout(timer);
+    }, [currentIndex, isPlaying, isFinished]);
 
 
 
@@ -83,12 +95,12 @@ export default function ClosingMessage() {
                         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
                         transition={{
-                            duration: 1.5,
+                            duration: 1.0,
                             ease: "easeInOut"
                         }}
                     >
                         <p className="text-lg md:text-2xl lg:text-3xl font-light leading-relaxed tracking-wider text-white whitespace-pre-line">
-                            {MESSAGES[currentIndex]}
+                            {MESSAGES[currentIndex].text}
                         </p>
                     </motion.div>
                 )}
