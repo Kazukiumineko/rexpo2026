@@ -56,7 +56,7 @@ export default function ClosingMessage() {
                         return prev + 1;
                     }
                 });
-            }, 6000);
+            }, 5400);
 
             return () => clearInterval(timer);
         }
