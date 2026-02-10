@@ -84,6 +84,17 @@ export default function ClosingMessage() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-purple-900/20 rounded-full blur-[100px] animate-pulse delay-1000" />
             </div>
 
+            {/* 画像をプリロードしておく */}
+            <div className="fixed opacity-0 pointer-events-none">
+                <Image
+                    src="/main/hippy-text.png"
+                    alt="Preload"
+                    width={600}
+                    height={300}
+                    priority
+                />
+            </div>
+
             <AnimatePresence mode="wait">
 
 
