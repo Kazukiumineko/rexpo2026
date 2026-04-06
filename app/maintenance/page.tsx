@@ -5,6 +5,9 @@ export default function MaintenancePage() {
                 <p className="text-xl md:text-2xl font-medium text-gray-900 dark:text-gray-100">
                     ただいまメンテナンス中です。再開まで今しばらくお待ちください。
                 </p>
+                <p className="text-base md:text-lg text-gray-700 dark:text-gray-300">
+                    お問い合わせ先　立命館慶祥中学校・高等学校 011-388-8888
+                </p>
             </div>
         </div>
     )
