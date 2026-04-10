@@ -16,9 +16,8 @@ export default function EntryTop() {
                     </p>
                 </FadeIn>
                 <FadeIn delay={0.4} duration={0.8}>
-                    <p className="relative z-10 text-gray-700 text-sm md:text-base mt-4 md:mt-6 font-medium leading-relaxed max-w-2xl">
-                        一般来場の方、保護者の方の来場もお待ちしております
-                    </p>
+                    <p className="relative z-10 text-gray-700 text-sm md:text-lg mt-4 md:mt-6 font-medium leading-relaxed max-w-2xl">
+                        2026年の開催は終了しました                    </p>
                 </FadeIn>
             </div>
         </SectionTop>
