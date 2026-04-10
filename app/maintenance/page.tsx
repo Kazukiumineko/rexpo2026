@@ -1,3 +1,5 @@
+import { Home } from "lucide-react";
+
 export default function MaintenancePage() {
     return (
         <div className="flex min-h-screen w-full items-center justify-center p-6 bg-white dark:bg-gray-950">
@@ -9,7 +11,12 @@ export default function MaintenancePage() {
                 <div className="pt-8">
                     <p className="text-base md:text-lg text-gray-700 dark:text-gray-300">
                         お問い合わせ先<br />
-                        立命館慶祥中学校・高等学校<br />
+                        <span className="inline-flex items-center gap-1.5 justify-center">
+                            <a href="https://www2.spc.ritsumei.ac.jp/top_menu/topmenu.html" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+                                <Home className="w-5 h-5" />
+                            </a>
+                            立命館慶祥中学校・高等学校
+                        </span><br />
                         TEL 011-388-8888
                     </p>
                 </div>
